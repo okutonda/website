@@ -3,7 +3,7 @@
    Tema: Profissional & Elegante | Azul Escuro + Dourado
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..500&display=swap');
 
 /* ─── CSS Variables ─── */
 :root {
@@ -38,7 +38,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
@@ -48,7 +48,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   line-height: 1.2;
   color: var(--primary);
@@ -123,7 +123,7 @@ img { max-width: 100%; height: auto; }
    BUTTONS
    ============================================================ */
 .btn {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 600;
   letter-spacing: 0.03em;
   transition: 0.35s;
@@ -452,7 +452,7 @@ img { max-width: 100%; height: auto; }
 }
 
 .carousel-caption h4.text-white {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: 'DM Sans', sans-serif !important;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -460,7 +460,7 @@ img { max-width: 100%; height: auto; }
   color: var(--gold) !important;
 }
 .carousel-caption h1.display-1 {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   font-weight: 700;
   color: var(--white) !important;
@@ -499,7 +499,7 @@ img { max-width: 100%; height: auto; }
 .text-primary { color: var(--gold) !important; }
 
 h4.text-primary {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -520,7 +520,7 @@ h4.text-primary::before {
 }
 
 .display-4 {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   font-weight: 700;
   color: var(--primary);
   line-height: 1.2;
@@ -638,20 +638,20 @@ h4.text-primary::before {
 .counter-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
 .counter-counting span.text-primary {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 2.4rem !important;
   color: var(--gold) !important;
   font-weight: 700;
 }
 .counter-counting .h1 {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   color: var(--gold) !important;
   font-size: 2rem;
 }
 .counter-item h4 {
   font-size: 0.88rem;
   color: var(--text-muted) !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
 }
 
@@ -735,7 +735,7 @@ h4.text-primary::before {
 .service .service-item .service-content .service-content-inner p { transition: 0.5s; }
 
 .service-content-inner a.h4 {
-  font-family: 'Lora', serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   color: var(--primary) !important;
   font-weight: 700;
@@ -785,7 +785,7 @@ h4.text-primary::before {
 .faq-section .accordion .accordion-item:hover { box-shadow: var(--shadow-sm); }
 
 .faq-section .accordion .accordion-item .accordion-header .accordion-button {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.93rem;
   font-weight: 600;
   color: var(--white);
@@ -1007,7 +1007,7 @@ h4.text-primary::before {
   border: 1.5px solid rgba(10,22,40,0.08) !important;
   border-radius: var(--radius) !important;
   color: var(--text-dark) !important;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.92rem;
   transition: var(--transition);
   box-shadow: none !important;
@@ -1069,7 +1069,7 @@ h4.text-primary::before {
   color: rgba(255,255,255,0.6) !important;
 }
 .footer .footer-item h4 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.18em;
