@@ -3,130 +3,41 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OKUTONDA | Soluções Tecnológicas Inovadoras para Angola</title>
-
-    <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="img/logo/favicon.png" type="image/png" />
-    <meta
-      name="description"
-      content="OKUTONDA — Soluções e Tecnologia: ERP/CRM, plataformas web, aplicações desktop e consultoria para empresas e escolas em Angola."
-    />
-    <meta
-      name="keywords"
-      content="OKUTONDA, Soluções Tecnológicas, Angola, ERP, CRM, Plataformas Web, Sistema integrado escolar Angolano, Consultoria, Luanda"
-    />
-    <meta
-      property="og:title"
-      content="OKUTONDA | Soluções Tecnológicas Inovadoras"
-    />
-    <meta
-      property="og:description"
-      content="Transforme a sua organização com tecnologia feita para Angola."
-    />
-    <meta property="og:type" content="website" />
-
-    <!-- Open Graph — imagem de partilha -->
-    <meta
-      property="og:image"
-      content="https://okenda.com.ao/img/slider/slider2.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="OKUTONDA — Soluções Tecnológicas Inovadoras para Angola"
-    />
-    <meta property="og:url" content="https://okenda.com.ao" />
-
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="OKUTONDA | Soluções Tecnológicas Inovadoras"
-    />
-    <meta
-      name="twitter:description"
-      content="Transforme a sua organização com tecnologia feita para Angola."
-    />
-    <meta
-      name="twitter:image"
-      content="https://okenda.com.ao/img/slider/slider2.png"
-    />
-
+    <title>OKUTONDA | Soluções Tecnológicas para Angola</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
 
     <style>
-      /* ══════════════════════════════════════════
-         TOKENS — novo sistema de cores OKUTONDA
-      ══════════════════════════════════════════ */
+      /* ══ TOKENS ══ */
       :root {
-        --primary: #030b1a;
-        --primary-mid: #071426;
-        --primary-light: #0d1d35;
-        --accent: #0f6fff;
-        --accent-2: #1e90ff;
-        --gold: #d9a441;
-        --gold-soft: #e8c768;
-        --white: #f5f7fa;
-        --txt: #8a9bbf;
-        --txt-lt: #bfcce0;
-        --txt-muted: #4e5f7a;
-        --card-bg: rgba(10, 20, 40, 0.55);
-        --border: rgba(15, 111, 255, 0.18);
-        --border-hov: rgba(15, 111, 255, 0.45);
-        --border-gold: rgba(217, 164, 65, 0.25);
-        --border-gold-hov: rgba(217, 164, 65, 0.55);
-        --accent-sub: rgba(15, 111, 255, 0.1);
-        --gold-sub: rgba(217, 164, 65, 0.1);
-        --g-accent: linear-gradient(135deg, #0f6fff, #1e90ff);
-        --g-gold: linear-gradient(135deg, #d9a441, #e8c768);
-        --g-dark: linear-gradient(
-          160deg,
-          #030b1a 0%,
-          #071426 60%,
-          #050f20 100%
-        );
-        --g-hero: linear-gradient(
-          135deg,
-          #030b1a 0%,
-          #071426 50%,
-          #0a1830 100%
-        );
-        --card-hov-blue:
-          0 24px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(15, 111, 255, 0.35),
-          0 0 30px rgba(15, 111, 255, 0.12);
-        --card-hov-gold:
-          0 24px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(217, 164, 65, 0.35),
-          0 0 30px rgba(217, 164, 65, 0.1);
-        --r-sm: 10px;
-        --r-md: 18px;
-        --r-lg: 26px;
-        --tf: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        --tb: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        --ts: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        --ink: #07111f;
+        --ink-mid: #0c1a2e;
+        --ink-lt: #132338;
+        --sky: #1059e8;
+        --sky-2: #3b7fff;
+        --amber: #d69f3c;
+        --amber-2: #e8bc6a;
+        --paper: #edf1f7;
+        --mist: #94a6be;
+        --ghost: #3d5070;
+        --line: rgba(255, 255, 255, 0.07);
+        --line-lt: rgba(255, 255, 255, 0.12);
+        --card: rgba(12, 26, 46, 0.6);
+        --r: 14px;
+        --r-lg: 24px;
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+        --t: 0.28s;
       }
 
-      /* ══════════════════════════════════════════
-         RESET
-      ══════════════════════════════════════════ */
+      /* ══ BASE ══ */
       *,
       *::before,
       *::after {
@@ -139,13 +50,12 @@
         -webkit-text-size-adjust: 100%;
       }
       body {
-        font-family: "Instrument Sans", sans-serif;
+        font-family: "DM Sans", sans-serif;
         font-size: 16px;
-        line-height: 1.65;
-        color: var(--txt);
-        background: var(--primary);
+        line-height: 1.7;
+        color: var(--mist);
+        background: var(--ink);
         overflow-x: hidden;
-        padding-top: 90px;
       }
       h1,
       h2,
@@ -153,791 +63,793 @@
       h4,
       h5,
       h6 {
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
-        line-height: 1.15;
-        color: var(--white);
+        font-family: "Fraunces", Georgia, serif;
+        font-weight: 600;
+        line-height: 1.12;
+        color: var(--paper);
         letter-spacing: -0.02em;
       }
       p {
-        color: var(--txt);
+        color: var(--mist);
       }
       a {
         text-decoration: none;
+        color: inherit;
       }
       img {
         max-width: 100%;
         height: auto;
         display: block;
       }
-      :focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 3px;
-        border-radius: 4px;
-      }
 
-      /* ══════════════════════════════════════════
-         PRELOADER
-      ══════════════════════════════════════════ */
-      #preloader {
+      /* ══ PRELOADER ══ */
+      #pl {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 100vh;
-        background: var(--primary);
-        z-index: 99999;
+        inset: 0;
+        background: var(--ink);
+        z-index: 9999;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 18px;
-        text-align: center;
-        padding: 0 16px;
+        gap: 20px;
         transition:
-          opacity 0.7s ease,
-          visibility 0.7s ease;
+          opacity 0.6s var(--ease),
+          visibility 0.6s;
       }
-      #preloader.hidden {
+      #pl.out {
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
       }
-      .loader-ring {
-        width: 58px;
-        height: 58px;
-        flex-shrink: 0;
-        border: 2px solid rgba(15, 111, 255, 0.15);
-        border-top-color: var(--accent);
+      .pl-ring {
+        width: 44px;
+        height: 44px;
+        border: 1.5px solid rgba(16, 89, 232, 0.15);
+        border-top-color: var(--sky);
         border-radius: 50%;
         animation: spin 0.9s linear infinite;
       }
-      .loader-logo {
-        font-family: "Syne", sans-serif;
-        font-size: 0.95rem;
-        font-weight: 700;
-        background: var(--g-accent);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        letter-spacing: 4px;
+      .pl-name {
+        font-family: "Fraunces", serif;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.35em;
         text-transform: uppercase;
-        animation: pulse-t 1.4s ease-in-out infinite;
-        white-space: nowrap;
+        color: rgba(237, 241, 247, 0.35);
+        animation: pulse 1.4s ease-in-out infinite;
       }
       @keyframes spin {
         to {
           transform: rotate(360deg);
         }
       }
-      @keyframes pulse-t {
+      @keyframes pulse {
         0%,
         100% {
           opacity: 0.3;
         }
         50% {
           opacity: 1;
-        }
-      }
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.3;
         }
       }
 
-      /* ══════════════════════════════════════════
-         TOP BAR
-      ══════════════════════════════════════════ */
-      .top-bar {
-        background: rgba(3, 11, 26, 0.85);
-        padding: 9px 0;
-        font-size: 0.82rem;
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+      /* ══ LAYOUT HELPERS ══ */
+      .container {
+        width: min(1200px, 100%);
+        margin-inline: auto;
+        padding-inline: clamp(20px, 5vw, 48px);
       }
-      .top-bar a {
-        color: rgba(245, 247, 250, 0.5);
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        transition: color var(--tf);
+      .grid {
+        display: grid;
       }
-      .top-bar a:hover {
-        color: var(--accent);
+
+      /* ══ TOPBAR — scrolls naturally, NOT fixed ══ */
+      .topbar {
+        background: rgba(7, 17, 31, 0.9);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        padding: 8px 0;
       }
-      .top-bar i {
-        color: var(--accent);
-        font-size: 0.78rem;
-      }
-      .top-bar .txt-loc {
-        color: rgba(245, 247, 250, 0.38);
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-      }
-      .soc-links {
+      .topbar-inner {
         display: flex;
-        gap: 6px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
       }
-      .soc-links a {
-        width: 30px;
-        height: 30px;
+      .topbar-contact {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .topbar-contact a,
+      .topbar-loc {
+        font-size: 0.8rem;
+        color: rgba(237, 241, 247, 0.4);
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        transition: color var(--t);
+      }
+      .topbar-contact a:hover {
+        color: var(--sky-2);
+      }
+      .topbar-contact i,
+      .topbar-loc i {
+        color: var(--sky);
+        font-size: 0.72rem;
+      }
+      .soc {
+        display: flex;
+        gap: 5px;
+      }
+      .soc a {
+        width: 28px;
+        height: 28px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.07);
-        color: rgba(255, 255, 255, 0.45);
-        font-size: 0.75rem;
-        transition: all var(--tb);
+        border: 1px solid var(--line);
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 0.7rem;
+        transition: all 0.25s var(--ease);
       }
-      .soc-links a:hover {
-        background: var(--g-accent);
-        color: var(--white);
-        border-color: var(--accent);
+      .soc a:hover {
+        background: var(--sky);
+        color: #fff;
+        border-color: var(--sky);
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(15, 111, 255, 0.35);
       }
 
-      /* ══════════════════════════════════════════
-         NAVBAR
-      ══════════════════════════════════════════ */
-      .navbar {
-        padding: 13px 0;
-        background: rgba(3, 11, 26, 0.92);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+      /* ══ NAV ══ */
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        padding: 18px 0;
+        background: transparent;
         border-bottom: 1px solid transparent;
-        transition: all var(--tb);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        transition: all 0.38s var(--ease);
       }
-      .navbar.scrolled {
-        padding: 9px 0;
-        border-bottom-color: var(--border);
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+      .nav.s {
+        padding: 11px 0;
+        background: rgba(5, 13, 26, 0.94);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom-color: var(--line);
+        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.35);
       }
-      .navbar-brand {
-        font-family: "Syne", sans-serif;
-        font-size: 1.25rem;
-        font-weight: 800;
-        color: var(--white) !important;
+      .nav-inner {
         display: flex;
         align-items: center;
-        gap: 8px;
-        flex-shrink: 1;
-        min-width: 0;
-        overflow: hidden;
+        gap: 32px;
+      }
+      .nav-brand {
+        font-family: "Fraunces", serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--paper);
+        letter-spacing: -0.03em;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+      }
+      .nav-brand img {
+        height: 44px;
+        width: auto;
+        transition: height 0.3s;
+      }
+      .nav.s .nav-brand img {
+        height: 38px;
+      }
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        flex: 1;
+        justify-content: center;
+      }
+      .nav-menu a {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        color: rgba(237, 241, 247, 0.6);
+        padding: 7px 14px;
+        border-radius: 50px;
+        transition: all var(--t) var(--ease);
+      }
+      .nav-menu a:hover,
+      .nav-menu a.act {
+        color: var(--paper);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .nav-cta {
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        color: #fff !important;
+        padding: 9px 22px !important;
+        border-radius: 50px;
+        font-weight: 500 !important;
+        letter-spacing: 0.01em !important;
+        box-shadow: 0 4px 16px rgba(16, 89, 232, 0.3);
+        transition: all 0.25s var(--ease) !important;
         white-space: nowrap;
       }
-      .navbar-brand img {
-        height: 60px;
-        width: auto;
+      .nav-cta:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 24px rgba(16, 89, 232, 0.45) !important;
+        background: rgba(255, 255, 255, 0.06) !important;
+        color: #fff !important;
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: 1px solid var(--line);
+        padding: 9px 10px;
+        border-radius: var(--r);
         flex-shrink: 0;
-        transition: height var(--tb);
       }
-      @media (max-width: 400px) {
-        .navbar-brand {
-          font-size: 1rem;
-          gap: 6px;
-        }
-        .navbar-brand img {
-          height: 60px;
-        }
-      }
-      .nav-link {
-        font-family: "Syne", sans-serif;
-        font-weight: 600;
-        font-size: 0.88rem;
-        color: rgba(245, 247, 250, 0.75) !important;
-        padding: 8px 16px !important;
-        position: relative;
-        transition: color var(--tf);
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 2px;
-        left: 16px;
-        right: 16px;
+      .hamburger span {
+        display: block;
+        width: 20px;
         height: 1.5px;
-        background: var(--g-accent);
+        background: rgba(237, 241, 247, 0.7);
+        border-radius: 2px;
+        transition: all 0.25s var(--ease);
+      }
+      .hamburger.open span:nth-child(1) {
+        transform: rotate(45deg) translate(4.5px, 4.5px);
+      }
+      .hamburger.open span:nth-child(2) {
+        opacity: 0;
         transform: scaleX(0);
-        transform-origin: center;
-        transition: transform var(--tb);
       }
-      .nav-link:hover,
-      .nav-link.active {
-        color: var(--white) !important;
-      }
-      .nav-link:hover::after,
-      .nav-link.active::after {
-        transform: scaleX(1);
-      }
-      .navbar-toggler {
-        border: 1px solid var(--border);
-        border-radius: var(--r-sm);
-        padding: 7px 9px;
-        flex-shrink: 0;
-      }
-      .navbar-toggler:focus {
-        box-shadow: 0 0 0 3px rgba(15, 111, 255, 0.2);
-      }
-      .navbar-toggler-icon {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(245,247,250,.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-      }
-      @media (max-width: 991.98px) {
-        .navbar-collapse {
-          background: var(--primary-light);
-          padding: 20px 22px;
-          border-radius: var(--r-md);
-          margin-top: 10px;
-          border: 1px solid var(--border);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-        }
-        .nav-link {
-          padding: 12px 0 !important;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-        .nav-link:last-of-type {
-          border-bottom: none;
-        }
-        .nav-link::after {
-          display: none;
-        }
-        .nav-link:hover,
-        .nav-link.active {
-          color: var(--accent) !important;
-        }
-        .nav-cta {
-          width: 100%;
-          justify-content: center;
-          margin-top: 12px;
-        }
+      .hamburger.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(4.5px, -4.5px);
       }
 
-      /* ══════════════════════════════════════════
-         BUTTONS
-      ══════════════════════════════════════════ */
-      .btn-blue {
-        background: var(--g-accent);
-        color: var(--white);
-        border: none;
+      /* Mobile menu */
+      .nav-drawer {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 800;
+        background: var(--ink-mid);
+        padding: 100px 28px 40px;
+        flex-direction: column;
+        gap: 8px;
+        animation: slideDown 0.28s var(--ease);
+      }
+      .nav-drawer.open {
+        display: flex;
+      }
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .nav-drawer a {
+        font-family: "Fraunces", serif;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: rgba(237, 241, 247, 0.6);
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+        transition: color 0.2s;
+      }
+      .nav-drawer a:last-child {
+        border-bottom: none;
+      }
+      .nav-drawer a:hover {
+        color: var(--paper);
+      }
+
+      /* ══ BUTTONS ══ */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 0.88rem;
         padding: 11px 26px;
         border-radius: 50px;
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
-        font-size: 0.88rem;
-        transition: all var(--tb);
-        box-shadow: 0 4px 16px rgba(15, 111, 255, 0.35);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
-      }
-      .btn-blue:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 28px rgba(15, 111, 255, 0.5);
-        color: var(--white);
-        filter: brightness(1.08);
-      }
-      .btn-blue:active {
-        transform: translateY(0);
-      }
-
-      .btn-gold {
-        background: var(--g-gold);
-        color: var(--primary);
         border: none;
-        padding: 11px 26px;
-        border-radius: 50px;
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
-        font-size: 0.88rem;
-        transition: all var(--tb);
-        box-shadow: 0 4px 16px rgba(217, 164, 65, 0.3);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
         cursor: pointer;
+        transition: all 0.26s var(--ease);
+        letter-spacing: 0.01em;
+        white-space: nowrap;
       }
-      .btn-gold:hover {
+      .btn-sky {
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(16, 89, 232, 0.3);
+      }
+      .btn-sky:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 28px rgba(217, 164, 65, 0.45);
-        color: var(--primary);
-        filter: brightness(1.08);
+        box-shadow: 0 8px 28px rgba(16, 89, 232, 0.45);
+        filter: brightness(1.07);
       }
-      .btn-gold:active {
-        transform: translateY(0);
-      }
-
-      .btn-outline-blue {
-        background: transparent;
-        color: var(--accent);
-        border: 1.5px solid var(--accent);
-        padding: 10px 26px;
-        border-radius: 50px;
-        font-family: "Syne", sans-serif;
+      .btn-amber {
+        background: linear-gradient(135deg, var(--amber), var(--amber-2));
+        color: var(--ink);
         font-weight: 600;
-        font-size: 0.88rem;
-        transition: all var(--tb);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
+        box-shadow: 0 4px 16px rgba(214, 159, 60, 0.25);
       }
-      .btn-outline-blue:hover {
-        background: var(--g-accent);
-        color: var(--white);
+      .btn-amber:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(15, 111, 255, 0.35);
-        border-color: transparent;
+        box-shadow: 0 8px 24px rgba(214, 159, 60, 0.4);
+        filter: brightness(1.06);
       }
-
-      .btn-outline-gold {
+      .btn-ghost {
         background: transparent;
-        color: var(--gold);
-        border: 1.5px solid var(--gold);
-        padding: 10px 26px;
-        border-radius: 50px;
-        font-family: "Syne", sans-serif;
-        font-weight: 600;
-        font-size: 0.88rem;
-        transition: all var(--tb);
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        cursor: pointer;
+        color: var(--paper);
+        border: 1.5px solid rgba(237, 241, 247, 0.18);
       }
-      .btn-outline-gold:hover {
-        background: var(--g-gold);
-        color: var(--primary);
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.05);
+        border-color: rgba(237, 241, 247, 0.35);
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(217, 164, 65, 0.3);
-        border-color: transparent;
       }
 
-      /* ══════════════════════════════════════════
-         SECTION COMMONS
-      ══════════════════════════════════════════ */
-      .sec-pad {
-        padding: 90px 0;
-      }
-      @media (max-width: 767.98px) {
-        .sec-pad {
-          padding: 60px 0;
-        }
-      }
-      @media (max-width: 575.98px) {
-        .sec-pad {
-          padding: 48px 0;
-        }
-      }
-
+      /* ══ EYEBROW ══ */
       .eyebrow {
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        font-family: "Syne", sans-serif;
-        font-size: 0.75rem;
-        font-weight: 700;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.7rem;
+        font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 2.5px;
-        color: var(--accent);
-        margin-bottom: 12px;
+        letter-spacing: 0.2em;
+        color: var(--sky-2);
+        margin-bottom: 14px;
       }
       .eyebrow::before {
         content: "";
-        width: 22px;
-        height: 1.5px;
-        background: var(--g-accent);
-        flex-shrink: 0;
+        width: 20px;
+        height: 1px;
+        background: linear-gradient(90deg, var(--sky), var(--sky-2));
       }
-      .eyebrow-gold {
-        color: var(--gold);
+      .eyebrow.gold {
+        color: var(--amber-2);
       }
-      .eyebrow-gold::before {
-        background: var(--g-gold);
+      .eyebrow.gold::before {
+        background: linear-gradient(90deg, var(--amber), var(--amber-2));
       }
 
-      .sec-title {
-        font-size: clamp(1.75rem, 4vw, 2.8rem);
-        color: var(--white);
-        margin-bottom: 14px;
-        letter-spacing: -0.03em;
+      /* ══ SECTION TITLE ══ */
+      .sec-h {
+        font-size: clamp(1.7rem, 4vw, 2.9rem);
+        margin-bottom: 16px;
       }
       .hl {
-        background: var(--g-accent);
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
       .hl-gold {
-        background: var(--g-gold);
+        background: linear-gradient(135deg, var(--amber), var(--amber-2));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
       }
 
-      /* ══════════════════════════════════════════
-         HERO — Slider de imagem pura
-      ══════════════════════════════════════════ */
-      .hero-section {
+      /* ══ HERO ══ */
+      .hero {
         position: relative;
-        background: var(--g-hero);
         overflow: hidden;
+        background: var(--ink);
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
       }
-      /* grid pattern overlay */
-      .hero-section::before {
-        content: "";
+      .hero-grid-bg {
         position: absolute;
         inset: 0;
         z-index: 0;
         background-image:
-          linear-gradient(rgba(15, 111, 255, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(15, 111, 255, 0.04) 1px, transparent 1px);
-        background-size: 60px 60px;
+          linear-gradient(rgba(16, 89, 232, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(16, 89, 232, 0.035) 1px, transparent 1px);
+        background-size: 56px 56px;
         mask-image: radial-gradient(
-          ellipse 80% 60% at 50% 0%,
-          black 40%,
+          ellipse 85% 65% at 50% 0%,
+          black 30%,
           transparent 100%
         );
         -webkit-mask-image: radial-gradient(
-          ellipse 80% 60% at 50% 0%,
-          black 40%,
+          ellipse 85% 65% at 50% 0%,
+          black 30%,
           transparent 100%
         );
       }
-      .glow-orb {
+      .hero-orb {
         position: absolute;
         border-radius: 50%;
-        filter: blur(80px);
+        filter: blur(90px);
         pointer-events: none;
         z-index: 0;
       }
-
-      /* ─ Slider imagem pura ─ */
-      .hero-slider-wrap {
+      .hero-slides {
         position: relative;
         z-index: 1;
-        width: 100%;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
       }
-      .hero-img-swiper {
-        width: 100%;
-      }
-      .hero-img-slide {
-        width: 100%;
+      .slides-viewport {
+        flex: 1;
         position: relative;
         overflow: hidden;
       }
-      .hero-img-slide img {
+      .slide {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        transition: opacity 0.9s var(--ease);
+      }
+      .slide.active {
+        opacity: 1;
+      }
+      .slide img {
         width: 100%;
-        height: auto;
-        max-height: 90vh;
+        height: 100%;
         object-fit: cover;
         object-position: center;
-        display: block;
       }
-      /* gradient overlay bottom para transição suave */
-      .hero-img-slide::after {
+      .slide::after {
         content: "";
         position: absolute;
         inset: 0;
         background: linear-gradient(
           to bottom,
-          transparent 60%,
-          rgba(3, 11, 26, 0.65) 100%
+          rgba(7, 17, 31, 0.18) 0%,
+          rgba(7, 17, 31, 0.45) 70%,
+          rgba(7, 17, 31, 0.75) 100%
         );
-        pointer-events: none;
+      }
+      .slide-dots {
+        position: absolute;
+        bottom: 22px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        gap: 7px;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.28);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      .dot.active {
+        background: var(--sky);
+        width: 20px;
+        border-radius: 4px;
       }
 
-      /* ─ CTA bar sob o slider ─ */
-      .hero-cta-bar {
-        background: rgba(7, 20, 38, 0.92);
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        padding: 22px 0;
-        position: relative;
-        z-index: 2;
+      /* ══ HERO COPY (overlaid) ══ */
+      .hero-copy {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+        padding: clamp(32px, 5vw, 64px) 0 clamp(20px, 3vw, 32px);
       }
-      .hero-cta-inner {
+      .hero-copy-inner {
+        max-width: 720px;
+      }
+      .hero-h {
+        font-family: "Fraunces", serif;
+        font-size: clamp(2.4rem, 6vw, 4.6rem);
+        font-weight: 700;
+        color: var(--paper);
+        line-height: 1.06;
+        letter-spacing: -0.03em;
+        margin-bottom: 18px;
+      }
+      .hero-h em {
+        font-style: italic;
+        font-weight: 300;
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-sub {
+        font-size: clamp(0.95rem, 2vw, 1.1rem);
+        color: rgba(237, 241, 247, 0.6);
+        max-width: 500px;
+        margin-bottom: 32px;
+        line-height: 1.7;
+      }
+      .hero-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      /* ══ STRIP ══ */
+      .strip {
+        background: rgba(12, 26, 46, 0.7);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+        padding: 16px 0;
+      }
+      .strip-inner {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px;
       }
-      .hero-cta-label {
-        font-family: "Syne", sans-serif;
-        font-size: 0.78rem;
-        font-weight: 700;
+      .strip-label {
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(245, 247, 250, 0.38);
-        white-space: nowrap;
-        margin-right: 8px;
-      }
-      @media (max-width: 575.98px) {
-        .hero-cta-label {
-          display: none;
-        }
+        color: rgba(237, 241, 247, 0.3);
+        margin-right: 4px;
       }
 
-      /* Swiper controls */
-      .swiper-button-next,
-      .swiper-button-prev {
-        color: var(--white) !important;
-        background: rgba(15, 111, 255, 0.25);
-        backdrop-filter: blur(8px);
-        width: 44px !important;
-        height: 44px !important;
-        border-radius: 50%;
-        border: 1px solid var(--border);
-        transition: all var(--tb);
+      /* ══ SECTIONS ══ */
+      .section {
+        padding: clamp(64px, 8vw, 120px) 0;
       }
-      .swiper-button-next::after,
-      .swiper-button-prev::after {
-        font-size: 13px !important;
-        font-weight: 700;
+      .section-alt {
+        background: var(--ink-mid);
       }
-      .swiper-button-next:hover,
-      .swiper-button-prev:hover {
-        background: var(--g-accent);
-        border-color: transparent;
-      }
-      .swiper-pagination-bullet {
-        background: rgba(255, 255, 255, 0.3) !important;
-        opacity: 1 !important;
-        transition: all var(--tb);
-      }
-      .swiper-pagination-bullet-active {
-        background: var(--accent) !important;
-        width: 20px !important;
-        border-radius: 4px !important;
-      }
-      @media (max-width: 575.98px) {
-        .swiper-button-next,
-        .swiper-button-prev {
-          display: none;
-        }
+      .sec-lead {
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+        color: var(--ghost);
+        max-width: 520px;
       }
 
-      /* ══════════════════════════════════════════
-         FEATURE CARDS
-      ══════════════════════════════════════════ */
-      .feature-card {
-        background: var(--card-bg);
-        padding: 36px 26px;
-        border-radius: var(--r-md);
-        border: 1px solid var(--border);
-        height: 100%;
-        transition: all var(--tb);
+      /* ══ FEATURE CARDS ══ */
+      .feat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 56px;
+      }
+      .feat-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        padding: 36px 28px;
         position: relative;
         overflow: hidden;
+        transition: all 0.3s var(--ease);
       }
-      .feature-card::before {
+      .feat-card::after {
         content: "";
         position: absolute;
-        inset: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
         background: linear-gradient(
-          135deg,
-          rgba(15, 111, 255, 0.08) 0%,
-          rgba(15, 111, 255, 0.02) 100%
+          90deg,
+          transparent,
+          rgba(16, 89, 232, 0.4),
+          transparent
         );
-        opacity: 0;
-        transition: opacity var(--tb);
+        transform: scaleX(0);
+        transition: transform 0.35s;
       }
-      .feature-card:hover {
-        transform: translateY(-8px);
-        border-color: var(--border-hov);
-        box-shadow: var(--card-hov-blue);
+      .feat-card:hover {
+        transform: translateY(-7px);
+        border-color: rgba(16, 89, 232, 0.3);
+        box-shadow:
+          0 24px 50px rgba(0, 0, 0, 0.4),
+          0 0 30px rgba(16, 89, 232, 0.08);
       }
-      .feature-card:hover::before {
-        opacity: 1;
+      .feat-card:hover::after {
+        transform: scaleX(1);
       }
-      .f-icon {
-        width: 56px;
-        height: 56px;
-        background: var(--accent-sub);
-        border-radius: var(--r-sm);
+      .feat-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 12px;
+        background: rgba(16, 89, 232, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
-        transition: all var(--tb);
+        margin-bottom: 22px;
+        transition: all 0.3s;
       }
-      .feature-card:hover .f-icon {
-        background: var(--g-accent);
-        box-shadow: 0 8px 20px rgba(15, 111, 255, 0.4);
+      .feat-card:hover .feat-icon {
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        box-shadow: 0 8px 20px rgba(16, 89, 232, 0.4);
       }
-      .f-icon i {
-        font-size: 1.45rem;
-        color: var(--accent);
-        transition: color var(--tb);
+      .feat-icon i {
+        font-size: 1.3rem;
+        color: var(--sky);
+        transition: color 0.3s;
       }
-      .feature-card:hover .f-icon i {
-        color: var(--white);
+      .feat-card:hover .feat-icon i {
+        color: #fff;
       }
-      .feature-card h4 {
-        color: var(--white);
+      .feat-card h4 {
+        font-size: 1rem;
         margin-bottom: 8px;
-        font-size: 1.05rem;
-        position: relative;
-        z-index: 1;
       }
-      .feature-card p {
-        color: var(--txt-muted);
-        font-size: 0.9rem;
-        line-height: 1.65;
-        position: relative;
-        z-index: 1;
+      .feat-card p {
+        font-size: 0.88rem;
+        color: var(--ghost);
         margin: 0;
+        line-height: 1.65;
       }
 
-      /* ══════════════════════════════════════════
-         ABOUT
-      ══════════════════════════════════════════ */
-      .about-img-wrap {
-        position: relative;
+      /* ══ ABOUT ══ */
+      .about-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: center;
+      }
+      .about-img {
         border-radius: var(--r-lg);
         overflow: hidden;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        position: relative;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
       }
-      .about-img-wrap img {
-        width: 100%;
-        display: block;
-      }
-      .about-img-wrap::after {
+      .about-img::before {
         content: "";
         position: absolute;
         inset: 0;
-        border: 1px solid var(--border-gold);
+        z-index: 1;
+        border: 1px solid rgba(214, 159, 60, 0.2);
         border-radius: var(--r-lg);
         pointer-events: none;
       }
-      .exp-badge {
+      .about-img img {
+        width: 100%;
+        display: block;
+      }
+      .about-badge {
         position: absolute;
         bottom: 24px;
-        right: -16px;
-        background: var(--g-gold);
-        padding: 20px 24px;
-        border-radius: var(--r-md);
+        right: -14px;
+        z-index: 2;
+        background: linear-gradient(135deg, var(--amber), var(--amber-2));
+        border-radius: var(--r);
+        padding: 20px 22px;
         text-align: center;
-        box-shadow: 0 12px 40px rgba(217, 164, 65, 0.4);
-        min-width: 120px;
+        box-shadow: 0 12px 40px rgba(214, 159, 60, 0.35);
       }
-      .exp-badge .n {
-        font-family: "Syne", sans-serif;
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: var(--primary);
+      .about-badge .n {
+        font-family: "Fraunces", serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: var(--ink);
         line-height: 1;
         margin-bottom: 4px;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.04em;
       }
-      .exp-badge .lbl {
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: rgba(3, 11, 26, 0.7);
+      .about-badge .l {
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: rgba(7, 17, 31, 0.65);
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.1em;
       }
-      @media (max-width: 575.98px) {
-        .exp-badge {
-          right: 12px;
-          bottom: 12px;
-          padding: 14px 16px;
-          min-width: 100px;
-        }
-        .exp-badge .n {
-          font-size: 1.8rem;
-        }
-      }
-
       .check-list {
         list-style: none;
         padding: 0;
-        margin-bottom: 28px;
+        margin: 22px 0 32px;
       }
       .check-list li {
         display: flex;
         align-items: flex-start;
         gap: 12px;
         margin-bottom: 12px;
-        color: var(--txt-lt);
-        font-weight: 500;
-        font-size: 0.95rem;
+        font-size: 0.93rem;
+        color: rgba(237, 241, 247, 0.75);
       }
-      .chk-ic {
-        width: 22px;
-        height: 22px;
+      .chk {
+        width: 20px;
+        height: 20px;
         flex-shrink: 0;
-        background: var(--accent-sub);
+        margin-top: 2px;
+        background: rgba(16, 89, 232, 0.12);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 1px;
       }
-      .chk-ic i {
-        font-size: 0.6rem;
-        color: var(--accent);
+      .chk i {
+        font-size: 0.55rem;
+        color: var(--sky-2);
       }
 
-      .stat-box {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: var(--r-md);
-        padding: 26px 16px;
+      /* Stats row */
+      .stats-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-top: clamp(40px, 5vw, 64px);
+      }
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: clamp(20px, 3vw, 28px);
         text-align: center;
-        transition: all var(--tb);
+        transition: all 0.28s var(--ease);
       }
-      .stat-box:hover {
-        transform: translateY(-6px);
-        border-color: var(--border-hov);
-        box-shadow: var(--card-hov-blue);
+      .stat:hover {
+        transform: translateY(-5px);
+        border-color: rgba(16, 89, 232, 0.28);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
       }
-      .stat-num {
-        font-family: "Syne", sans-serif;
-        font-size: 2.1rem;
-        font-weight: 800;
-        background: var(--g-accent);
+      .stat-n {
+        font-family: "Fraunces", serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        letter-spacing: -0.03em;
+        background-clip: text;
         line-height: 1;
         margin-bottom: 6px;
+        letter-spacing: -0.03em;
         display: block;
       }
-      .stat-box p {
-        font-size: 0.83rem;
-        color: var(--txt-muted);
+      .stat p {
+        font-size: 0.8rem;
+        color: var(--ghost);
         margin: 0;
       }
 
-      /* ══════════════════════════════════════════
-         SERVICE CARDS
-      ══════════════════════════════════════════ */
+      /* ══ SERVICES ══ */
+      .svc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 52px;
+      }
       .svc-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
+        background: var(--card);
+        border: 1px solid var(--line);
         border-radius: var(--r-lg);
         padding: 36px 28px;
-        height: 100%;
-        transition: all var(--tb);
         display: flex;
         flex-direction: column;
         position: relative;
         overflow: hidden;
+        transition: all 0.3s var(--ease);
       }
       .svc-card::before {
         content: "";
@@ -946,306 +858,323 @@
         left: 0;
         right: 0;
         height: 2px;
-        background: var(--g-accent);
+        background: linear-gradient(90deg, var(--sky), var(--sky-2));
         transform: scaleX(0);
-        transition: transform var(--tb);
+        transform-origin: left;
+        transition: transform 0.35s var(--ease);
       }
       .svc-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--border-hov);
-        box-shadow: var(--card-hov-blue);
+        transform: translateY(-9px);
+        border-color: rgba(16, 89, 232, 0.28);
+        box-shadow:
+          0 28px 55px rgba(0, 0, 0, 0.45),
+          0 0 30px rgba(16, 89, 232, 0.07);
       }
       .svc-card:hover::before {
         transform: scaleX(1);
       }
-      .svc-ic {
-        width: 68px;
-        height: 68px;
-        background: var(--accent-sub);
-        border-radius: var(--r-md);
+      .svc-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: var(--r);
+        background: rgba(16, 89, 232, 0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 20px;
-        transition: all var(--tb);
+        margin-bottom: 22px;
+        transition: all 0.3s;
       }
-      .svc-card:hover .svc-ic {
-        background: var(--g-accent);
-        box-shadow: 0 10px 24px rgba(15, 111, 255, 0.4);
+      .svc-card:hover .svc-icon {
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        box-shadow: 0 10px 24px rgba(16, 89, 232, 0.38);
       }
-      .svc-ic i {
-        font-size: 1.7rem;
-        color: var(--accent);
-        transition: color var(--tb);
+      .svc-icon i {
+        font-size: 1.6rem;
+        color: var(--sky);
+        transition: color 0.3s;
       }
-      .svc-card:hover .svc-ic i {
-        color: var(--white);
+      .svc-card:hover .svc-icon i {
+        color: #fff;
       }
       .svc-card h4 {
-        color: var(--white);
         font-size: 1.05rem;
         margin-bottom: 10px;
       }
       .svc-card p {
-        color: var(--txt-muted);
-        font-size: 0.88rem;
-        line-height: 1.7;
+        font-size: 0.87rem;
+        color: var(--ghost);
         flex: 1;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
+        line-height: 1.7;
       }
-      .svc-link {
-        color: var(--accent);
-        font-family: "Syne", sans-serif;
-        font-weight: 600;
-        font-size: 0.84rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 7px;
-        transition: all var(--tb);
-        margin-top: auto;
-      }
-      .svc-link:hover {
-        color: var(--accent-2);
-        gap: 12px;
-      }
-      .svc-badge {
-        font-size: 0.7rem;
-        color: var(--gold);
-        opacity: 0.7;
-        display: block;
-        margin-top: 3px;
+      .svc-tag {
+        font-size: 0.75rem;
+        color: var(--amber-2);
+        letter-spacing: 0.05em;
         font-weight: 400;
+        font-style: italic;
       }
 
-      .extra-svc {
+      /* Extra services */
+      .extra-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .extra {
         display: flex;
         align-items: center;
-        gap: 14px;
-        padding: 18px 22px;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: var(--r-md);
-        transition: all var(--tb);
-        height: 100%;
+        gap: 13px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 16px 18px;
+        transition: all 0.25s var(--ease);
       }
-      .extra-svc:hover {
-        border-color: var(--border-hov);
-        background: rgba(15, 111, 255, 0.05);
-        transform: translateX(4px);
+      .extra:hover {
+        border-color: rgba(16, 89, 232, 0.25);
+        background: rgba(16, 89, 232, 0.04);
+        transform: translateX(3px);
       }
       .extra-ic {
-        width: 42px;
-        height: 42px;
+        width: 38px;
+        height: 38px;
         flex-shrink: 0;
-        background: var(--accent-sub);
-        border-radius: var(--r-sm);
+        background: rgba(16, 89, 232, 0.1);
+        border-radius: 9px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
       .extra-ic i {
-        font-size: 1.05rem;
-        color: var(--accent);
+        font-size: 0.95rem;
+        color: var(--sky);
       }
-      .extra-svc h6 {
-        color: var(--white);
+      .extra h6 {
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.87rem;
+        color: var(--paper);
         margin-bottom: 2px;
-        font-size: 0.88rem;
       }
-      .extra-svc small {
-        color: var(--txt-muted);
-        font-size: 0.76rem;
+      .extra small {
+        font-size: 0.75rem;
+        color: var(--ghost);
       }
 
-      /* ══════════════════════════════════════════
-         PROCESS
-      ══════════════════════════════════════════ */
+      /* ══ PROCESS ══ */
+      .proc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+        gap: 18px;
+        margin-top: 52px;
+      }
       .proc-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 30px 22px 26px;
         text-align: center;
-        padding: 34px 22px;
-        background: var(--card-bg);
-        border-radius: var(--r-md);
-        border: 1px solid var(--border);
-        height: 100%;
-        transition: all var(--tb);
+        transition: all 0.28s var(--ease);
       }
       .proc-card:hover {
-        transform: translateY(-6px);
-        border-color: var(--border-hov);
-        box-shadow: var(--card-hov-blue);
+        transform: translateY(-5px);
+        border-color: rgba(16, 89, 232, 0.28);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
       }
       .proc-num {
-        width: 50px;
-        height: 50px;
-        background: var(--g-accent);
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-size: 1.3rem;
-        font-weight: 800;
+        width: 44px;
+        height: 44px;
+        margin: 0 auto 16px;
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 16px;
-        box-shadow: 0 6px 20px rgba(15, 111, 255, 0.4);
+        font-family: "Fraunces", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(16, 89, 232, 0.38);
       }
       .proc-card h5 {
-        color: var(--white);
-        margin-bottom: 8px;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-bottom: 7px;
       }
       .proc-card p {
-        color: var(--txt-muted);
-        font-size: 0.86rem;
+        font-size: 0.82rem;
+        color: var(--ghost);
         margin: 0;
       }
 
-      /* ══════════════════════════════════════════
-         PARCEIROS
-      ══════════════════════════════════════════ */
+      /* ══ PARTNERS ══ */
       .partners-section {
-        background: var(--primary-light);
+        background: var(--ink-lt);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
         padding: 60px 0;
-        border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
-        position: relative;
-        overflow: hidden;
       }
-      .partners-section::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background:
-          radial-gradient(
-            ellipse 60% 80% at 20% 50%,
-            rgba(15, 111, 255, 0.04) 0%,
-            transparent 70%
-          ),
-          radial-gradient(
-            ellipse 50% 70% at 80% 50%,
-            rgba(217, 164, 65, 0.04) 0%,
-            transparent 70%
-          );
-        pointer-events: none;
-      }
-      .partners-title-row {
+      .partners-label-row {
         display: flex;
         align-items: center;
-        justify-content: center;
+        gap: 18px;
         margin-bottom: 40px;
       }
-      .partners-line {
+      .pline {
         flex: 1;
         height: 1px;
-        background: linear-gradient(to right, transparent, var(--border));
+        background: linear-gradient(90deg, transparent, var(--line));
       }
-      .partners-line.right {
-        background: linear-gradient(to left, transparent, var(--border));
+      .pline.r {
+        background: linear-gradient(90deg, var(--line), transparent);
       }
-      .partners-label {
-        font-family: "Syne", sans-serif;
-        font-size: 0.72rem;
-        font-weight: 700;
+      .plabel {
+        font-size: 0.68rem;
+        font-weight: 500;
+        letter-spacing: 0.2em;
         text-transform: uppercase;
-        letter-spacing: 2.5px;
-        color: rgba(245, 247, 250, 0.32);
-        padding: 0 20px;
+        color: rgba(237, 241, 247, 0.28);
         white-space: nowrap;
       }
-
-      /* Swiper parceiros — scroll infinito */
-      .partners-swiper {
-        width: 100%;
-        padding: 8px 0 !important;
-        mask-image: linear-gradient(
-          to right,
-          transparent 0%,
-          black 10%,
-          black 90%,
-          transparent 100%
-        );
-        -webkit-mask-image: linear-gradient(
-          to right,
-          transparent 0%,
-          black 10%,
-          black 90%,
-          transparent 100%
-        );
+      .partners-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
       }
-      .partner-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        border-radius: var(--r-md);
-        padding: 24px 32px;
+      .partner {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 22px 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 100px;
-        transition: all var(--tb);
+        min-width: 140px;
+        min-height: 84px;
+        transition: all 0.28s var(--ease);
         position: relative;
         overflow: hidden;
       }
-      .partner-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--g-accent);
-        opacity: 0;
-        transition: opacity var(--tb);
-      }
-      .partner-card:hover {
-        border-color: var(--border-hov);
-        box-shadow: var(--card-hov-blue);
+      .partner:hover {
+        border-color: rgba(16, 89, 232, 0.3);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
         transform: translateY(-4px);
       }
-      .partner-card:hover::before {
-        opacity: 0.06;
-      }
-      .partner-card img {
-        max-height: 52px;
+      .partner img {
+        max-height: 44px;
         width: auto;
-        max-width: 160px;
+        max-width: 130px;
         object-fit: contain;
-        filter: brightness(0) invert(1) opacity(0.45);
-        transition: filter var(--tb);
-        position: relative;
-        z-index: 1;
+        filter: brightness(0) invert(1) opacity(0.35);
+        transition: filter 0.28s;
       }
-      .partner-card:hover img {
-        filter: brightness(0) invert(1) opacity(0.85);
+      .partner:hover img {
+        filter: brightness(0) invert(1) opacity(0.8);
       }
-      /* fallback: nome texto se imagem falhar */
-      .partner-card .partner-name {
-        font-family: "Syne", sans-serif;
-        font-weight: 700;
-        font-size: 0.95rem;
-        color: rgba(245, 247, 250, 0.45);
-        letter-spacing: 1px;
-        transition: color var(--tb);
-        position: relative;
-        z-index: 1;
+      .pname {
+        font-family: "Fraunces", serif;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: rgba(237, 241, 247, 0.3);
+        letter-spacing: 0.02em;
+        transition: color 0.28s;
       }
-      .partner-card:hover .partner-name {
-        color: var(--white);
+      .partner:hover .pname {
+        color: rgba(237, 241, 247, 0.65);
       }
-
-      /* CTA parceiros */
       .partners-cta {
         text-align: center;
-        margin-top: 40px;
-      }
-      .partners-cta p {
-        font-size: 0.86rem;
-        color: var(--txt-muted);
-        margin-bottom: 14px;
+        margin-top: 36px;
       }
 
-      /* ══════════════════════════════════════════
-         CTA BANNER
-      ══════════════════════════════════════════ */
+      /* ══ FAQ ══ */
+      .faq-wrap {
+        max-width: 760px;
+        margin: 52px auto 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .faq-item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        overflow: hidden;
+        transition: border-color 0.25s;
+      }
+      .faq-item.open {
+        border-color: rgba(16, 89, 232, 0.25);
+      }
+      .faq-q {
+        width: 100%;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 22px;
+        gap: 16px;
+        text-align: left;
+        transition: background 0.2s;
+      }
+      .faq-item.open .faq-q {
+        background: rgba(16, 89, 232, 0.04);
+      }
+      .faq-q span {
+        font-family: "Fraunces", serif;
+        font-size: 0.93rem;
+        font-weight: 600;
+        color: var(--paper);
+      }
+      .faq-icon {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+        background: rgba(16, 89, 232, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.25s;
+      }
+      .faq-item.open .faq-icon {
+        background: var(--sky);
+        transform: rotate(45deg);
+      }
+      .faq-icon i {
+        font-size: 0.6rem;
+        color: var(--sky);
+        transition: color 0.25s;
+      }
+      .faq-item.open .faq-icon i {
+        color: #fff;
+      }
+      .faq-a {
+        padding: 0 22px;
+        max-height: 0;
+        overflow: hidden;
+        transition:
+          max-height 0.35s var(--ease),
+          padding 0.35s;
+      }
+      .faq-item.open .faq-a {
+        max-height: 200px;
+        padding: 0 22px 18px;
+      }
+      .faq-a p {
+        font-size: 0.88rem;
+        color: var(--ghost);
+        margin: 0;
+        line-height: 1.75;
+      }
+
+      /* ══ CTA BANNER ══ */
       .cta-section {
-        background: var(--primary-mid);
-        padding: 80px 0;
+        background: var(--ink-mid);
+        padding: clamp(64px, 8vw, 100px) 0;
         position: relative;
         overflow: hidden;
       }
@@ -1255,22 +1184,21 @@
         inset: 0;
         background:
           radial-gradient(
-            ellipse 70% 80% at 10% 50%,
-            rgba(15, 111, 255, 0.07) 0%,
+            ellipse 70% 70% at 10% 50%,
+            rgba(16, 89, 232, 0.06) 0%,
             transparent 60%
           ),
           radial-gradient(
             ellipse 50% 60% at 90% 50%,
-            rgba(217, 164, 65, 0.05) 0%,
+            rgba(214, 159, 60, 0.04) 0%,
             transparent 60%
           );
-        pointer-events: none;
       }
       .cta-card {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
+        background: var(--card);
+        border: 1px solid var(--line);
         border-radius: var(--r-lg);
-        padding: 60px 48px;
+        padding: clamp(40px, 5vw, 64px);
         text-align: center;
         position: relative;
         overflow: hidden;
@@ -1281,877 +1209,787 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 2px;
-        background: linear-gradient(to right, var(--accent), var(--gold));
+        height: 1.5px;
+        background: linear-gradient(90deg, var(--sky) 0%, var(--amber) 100%);
       }
-      @media (max-width: 575.98px) {
-        .cta-card {
-          padding: 36px 20px;
-        }
+      .cta-card .sec-h {
+        margin-bottom: 14px;
       }
-
-      /* ══════════════════════════════════════════
-         FAQ
-      ══════════════════════════════════════════ */
-      .accordion-item {
-        background: var(--card-bg) !important;
-        border: 1px solid var(--border) !important;
-        border-radius: var(--r-md) !important;
-        margin-bottom: 10px;
-        overflow: hidden;
+      .cta-card p {
+        max-width: 480px;
+        margin: 0 auto 36px;
+        font-size: 0.97rem;
       }
-      .accordion-button {
-        background: transparent !important;
-        color: var(--white);
-        font-family: "Syne", sans-serif;
-        font-weight: 600;
-        font-size: 0.93rem;
-        padding: 18px 22px;
-        box-shadow: none !important;
-        transition: all var(--tf);
-      }
-      .accordion-button::after {
-        filter: brightness(0) saturate(100%) invert(46%) sepia(97%)
-          saturate(1500%) hue-rotate(196deg) brightness(105%) contrast(98%);
-      }
-      .accordion-button:not(.collapsed) {
-        background: var(--accent-sub) !important;
-        color: var(--accent);
-      }
-      .accordion-body {
-        padding: 0 22px 18px;
-        color: var(--txt-muted);
-        font-size: 0.9rem;
-        line-height: 1.7;
+      .cta-btns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
       }
 
-      /* ══════════════════════════════════════════
-         CONTACT
-      ══════════════════════════════════════════ */
-      .contact-form-card {
-        background: var(--card-bg);
-        padding: 44px 38px;
+      /* ══ CONTACT ══ */
+      .contact-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(28px, 4vw, 56px);
+        align-items: start;
+      }
+      .ci-card {
+        background: rgba(0, 0, 0, 0.18);
+        border: 1px solid var(--line);
         border-radius: var(--r-lg);
-        border: 1px solid var(--border);
-      }
-      @media (max-width: 575.98px) {
-        .contact-form-card {
-          padding: 28px 18px;
-        }
-      }
-
-      .form-label {
-        font-family: "Syne", sans-serif;
-        font-size: 0.78rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        color: rgba(245, 247, 250, 0.5);
-        margin-bottom: 6px;
-      }
-      .form-control,
-      .form-select {
-        background: rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        color: var(--white);
-        border-radius: var(--r-sm);
-        padding: 12px 15px;
-        font-size: 0.9rem;
-        transition: all var(--tf);
-      }
-      .form-control::placeholder {
-        color: rgba(255, 255, 255, 0.25);
-      }
-      .form-select option {
-        background: var(--primary-light);
-      }
-      .form-control:focus,
-      .form-select:focus {
-        background: rgba(0, 0, 0, 0.4);
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px rgba(15, 111, 255, 0.12);
-        color: var(--white);
-      }
-      .contact-info-card {
-        background: rgba(0, 0, 0, 0.22);
-        padding: 38px 32px;
-        border-radius: var(--r-lg);
-        border: 1px solid var(--border);
+        padding: clamp(28px, 4vw, 44px);
         height: 100%;
       }
-      @media (max-width: 575.98px) {
-        .contact-info-card {
-          padding: 28px 18px;
-        }
+      .ci-card h4 {
+        font-size: 1.1rem;
+        margin-bottom: 28px;
       }
       .ci-item {
         display: flex;
         align-items: flex-start;
         gap: 14px;
-        margin-bottom: 24px;
+        margin-bottom: 22px;
       }
-      .ci-icon {
-        width: 44px;
-        height: 44px;
+      .ci-item:last-child {
+        margin-bottom: 0;
+      }
+      .ci-ic {
+        width: 42px;
+        height: 42px;
         flex-shrink: 0;
-        background: var(--accent-sub);
-        border-radius: var(--r-sm);
+        background: rgba(16, 89, 232, 0.1);
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      .ci-icon i {
-        color: var(--accent);
-        font-size: 0.95rem;
+      .ci-ic i {
+        color: var(--sky);
+        font-size: 0.9rem;
       }
       .ci-item h6 {
-        color: rgba(245, 247, 250, 0.5);
+        font-family: "DM Sans", sans-serif;
         font-size: 0.68rem;
+        font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.1em;
+        color: rgba(237, 241, 247, 0.35);
         margin-bottom: 3px;
-        font-family: "Syne", sans-serif;
       }
       .ci-item p,
       .ci-item a {
-        color: var(--txt-lt);
-        margin: 0;
+        color: rgba(237, 241, 247, 0.75);
         font-size: 0.9rem;
-        transition: color var(--tf);
+        margin: 0;
+        transition: color 0.2s;
       }
       .ci-item a:hover {
-        color: var(--accent);
+        color: var(--sky-2);
       }
-      .form-success {
-        display: none;
-        text-align: center;
-        padding: 40px 16px;
+      .ci-side {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
-      .success-ic {
-        width: 68px;
-        height: 68px;
-        background: var(--accent-sub);
-        border-radius: 50%;
+      .ci-map {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        flex: 1;
+        min-height: 220px;
+        position: relative;
+      }
+      .ci-map-inner {
+        width: 100%;
+        height: 100%;
+        min-height: 220px;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 18px;
+        flex-direction: column;
+        gap: 12px;
+        color: var(--ghost);
+        font-size: 0.85rem;
       }
-      .success-ic i {
-        font-size: 1.9rem;
-        color: var(--accent);
+      .ci-map-inner i {
+        font-size: 2rem;
+        color: rgba(16, 89, 232, 0.4);
       }
-
-      /* ══════════════════════════════════════════
-         FOOTER
-      ══════════════════════════════════════════ */
-      .footer {
-        background: #020810;
-        padding: 80px 0 0;
-        border-top: 1px solid var(--border);
+      .wa-block {
+        background: linear-gradient(
+          135deg,
+          rgba(37, 211, 102, 0.1),
+          rgba(37, 211, 102, 0.05)
+        );
+        border: 1px solid rgba(37, 211, 102, 0.2);
+        border-radius: var(--r-lg);
+        padding: 24px 28px;
+        text-align: center;
       }
-      .footer-logo {
-        font-family: "Syne", sans-serif;
-        font-size: 1.45rem;
-        font-weight: 800;
-        color: var(--white);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        text-decoration: none;
-        letter-spacing: -0.03em;
+      .wa-block p {
+        font-size: 0.85rem;
+        color: var(--ghost);
         margin-bottom: 14px;
       }
-      .footer-logo img {
+      .btn-wa {
+        background: #25d366;
+        color: #fff;
+        gap: 9px;
+        box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+        width: 100%;
+        justify-content: center;
+        font-weight: 500;
+      }
+      .btn-wa:hover {
+        background: #1ebe5c;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      }
+
+      /* ══ FOOTER ══ */
+      .footer {
+        background: #020b17;
+        border-top: 1px solid var(--line);
+        padding: clamp(56px, 7vw, 88px) 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+        gap: clamp(24px, 4vw, 48px);
+      }
+      .footer-brand {
+        font-family: "Fraunces", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--paper);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 14px;
+      }
+      .footer-brand img {
+        height: 38px;
         width: auto;
       }
       .footer-about {
-        color: var(--txt-muted);
-        font-size: 0.87rem;
-        line-height: 1.7;
+        font-size: 0.85rem;
+        color: var(--ghost);
+        line-height: 1.75;
         margin-bottom: 22px;
       }
       .footer-head {
-        font-family: "Syne", sans-serif;
-        font-size: 0.73rem;
-        font-weight: 700;
+        font-family: "DM Sans", sans-serif;
+        font-size: 0.68rem;
+        font-weight: 500;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        color: rgba(245, 247, 250, 0.38);
-        margin-bottom: 18px;
+        letter-spacing: 0.2em;
+        color: rgba(237, 241, 247, 0.28);
+        margin-bottom: 16px;
       }
       .footer-links {
         list-style: none;
         padding: 0;
       }
       .footer-links li {
-        margin-bottom: 9px;
+        margin-bottom: 8px;
       }
       .footer-links a {
-        color: var(--txt-muted);
-        font-size: 0.88rem;
+        font-size: 0.86rem;
+        color: var(--ghost);
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        transition: all var(--tf);
+        gap: 7px;
+        transition: all 0.2s var(--ease);
       }
       .footer-links a:hover {
-        color: var(--accent);
+        color: var(--paper);
         transform: translateX(4px);
-      }
-      .footer-links a::before {
-        content: "→";
-        font-size: 0.72rem;
-        opacity: 0;
-        transform: translateX(-6px);
-        transition: all var(--tf);
-      }
-      .footer-links a:hover::before {
-        opacity: 1;
-        transform: translateX(0);
       }
       .nl-form {
         display: flex;
         gap: 8px;
       }
-      .nl-form input {
+      .nl-input {
         flex: 1;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--line);
         border-radius: 50px;
         padding: 10px 16px;
-        color: var(--white);
-        font-size: 0.87rem;
+        color: var(--paper);
+        font-size: 0.84rem;
         outline: none;
         min-width: 0;
-        transition: border-color var(--tf);
+        transition: border-color 0.2s;
+        font-family: "DM Sans", sans-serif;
       }
-      .nl-form input::placeholder {
-        color: rgba(255, 255, 255, 0.25);
+      .nl-input::placeholder {
+        color: rgba(255, 255, 255, 0.22);
       }
-      .nl-form input:focus {
-        border-color: var(--accent);
+      .nl-input:focus {
+        border-color: var(--sky);
       }
-      .nl-form button {
-        background: var(--g-accent);
+      .nl-btn {
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
         border: none;
         border-radius: 50%;
-        width: 42px;
-        height: 42px;
+        width: 40px;
+        height: 40px;
         flex-shrink: 0;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: var(--white);
+        color: #fff;
         cursor: pointer;
-        transition: all var(--tb);
+        font-size: 0.8rem;
+        transition: all 0.25s var(--ease);
       }
-      .nl-form button:hover {
+      .nl-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 18px rgba(15, 111, 255, 0.4);
+        box-shadow: 0 6px 16px rgba(16, 89, 232, 0.4);
       }
       .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 26px 0;
-        margin-top: 60px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 22px 0;
+        margin-top: clamp(44px, 5vw, 64px);
+      }
+      .footer-bottom-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
       }
       .footer-bottom p {
-        color: var(--txt-muted);
-        font-size: 0.8rem;
+        font-size: 0.78rem;
+        color: var(--ghost);
         margin: 0;
       }
       .heart {
-        color: var(--gold);
+        color: var(--amber);
       }
 
-      /* ══════════════════════════════════════════
-         BACK TO TOP
-      ══════════════════════════════════════════ */
-      .back-to-top {
+      /* ══ BACK TO TOP ══ */
+      #btt {
         position: fixed;
-        bottom: 26px;
-        right: 26px;
-        width: 46px;
-        height: 46px;
-        background: var(--g-accent);
-        color: var(--white);
+        bottom: 24px;
+        right: 24px;
+        z-index: 800;
+        width: 44px;
+        height: 44px;
+        background: linear-gradient(135deg, var(--sky), var(--sky-2));
+        color: #fff;
         border: none;
         border-radius: 50%;
+        cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
+        font-size: 0.8rem;
         opacity: 0;
         visibility: hidden;
-        transform: translateY(12px);
-        transition: all var(--tb);
-        z-index: 999;
-        box-shadow: 0 4px 16px rgba(15, 111, 255, 0.4);
+        transform: translateY(10px);
+        transition: all 0.28s var(--ease);
+        box-shadow: 0 4px 16px rgba(16, 89, 232, 0.4);
       }
-      .back-to-top.visible {
+      #btt.show {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
       }
-      .back-to-top:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 24px rgba(15, 111, 255, 0.55);
+      #btt:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 22px rgba(16, 89, 232, 0.5);
       }
 
-      /* ══════════════════════════════════════════
-         COOKIE BANNER
-      ══════════════════════════════════════════ */
-      .cookie-banner {
-        position: fixed;
-        bottom: 16px;
-        left: 16px;
-        max-width: 360px;
-        width: calc(100% - 32px);
-        background: var(--primary-light);
-        border: 1px solid var(--border);
-        border-radius: var(--r-md);
-        padding: 18px 22px;
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-        z-index: 9999;
-        transform: translateY(130px);
-        opacity: 0;
-        transition: all var(--ts);
-      }
-      .cookie-banner.visible {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      .cookie-banner p {
-        font-size: 0.83rem;
-        margin-bottom: 12px;
-        color: var(--txt-muted);
-      }
-
-      /* ══════════════════════════════════════════
-         DIVIDER GRADIENT
-      ══════════════════════════════════════════ */
-      .sec-divider {
+      /* ══ DIVIDER ══ */
+      .divider {
         height: 1px;
         background: linear-gradient(
-          to right,
+          90deg,
           transparent,
-          var(--border),
+          var(--line),
           transparent
         );
       }
 
-      /* ══════════════════════════════════════════
-         RESPONSIVE FIXES
-      ══════════════════════════════════════════ */
-      @media (max-width: 767.98px) {
-        .hero-cta-inner {
-          gap: 8px;
+      /* ══ AOS-LIKE ANIMATIONS ══ */
+      [data-anim] {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.7s var(--ease),
+          transform 0.7s var(--ease);
+      }
+      [data-anim].visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      [data-anim][data-delay="1"] {
+        transition-delay: 0.08s;
+      }
+      [data-anim][data-delay="2"] {
+        transition-delay: 0.16s;
+      }
+      [data-anim][data-delay="3"] {
+        transition-delay: 0.24s;
+      }
+      [data-anim][data-delay="4"] {
+        transition-delay: 0.32s;
+      }
+      [data-anim][data-delay="5"] {
+        transition-delay: 0.4s;
+      }
+      [data-anim][data-delay="6"] {
+        transition-delay: 0.48s;
+      }
+
+      /* ══ RESPONSIVE ══ */
+
+      /* Tablet ≤ 992px */
+      @media (max-width: 992px) {
+        .about-row {
+          grid-template-columns: 1fr;
+          gap: 40px;
         }
-        .btn-blue,
-        .btn-gold,
-        .btn-outline-blue,
-        .btn-outline-gold {
-          font-size: 0.82rem;
-          padding: 9px 18px;
+        .about-badge {
+          right: 16px;
         }
+        .stats-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .contact-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-menu,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* Mobile ≤ 640px */
+      @media (max-width: 640px) {
+        .topbar {
+          display: none;
+        }
+        .hero-h {
+          font-size: clamp(2rem, 8vw, 3rem);
+        }
+        .feat-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-grid {
+          grid-template-columns: 1fr;
+        }
+        .proc-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .stats-row {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom-inner {
+          flex-direction: column;
+          text-align: center;
+          gap: 6px;
+        }
+        .hero-btns .btn:nth-child(3) {
+          display: none;
+        }
+        .strip-label {
+          display: none;
+        }
+        .partners-row {
+          gap: 12px;
+        }
+        .partner {
+          min-width: 120px;
+          padding: 18px 22px;
+        }
+        .extra-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Hero bleeds under the transparent nav — no padding needed */
+      body {
+        padding-top: 0;
+      }
+
+      /* ══ FOCUS ══ */
+      :focus-visible {
+        outline: 2px solid var(--sky);
+        outline-offset: 3px;
+        border-radius: 4px;
       }
     </style>
   </head>
-
   <body>
-    <!-- Preloader -->
-    <div id="preloader" aria-hidden="true">
-      <div class="loader-ring"></div>
-      <div class="loader-logo">OKUTONDA</div>
+    <!-- PRELOADER -->
+    <div id="pl" aria-hidden="true">
+      <div class="pl-ring"></div>
+      <div class="pl-name">OKUTONDA</div>
     </div>
 
-    <!-- ── TOP BAR (lg+) ──────────────────────── -->
-    <div class="top-bar d-none d-lg-block" role="complementary">
+    <!-- NAV -->
+    <nav class="nav" id="nav" aria-label="Navegação principal">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-auto">
-            <div class="d-flex flex-wrap gap-3">
-              <a href="tel:+244945317734" aria-label="Ligar"
-                ><i class="fas fa-phone"></i>+244 945 317 734</a
-              >
-              <a href="mailto:okutonda@gmail.com" aria-label="Email"
-                ><i class="fas fa-envelope"></i>okutonda@gmail.com</a
-              >
-              <span class="txt-loc"
-                ><i
-                  class="fas fa-map-marker-alt"
-                  style="color: var(--accent)"
-                ></i
-                >Luanda, Angola</span
-              >
-            </div>
-          </div>
-          <div class="col ms-auto d-flex justify-content-end">
-            <div class="soc-links" aria-label="Redes Sociais">
-              <a
-                href="https://www.facebook.com/profile.php?id=61565844385579"
-                target="_blank"
-                rel="noopener"
-                aria-label="Facebook"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a
-                href="https://wa.link/qxuy5y"
-                target="_blank"
-                rel="noopener"
-                aria-label="WhatsApp"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-              <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── NAVBAR ─────────────────────────────── -->
-    <nav
-      class="navbar navbar-expand-lg fixed-top"
-      aria-label="Navegação principal"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#home">
-          <img
-            src="img/logo/logo2.png"
-            alt="Logo OKUTONDA"
-            onerror="this.style.display = 'none'"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Menu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#partners">Parceiros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contacto</a>
-            </li>
-          </ul>
-          <a href="#contact" class="btn btn-blue nav-cta ms-lg-3">
-            <i class="fas fa-paper-plane"></i>Fale Connosco
+        <div class="nav-inner">
+          <a href="#home" class="nav-brand">
+            <img
+              src="img/logo/logo2.png"
+              alt="OKUTONDA"
+              onerror="this.style.display = 'none'"
+            />
+            <!-- OKUTONDA -->
           </a>
+          <ul class="nav-menu" role="list">
+            <li><a href="#home" class="act">Home</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#services">Serviços</a></li>
+            <li><a href="#partners">Parceiros</a></li>
+            <li><a href="#contact">Contacto</a></li>
+          </ul>
+          <a href="#contact" class="btn btn-sky nav-cta"
+            ><i class="fas fa-paper-plane"></i>Fale Connosco</a
+          >
+          <button
+            class="hamburger"
+            id="burger"
+            aria-label="Menu"
+            aria-expanded="false"
+          >
+            <span></span><span></span><span></span>
+          </button>
         </div>
       </div>
     </nav>
 
-    <!-- ══════════════════════════════════════════
-         HERO — Slider de imagem pura
-    ═══════════════════════════════════════════ -->
-    <section class="hero-section" id="home" aria-label="Apresentação">
+    <!-- MOBILE DRAWER -->
+    <nav class="nav-drawer" id="drawer" aria-label="Menu mobile">
+      <a href="#home">Home</a>
+      <a href="#about">Sobre Nós</a>
+      <a href="#services">Serviços</a>
+      <a href="#partners">Parceiros</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" id="home" aria-label="Apresentação">
+      <div class="hero-grid-bg"></div>
       <div
-        class="glow-orb d-none d-xl-block"
+        class="hero-orb"
         style="
-          width: 500px;
-          height: 500px;
-          background: rgba(15, 111, 255, 0.07);
-          top: -300px;
+          width: 520px;
+          height: 520px;
+          background: rgba(16, 89, 232, 0.06);
+          top: -180px;
           right: -100px;
         "
       ></div>
       <div
-        class="glow-orb d-none d-xl-block"
+        class="hero-orb"
         style="
-          width: 380px;
-          height: 380px;
-          background: rgba(217, 164, 65, 0.04);
-          bottom: -100px;
-          left: -100px;
+          width: 340px;
+          height: 340px;
+          background: rgba(214, 159, 60, 0.04);
+          bottom: -80px;
+          left: -60px;
         "
       ></div>
 
-      <div class="hero-slider-wrap">
-        <div class="swiper heroSwiper hero-img-swiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="hero-img-slide">
-                <img
-                  src="img/slider/slider2.png"
-                  alt="OKUTONDA — Soluções Tecnológicas para Angola"
-                  loading="eager"
-                />
-              </div>
-            </div>
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="hero-img-slide">
-                <img
-                  src="img/slider/slider1.png"
-                  alt="OKUTONDA — Inovação e Resultados"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <div class="hero-img-slide">
-                <img
-                  src="img/slider/slider3.png"
-                  alt="OKUTONDA — Inovação e Resultados"
-                  loading="lazy"
-                />
-              </div>
-            </div>
+      <div class="hero-slides">
+        <div class="slides-viewport">
+          <div class="slide active">
+            <img
+              src="img/slider/slider1.png"
+              alt="OKUTONDA — Inovação"
+              loading="lazy"
+            />
           </div>
-          <div class="swiper-button-next" aria-label="Próximo slide"></div>
-          <div class="swiper-button-prev" aria-label="Slide anterior"></div>
-          <div class="swiper-pagination"></div>
+          <div class="slide">
+            <img
+              src="img/slider/slider2.png"
+              alt="OKUTONDA — Soluções Tecnológicas para Angola"
+              loading="eager"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="img/slider/slider3.png"
+              alt="OKUTONDA — Resultados"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="img/slider/slider4.png"
+              alt="OKUTONDA — Resultados"
+              loading="lazy"
+            />
+          </div>
+          <div class="slide-dots">
+            <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+            <button class="dot" data-i="1" aria-label="Slide 2"></button>
+            <button class="dot" data-i="2" aria-label="Slide 3"></button>
+            <button class="dot" data-i="3" aria-label="Slide 4"></button>
+          </div>
         </div>
-      </div>
 
-      <!-- CTA Bar -->
-      <div class="hero-cta-bar">
-        <div class="container">
-          <div class="hero-cta-inner">
-            <span class="hero-cta-label">Próximos passos</span>
-            <a href="#contact" class="btn btn-blue"
-              ><i class="fas fa-file-alt"></i>Peça uma Proposta</a
-            >
-            <a href="#contact" class="btn btn-outline-blue"
-              ><i class="fas fa-calendar-alt"></i>Agendar Demonstração</a
-            >
-            <a
-              href="https://wa.link/qxuy5y"
-              class="btn btn-outline-gold"
-              target="_blank"
-              rel="noopener"
-              ><i class="fab fa-whatsapp"></i>Falar com Especialista</a
-            >
-            <a href="#services" class="btn btn-gold"
-              ><i class="fas fa-cogs"></i>Ver Serviços</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-         FEATURES
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      id="features"
-      style="background: var(--primary)"
-      aria-labelledby="features-title"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-4 mb-md-5" data-aos="fade-up">
-          <div class="col-12 col-lg-8 text-center">
-            <div class="eyebrow">Por que Escolher-nos</div>
-            <h2 class="sec-title" id="features-title">
-              Valores que <span class="hl">Guiam o Nosso Trabalho</span>
-            </h2>
-          </div>
-        </div>
-        <div class="row g-3 g-md-4">
-          <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up">
-            <div class="feature-card">
-              <div class="f-icon"><i class="fas fa-lightbulb"></i></div>
-              <h4>Inovação</h4>
-              <p>
-                Soluções práticas e orientadas a resultados, usando as melhores
-                tecnologias disponíveis.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="80"
-          >
-            <div class="feature-card">
-              <div class="f-icon"><i class="fas fa-handshake"></i></div>
-              <h4>Proximidade</h4>
-              <p>
-                Foco no contexto e nas necessidades reais das organizações
-                angolanas.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="160"
-          >
-            <div class="feature-card">
-              <div class="f-icon"><i class="fas fa-chart-line"></i></div>
-              <h4>Qualidade</h4>
-              <p>
-                Entregas seguras, testadas e escaláveis para garantir
-                longevidade e confiança.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="240"
-          >
-            <div class="feature-card">
-              <div class="f-icon"><i class="fas fa-lock"></i></div>
-              <h4>Responsabilidade</h4>
-              <p>
-                Proteção de dados e compromisso com o impacto positivo na
-                comunidade.
-              </p>
+        <div class="hero-copy">
+          <div class="container">
+            <div class="hero-copy-inner" data-anim>
+              <div class="eyebrow">Soluções Tecnológicas · Angola</div>
+              <!-- <h1 class="hero-h">
+                Tecnologia que <em>transforma</em> o seu negócio
+              </h1>
+              <p class="hero-sub">
+                ERP, plataformas web, aplicações desktop e consultoria — feitos
+                para o contexto angolano.
+              </p> -->
+              <div class="hero-btns">
+                <a href="#contact" class="btn btn-sky"
+                  ><i class="fas fa-file-alt"></i>Peça uma Proposta</a
+                >
+                <a
+                  href="https://wa.link/qxuy5y"
+                  class="btn btn-amber"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fab fa-whatsapp"></i>WhatsApp</a
+                >
+                <a href="#services" class="btn btn-ghost"
+                  >Ver Serviços <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         ABOUT
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      id="about"
-      style="background: var(--primary-mid)"
-      aria-labelledby="about-title"
-    >
+    <!-- ══ FEATURES ══ -->
+    <section class="section" id="features" aria-labelledby="features-h">
       <div class="container">
-        <div class="row align-items-center g-4 g-lg-5">
-          <div class="col-12 col-lg-6" data-aos="fade-right">
-            <div class="about-img-wrap">
+        <div
+          style="text-align: center; max-width: 580px; margin: 0 auto"
+          data-anim
+        >
+          <div class="eyebrow">Por que Escolher-nos</div>
+          <h2 class="sec-h" id="features-h">
+            Valores que <span class="hl">guiam o nosso trabalho</span>
+          </h2>
+        </div>
+        <div class="feat-grid">
+          <div class="feat-card" data-anim data-delay="1">
+            <div class="feat-icon"><i class="fas fa-lightbulb"></i></div>
+            <h4>Inovação</h4>
+            <p>
+              Soluções práticas e orientadas a resultados, usando as melhores
+              tecnologias disponíveis.
+            </p>
+          </div>
+          <div class="feat-card" data-anim data-delay="2">
+            <div class="feat-icon"><i class="fas fa-handshake"></i></div>
+            <h4>Proximidade</h4>
+            <p>
+              Foco no contexto e nas necessidades reais das organizações
+              angolanas.
+            </p>
+          </div>
+          <div class="feat-card" data-anim data-delay="3">
+            <div class="feat-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Qualidade</h4>
+            <p>
+              Entregas seguras, testadas e escaláveis para garantir longevidade
+              e confiança.
+            </p>
+          </div>
+          <div class="feat-card" data-anim data-delay="4">
+            <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
+            <h4>Responsabilidade</h4>
+            <p>
+              Proteção de dados e compromisso com o impacto positivo na
+              comunidade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══ ABOUT ══ -->
+    <section class="section section-alt" id="about" aria-labelledby="about-h">
+      <div class="container">
+        <div class="about-row">
+          <div data-anim>
+            <div class="about-img">
               <img
                 src="img/images/about-1.png"
                 alt="Equipa OKUTONDA"
                 loading="lazy"
               />
-              <div class="exp-badge">
+              <div class="about-badge">
                 <div class="n">5+</div>
-                <div class="lbl">Anos de<br />Experiência</div>
+                <div class="l">Anos de<br />Experiência</div>
               </div>
             </div>
           </div>
-          <div
-            class="col-12 col-lg-6"
-            data-aos="fade-left"
-            data-aos-delay="100"
-          >
+          <div data-anim data-delay="2">
             <div class="eyebrow">Sobre Nós</div>
-            <h2 class="sec-title" id="about-title">
-              Tecnologia que <span class="hl">Transforma Negócios</span> em
+            <h2 class="sec-h" id="about-h">
+              Tecnologia que <span class="hl">transforma negócios</span> em
               Angola
             </h2>
-            <p class="mb-4" style="line-height: 1.8">
+            <p style="margin-bottom: 8px">
               A OKUTONDA nasceu para acelerar a transformação digital em Angola.
-              Somos uma equipa multidisciplinar que cria soluções
-              personalizadas: sistemas ERP/CRM, plataformas web responsivas e
-              aplicações desktop com suporte offline.
+              Somos uma equipa multidisciplinar que cria soluções personalizadas
+              — sistemas ERP/CRM, plataformas web responsivas e aplicações
+              desktop com suporte offline.
             </p>
             <ul class="check-list">
               <li>
-                <span class="chk-ic"><i class="fas fa-check"></i></span>Soluções
+                <span class="chk"><i class="fas fa-check"></i></span>Soluções
                 adaptadas ao contexto angolano
               </li>
               <li>
-                <span class="chk-ic"><i class="fas fa-check"></i></span
-                >Capacitação de equipas locais
+                <span class="chk"><i class="fas fa-check"></i></span>Capacitação
+                de equipas locais
               </li>
               <li>
-                <span class="chk-ic"><i class="fas fa-check"></i></span>Suporte
-                contínuo e formação
+                <span class="chk"><i class="fas fa-check"></i></span>Suporte
+                contínuo e formação especializada
               </li>
               <li>
-                <span class="chk-ic"><i class="fas fa-check"></i></span
-                >Segurança e conformidade de dados
+                <span class="chk"><i class="fas fa-check"></i></span>Segurança e
+                conformidade de dados
               </li>
             </ul>
-            <a href="#services" class="btn btn-blue"
+            <a href="#services" class="btn btn-sky"
               >Conhecer Serviços <i class="fas fa-arrow-right"></i
             ></a>
           </div>
         </div>
 
-        <div class="row g-3 g-md-4 mt-3 mt-md-4" data-aos="fade-up">
-          <div class="col-6 col-md-3">
-            <div class="stat-box">
-              <span class="stat-num">20+</span>
-              <p>Projetos</p>
-            </div>
+        <div class="stats-row" data-anim>
+          <div class="stat">
+            <span class="stat-n">20+</span>
+            <p>Projetos Entregues</p>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="stat-box">
-              <span class="stat-num">10+</span>
-              <p>Clientes Ativos</p>
-            </div>
+          <div class="stat">
+            <span class="stat-n">10+</span>
+            <p>Clientes Ativos</p>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="stat-box">
-              <span class="stat-num">8+</span>
-              <p>Tecnologias</p>
-            </div>
+          <div class="stat">
+            <span class="stat-n">8+</span>
+            <p>Tecnologias</p>
           </div>
-          <div class="col-6 col-md-3">
-            <div class="stat-box">
-              <span class="stat-num">100%</span>
-              <p>Foco Local</p>
-            </div>
+          <div class="stat">
+            <span class="stat-n">100%</span>
+            <p>Foco Local</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         SERVICES
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      id="services"
-      style="background: var(--primary)"
-      aria-labelledby="services-title"
-    >
+    <!-- ══ SERVICES ══ -->
+    <section class="section" id="services" aria-labelledby="services-h">
       <div class="container">
-        <div class="row justify-content-center mb-4 mb-md-5" data-aos="fade-up">
-          <div class="col-12 col-lg-7 text-center">
-            <div class="eyebrow">Nossos Serviços</div>
-            <h2 class="sec-title" id="services-title">
-              Soluções digitais <span class="hl">locais e seguras</span>
-            </h2>
+        <div
+          style="text-align: center; max-width: 580px; margin: 0 auto"
+          data-anim
+        >
+          <div class="eyebrow">Nossos Serviços</div>
+          <h2 class="sec-h" id="services-h">
+            Soluções digitais <span class="hl">locais e seguras</span>
+          </h2>
+          <p class="sec-lead" style="margin: 0 auto">
+            Do ERP à consultoria, construímos tecnologia que gera impacto real.
+          </p>
+        </div>
+
+        <div class="svc-grid">
+          <div class="svc-card" data-anim data-delay="1">
+            <div class="svc-icon"><i class="fas fa-cogs"></i></div>
+            <h4>Sistemas ERP &amp; CRM</h4>
             <p>
-              Do ERP à consultoria, construímos tecnologia que gera impacto
-              real.
+              Implementação e customização para gerir finanças, inventário,
+              vendas e RH, adaptado às regras angolanas.
             </p>
+            <span class="svc-tag">Demonstração disponível</span>
+          </div>
+          <div class="svc-card" data-anim data-delay="2">
+            <div class="svc-icon"><i class="fas fa-globe"></i></div>
+            <h4>Plataformas Web</h4>
+            <p>
+              Sites institucionais, portais de serviço, SaaS e e-commerce
+              responsivos, seguros e optimizados para SEO local.
+            </p>
+            <span class="svc-tag">Projetos sob medida</span>
+          </div>
+          <div class="svc-card" data-anim data-delay="3">
+            <div class="svc-icon"><i class="fas fa-desktop"></i></div>
+            <h4>Aplicações Desktop</h4>
+            <p>
+              Soluções robustas com operação offline e sincronização automática,
+              ideal para conectividade instável.
+            </p>
+            <span class="svc-tag">Análise de requisitos grátis</span>
+          </div>
+          <div class="svc-card" data-anim data-delay="4">
+            <div class="svc-icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Consultoria Tech</h4>
+            <p>
+              Avaliação de processos, planeamento de TI, governação de dados e
+              formação de equipas especializadas.
+            </p>
+            <span class="svc-tag">1ª reunião gratuita</span>
           </div>
         </div>
 
-        <div class="row g-3 g-md-4 mb-4">
-          <div class="col-12 col-sm-6 col-xl-3" data-aos="fade-up">
-            <div class="svc-card">
-              <div class="svc-ic"><i class="fas fa-cogs"></i></div>
-              <h4>Sistemas ERP &amp; CRM</h4>
-              <p>
-                Implementação e customização para gerir finanças, inventário,
-                vendas e RH, adaptado às regras angolanas.
-              </p>
-              <a href="#contact" class="svc-link"
-                >Solicitar Demo <i class="fas fa-arrow-right"></i
-                ><span class="svc-badge">Ver funcionalidades →</span></a
-              >
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="80"
-          >
-            <div class="svc-card">
-              <div class="svc-ic"><i class="fas fa-globe"></i></div>
-              <h4>Plataformas Web</h4>
-              <p>
-                Sites institucionais, portais de serviço, SaaS e e-commerce
-                responsivos, seguros e otimizados para SEO local.
-              </p>
-              <a href="#contact" class="svc-link"
-                >Ver Portfólio <i class="fas fa-arrow-right"></i
-                ><span class="svc-badge">Projetos semelhantes →</span></a
-              >
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="160"
-          >
-            <div class="svc-card">
-              <div class="svc-ic"><i class="fas fa-desktop"></i></div>
-              <h4>Aplicações Desktop</h4>
-              <p>
-                Soluções robustas com operação offline e sincronização
-                automática, ideal para internet instável.
-              </p>
-              <a href="#contact" class="svc-link"
-                >Solicitar Proposta <i class="fas fa-arrow-right"></i
-                ><span class="svc-badge">Análise grátis de requisitos</span></a
-              >
-            </div>
-          </div>
-          <div
-            class="col-12 col-sm-6 col-xl-3"
-            data-aos="fade-up"
-            data-aos-delay="240"
-          >
-            <div class="svc-card">
-              <div class="svc-ic"><i class="fas fa-chart-line"></i></div>
-              <h4>Consultoria Tech</h4>
-              <p>
-                Avaliação de processos, planeamento de TI, governação de dados e
-                formação de equipas.
-              </p>
-              <a href="#contact" class="svc-link"
-                >Agendar Consultoria <i class="fas fa-arrow-right"></i
-                ><span class="svc-badge">1ª reunião gratuita</span></a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div data-aos="fade-up">
+        <div data-anim style="margin-top: 44px">
           <p
-            class="text-center mb-3"
             style="
-              font-family: &quot;Syne&quot;, sans-serif;
-              font-size: 0.72rem;
+              font-size: 0.7rem;
               text-transform: uppercase;
-              letter-spacing: 2px;
-              color: rgba(245, 247, 250, 0.32);
+              letter-spacing: 0.2em;
+              color: rgba(237, 241, 247, 0.28);
+              text-align: center;
+              margin-bottom: 14px;
             "
           >
             Serviços Complementares
           </p>
-          <div class="row g-3">
-            <div class="col-12 col-md-4">
-              <div class="extra-svc">
-                <div class="extra-ic"><i class="fas fa-school"></i></div>
-                <div>
-                  <h6>Sistemas Escolares</h6>
-                  <small>Matrículas, notas, comunicações</small>
-                </div>
+          <div class="extra-grid">
+            <div class="extra">
+              <div class="extra-ic"><i class="fas fa-school"></i></div>
+              <div>
+                <h6>Sistemas Escolares</h6>
+                <small>Matrículas, notas, comunicações</small>
               </div>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="extra-svc">
-                <div class="extra-ic"><i class="fas fa-database"></i></div>
-                <div>
-                  <h6>Hospedagem &amp; Backups</h6>
-                  <small>Armazenamento seguro e recuperação</small>
-                </div>
+            <div class="extra">
+              <div class="extra-ic"><i class="fas fa-database"></i></div>
+              <div>
+                <h6>Hospedagem &amp; Backups</h6>
+                <small>Armazenamento seguro e recuperação</small>
               </div>
             </div>
-            <div class="col-12 col-md-4">
-              <div class="extra-svc">
-                <div class="extra-ic"><i class="fas fa-mobile-alt"></i></div>
-                <div>
-                  <h6>Desenvolvimento Mobile</h6>
-                  <small>Apps nativas e PWAs</small>
-                </div>
+            <div class="extra">
+              <div class="extra-ic"><i class="fas fa-mobile-alt"></i></div>
+              <div>
+                <h6>Desenvolvimento Mobile</h6>
+                <small>Apps nativas e PWAs</small>
               </div>
             </div>
           </div>
@@ -2159,528 +1997,170 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         PROCESS
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      style="background: var(--primary-mid)"
-      aria-labelledby="process-title"
-    >
+    <div class="divider"></div>
+
+    <!-- ══ PROCESS ══ -->
+    <section class="section section-alt" aria-labelledby="proc-h">
       <div class="container">
-        <div class="row justify-content-center mb-4 mb-md-5" data-aos="fade-up">
-          <div class="col-12 col-lg-8 text-center">
-            <div class="eyebrow">Como Trabalhamos</div>
-            <h2 class="sec-title" id="process-title">
-              Metodologia que <span class="hl">Garante Resultados</span>
-            </h2>
-          </div>
+        <div
+          style="text-align: center; max-width: 560px; margin: 0 auto"
+          data-anim
+        >
+          <div class="eyebrow">Como Trabalhamos</div>
+          <h2 class="sec-h" id="proc-h">
+            Metodologia que <span class="hl">garante resultados</span>
+          </h2>
         </div>
-        <div class="row g-3 g-md-4">
-          <div class="col-12 col-sm-6 col-md-4" data-aos="fade-up">
-            <div class="proc-card">
-              <div class="proc-num">1</div>
-              <h5>Diagnóstico</h5>
-              <p>
-                Análise de processos, infraestrutura e necessidades reais da
-                organização.
-              </p>
-            </div>
+        <div class="proc-grid">
+          <div class="proc-card" data-anim data-delay="1">
+            <div class="proc-num">1</div>
+            <h5>Diagnóstico</h5>
+            <p>
+              Análise de processos, infraestrutura e necessidades reais da
+              organização.
+            </p>
           </div>
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            data-aos="fade-up"
-            data-aos-delay="60"
-          >
-            <div class="proc-card">
-              <div class="proc-num">2</div>
-              <h5>Proposta &amp; Protótipo</h5>
-              <p>
-                Definição de escopo, orçamento detalhado e protótipo inicial.
-              </p>
-            </div>
+          <div class="proc-card" data-anim data-delay="2">
+            <div class="proc-num">2</div>
+            <h5>Proposta</h5>
+            <p>Definição de escopo, orçamento detalhado e protótipo inicial.</p>
           </div>
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            data-aos="fade-up"
-            data-aos-delay="120"
-          >
-            <div class="proc-card">
-              <div class="proc-num">3</div>
-              <h5>Desenvolvimento Ágil</h5>
-              <p>
-                Entregas incrementais com testes e feedback contínuo do cliente.
-              </p>
-            </div>
+          <div class="proc-card" data-anim data-delay="3">
+            <div class="proc-num">3</div>
+            <h5>Desenvolvimento</h5>
+            <p>
+              Entregas incrementais com testes e feedback contínuo do cliente.
+            </p>
           </div>
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            data-aos="fade-up"
-            data-aos-delay="0"
-          >
-            <div class="proc-card">
-              <div class="proc-num">4</div>
-              <h5>Implementação</h5>
-              <p>
-                Migração de dados, configuração de integrações e testes finais.
-              </p>
-            </div>
+          <div class="proc-card" data-anim data-delay="4">
+            <div class="proc-num">4</div>
+            <h5>Implementação</h5>
+            <p>
+              Migração de dados, integrações e testes finais em ambiente real.
+            </p>
           </div>
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            data-aos="fade-up"
-            data-aos-delay="60"
-          >
-            <div class="proc-card">
-              <div class="proc-num">5</div>
-              <h5>Formação</h5>
-              <p>
-                Capacitação de utilizadores, documentação e materiais de apoio.
-              </p>
-            </div>
+          <div class="proc-card" data-anim data-delay="5">
+            <div class="proc-num">5</div>
+            <h5>Formação</h5>
+            <p>
+              Capacitação de utilizadores, documentação e materiais de apoio.
+            </p>
           </div>
-          <div
-            class="col-12 col-sm-6 col-md-4"
-            data-aos="fade-up"
-            data-aos-delay="120"
-          >
-            <div class="proc-card">
-              <div class="proc-num">6</div>
-              <h5>Suporte Contínuo</h5>
-              <p>
-                Manutenção, atualizações e evolução contínua do sistema com SLA.
-              </p>
-            </div>
+          <div class="proc-card" data-anim data-delay="6">
+            <div class="proc-num">6</div>
+            <h5>Suporte Contínuo</h5>
+            <p>
+              Manutenção, atualizações e evolução contínua com SLA garantido.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         PARCEIROS
-    ═══════════════════════════════════════════ -->
+    <!-- ══ PARTNERS ══ -->
     <section
       class="partners-section"
       id="partners"
-      aria-labelledby="partners-title"
+      aria-labelledby="partners-h"
     >
       <div class="container">
-        <div class="partners-title-row" data-aos="fade-up">
-          <div class="partners-line"></div>
-          <div class="partners-label" id="partners-title">
-            Os Nossos Parceiros
-          </div>
-          <div class="partners-line right"></div>
+        <div class="partners-label-row" data-anim>
+          <div class="pline"></div>
+          <span class="plabel" id="partners-h">Os Nossos Parceiros</span>
+          <div class="pline r"></div>
         </div>
-
-        <!-- Swiper autoplay infinito -->
-        <div
-          class="swiper partnersSwiper partners-swiper"
-          data-aos="fade-up"
-          data-aos-delay="80"
-        >
-          <div class="swiper-wrapper">
-            <!-- Parceiro 1 – oku.png -->
-            <div class="swiper-slide" style="width: auto">
-              <div class="partner-card">
-                <img
-                  src="img/slider/oku.png"
-                  alt="Parceiro OKUTONDA"
-                  onerror="
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'block';
-                  "
-                />
-                <span class="partner-name" style="display: none"
-                  >Parceiro 1</span
-                >
-              </div>
-            </div>
-            <!-- Parceiro 2 – oku2.png -->
-            <div class="swiper-slide" style="width: auto">
-              <div class="partner-card">
-                <img
-                  src="img/slider/oku2.png"
-                  alt="Parceiro OKUTONDA"
-                  onerror="
-                    this.style.display = 'none';
-                    this.nextElementSibling.style.display = 'block';
-                  "
-                />
-                <span class="partner-name" style="display: none"
-                  >Parceiro 2</span
-                >
-              </div>
-            </div>
-            <!-- Placeholder cards para futuros parceiros -->
-            <div class="swiper-slide" style="width: auto">
-              <div class="partner-card">
-                <span class="partner-name">Em Breve</span>
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: auto">
-              <div class="partner-card">
-                <span class="partner-name">Em Breve</span>
-              </div>
-            </div>
-            <div class="swiper-slide" style="width: auto">
-              <div class="partner-card">
-                <span class="partner-name">Em Breve</span>
-              </div>
-            </div>
+        <div class="partners-row" data-anim data-delay="1">
+          <div class="partner">
+            <img
+              src="img/partners/partner1.png"
+              alt="Parceiro"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <span class="pname" style="display: none">Parceiro 1</span>
           </div>
+          <div class="partner">
+            <img
+              src="img/partners/partner2.png"
+              alt="Parceiro"
+              onerror="
+                this.style.display = 'none';
+                this.nextElementSibling.style.display = 'block';
+              "
+            />
+            <span class="pname" style="display: none">Parceiro 2</span>
+          </div>
+          <div class="partner"><span class="pname">Em Breve</span></div>
+          <div class="partner"><span class="pname">Em Breve</span></div>
+          <div class="partner"><span class="pname">Em Breve</span></div>
         </div>
-
-        <div class="partners-cta" data-aos="fade-up" data-aos-delay="120">
-          <p>Interesse em fazer parte da nossa rede de parceiros?</p>
-          <a href="#contact" class="btn btn-outline-blue"
+        <div class="partners-cta" data-anim>
+          <a href="#contact" class="btn btn-ghost"
             ><i class="fas fa-handshake"></i>Tornar-se Parceiro</a
           >
         </div>
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         FAQ
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      style="background: var(--primary)"
-      aria-labelledby="faq-title"
-    >
+    <!-- ══ FAQ ══ -->
+    <section class="section" aria-labelledby="faq-h">
       <div class="container">
-        <div class="row justify-content-center mb-4 mb-md-5" data-aos="fade-up">
-          <div class="col-12 col-lg-8 text-center">
-            <div class="eyebrow">Perguntas Frequentes</div>
-            <h2 class="sec-title" id="faq-title">
-              Tem <span class="hl">Dúvidas?</span>
-            </h2>
-          </div>
+        <div style="text-align: center" data-anim>
+          <div class="eyebrow">Perguntas Frequentes</div>
+          <h2 class="sec-h" id="faq-h">Tem <span class="hl">dúvidas?</span></h2>
         </div>
-        <div class="row justify-content-center" data-aos="fade-up">
-          <div class="col-12 col-lg-8">
-            <div class="accordion" id="faqAccordion">
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#faq1"
-                    aria-expanded="true"
-                  >
-                    Quanto tempo demora um ERP básico?
-                  </button>
-                </h2>
-                <div
-                  id="faq1"
-                  class="accordion-collapse collapse show"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div class="accordion-body">
-                    Projetos simples levam 3–4 meses; projetos complexos podem
-                    demorar 6+ meses. Após o diagnóstico, disponibilizamos um
-                    cronograma detalhado sem compromisso.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#faq2"
-                    aria-expanded="false"
-                  >
-                    Oferecem suporte pós-implementação?
-                  </button>
-                </h2>
-                <div
-                  id="faq2"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div class="accordion-body">
-                    Sim! Disponibilizamos planos de suporte e manutenção com SLA
-                    adaptados às necessidades de cada cliente, incluindo
-                    atualizações de segurança e suporte técnico dedicado.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#faq3"
-                    aria-expanded="false"
-                  >
-                    Fazem hosting e backups?
-                  </button>
-                </h2>
-                <div
-                  id="faq3"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div class="accordion-body">
-                    Sim. Oferecemos hospedagem segura, backups automáticos
-                    diários e planos de recuperação de desastre para garantir a
-                    continuidade do negócio.
-                  </div>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <h2 class="accordion-header">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#faq4"
-                    aria-expanded="false"
-                  >
-                    As soluções funcionam sem internet estável?
-                  </button>
-                </h2>
-                <div
-                  id="faq4"
-                  class="accordion-collapse collapse"
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div class="accordion-body">
-                    Sim! As aplicações desktop foram pensadas para o contexto
-                    angolano, com modo offline completo e sincronização
-                    automática quando a conectividade for restabelecida.
-                  </div>
-                </div>
-              </div>
+        <div class="faq-wrap" data-anim data-delay="1">
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Quanto tempo demora um ERP básico?</span>
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-a">
+              <p>
+                Projetos simples levam 3–4 meses; projetos complexos podem
+                demorar 6+ meses. Após o diagnóstico, disponibilizamos um
+                cronograma detalhado sem compromisso.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-         CTA BANNER
-    ═══════════════════════════════════════════ -->
-    <section class="cta-section" aria-label="Chamada para ação">
-      <div class="container">
-        <div class="cta-card" data-aos="fade-up">
-          <div class="eyebrow justify-content-center mb-3">
-            Pronto para começar?
-          </div>
-          <h2 class="sec-title mb-3">Leve a sua empresa ao próximo nível</h2>
-          <p
-            class="mb-5"
-            style="max-width: 560px; margin-left: auto; margin-right: auto"
-          >
-            Da primeira conversa à entrega final — estamos ao seu lado em cada
-            etapa da transformação digital.
-          </p>
-          <div class="d-flex flex-wrap justify-content-center gap-3">
-            <a href="#contact" class="btn btn-blue"
-              ><i class="fas fa-file-alt"></i>Peça uma Proposta</a
-            >
-            <a href="#contact" class="btn btn-gold"
-              ><i class="fas fa-calendar-alt"></i>Agendar Demonstração</a
-            >
-            <a
-              href="https://wa.link/qxuy5y"
-              class="btn btn-outline-blue"
-              target="_blank"
-              rel="noopener"
-              ><i class="fab fa-whatsapp"></i>Falar com Especialista</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════════
-         CONTACT
-    ═══════════════════════════════════════════ -->
-    <section
-      class="sec-pad"
-      id="contact"
-      style="background: var(--primary-mid)"
-      aria-labelledby="contact-title"
-    >
-      <div class="container">
-        <div class="row justify-content-center mb-4 mb-md-5" data-aos="fade-up">
-          <div class="col-12 col-lg-7 text-center">
-            <div class="eyebrow">Fale Connosco</div>
-            <h2 class="sec-title" id="contact-title">
-              Tem um <span class="hl">projeto em mente?</span>
-            </h2>
-            <p>
-              Preencha o formulário ou fale pelo WhatsApp. Respondemos em até
-              24h úteis.
-            </p>
-          </div>
-        </div>
-        <div class="row g-4" data-aos="fade-up">
-          <div class="col-12 col-lg-7">
-            <div class="contact-form-card">
-              <form id="contactForm" novalidate>
-                <div id="formContent">
-                  <div class="row g-3">
-                    <div class="col-12 col-sm-6">
-                      <label for="name" class="form-label"
-                        >Nome Completo
-                        <span style="color: var(--accent)">*</span></label
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name"
-                        name="name"
-                        placeholder="O seu nome"
-                        required
-                        autocomplete="name"
-                      />
-                    </div>
-                    <div class="col-12 col-sm-6">
-                      <label for="email" class="form-label"
-                        >Email
-                        <span style="color: var(--accent)">*</span></label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email"
-                        name="email"
-                        placeholder="email@empresa.com"
-                        required
-                        autocomplete="email"
-                      />
-                    </div>
-                    <div class="col-12 col-sm-6">
-                      <label for="phone" class="form-label"
-                        >Telefone / WhatsApp</label
-                      >
-                      <input
-                        type="tel"
-                        class="form-control"
-                        id="phone"
-                        name="phone"
-                        placeholder="+244 945 317 734"
-                        autocomplete="tel"
-                      />
-                    </div>
-                    <div class="col-12 col-sm-6">
-                      <label for="service" class="form-label"
-                        >Tipo de Serviço
-                        <span style="color: var(--accent)">*</span></label
-                      >
-                      <select
-                        class="form-select"
-                        id="service"
-                        name="service"
-                        required
-                      >
-                        <option value="" disabled selected>
-                          Selecione um serviço
-                        </option>
-                        <option value="erp">Sistema ERP/CRM</option>
-                        <option value="web">Plataforma Web</option>
-                        <option value="desktop">Aplicação Desktop</option>
-                        <option value="mobile">Desenvolvimento Mobile</option>
-                        <option value="consulting">Consultoria Tech</option>
-                        <option value="school">Sistema Escolar</option>
-                        <option value="other">Outro</option>
-                      </select>
-                    </div>
-                    <div class="col-12">
-                      <label for="message" class="form-label"
-                        >Descreva o seu projeto
-                        <span style="color: var(--accent)">*</span></label
-                      >
-                      <textarea
-                        class="form-control"
-                        id="message"
-                        name="message"
-                        rows="4"
-                        placeholder="Conte-nos sobre o seu projeto, necessidades e prazos..."
-                        required
-                      ></textarea>
-                    </div>
-                    <div class="col-12">
-                      <button
-                        type="submit"
-                        class="btn btn-blue w-100 justify-content-center"
-                        style="padding: 14px; font-size: 1rem"
-                      >
-                        <i class="fas fa-paper-plane"></i>Enviar Mensagem
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-success" id="formSuccess" role="status">
-                  <div class="success-ic"><i class="fas fa-check"></i></div>
-                  <h4 style="color: var(--accent); margin-bottom: 10px">
-                    Mensagem enviada!
-                  </h4>
-                  <p>
-                    A nossa equipa entrará em contacto brevemente. Obrigado pelo
-                    seu interesse.
-                  </p>
-                </div>
-              </form>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Oferecem suporte pós-implementação?</span>
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-a">
+              <p>
+                Sim. Disponibilizamos planos de suporte e manutenção com SLA
+                adaptados, incluindo atualizações de segurança e suporte técnico
+                dedicado.
+              </p>
             </div>
           </div>
-          <div class="col-12 col-lg-5">
-            <div class="contact-info-card">
-              <h4 class="mb-4" style="font-size: 1.15rem">
-                Informações de Contacto
-              </h4>
-              <div class="ci-item">
-                <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <div>
-                  <h6>Localização</h6>
-                  <p>Luanda, Angola</p>
-                </div>
-              </div>
-              <div class="ci-item">
-                <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-                <div>
-                  <h6>Email</h6>
-                  <a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a>
-                </div>
-              </div>
-              <div class="ci-item">
-                <div class="ci-icon"><i class="fas fa-phone"></i></div>
-                <div>
-                  <h6>Telefone / WhatsApp</h6>
-                  <a
-                    href="https://wa.link/qxuy5y"
-                    target="_blank"
-                    rel="noopener"
-                    >+244 945 317 734</a
-                  >
-                </div>
-              </div>
-              <div class="ci-item mb-0">
-                <div class="ci-icon"><i class="fas fa-clock"></i></div>
-                <div>
-                  <h6>Horário</h6>
-                  <p>Seg – Sex: 08h00 – 20h00</p>
-                </div>
-              </div>
-              <a
-                href="https://wa.link/qxuy5y"
-                class="btn btn-gold w-100 mt-4 justify-content-center"
-                target="_blank"
-                rel="noopener"
-              >
-                <i class="fab fa-whatsapp"></i>Falar com um Especialista
-              </a>
-              <p
-                class="text-center mt-2"
-                style="font-size: 0.76rem; color: var(--txt-muted)"
-              >
-                Resposta em até 24h (dias úteis)
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>Fazem hosting e backups?</span>
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-a">
+              <p>
+                Sim. Oferecemos hospedagem segura, backups automáticos diários e
+                planos de recuperação de desastre para garantir a continuidade
+                do negócio.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" aria-expanded="false">
+              <span>As soluções funcionam sem internet estável?</span>
+              <div class="faq-icon"><i class="fas fa-plus"></i></div>
+            </button>
+            <div class="faq-a">
+              <p>
+                Sim. As aplicações desktop foram pensadas para o contexto
+                angolano, com modo offline completo e sincronização automática
+                quando a conectividade for restabelecida.
               </p>
             </div>
           </div>
@@ -2688,26 +2168,96 @@
       </div>
     </section>
 
-    <!-- ══════════════════════════════════════════
-         FOOTER
-    ═══════════════════════════════════════════ -->
-    <footer class="footer" role="contentinfo">
+    <!-- ══ CTA ══ -->
+    <section class="cta-section" aria-label="Chamada para ação">
       <div class="container">
-        <div class="row g-4 g-lg-5">
-          <div class="col-12 col-sm-6 col-lg-4">
-            <a href="#home" class="footer-logo">
-              <img
-                src="img/logo/logo3.png"
-                alt=""
-                onerror="this.style.display = 'none'"
-              />
-            </a>
-            <p class="footer-about">
-              Soluções digitais confiáveis, adaptadas ao contexto angolano —
-              desde ERPs e CRMs até plataformas web, aplicações desktop e
-              consultoria especializada.
-            </p>
-            <div class="soc-links" aria-label="Redes Sociais">
+        <div class="cta-card" data-anim>
+          <div
+            class="eyebrow"
+            style="justify-content: center; margin-bottom: 16px"
+          >
+            Pronto para começar?
+          </div>
+          <h2 class="sec-h">Leve a sua empresa ao próximo nível</h2>
+          <p>
+            Da primeira conversa à entrega final — estamos ao seu lado em cada
+            etapa da transformação digital.
+          </p>
+          <div class="cta-btns">
+            <a href="#contact" class="btn btn-sky"
+              ><i class="fas fa-file-alt"></i>Peça uma Proposta</a
+            >
+            <a href="#contact" class="btn btn-amber"
+              ><i class="fas fa-calendar-alt"></i>Agendar Demonstração</a
+            >
+            <a
+              href="https://wa.link/qxuy5y"
+              class="btn btn-ghost"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-whatsapp"></i>Falar pelo WhatsApp</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section
+      class="section section-alt"
+      id="contact"
+      aria-labelledby="contact-h"
+    >
+      <div class="container">
+        <div
+          style="text-align: center; max-width: 560px; margin: 0 auto 52px"
+          data-anim
+        >
+          <div class="eyebrow">Fale Connosco</div>
+          <h2 class="sec-h" id="contact-h">
+            Tem um <span class="hl">projeto em mente?</span>
+          </h2>
+          <p>
+            Contacte-nos pelo WhatsApp, email ou telefone. Respondemos em até
+            24h úteis.
+          </p>
+        </div>
+        <div class="contact-row" data-anim>
+          <div class="ci-card">
+            <h4>Informações de Contacto</h4>
+            <div class="ci-item">
+              <div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h6>Localização</h6>
+                <p>Luanda, Angola</p>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h6>Email</h6>
+                <a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><i class="fas fa-phone"></i></div>
+              <div>
+                <h6>Telefone</h6>
+                <a href="tel:+244945317734">+244 945 317 734</a>
+              </div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-ic"><i class="fas fa-clock"></i></div>
+              <div>
+                <h6>Horário</h6>
+                <p>Seg – Sex: 08h00 – 20h00</p>
+              </div>
+            </div>
+            <div
+              class="soc"
+              style="margin-top: 22px"
+              aria-label="Redes sociais"
+            >
               <a
                 href="https://www.facebook.com/profile.php?id=61565844385579"
                 target="_blank"
@@ -2727,8 +2277,78 @@
               ></a>
             </div>
           </div>
+          <div class="ci-side">
+            <div class="wa-block">
+              <h4 style="margin-bottom: 10px; font-size: 1.05rem">
+                Prefere falar directamente?
+              </h4>
+              <p>
+                A nossa equipa está disponível no WhatsApp para responder às
+                suas dúvidas em tempo real.
+              </p>
+              <a
+                href="https://wa.link/qxuy5y"
+                class="btn btn-wa"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-whatsapp" style="font-size: 1.1rem"></i>Iniciar
+                Conversa no WhatsApp
+              </a>
+              <p style="font-size: 0.76rem; margin-top: 10px; margin-bottom: 0">
+                Resposta rápida · Seg–Sex 08h–20h
+              </p>
+            </div>
+            <div class="ci-map">
+              <div class="ci-map-inner">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Luanda, Angola</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <div class="col-6 col-sm-3 col-lg-2">
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="img/logo/logo3.png"
+                alt=""
+                onerror="this.style.display = 'none'"
+              />
+              OKUTONDA
+            </div>
+            <p class="footer-about">
+              Soluções digitais confiáveis, adaptadas ao contexto angolano —
+              desde ERPs e CRMs até plataformas web, aplicações desktop e
+              consultoria especializada.
+            </p>
+            <div class="soc" aria-label="Redes Sociais">
+              <a
+                href="https://www.facebook.com/profile.php?id=61565844385579"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://wa.link/qxuy5y"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div>
             <h3 class="footer-head">Navegação</h3>
             <ul class="footer-links">
               <li><a href="#home">Home</a></li>
@@ -2738,224 +2358,192 @@
               <li><a href="#contact">Contacto</a></li>
             </ul>
           </div>
-
-          <div class="col-6 col-sm-3 col-lg-3">
+          <div>
             <h3 class="footer-head">Serviços</h3>
             <ul class="footer-links">
               <li><a href="#services">ERP / CRM</a></li>
               <li><a href="#services">Plataformas Web</a></li>
-              <li><a href="#services">Aplicações Desktop</a></li>
+              <li><a href="#services">Apps Desktop</a></li>
               <li><a href="#services">Consultoria Tech</a></li>
               <li><a href="#services">Sistemas Escolares</a></li>
             </ul>
           </div>
-
-          <div class="col-12 col-sm-6 col-lg-3">
+          <div>
             <h3 class="footer-head">Newsletter</h3>
             <p
               style="
-                font-size: 0.86rem;
-                color: var(--txt-muted);
+                font-size: 0.84rem;
+                color: var(--ghost);
                 margin-bottom: 14px;
               "
             >
               Receba novidades sobre tecnologia e inovação em Angola.
             </p>
-            <form class="nl-form" id="newsletterForm" novalidate>
+            <form class="nl-form" id="nlForm" novalidate>
               <input
+                class="nl-input"
                 type="email"
                 placeholder="O seu email"
                 required
-                aria-label="Email para newsletter"
+                aria-label="Email newsletter"
               />
-              <button type="submit" aria-label="Subscrever">
+              <button class="nl-btn" type="submit" aria-label="Subscrever">
                 <i class="fas fa-paper-plane"></i>
               </button>
             </form>
           </div>
         </div>
-
         <div class="footer-bottom">
-          <div class="row align-items-center g-2">
-            <div class="col-12 col-md-auto text-center text-md-start">
-              <p>
-                &copy; <span id="currentYear"></span> OKUTONDA — Soluções e
-                Tecnologia. Todos os direitos reservados.
-              </p>
-            </div>
-            <div class="col-12 col-md-auto ms-md-auto text-center text-md-end">
-              <p>Desenvolvido com <span class="heart">♥</span> em Angola</p>
-            </div>
+          <div class="footer-bottom-inner">
+            <p>
+              &copy; <span id="yr"></span> OKUTONDA — Soluções e Tecnologia.
+              Todos os direitos reservados.
+            </p>
+            <p>Desenvolvido com <span class="heart">♥</span> em Angola</p>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+    <!-- BACK TO TOP -->
+    <button id="btt" aria-label="Voltar ao topo">
       <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- Cookie Banner -->
-    <div
-      class="cookie-banner"
-      id="cookieBanner"
-      role="dialog"
-      aria-label="Aviso de cookies"
-      aria-live="polite"
-    >
-      <p>
-        Utilizamos cookies para melhorar a sua experiência. Ao continuar, aceita
-        a nossa política de privacidade.
-      </p>
-      <div class="d-flex gap-2 flex-wrap">
-        <button
-          class="btn btn-blue"
-          id="cookieAccept"
-          style="font-size: 0.82rem; padding: 8px 18px"
-        >
-          Aceitar
-        </button>
-        <button
-          class="btn btn-outline-blue"
-          id="cookieDecline"
-          style="font-size: 0.82rem; padding: 8px 18px"
-        >
-          Recusar
-        </button>
-      </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
     <script>
-      /* Preloader */
+      /* ── Preloader ── */
       window.addEventListener("load", () =>
         setTimeout(
-          () => document.getElementById("preloader")?.classList.add("hidden"),
-          900,
+          () => document.getElementById("pl")?.classList.add("out"),
+          800,
         ),
       );
 
-      /* AOS */
-      AOS.init({
-        once: true,
-        offset: 70,
-        duration: 750,
-        easing: "ease-out-quart",
-      });
+      /* ── Year ── */
+      document.getElementById("yr").textContent = new Date().getFullYear();
 
-      /* Navbar scroll + active section */
-      const navbar = document.querySelector(".navbar");
-      const navLinks = document.querySelectorAll(".nav-link");
+      /* ── Nav reference ── */
+      const nav = document.getElementById("nav");
+
+      /* ── Scroll behaviors ── */
       const sections = document.querySelectorAll("section[id]");
-      function updateNav() {
+      const menuLinks = document.querySelectorAll(".nav-menu a, .nav-drawer a");
+
+      function onScroll() {
         const sy = window.scrollY;
-        navbar.classList.toggle("scrolled", sy > 60);
+        nav.classList.toggle("s", sy > 60);
+
+        // Active link
         let current = "";
         sections.forEach((s) => {
-          if (sy >= s.offsetTop - 130) current = s.id;
+          if (sy >= s.offsetTop - 160) current = s.id;
         });
-        navLinks.forEach((l) => {
-          l.classList.remove("active");
-          if (l.getAttribute("href") === "#" + current)
-            l.classList.add("active");
+        menuLinks.forEach((a) => {
+          a.classList.remove("act");
+          if (a.getAttribute("href") === "#" + current) a.classList.add("act");
         });
+
+        // Back to top
+        document.getElementById("btt").classList.toggle("show", sy > 400);
       }
-      window.addEventListener("scroll", updateNav, { passive: true });
-      updateNav();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-      /* Close mobile nav on link click */
-      document.querySelectorAll("#navbarNav a").forEach((a) => {
-        a.addEventListener("click", () => {
-          const c = document.getElementById("navbarNav");
-          bootstrap.Collapse.getInstance(c)?.hide();
-        });
-      });
-
-      /* Smooth scroll */
+      /* ── Smooth scroll ── */
       document.querySelectorAll('a[href^="#"]').forEach((a) => {
         a.addEventListener("click", function (e) {
           const t = document.querySelector(this.getAttribute("href"));
-          if (t) {
-            e.preventDefault();
-            window.scrollTo({
-              top: t.offsetTop - (navbar.offsetHeight + 16),
-              behavior: "smooth",
-            });
-          }
+          if (!t) return;
+          e.preventDefault();
+          const navH = nav.offsetHeight;
+          window.scrollTo({ top: t.offsetTop - navH - 8, behavior: "smooth" });
         });
       });
 
-      /* Hero Swiper — imagem pura */
-      new Swiper(".heroSwiper", {
-        slidesPerView: 1,
-        loop: true,
-        speed: 900,
-        autoplay: {
-          delay: 6500,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        },
-        pagination: { el: ".swiper-pagination", clickable: true },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        effect: "fade",
-        fadeEffect: { crossFade: true },
-        a11y: {
-          prevSlideMessage: "Slide anterior",
-          nextSlideMessage: "Próximo slide",
-        },
+      /* ── Hamburger / Drawer ── */
+      const burger = document.getElementById("burger");
+      const drawer = document.getElementById("drawer");
+      burger.addEventListener("click", () => {
+        const open = drawer.classList.toggle("open");
+        burger.classList.toggle("open", open);
+        burger.setAttribute("aria-expanded", open);
+        document.body.style.overflow = open ? "hidden" : "";
       });
-
-      /* Parceiros Swiper — scroll infinito */
-      new Swiper(".partnersSwiper", {
-        slidesPerView: "auto",
-        spaceBetween: 20,
-        loop: true,
-        speed: 4000,
-        freeMode: true,
-        autoplay: { delay: 0, disableOnInteraction: false },
-        a11y: false,
-      });
-
-      /* Back to top */
-      const btt = document.getElementById("backToTop");
-      window.addEventListener(
-        "scroll",
-        () => btt.classList.toggle("visible", window.scrollY > 400),
-        { passive: true },
-      );
-      btt.addEventListener("click", () =>
-        window.scrollTo({ top: 0, behavior: "smooth" }),
-      );
-
-      /* Contact form */
-      document
-        .getElementById("contactForm")
-        ?.addEventListener("submit", function (e) {
-          e.preventDefault();
-          if (!this.checkValidity()) {
-            this.reportValidity();
-            return;
-          }
-          document.getElementById("formContent").style.display = "none";
-          document.getElementById("formSuccess").style.display = "block";
+      drawer.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          drawer.classList.remove("open");
+          burger.classList.remove("open");
+          burger.setAttribute("aria-expanded", false);
+          document.body.style.overflow = "";
         });
+      });
 
-      /* Newsletter */
+      /* ── Hero Slider ── */
+      (function () {
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        let cur = 0,
+          timer;
+
+        function go(i) {
+          slides[cur].classList.remove("active");
+          dots[cur].classList.remove("active");
+          cur = i;
+          slides[cur].classList.add("active");
+          dots[cur].classList.add("active");
+        }
+        function next() {
+          go((cur + 1) % slides.length);
+        }
+
+        function startAuto() {
+          timer = setInterval(next, 6500);
+        }
+        function stopAuto() {
+          clearInterval(timer);
+        }
+
+        dots.forEach((d) =>
+          d.addEventListener("click", () => {
+            stopAuto();
+            go(+d.dataset.i);
+            startAuto();
+          }),
+        );
+        startAuto();
+      })();
+
+      /* ── Intersection Observer (animations) ── */
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document.querySelectorAll("[data-anim]").forEach((el) => io.observe(el));
+
+      /* ── FAQ ── */
+      document.querySelectorAll(".faq-q").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".faq-item");
+          const open = item.classList.toggle("open");
+          btn.setAttribute("aria-expanded", open);
+        });
+      });
+
+      /* ── Newsletter ── */
       document
-        .getElementById("newsletterForm")
+        .getElementById("nlForm")
         ?.addEventListener("submit", function (e) {
           e.preventDefault();
-          const btn = this.querySelector("button");
+          const btn = this.querySelector(".nl-btn");
           btn.innerHTML = '<i class="fas fa-check"></i>';
-          btn.style.background = "#28a745";
+          btn.style.background = "#25d366";
           this.querySelector("input").value = "";
           setTimeout(() => {
             btn.innerHTML = '<i class="fas fa-paper-plane"></i>';
@@ -2963,25 +2551,12 @@
           }, 3000);
         });
 
-      /* Footer year */
-      document.getElementById("currentYear").textContent =
-        new Date().getFullYear();
-
-      /* Cookie banner */
-      const cb = document.getElementById("cookieBanner");
-      const CK = "oku_cookies";
-      if (!localStorage.getItem(CK))
-        setTimeout(() => cb.classList.add("visible"), 2500);
-      document.getElementById("cookieAccept")?.addEventListener("click", () => {
-        localStorage.setItem(CK, "1");
-        cb.classList.remove("visible");
-      });
+      /* ── Back to top ── */
       document
-        .getElementById("cookieDecline")
-        ?.addEventListener("click", () => {
-          localStorage.setItem(CK, "0");
-          cb.classList.remove("visible");
-        });
+        .getElementById("btt")
+        .addEventListener("click", () =>
+          window.scrollTo({ top: 0, behavior: "smooth" }),
+        );
     </script>
   </body>
 </html>
