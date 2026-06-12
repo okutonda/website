@@ -258,6 +258,23 @@
     .plat-hero {
       position:relative; overflow:hidden; background:var(--ink);
       padding:clamp(120px,14vw,180px) 0 clamp(64px,8vw,100px);
+      background-image: url('img/slider/slider2.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    /* Overlay escuro por cima da imagem, abaixo do conteúdo */
+    .plat-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(7,17,31,0.72) 0%,
+        rgba(7,17,31,0.60) 50%,
+        rgba(7,17,31,0.88) 100%
+      );
+      z-index: 1;
     }
     .plat-hero::before {
       content:''; position:absolute; inset:0;
@@ -267,11 +284,12 @@
       background-size:60px 60px;
       mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 90%);
       -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 90%);
+      z-index: 2;
     }
     .plat-hero-orb {
       position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; z-index:0;
     }
-    .plat-hero-inner { position:relative; z-index:1; text-align:center; }
+    .plat-hero-inner { position:relative; z-index:3; text-align:center; }
     .plat-badge {
       display:inline-flex; align-items:center; gap:8px;
       background:rgba(16,89,232,.1); border:1px solid rgba(16,89,232,.2);
@@ -591,7 +609,7 @@
       <li><a href="index.html#contact">Contacto</a></li>
     </ul>
     <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i>Voltar ao site</a>
-    <a href="index.html#contact" class="nav-cta"><i class="fas fa-paper-plane"></i>Demo</a>
+    <a href="index.html#contact" class="nav-cta"><i class="fas fa-paper-plane"></i>Fale Connosco</a>
     <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
