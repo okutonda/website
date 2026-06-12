@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termos de Uso — OKUTONDA Technologies</title>
+  <meta name="description" content="Termos e condições de uso dos serviços e plataformas OKUTONDA Technologies." />
+  <meta property="og:title" content="Termos de Uso — OKUTONDA Technologies" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="img/logo/favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --ink:      #07111f;
+      --ink-mid:  #0c1a2e;
+      --ink-lt:   #111f33;
+      --sky:      #1059e8;
+      --sky-2:    #4080ff;
+      --amber:    #c8922a;
+      --amber-lt: #e8b96a;
+      --paper:    #edf1f7;
+      --mist:     #8fa3be;
+      --ghost:    #3d5070;
+      --line:     rgba(255,255,255,.07);
+      --card:     rgba(12,26,46,.55);
+      --r:        10px;
+      --r-lg:     18px;
+      --ease:     cubic-bezier(.4,0,.2,1);
+      --t:        .26s;
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+    body {
+      font-family:'Inter', sans-serif;
+      font-size:15px; line-height:1.7;
+      color:var(--mist); background:var(--ink);
+      overflow-x:hidden;
+    }
+    h1,h2,h3,h4,h5 {
+      font-family:'Syne', sans-serif;
+      font-weight:600; line-height:1.15;
+      color:var(--paper); letter-spacing:-.02em;
+    }
+    p  { color:var(--mist); }
+    a  { text-decoration:none; color:inherit; }
+    img{ max-width:100%; height:auto; display:block; }
+
+    /* Nav */
+    .nav {
+      position:fixed; top:0; left:0; right:0; z-index:900;
+      padding:20px 0; background:transparent;
+      border-bottom:1px solid transparent;
+      transition:all .36s var(--ease);
+    }
+    .nav.scrolled {
+      padding:12px 0;
+      background:rgba(5,13,26,.95);
+      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+      border-bottom-color:var(--line);
+      box-shadow:0 2px 32px rgba(0,0,0,.3);
+    }
+    .nav-inner {
+      max-width:1360px; margin:0 auto;
+      padding:0 clamp(16px,3vw,40px);
+      display:flex; align-items:center; justify-content:space-between; gap:24px;
+    }
+    .nav-brand img { height:40px; width:auto; transition:height .3s; }
+    .nav.scrolled .nav-brand img { height:34px; }
+    .nav-back {
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:.82rem; font-weight:500; color:rgba(237,241,247,.55);
+      padding:7px 16px; border-radius:50px;
+      border:1px solid var(--line); transition:all .25s var(--ease);
+    }
+    .nav-back:hover { color:var(--paper); background:rgba(255,255,255,.06); border-color:rgba(237,241,247,.2); }
+    .nav-back i { font-size:.75rem; }
+
+    /* Page hero */
+    .page-hero {
+      padding:clamp(120px,14vw,160px) 0 clamp(56px,7vw,80px);
+      position:relative; overflow:hidden;
+      background:var(--ink);
+      border-bottom:1px solid var(--line);
+    }
+    .page-hero::before {
+      content:''; position:absolute; inset:0;
+      background:
+        linear-gradient(rgba(16,89,232,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(16,89,232,.03) 1px, transparent 1px);
+      background-size:60px 60px;
+      mask-image:radial-gradient(ellipse 70% 80% at 50% 0%, black 20%, transparent 100%);
+      -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 0%, black 20%, transparent 100%);
+    }
+    .page-hero .orb {
+      position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none;
+    }
+    .page-hero-inner { position:relative; z-index:1; max-width:760px; }
+    .eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      font-size:.68rem; font-weight:500; text-transform:uppercase;
+      letter-spacing:.2em; color:var(--sky-2); margin-bottom:12px;
+    }
+    .eyebrow::before { content:''; width:18px; height:1px; background:var(--sky-2); opacity:.6; }
+    .page-hero h1 { font-size:clamp(1.8rem,4vw,3rem); margin-bottom:14px; }
+    .page-hero p  { font-size:.97rem; color:var(--ghost); max-width:520px; line-height:1.8; }
+    .page-hero .meta {
+      display:inline-flex; align-items:center; gap:8px;
+      margin-top:20px; font-size:.75rem; color:var(--ghost);
+      background:rgba(255,255,255,.04); border:1px solid var(--line);
+      padding:6px 14px; border-radius:50px;
+    }
+    .page-hero .meta i { color:var(--sky); font-size:.7rem; }
+    .hl { background:linear-gradient(135deg,var(--sky),var(--sky-2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+    /* Layout */
+    .container { max-width:1320px; margin:0 auto; padding:0 clamp(16px,3vw,40px); }
+    .content-layout {
+      display:grid;
+      grid-template-columns:240px 1fr;
+      gap:clamp(32px,4vw,64px);
+      align-items:start;
+      padding:clamp(48px,7vw,80px) 0;
+    }
+    @media (max-width:900px) { .content-layout { grid-template-columns:1fr; } }
+
+    /* TOC Sidebar */
+    .toc {
+      position:sticky; top:100px;
+      background:var(--card); border:1px solid var(--line);
+      border-radius:var(--r-lg); padding:22px 20px;
+    }
+    @media (max-width:900px) { .toc { position:static; } }
+    .toc-title {
+      font-family:'Syne',sans-serif; font-size:.72rem; font-weight:600;
+      text-transform:uppercase; letter-spacing:.15em;
+      color:rgba(237,241,247,.3); margin-bottom:14px; padding-bottom:12px;
+      border-bottom:1px solid var(--line);
+    }
+    .toc ul { list-style:none; padding:0; }
+    .toc ul li { margin-bottom:2px; }
+    .toc ul li a {
+      display:block; font-size:.82rem; color:var(--ghost);
+      padding:6px 10px; border-radius:7px; border-left:2px solid transparent;
+      transition:all .2s var(--ease);
+    }
+    .toc ul li a:hover,
+    .toc ul li a.active {
+      color:var(--paper); background:rgba(16,89,232,.07); border-left-color:var(--sky);
+    }
+
+    /* Article */
+    .article section { margin-bottom:clamp(36px,5vw,52px); }
+    .article h2 {
+      font-size:1.25rem; margin-bottom:16px; padding-bottom:12px;
+      border-bottom:1px solid var(--line);
+      display:flex; align-items:center; gap:10px;
+    }
+    .article h2 .sec-num {
+      display:inline-flex; align-items:center; justify-content:center;
+      width:26px; height:26px; border-radius:7px; flex-shrink:0;
+      background:rgba(16,89,232,.12); font-size:.72rem; font-weight:600; color:var(--sky-2);
+      font-family:'Inter',sans-serif; letter-spacing:0;
+    }
+    .article h3 { font-size:1rem; margin:20px 0 8px; color:rgba(237,241,247,.8); }
+    .article p  { font-size:.9rem; margin-bottom:12px; color:rgba(143,163,190,.85); line-height:1.8; }
+    .article ul, .article ol {
+      padding-left:0; list-style:none; margin:12px 0 16px;
+    }
+    .article ul li, .article ol li {
+      display:flex; align-items:flex-start; gap:10px;
+      font-size:.88rem; color:rgba(143,163,190,.85);
+      margin-bottom:8px; line-height:1.7;
+    }
+    .article ul li::before {
+      content:''; width:5px; height:5px; border-radius:50%;
+      background:var(--sky); flex-shrink:0; margin-top:8px;
+    }
+    .article ol { counter-reset:ol; }
+    .article ol li { counter-increment:ol; }
+    .article ol li::before {
+      content:counter(ol) '.';
+      font-size:.72rem; font-weight:600; color:var(--sky-2);
+      flex-shrink:0; min-width:18px; margin-top:2px;
+    }
+    .article a { color:var(--sky-2); transition:color .2s; }
+    .article a:hover { color:var(--paper); }
+
+    .highlight-box {
+      background:rgba(16,89,232,.06); border:1px solid rgba(16,89,232,.18);
+      border-left:3px solid var(--sky); border-radius:var(--r);
+      padding:16px 20px; margin:18px 0;
+    }
+    .highlight-box p { margin:0; font-size:.875rem; color:rgba(237,241,247,.65); }
+    .highlight-box strong { color:var(--sky-2); }
+
+    .warn-box {
+      background:rgba(200,146,42,.06); border:1px solid rgba(200,146,42,.2);
+      border-left:3px solid var(--amber); border-radius:var(--r);
+      padding:16px 20px; margin:18px 0;
+      display:flex; gap:12px; align-items:flex-start;
+    }
+    .warn-box i { color:var(--amber-lt); font-size:.9rem; margin-top:2px; flex-shrink:0; }
+    .warn-box p { margin:0; font-size:.875rem; color:rgba(237,241,247,.6); }
+
+    /* Divider */
+    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent); }
+
+    /* Footer */
+    .footer { background:#020b17; border-top:1px solid var(--line); padding:clamp(40px,5vw,56px) 0 0; }
+    .footer-bottom { border-top:1px solid rgba(255,255,255,.04); padding:20px 0; margin-top:clamp(32px,4vw,48px); }
+    .footer-bottom-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+    .footer-bottom p { font-size:.76rem; color:var(--ghost); margin:0; }
+    .footer-bottom a { color:var(--ghost); transition:color .2s; }
+    .footer-bottom a:hover { color:var(--sky-2); }
+    .heart { color:var(--amber); }
+    .footer-links-row { display:flex; gap:20px; flex-wrap:wrap; margin-bottom:24px; }
+    .footer-links-row a {
+      font-size:.83rem; color:var(--ghost); transition:color .2s;
+      display:inline-flex; align-items:center; gap:6px;
+    }
+    .footer-links-row a:hover { color:var(--paper); }
+    .footer-brand img { height:60px; width:auto; margin-bottom:12px; }
+    .footer-about { font-size:.82rem; color:var(--ghost); line-height:1.75; max-width:380px; }
+
+    /* Animations */
+    [data-anim] { opacity:0; transform:translateY(16px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
+    [data-anim].visible { opacity:1; transform:translateY(0); }
+    [data-anim][data-delay="1"] { transition-delay:.07s; }
+    [data-anim][data-delay="2"] { transition-delay:.14s; }
+
+    /* Back to top */
+    #btt {
+      position:fixed; bottom:24px; right:24px; z-index:800;
+      width:42px; height:42px;
+      background:linear-gradient(135deg,var(--sky),var(--sky-2));
+      color:#fff; border:none; border-radius:50%; cursor:pointer;
+      display:flex; align-items:center; justify-content:center; font-size:.75rem;
+      opacity:0; visibility:hidden; transform:translateY(8px);
+      transition:all .26s var(--ease); box-shadow:0 4px 14px rgba(16,89,232,.36);
+    }
+    #btt.show { opacity:1; visibility:visible; transform:translateY(0); }
+    #btt:hover { transform:translateY(-3px); }
+
+    :focus-visible { outline:2px solid var(--sky); outline-offset:3px; border-radius:4px; }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
+    </a>
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i>Voltar ao Site</a>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<div class="page-hero">
+  <div class="orb" style="width:400px;height:400px;background:rgba(16,89,232,.05);top:-100px;right:-60px;"></div>
+  <div class="container">
+    <div class="page-hero-inner" data-anim>
+      <div class="eyebrow">Legal</div>
+      <h1>Termos de <span class="hl">Uso</span></h1>
+      <p>Condições que regem a utilização dos serviços, plataformas e produtos da OKUTONDA Technologies.</p>
+      <span class="meta"><i class="fas fa-calendar-alt"></i>Última actualização: Janeiro de 2025</span>
+    </div>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="container">
+  <div class="content-layout">
+
+    <!-- TOC -->
+    <aside class="toc" data-anim>
+      <div class="toc-title">Índice</div>
+      <ul>
+        <li><a href="#aceitacao">1. Aceitação</a></li>
+        <li><a href="#servicos">2. Serviços</a></li>
+        <li><a href="#utilizacao">3. Utilização</a></li>
+        <li><a href="#contas">4. Contas</a></li>
+        <li><a href="#propriedade">5. Propriedade Intelectual</a></li>
+        <li><a href="#pagamentos">6. Pagamentos</a></li>
+        <li><a href="#privacidade">7. Privacidade</a></li>
+        <li><a href="#limitacao">8. Limitação de Responsabilidade</a></li>
+        <li><a href="#rescisao">9. Rescisão</a></li>
+        <li><a href="#alteracoes">10. Alterações</a></li>
+        <li><a href="#lei">11. Lei Aplicável</a></li>
+        <li><a href="#contacto-termos">12. Contacto</a></li>
+      </ul>
+    </aside>
+
+    <!-- Article -->
+    <article class="article" data-anim data-delay="1">
+
+      <div class="highlight-box">
+        <p><strong>Por favor leia com atenção.</strong> Ao aceder ou utilizar qualquer serviço, plataforma ou produto da OKUTONDA Technologies, declara ter lido, compreendido e aceite estes Termos de Uso na íntegra.</p>
+      </div>
+
+      <section id="aceitacao">
+        <h2><span class="sec-num">1</span>Aceitação dos Termos</h2>
+        <p>Estes Termos de Uso ("Termos") constituem um acordo legal vinculativo entre si ("Utilizador" ou "Cliente") e a <strong style="color:var(--paper);">OKUTONDA Technologies</strong>, empresa sediada em Luanda, Angola, responsável pelo desenvolvimento e comercialização das plataformas da Oku Platform (OkuEdu, OkuERP, OkuPDV, OkuCRM, OkuHR, entre outros).</p>
+        <p>O acesso e uso de qualquer um dos nossos serviços implica a aceitação plena e incondicional destes Termos. Caso não concorde com alguma das condições aqui estabelecidas, deverá cessar imediatamente a utilização dos nossos serviços.</p>
+      </section>
+
+      <section id="servicos">
+        <h2><span class="sec-num">2</span>Descrição dos Serviços</h2>
+        <p>A OKUTONDA Technologies disponibiliza um conjunto de plataformas digitais e serviços de consultoria tecnológica, incluindo:</p>
+        <ul>
+          <li><strong style="color:var(--paper);">OkuEdu</strong> — Sistema de gestão académica e administrativa para instituições de ensino</li>
+          <li><strong style="color:var(--paper);">OkuERP</strong> — Plataforma integrada para gestão empresarial, finanças e inventário</li>
+          <li><strong style="color:var(--paper);">OkuPDV</strong> — Sistema de faturação e ponto de venda</li>
+          <li><strong style="color:var(--paper);">OkuCRM</strong> — Gestão de relacionamento com clientes</li>
+          <li><strong style="color:var(--paper);">OkuHR</strong> — Gestão de recursos humanos</li>
+          <li>Consultoria tecnológica, desenvolvimento de software personalizado e plataformas web</li>
+        </ul>
+        <p>Os serviços são fornecidos no modelo SaaS (Software como Serviço), podendo ser acedidos via browser em qualquer dispositivo com ligação à internet.</p>
+      </section>
+
+      <section id="utilizacao">
+        <h2><span class="sec-num">3</span>Condições de Utilização</h2>
+        <h3>3.1 Uso permitido</h3>
+        <p>O Utilizador compromete-se a usar os serviços exclusivamente para fins legítimos e no âmbito das actividades da sua organização, em conformidade com a legislação angolana vigente.</p>
+        <h3>3.2 Uso proibido</h3>
+        <p>É expressamente proibido:</p>
+        <ul>
+          <li>Tentar aceder a áreas restritas ou sistemas de outros utilizadores sem autorização</li>
+          <li>Utilizar os serviços para actividades ilegais, fraudulentas ou que violem direitos de terceiros</li>
+          <li>Reproduzir, copiar, distribuir ou revender qualquer parte dos serviços sem autorização escrita prévia</li>
+          <li>Realizar engenharia reversa, descompilar ou tentar extrair o código fonte das plataformas</li>
+          <li>Introduzir vírus, malware ou qualquer código malicioso nos sistemas</li>
+          <li>Sobrecarregar intencionalmente os servidores ou infraestrutura da plataforma</li>
+        </ul>
+        <div class="warn-box">
+          <i class="fas fa-exclamation-triangle"></i>
+          <p>A violação destas condições pode resultar na suspensão imediata da conta e eventual acção legal, sem prejuízo de outras medidas cabíveis.</p>
+        </div>
+      </section>
+
+      <section id="contas">
+        <h2><span class="sec-num">4</span>Contas e Credenciais</h2>
+        <p>Para aceder aos nossos serviços, o Utilizador deverá criar uma conta com credenciais válidas. É responsabilidade exclusiva do Utilizador:</p>
+        <ul>
+          <li>Manter as credenciais de acesso (utilizador e senha) em segurança e confidencialidade</li>
+          <li>Notificar imediatamente a OKUTONDA Technologies em caso de uso não autorizado da conta</li>
+          <li>Garantir que todas as informações fornecidas durante o registo são verídicas e actualizadas</li>
+          <li>Não partilhar as credenciais de acesso com pessoas não autorizadas pela organização</li>
+        </ul>
+        <p>A OKUTONDA Technologies não se responsabiliza por perdas resultantes do uso não autorizado de credenciais que o Utilizador não tenha reportado atempadamente.</p>
+      </section>
+
+      <section id="propriedade">
+        <h2><span class="sec-num">5</span>Propriedade Intelectual</h2>
+        <p>Todo o conteúdo das plataformas, incluindo mas não se limitando a software, código, interfaces, design, logótipos, textos, documentação e metodologias, é propriedade exclusiva da OKUTONDA Technologies ou dos seus licenciadores, protegido pela legislação angolana e internacional de propriedade intelectual.</p>
+        <p>A OKUTONDA Technologies concede ao Utilizador uma licença limitada, não exclusiva, não transferível e revogável para usar os serviços contratados, exclusivamente para os fins acordados no contrato de prestação de serviços.</p>
+        <h3>5.1 Dados do Cliente</h3>
+        <p>Os dados introduzidos pelo Cliente nas plataformas (dados académicos, financeiros, de colaboradores, etc.) permanecem propriedade do Cliente. A OKUTONDA Technologies processa esses dados exclusivamente para prestar os serviços contratados.</p>
+      </section>
+
+      <section id="pagamentos">
+        <h2><span class="sec-num">6</span>Pagamentos e Faturação</h2>
+        <p>As condições de pagamento são estabelecidas em contrato específico celebrado entre o Cliente e a OKUTONDA Technologies. Em geral:</p>
+        <ul>
+          <li>Os valores são expressos em Kwanza Angolano (AOA) salvo indicação em contrário</li>
+          <li>O não pagamento nos prazos acordados pode resultar na suspensão temporária do acesso aos serviços</li>
+          <li>Eventuais reembolsos estão sujeitos à política comercial acordada em contrato</li>
+          <li>Os preços podem ser revistos com aviso prévio mínimo de 30 dias</li>
+        </ul>
+      </section>
+
+      <section id="privacidade">
+        <h2><span class="sec-num">7</span>Privacidade e Protecção de Dados</h2>
+        <p>O tratamento de dados pessoais recolhidos no âmbito dos nossos serviços é regido pela nossa <a href="privacidade.html">Política de Privacidade</a>, que constitui parte integrante destes Termos.</p>
+        <p>A OKUTONDA Technologies compromete-se a tratar os dados pessoais de acordo com a legislação angolana aplicável, incluindo a Lei de Protecção de Dados Pessoais, adoptando medidas técnicas e organizacionais adequadas para garantir a sua segurança.</p>
+      </section>
+
+      <section id="limitacao">
+        <h2><span class="sec-num">8</span>Limitação de Responsabilidade</h2>
+        <p>Na máxima extensão permitida pela lei, a OKUTONDA Technologies não será responsável por:</p>
+        <ul>
+          <li>Perdas indirectas, incidentais ou consequenciais resultantes do uso ou impossibilidade de uso dos serviços</li>
+          <li>Interrupções de serviço causadas por factores fora do nosso controlo (força maior, falhas de telecomunicações, etc.)</li>
+          <li>Perda de dados resultante de uso indevido ou falha no cumprimento das boas práticas de segurança pelo Cliente</li>
+          <li>Danos causados por terceiros que tenham obtido acesso não autorizado aos sistemas do Cliente</li>
+        </ul>
+        <div class="highlight-box">
+          <p><strong>Disponibilidade:</strong> A OKUTONDA Technologies envidará os melhores esforços para garantir a disponibilidade contínua dos serviços, mas não garante disponibilidade ininterrupta. Janelas de manutenção programada serão comunicadas com antecedência.</p>
+        </div>
+      </section>
+
+      <section id="rescisao">
+        <h2><span class="sec-num">9</span>Rescisão</h2>
+        <p>Qualquer das partes pode rescindir o contrato de prestação de serviços, respeitando o prazo de aviso prévio estabelecido em contrato. Em caso de violação grave destes Termos, a OKUTONDA Technologies reserva-se o direito de suspender ou encerrar o acesso de forma imediata.</p>
+        <p>Após a rescisão, o Cliente terá um período de 30 dias para exportar os seus dados. Após esse período, os dados poderão ser eliminados dos nossos sistemas.</p>
+      </section>
+
+      <section id="alteracoes">
+        <h2><span class="sec-num">10</span>Alterações aos Termos</h2>
+        <p>A OKUTONDA Technologies reserva-se o direito de actualizar estes Termos a qualquer momento. As alterações serão comunicadas por email e/ou notificação nas plataformas com antecedência mínima de 15 dias.</p>
+        <p>A continuação da utilização dos serviços após a entrada em vigor das alterações implica a aceitação dos novos Termos.</p>
+      </section>
+
+      <section id="lei">
+        <h2><span class="sec-num">11</span>Lei Aplicável e Jurisdição</h2>
+        <p>Estes Termos são regidos pela lei angolana. Qualquer litígio decorrente ou relacionado com estes Termos será submetido à jurisdição exclusiva dos tribunais de Luanda, Angola, sem prejuízo do recurso a meios alternativos de resolução de conflitos.</p>
+      </section>
+
+      <section id="contacto-termos">
+        <h2><span class="sec-num">12</span>Contacto</h2>
+        <p>Para questões relacionadas com estes Termos de Uso, pode contactar-nos através dos seguintes meios:</p>
+        <ul>
+          <li><strong style="color:var(--paper);">Email:</strong> <a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a></li>
+          <li><strong style="color:var(--paper);">Telefone / WhatsApp:</strong> <a href="tel:+244945317734">+244 945 317 734</a></li>
+          <li><strong style="color:var(--paper);">Morada:</strong> Luanda, Angola</li>
+          <li><strong style="color:var(--paper);">Horário:</strong> Segunda a Sexta, 08h00 – 20h00</li>
+        </ul>
+      </section>
+
+    </article>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:8px;">
+      <div>
+        <div class="footer-brand">
+          <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
+        </div>
+        <p class="footer-about">Plataformas digitais para organizações que exigem eficiência, integração e crescimento sustentado — desenvolvidas em Angola.</p>
+      </div>
+      <div class="footer-links-row" style="align-items:center; margin-bottom:0;">
+        <a href="index.html"><i class="fas fa-home" style="font-size:.7rem;color:var(--sky);"></i>Home</a>
+        <a href="index.html#contact"><i class="fas fa-envelope" style="font-size:.7rem;color:var(--sky);"></i>Contacto</a>
+        <a href="termos.html" style="color:var(--sky-2);"><i class="fas fa-file-contract" style="font-size:.7rem;"></i>Termos</a>
+        <a href="privacidade.html"><i class="fas fa-shield-alt" style="font-size:.7rem;color:var(--sky);"></i>Privacidade</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <p>&copy; <span id="yr"></span> OKUTONDA Technologies. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <span class="heart">♥</span> em Angola 🇦🇴</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('btt').classList.toggle('show', window.scrollY > 400);
+    updateTOC();
+  }, { passive: true });
+
+  document.getElementById('btt').addEventListener('click', () =>
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  );
+
+  /* TOC active highlight */
+  function updateTOC() {
+    const sections = document.querySelectorAll('.article section[id]');
+    const links    = document.querySelectorAll('.toc a');
+    let current    = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 140) current = s.id;
+    });
+    links.forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  }
+
+  /* Entrance animations */
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('[data-anim]').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -140,21 +140,33 @@ function animateCounter(el) {
 function initDashboardTabs() {
   const tabBtns = document.querySelectorAll('.dash-tab-btn');
   const screens = document.querySelectorAll('.dash-screen-item');
+  const preview = document.querySelector('.dashboard-preview[data-modal-trigger]');
 
   if (!tabBtns.length) return;
+
+  const titles = {
+    overview: 'Dashboard — Visão Geral',
+    academico: 'Gestão Académica',
+    financeiro: 'Gestão Financeira',
+    aluno: 'Portal do Aluno',
+    professor: 'Portal do Professor',
+  };
 
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-tab');
 
-      // Update buttons
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      // Update screens
       screens.forEach(s => {
         s.style.display = s.getAttribute('data-screen') === target ? 'block' : 'none';
       });
+
+      // Actualiza o título do modal conforme o tab activo
+      if (preview) {
+        preview.setAttribute('data-title', titles[target] || 'Dashboard');
+      }
     });
   });
 }
@@ -163,31 +175,28 @@ function initDashboardTabs() {
    MODAL DE IMAGENS DO DASHBOARD
    ============================================= */
 function initDashboardModal() {
-  const previews = document.querySelectorAll('[data-modal-trigger]');
+  const preview = document.querySelector('[data-modal-trigger]');
   const modal = document.getElementById('dashboardModal');
   const modalImg = document.getElementById('modalDashImg');
   const modalLabel = document.getElementById('dashboardModalLabel');
 
-  if (!modal) return;
+  if (!preview || !modal) return;
 
-  previews.forEach(el => {
-    el.addEventListener('click', () => {
-      const title = el.getAttribute('data-title') || 'Dashboard';
-      if (modalLabel) modalLabel.textContent = title;
+  preview.addEventListener('click', () => {
+    // Pega o screen visível
+    const activeScreen = preview.querySelector('.dash-screen-item:not([style*="display: none"]):not([style*="display:none"])');
+    const img = activeScreen ? activeScreen.querySelector('img') : null;
 
-      // Como não temos imagens reais, mostrar o SVG gerado
-      const svgEl = el.querySelector('svg');
-      if (svgEl && modalImg) {
-        const svg = svgEl.outerHTML;
-        const blob = new Blob([svg], { type: 'image/svg+xml' });
-        const url = URL.createObjectURL(blob);
-        modalImg.src = url;
-        modalImg.onload = () => URL.revokeObjectURL(url);
-      }
+    if (modalImg) {
+      modalImg.src = img ? img.src : '';
+      modalImg.alt = img ? img.alt : 'Preview';
+    }
 
-      const bsModal = new bootstrap.Modal(modal);
-      bsModal.show();
-    });
+    if (modalLabel) {
+      modalLabel.textContent = preview.getAttribute('data-title') || 'Dashboard';
+    }
+
+    new bootstrap.Modal(modal).show();
   });
 }
 
