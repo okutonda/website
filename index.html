@@ -4,578 +4,712 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OKUTONDA Technologies | Soluções Tecnológicas</title>
-  <meta name="description" content="OKUTONDA Technologies — Plataformas digitais, soluções e consultoria para empresas e instituições." />
-  <meta name="keywords" content="OKUTONDA, OkuEdu, OkuERP, OkuPOS, OkuCRM, Oku Platform, Soluções Tecnológicas, Angola, Luanda" />
-  <meta property="og:title" content="OKUTONDA Technologies" />
-  <meta property="og:description" content="Plataformas digitais para organizações que exigem mais." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://okutonda.com" />
-
-  <link rel="icon" href="img/logo/favicon.ico" type="image/x-icon" />
-  <link rel="icon" href="img/logo/favicon.png" type="image/png" />
-
-  <!-- FONTES: carregamento assíncrono — não bloqueia o render -->
+  <meta name="description" content="OKUTONDA Technologies — Plataformas digitais, soluções e consultoria para empresas e instituições em Angola." />
+  <link rel="icon" type="image/png" href="img/logo/favicon.png" />
+  <link rel="shortcut icon" href="img/logo/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;600;700&display=swap"
-    onload="this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@500;600;700&display=swap" />
-  </noscript>
-
-  <!-- FONT AWESOME: também assíncrono -->
-  <link rel="preload" as="style"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    onload="this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* ── Tokens ── */
+    /* ─── Design Tokens ─── */
     :root {
-      --ink:       #07111f;
-      --ink-mid:   #0c1a2e;
-      --ink-lt:    #111f33;
-      --sky:       #1059e8;
-      --sky-2:     #4080ff;
-      --amber:     #c8922a;
-      --amber-lt:  #e8b96a;
-      --paper:     #edf1f7;
-      --mist:      #8fa3be;
-      --ghost:     #3d5070;
-      --line:      rgba(255,255,255,.07);
-      --card:      rgba(12,26,46,.55);
-      --r:         10px;
-      --r-lg:      18px;
-      --ease:      cubic-bezier(.4,0,.2,1);
-      --t:         .26s;
-      --sidebar-w: 280px;
+      --night:       #07111f;
+      --navy:        #0A1628;
+      --navy-2:      #112240;
+      --navy-mid:    #0d1e35;
+      --blue:        #2563EB;
+      --blue-lt:     #3B82F6;
+      --blue-xs:     #EFF6FF;
+      --amber:       #F59E0B;
+      --amber-lt:    #FCD34D;
+      --snow:        #FAFBFF;
+      --slate:       #F1F5F9;
+      --border:      #E2E8F0;
+      --muted:       #64748B;
+      --dark:        #1E293B;
+      --card-bg:     #FFFFFF;
+      --r:           12px;
+      --r-lg:        20px;
+      --r-xl:        28px;
+      --ease:        cubic-bezier(.4,0,.2,1);
+      --t:           .28s;
     }
 
-    /* ── Reset ── */
+    /* ─── Reset ─── */
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
     body {
       font-family:'Inter', sans-serif;
       font-size:15px; line-height:1.7;
-      color:var(--mist); background:var(--ink);
+      color:var(--muted);
+      background:var(--snow);
       overflow-x:hidden;
     }
-    body.sidebar-open { overflow:hidden; }
+    body.no-scroll { overflow:hidden; }
     h1,h2,h3,h4,h5 {
-      font-family:'Syne', sans-serif;
-      font-weight:600; line-height:1.1;
-      color:var(--paper); letter-spacing:-.02em;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      font-weight:700; line-height:1.1;
+      color:var(--dark); letter-spacing:-.025em;
     }
-    p  { color:var(--mist); }
-    a  { text-decoration:none; color:inherit; }
-    img{ max-width:100%; height:auto; display:block; }
+    a { text-decoration:none; color:inherit; }
+    img { max-width:100%; height:auto; display:block; }
+    p { color:var(--muted); }
 
-    /* ── Preloader ── */
+    /* ─── Preloader ─── */
     #pl {
-      position:fixed; inset:0; background:var(--ink); z-index:9999;
-      display:flex; align-items:center; justify-content:center; gap:16px;
-      transition:opacity .5s var(--ease), visibility .5s;
+      position:fixed; inset:0; z-index:9999;
+      background:var(--navy);
+      display:flex; align-items:center; justify-content:center; flex-direction:column; gap:20px;
+      transition:opacity .7s var(--ease), visibility .7s;
     }
     #pl.out { opacity:0; visibility:hidden; pointer-events:none; }
-    .pl-ring {
-      width:36px; height:36px;
-      border:1.5px solid rgba(16,89,232,.15); border-top-color:var(--sky);
-      border-radius:50%; animation:spin .9s linear infinite;
+    .pl-logo-img { width:160px; height:auto; opacity:.9; }
+    .pl-bar {
+      width:140px; height:2px;
+      background:rgba(255,255,255,.1); border-radius:2px; overflow:hidden;
     }
-    .pl-name {
-      font-family:'Syne',sans-serif; font-size:.75rem; font-weight:600;
-      letter-spacing:.3em; text-transform:uppercase; color:rgba(237,241,247,.3);
+    .pl-fill {
+      height:100%;
+      background:linear-gradient(90deg, var(--blue), var(--amber));
+      border-radius:2px; animation:fillbar 1.6s var(--ease) forwards;
     }
-    @keyframes spin { to { transform:rotate(360deg); } }
+    @keyframes fillbar { from{width:0} to{width:100%} }
 
-    /* ── Sidebar overlay ── */
-    .sidebar-overlay {
+    /* ─── Sidebar overlay ─── */
+    .overlay {
       display:none; position:fixed; inset:0; z-index:1099;
-      background:rgba(4,10,20,.75); backdrop-filter:blur(4px);
-      -webkit-backdrop-filter:blur(4px); opacity:0;
-      transition:opacity .3s var(--ease);
+      background:rgba(7,17,31,.75); backdrop-filter:blur(6px);
+      opacity:0; transition:opacity .3s var(--ease);
     }
-    .sidebar-overlay.active { display:block; opacity:1; }
+    .overlay.on { display:block; opacity:1; }
 
-    /* ── Sidebar ── */
+    /* ─── Sidebar ─── */
     .sidebar {
       position:fixed; top:0; right:0; bottom:0; z-index:1100;
-      width:var(--sidebar-w); max-width:88vw;
-      background:var(--ink-mid);
-      border-left:1px solid rgba(255,255,255,.08);
+      width:300px; max-width:90vw;
+      background:var(--navy);
       transform:translateX(100%);
       transition:transform .36s var(--ease);
-      display:flex; flex-direction:column; overflow-y:auto;
+      display:flex; flex-direction:column;
+      border-left:1px solid rgba(255,255,255,.07);
     }
     .sidebar.open { transform:translateX(0); }
-    .sidebar-header {
+    .sb-head {
+      padding:20px 24px; border-bottom:1px solid rgba(255,255,255,.07);
       display:flex; align-items:center; justify-content:space-between;
-      padding:22px 22px 16px;
-      border-bottom:1px solid var(--line);
     }
-    .sidebar-brand img { height:32px; width:auto; }
-    .sidebar-close {
-      width:34px; height:34px; border-radius:50%;
-      background:rgba(255,255,255,.05); border:1px solid var(--line);
-      color:rgba(237,241,247,.5); font-size:.75rem;
+    .sb-logo { height:32px; width:auto; }
+    .sb-close {
+      width:36px; height:36px; border-radius:50%;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.05); color:rgba(255,255,255,.6);
       display:flex; align-items:center; justify-content:center;
-      cursor:pointer; transition:all .2s var(--ease);
+      cursor:pointer; font-size:.8rem; transition:all .2s;
     }
-    .sidebar-close:hover { background:rgba(255,255,255,.1); color:var(--paper); }
-    .sidebar-nav { flex:1; padding:20px 0; list-style:none; }
-    .sidebar-nav li a {
-      display:flex; align-items:center; gap:13px;
-      padding:13px 22px;
-      font-family:'Syne',sans-serif; font-size:.95rem; font-weight:500;
-      color:rgba(237,241,247,.55);
-      border-left:2px solid transparent;
-      transition:all .2s var(--ease);
+    .sb-close:hover { background:rgba(255,255,255,.12); color:#fff; }
+    .sb-nav { flex:1; list-style:none; padding:20px 0; overflow-y:auto; }
+    .sb-nav li a {
+      display:flex; align-items:center; gap:14px; padding:14px 24px;
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:.93rem; font-weight:600;
+      color:rgba(255,255,255,.45); border-left:2px solid transparent;
+      transition:all .2s;
     }
-    .sidebar-nav li a i { width:16px; text-align:center; font-size:.8rem; color:var(--sky); opacity:.7; }
-    .sidebar-nav li a:hover,
-    .sidebar-nav li a.act {
-      color:var(--paper); background:rgba(16,89,232,.07); border-left-color:var(--sky);
+    .sb-nav li a i { width:16px; font-size:.8rem; color:var(--blue-lt); }
+    .sb-nav li a:hover, .sb-nav li a.act {
+      color:#fff; background:rgba(255,255,255,.04); border-left-color:var(--blue-lt);
     }
-    .sidebar-nav li a:hover i,
-    .sidebar-nav li a.act i { opacity:1; }
-    .sidebar-footer {
-      padding:18px 22px; border-top:1px solid var(--line);
-      display:flex; flex-direction:column; gap:8px;
+    .sb-foot {
+      padding:20px 24px; border-top:1px solid rgba(255,255,255,.07);
+      display:flex; flex-direction:column; gap:10px;
     }
     .sb-cta {
       display:flex; align-items:center; justify-content:center; gap:8px;
-      background:linear-gradient(135deg,var(--sky),var(--sky-2));
-      color:#fff; padding:11px 18px; border-radius:50px;
-      font-size:.85rem; font-weight:500;
-      box-shadow:0 4px 14px rgba(16,89,232,.28);
-      transition:all .25s var(--ease);
+      padding:12px; border-radius:50px;
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:.85rem; font-weight:700;
+      background:var(--blue); color:#fff; transition:all .25s;
     }
-    .sb-cta:hover { transform:translateY(-2px); box-shadow:0 7px 20px rgba(16,89,232,.4); }
+    .sb-cta:hover { background:var(--blue-lt); transform:translateY(-1px); }
     .sb-wa {
       display:flex; align-items:center; justify-content:center; gap:8px;
-      background:#25d366; color:#fff; padding:11px 18px; border-radius:50px;
-      font-size:.85rem; font-weight:500; transition:all .25s var(--ease);
+      padding:12px; border-radius:50px;
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:.85rem; font-weight:700;
+      background:#25d366; color:#fff; transition:all .25s;
     }
-    .sb-wa:hover { background:#1ebe5c; transform:translateY(-2px); }
-    .sb-soc { display:flex; gap:7px; justify-content:center; margin-top:2px; }
-    .sb-soc a {
-      width:32px; height:32px; display:flex; align-items:center; justify-content:center;
-      border-radius:50%; background:rgba(255,255,255,.05); border:1px solid var(--line);
-      color:rgba(255,255,255,.35); font-size:.7rem; transition:all .2s var(--ease);
-    }
-    .sb-soc a:hover { background:var(--sky); color:#fff; border-color:var(--sky); }
+    .sb-wa:hover { background:#1ebe5c; transform:translateY(-1px); }
 
-    /* ── Nav ── */
+    /* ─── Navigation ─── */
     .nav {
       position:fixed; top:0; left:0; right:0; z-index:900;
-      padding:20px 0; background:transparent;
-      border-bottom:1px solid transparent;
+      padding:16px 0;
+      background:transparent;
       transition:all .36s var(--ease);
     }
     .nav.scrolled {
-      padding:12px 0;
-      background:rgba(5,13,26,.95);
-      backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
-      border-bottom-color:var(--line);
-      box-shadow:0 2px 32px rgba(0,0,0,.3);
+      background:rgba(255,255,255,.97);
+      backdrop-filter:blur(20px);
+      box-shadow:0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,.07);
+      padding:10px 0;
     }
     .nav-inner {
       max-width:1360px; margin:0 auto;
-      padding:0 clamp(16px,3vw,40px);
+      padding:0 clamp(16px,3vw,48px);
       display:flex; align-items:center; gap:24px;
     }
-    .nav-brand { display:flex; align-items:center; gap:10px; flex-shrink:0; }
-    .nav-brand img { height:40px; width:auto; transition:height .3s; }
-    .nav.scrolled .nav-brand img { height:34px; }
-    .nav-menu {
-      display:flex; align-items:center; gap:2px;
-      list-style:none; flex:1; justify-content:center;
+
+    /* Logo in navbar */
+    .nav-logo {
+      flex-shrink:0; display:flex; align-items:center;
+      transition:opacity .3s;
     }
+    .nav-logo img { height:36px; width:auto; display:block; }
+    /* white version shown on dark hero, dark version on scrolled */
+    .nav-logo .logo-light { display:block; }
+    .nav-logo .logo-dark  { display:none; }
+    .nav.scrolled .nav-logo .logo-light { display:none; }
+    .nav.scrolled .nav-logo .logo-dark  { display:block; }
+
+    .nav-menu { flex:1; display:flex; align-items:center; justify-content:center; gap:2px; list-style:none; }
     .nav-menu a {
-      font-size:.8rem; font-weight:500; letter-spacing:.03em;
-      color:rgba(237,241,247,.55); padding:6px 14px; border-radius:50px;
-      transition:all var(--t) var(--ease);
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:.82rem; font-weight:600;
+      letter-spacing:.02em; color:rgba(255,255,255,.65); padding:7px 16px; border-radius:50px;
+      transition:all .2s;
     }
-    .nav-menu a:hover, .nav-menu a.act { color:var(--paper); background:rgba(255,255,255,.06); }
+    .nav.scrolled .nav-menu a { color:var(--muted); }
+    .nav-menu a:hover, .nav-menu a.act { color:#fff; background:rgba(255,255,255,.12); }
+    .nav.scrolled .nav-menu a:hover, .nav.scrolled .nav-menu a.act { color:var(--blue); background:var(--blue-xs); }
     .nav-cta {
       display:inline-flex; align-items:center; gap:8px;
-      background:linear-gradient(135deg,var(--sky),var(--sky-2));
-      color:#fff; padding:8px 20px; border-radius:50px;
-      font-size:.8rem; font-weight:500; white-space:nowrap;
-      box-shadow:0 4px 14px rgba(16,89,232,.28);
-      transition:all .25s var(--ease);
+      padding:9px 22px; border-radius:50px;
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:.82rem; font-weight:700;
+      background:var(--blue); color:#fff;
+      box-shadow:0 4px 14px rgba(37,99,235,.35);
+      transition:all .25s; white-space:nowrap;
     }
-    .nav-cta:hover { transform:translateY(-2px); box-shadow:0 7px 22px rgba(16,89,232,.4); color:#fff; }
+    .nav-cta:hover { background:var(--blue-lt); transform:translateY(-1px); box-shadow:0 7px 20px rgba(37,99,235,.45); color:#fff; }
     .hamburger {
       display:none; flex-direction:column; gap:5px; cursor:pointer;
-      background:none; border:1px solid var(--line);
-      padding:8px 9px; border-radius:var(--r); flex-shrink:0;
+      background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+      padding:9px 10px; border-radius:10px; flex-shrink:0;
+      transition:background .2s;
     }
-    .hamburger span {
-      display:block; width:18px; height:1.5px;
-      background:rgba(237,241,247,.7); border-radius:2px;
-      transition:all .25s var(--ease);
-    }
-    @media (max-width:991px) {
+    .nav.scrolled .hamburger { background:var(--slate); border-color:var(--border); }
+    .hamburger span { display:block; width:18px; height:1.5px; background:rgba(255,255,255,.8); border-radius:2px; transition:all .25s; }
+    .nav.scrolled .hamburger span { background:var(--dark); }
+    @media(max-width:991px){
       .nav-menu, .nav-cta { display:none; }
       .hamburger { display:flex; }
       .nav-inner { justify-content:space-between; }
     }
 
-    /* ── Utilities ── */
-    .container { max-width:1320px; margin:0 auto; padding:0 clamp(16px,3vw,40px); }
+    /* ─── Utilities ─── */
+    .container { max-width:1320px; margin:0 auto; padding:0 clamp(16px,3vw,48px); }
+    .section { padding:clamp(80px,10vw,140px) 0; }
+    .section-light { background:var(--snow); }
+    .section-slate { background:var(--slate); }
+    .section-navy { background:var(--navy); }
+
     .btn {
-      display:inline-flex; align-items:center; gap:9px;
-      font-family:'Inter', sans-serif; font-weight:500; font-size:.85rem;
-      padding:10px 24px; border-radius:50px; border:none; cursor:pointer;
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:'Plus Jakarta Sans', sans-serif; font-weight:700; font-size:.85rem;
+      padding:11px 26px; border-radius:50px; border:none; cursor:pointer;
       transition:all .25s var(--ease); white-space:nowrap; text-decoration:none;
     }
-    .btn-sky { background:linear-gradient(135deg,var(--sky),var(--sky-2)); color:#fff; box-shadow:0 4px 14px rgba(16,89,232,.28); }
-    .btn-sky:hover { transform:translateY(-2px); box-shadow:0 7px 24px rgba(16,89,232,.42); color:#fff; }
-    .btn-ghost { background:transparent; color:var(--paper); border:1px solid rgba(237,241,247,.16); }
-    .btn-ghost:hover { background:rgba(255,255,255,.05); border-color:rgba(237,241,247,.3); transform:translateY(-2px); color:var(--paper); }
-    .btn-wa { background:#25d366; color:#fff; box-shadow:0 4px 14px rgba(37,211,102,.25); }
-    .btn-wa:hover { background:#1ebe5c; transform:translateY(-2px); box-shadow:0 7px 22px rgba(37,211,102,.38); color:#fff; }
+    .btn-blue { background:var(--blue); color:#fff; box-shadow:0 4px 16px rgba(37,99,235,.3); }
+    .btn-blue:hover { background:var(--blue-lt); transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,99,235,.4); color:#fff; }
+    .btn-outline { background:transparent; color:var(--dark); border:1.5px solid var(--border); }
+    .btn-outline:hover { border-color:var(--blue); color:var(--blue); background:var(--blue-xs); transform:translateY(-2px); }
+    .btn-outline-white { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.28); }
+    .btn-outline-white:hover { background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.5); color:#fff; transform:translateY(-2px); }
+    .btn-wa { background:#25d366; color:#fff; box-shadow:0 4px 14px rgba(37,211,102,.3); }
+    .btn-wa:hover { background:#1ebe5c; transform:translateY(-2px); box-shadow:0 8px 22px rgba(37,211,102,.4); color:#fff; }
 
     .eyebrow {
       display:inline-flex; align-items:center; gap:10px;
-      font-size:.68rem; font-weight:500; text-transform:uppercase;
-      letter-spacing:.2em; color:var(--sky-2); margin-bottom:12px;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      font-size:.68rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.2em; color:var(--blue); margin-bottom:14px;
     }
-    .eyebrow::before { content:''; width:18px; height:1px; background:var(--sky-2); opacity:.6; }
-    .sec-h { font-size:clamp(1.6rem,3.8vw,2.7rem); margin-bottom:14px; }
-    .hl { background:linear-gradient(135deg,var(--sky),var(--sky-2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .hl-amber { background:linear-gradient(135deg,var(--amber),var(--amber-lt)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
-    .section { padding:clamp(72px,9vw,128px) 0; }
-    .section-alt { background:var(--ink-mid); }
-    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent); }
+    .eyebrow::before { content:''; width:20px; height:2px; background:var(--blue); border-radius:2px; }
+    .eyebrow-amber { color:var(--amber); }
+    .eyebrow-amber::before { background:var(--amber); }
+    .eyebrow-white { color:rgba(255,255,255,.55); }
+    .eyebrow-white::before { background:rgba(255,255,255,.35); }
+
+    .sec-h { font-size:clamp(1.75rem,4vw,3rem); margin-bottom:16px; }
+    .hl { color:var(--blue); }
+    .hl-amber { color:var(--amber); }
+    .hl-white { color:#fff; }
     .text-center { text-align:center; }
     .mx-auto { margin-left:auto; margin-right:auto; }
 
-    .soc { display:flex; gap:5px; }
-    .soc a {
-      width:30px; height:30px; display:flex; align-items:center; justify-content:center;
-      border-radius:50%; background:rgba(255,255,255,.04); border:1px solid var(--line);
-      color:rgba(255,255,255,.3); font-size:.68rem; transition:all .22s var(--ease);
-    }
-    .soc a:hover { background:var(--sky); color:#fff; border-color:var(--sky); transform:translateY(-2px); }
-
-    /* ── Hero ── */
-    .hero {
-      position:relative; overflow:hidden; background:var(--ink);
-      min-height:100svh; display:flex; flex-direction:column;
-    }
-    .hero-grid {
-      position:absolute; inset:0; z-index:0;
-      background-image:
-        linear-gradient(rgba(16,89,232,.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16,89,232,.03) 1px, transparent 1px);
-      background-size:60px 60px;
-      mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
-      -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 30%, transparent 100%);
-    }
-    .hero-orb { position:absolute; border-radius:50%; filter:blur(100px); pointer-events:none; z-index:0; }
-    .slides-viewport { flex:1; position:relative; overflow:hidden; min-height:100svh; }
-    .slide { position:absolute; inset:0; opacity:0; transition:opacity .9s var(--ease); }
-    .slide.active { opacity:1; }
-    /* Fundo de fallback enquanto imagem não carrega */
-    .slide-bg {
-      width:100%; height:100%; background:var(--ink-lt); position:relative;
-    }
-    .slide-bg img {
-      width:100%; height:100%; object-fit:cover; object-position:center top;
-    }
-    .slide::after {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(7,17,31,.08) 0%, rgba(7,17,31,.45) 50%, rgba(7,17,31,.92) 100%);
-    }
-    .slide-dots {
-      position:absolute; bottom:clamp(72px,10vw,96px);
-      left:50%; transform:translateX(-50%); z-index:2; display:flex; gap:7px;
-    }
-    .dot {
-      width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,.25);
-      border:none; cursor:pointer; transition:all .3s;
-    }
-    .dot.active { background:var(--sky); width:18px; border-radius:3px; }
-    .hero-copy {
-      position:absolute; bottom:0; left:0; right:0; z-index:3;
-      padding:clamp(24px,4vw,56px) 0 clamp(40px,5vw,68px);
-    }
-    .hero-copy-inner { max-width:680px; }
-    .hero-kicker {
-      display:inline-block;
-      font-size:.7rem; font-weight:500; text-transform:uppercase; letter-spacing:.22em;
-      color:rgba(237,241,247,.45); margin-bottom:16px;
-    }
-    .hero-h {
-      font-size:clamp(2rem,5.5vw,4.4rem); font-weight:700;
-      color:var(--paper); line-height:1.04; letter-spacing:-.03em; margin-bottom:16px;
-    }
-    .hero-h em {
-      font-style:italic; font-weight:300;
-      background:linear-gradient(135deg,var(--sky),var(--sky-2));
-      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-    }
-    .hero-sub {
-      font-size:clamp(.88rem,1.6vw,1rem); color:rgba(237,241,247,.55);
-      max-width:480px; margin-bottom:28px; line-height:1.8;
-    }
-    .hero-btns { display:flex; flex-wrap:wrap; gap:10px; }
-    @media (max-width:480px) {
-      .hero-h { font-size:clamp(1.85rem,7.5vw,2.5rem); }
-      .hero-sub { font-size:.88rem; }
-    }
-
-    /* ── Sobre Nós ── */
-    .about-grid {
-      display:grid; grid-template-columns:5fr 7fr;
-      gap:clamp(32px,5vw,80px); align-items:center;
-    }
-    @media (max-width:860px) { .about-grid { grid-template-columns:1fr; gap:44px; } }
-    .about-img { position:relative; border-radius:var(--r-lg); overflow:visible; }
-    .about-img > img { border-radius:var(--r-lg); width:100%; display:block; filter:brightness(.9) contrast(1.05); }
-    .about-img::before {
-      content:''; position:absolute; inset:0; z-index:1;
-      border:1px solid rgba(200,146,42,.18); border-radius:var(--r-lg); pointer-events:none;
-    }
-    .about-badge {
-      position:absolute; bottom:24px; right:-12px; z-index:2;
-      background:var(--ink-lt); border:1px solid rgba(200,146,42,.3);
-      border-radius:var(--r); padding:18px 22px; text-align:center;
-      box-shadow:0 12px 36px rgba(0,0,0,.5);
-    }
-    @media (max-width:860px) { .about-badge { right:16px; } }
-    .about-badge .n {
-      font-family:'Syne',sans-serif; font-size:2.2rem; font-weight:700;
-      color:var(--amber-lt); line-height:1; margin-bottom:3px; letter-spacing:-.04em;
-    }
-    .about-badge .l {
-      font-size:.65rem; font-weight:500; color:rgba(237,241,247,.4);
-      text-transform:uppercase; letter-spacing:.1em;
-    }
-    .check-list { list-style:none; padding:0; margin:20px 0 28px; }
-    .check-list li {
-      display:flex; align-items:flex-start; gap:12px;
-      margin-bottom:11px; font-size:.9rem; color:rgba(237,241,247,.7);
-    }
-    .chk {
-      width:18px; height:18px; flex-shrink:0; margin-top:2px;
-      background:rgba(16,89,232,.12); border-radius:50%;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .chk i { font-size:.5rem; color:var(--sky-2); }
-
-    /* ── Oku Platform ── */
-    .platform-section {
-      background:var(--ink-lt);
-      border-top:1px solid var(--line); border-bottom:1px solid var(--line);
-      padding:clamp(72px,9vw,128px) 0; position:relative; overflow:hidden;
-    }
-    .platform-section::before {
-      content:''; position:absolute; inset:0;
-      background:radial-gradient(ellipse 55% 70% at 85% 50%, rgba(16,89,232,.04) 0%, transparent 65%);
-    }
-    .platform-header {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:clamp(32px,5vw,72px); align-items:center;
-      margin-bottom:clamp(48px,6vw,72px);
-    }
-    @media (max-width:768px) { .platform-header { grid-template-columns:1fr; } }
-    .platform-header p { font-size:.97rem; max-width:480px; line-height:1.8; }
-    .prod-grid {
-      display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
-    }
-    @media (max-width:900px) { .prod-grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:520px)  { .prod-grid { grid-template-columns:1fr; } }
-    .prod-card {
-      background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg);
-      padding:28px 24px; display:flex; flex-direction:column;
-      position:relative; overflow:hidden; transition:all .3s var(--ease);
-    }
-    .prod-card::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:1px;
-      background:linear-gradient(90deg,transparent,rgba(16,89,232,.35),transparent);
-      transform:scaleX(0); transform-origin:left; transition:transform .32s var(--ease);
-    }
-    .prod-card:hover { transform:translateY(-6px); border-color:rgba(16,89,232,.22); box-shadow:0 20px 48px rgba(0,0,0,.4); }
-    .prod-card:hover::before { transform:scaleX(1); }
-    .prod-icon {
-      width:44px; height:44px; border-radius:10px; background:rgba(16,89,232,.1);
-      display:flex; align-items:center; justify-content:center;
-      margin-bottom:18px; transition:all .28s var(--ease);
-    }
-    .prod-card:hover .prod-icon { background:linear-gradient(135deg,var(--sky),var(--sky-2)); box-shadow:0 8px 18px rgba(16,89,232,.32); }
-    .prod-icon i { font-size:1.2rem; color:var(--sky); transition:color .28s; }
-    .prod-card:hover .prod-icon i { color:#fff; }
-    .prod-name { font-size:.97rem; margin-bottom:8px; }
-    .prod-card p { font-size:.83rem; color:var(--ghost); flex:1; line-height:1.7; margin:0; }
-    .prod-tag {
-      display:inline-block; margin-top:14px;
-      font-size:.68rem; color:rgba(16,89,232,.8); letter-spacing:.04em;
-      background:rgba(16,89,232,.07); border:1px solid rgba(16,89,232,.14);
-      padding:3px 10px; border-radius:50px;
-    }
-
-    /* ── Soluções ── */
-    .svc-list { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:48px; }
-    @media (max-width:640px) { .svc-list { grid-template-columns:1fr; } }
-    .svc-row {
-      display:flex; align-items:flex-start; gap:16px;
-      background:var(--card); border:1px solid var(--line);
-      border-radius:var(--r); padding:20px 22px; transition:all .25s var(--ease);
-    }
-    .svc-row:hover { border-color:rgba(16,89,232,.22); background:rgba(16,89,232,.04); }
-    .svc-ic {
-      width:40px; height:40px; flex-shrink:0;
-      background:rgba(16,89,232,.09); border-radius:9px;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .svc-ic i { font-size:.95rem; color:var(--sky); }
-    .svc-row h4 { font-size:.9rem; margin-bottom:4px; }
-    .svc-row p  { font-size:.82rem; color:var(--ghost); margin:0; line-height:1.65; }
-
-    /* ── Contacto ── */
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,4vw,52px); align-items:start; }
-    @media (max-width:768px) { .contact-grid { grid-template-columns:1fr; } }
-    .ci-card {
-      background:rgba(0,0,0,.2); border:1px solid var(--line);
-      border-radius:var(--r-lg); padding:clamp(24px,4vw,40px);
-    }
-    .ci-card h4 { font-size:1rem; margin-bottom:24px; }
-    .ci-item { display:flex; align-items:flex-start; gap:13px; margin-bottom:20px; }
-    .ci-item:last-of-type { margin-bottom:0; }
-    .ci-ic {
-      width:38px; height:38px; flex-shrink:0;
-      background:rgba(16,89,232,.09); border-radius:9px;
-      display:flex; align-items:center; justify-content:center;
-    }
-    .ci-ic i { color:var(--sky); font-size:.85rem; }
-    .ci-item h6 {
-      font-family:'Inter',sans-serif; font-size:.65rem; font-weight:500;
-      text-transform:uppercase; letter-spacing:.1em;
-      color:rgba(237,241,247,.3); margin-bottom:3px;
-    }
-    .ci-item p, .ci-item a { color:rgba(237,241,247,.7); font-size:.88rem; margin:0; transition:color .2s; }
-    .ci-item a:hover { color:var(--sky-2); }
-    .ci-side { display:flex; flex-direction:column; gap:20px; }
-    .wa-block {
-      background:linear-gradient(135deg,rgba(37,211,102,.09),rgba(37,211,102,.04));
-      border:1px solid rgba(37,211,102,.18); border-radius:var(--r-lg); padding:28px; text-align:center;
-    }
-    .wa-block h4 { font-size:1rem; margin-bottom:8px; }
-    .wa-block > p { font-size:.83rem; color:var(--ghost); margin-bottom:16px; }
-    .wa-block .hint { font-size:.74rem; color:var(--ghost); margin-top:9px; margin-bottom:0; }
-    .ci-map {
-      background:var(--card); border:1px solid var(--line); border-radius:var(--r-lg);
-      overflow:hidden; flex:1; min-height:220px;
-    }
-    .ci-map iframe { width:100%; height:100%; min-height:220px; border:none; filter:brightness(.85) contrast(1.1) saturate(.7); }
-
-    /* ── Footer ── */
-    .footer { background:#020b17; border-top:1px solid var(--line); padding:clamp(56px,7vw,84px) 0 0; }
-    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:clamp(24px,4vw,48px); }
-    @media (max-width:900px)  { .footer-grid { grid-template-columns:1fr 1fr; } }
-    @media (max-width:540px)  { .footer-grid { grid-template-columns:1fr; } }
-    .footer-brand { display:flex; align-items:center; gap:9px; margin-bottom:14px; }
-    .footer-brand img { height:70px; width:auto; }
-    .footer-about { font-size:.83rem; color:var(--ghost); line-height:1.75; margin-bottom:20px; }
-    .footer-head {
-      font-size:.65rem; font-weight:500; text-transform:uppercase;
-      letter-spacing:.2em; color:rgba(237,241,247,.25); margin-bottom:14px;
-    }
-    .footer-links { list-style:none; padding:0; }
-    .footer-links li { margin-bottom:8px; }
-    .footer-links a {
-      font-size:.84rem; color:var(--ghost);
-      display:inline-flex; align-items:center; gap:7px; transition:all .2s var(--ease);
-    }
-    .footer-links a:hover { color:var(--paper); transform:translateX(3px); }
-    .footer-bottom { border-top:1px solid rgba(255,255,255,.04); padding:20px 0; margin-top:clamp(40px,5vw,60px); }
-    .footer-bottom-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
-    .footer-bottom p { font-size:.76rem; color:var(--ghost); margin:0; }
-    .heart { color:var(--amber); }
-
-    /* ── Back to top ── */
+    /* ─── Back to top ─── */
     #btt {
-      position:fixed; bottom:24px; right:24px; z-index:800;
-      width:42px; height:42px;
-      background:linear-gradient(135deg,var(--sky),var(--sky-2));
-      color:#fff; border:none; border-radius:50%; cursor:pointer;
-      display:flex; align-items:center; justify-content:center; font-size:.75rem;
+      position:fixed; bottom:28px; right:28px; z-index:800;
+      width:44px; height:44px; border-radius:50%; border:none; cursor:pointer;
+      background:var(--blue); color:#fff; font-size:.75rem;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 4px 16px rgba(37,99,235,.4);
       opacity:0; visibility:hidden; transform:translateY(8px);
-      transition:all .26s var(--ease); box-shadow:0 4px 14px rgba(16,89,232,.36);
+      transition:all .28s var(--ease);
     }
     #btt.show { opacity:1; visibility:visible; transform:translateY(0); }
-    #btt:hover { transform:translateY(-3px); box-shadow:0 7px 20px rgba(16,89,232,.48); }
+    #btt:hover { transform:translateY(-3px); box-shadow:0 8px 22px rgba(37,99,235,.5); }
 
-    /* ── Entrance animations ── */
-    [data-anim] { opacity:0; transform:translateY(20px); transition:opacity .65s var(--ease), transform .65s var(--ease); }
+    /* ─── Entrance animations ─── */
+    [data-anim] { opacity:0; transform:translateY(24px); transition:opacity .7s var(--ease), transform .7s var(--ease); }
     [data-anim].visible { opacity:1; transform:translateY(0); }
-    [data-anim][data-delay="1"] { transition-delay:.07s; }
-    [data-anim][data-delay="2"] { transition-delay:.14s; }
-    [data-anim][data-delay="3"] { transition-delay:.21s; }
-    [data-anim][data-delay="4"] { transition-delay:.28s; }
-    [data-anim][data-delay="5"] { transition-delay:.35s; }
-    [data-anim][data-delay="6"] { transition-delay:.42s; }
-    [data-anim][data-delay="7"] { transition-delay:.49s; }
-    [data-anim][data-delay="8"] { transition-delay:.56s; }
-    [data-anim][data-delay="9"] { transition-delay:.63s; }
+    [data-anim][data-delay="1"] { transition-delay:.08s; }
+    [data-anim][data-delay="2"] { transition-delay:.16s; }
+    [data-anim][data-delay="3"] { transition-delay:.24s; }
+    [data-anim][data-delay="4"] { transition-delay:.32s; }
+    [data-anim][data-delay="5"] { transition-delay:.40s; }
+    [data-anim][data-delay="6"] { transition-delay:.48s; }
 
-    :focus-visible { outline:2px solid var(--sky); outline-offset:3px; border-radius:4px; }
+    /* ═══════════════════════════
+       HERO — dark world
+    ═══════════════════════════ */
+    .hero {
+      position:relative; min-height:100svh;
+      background:var(--navy);
+      display:flex; flex-direction:column;
+      overflow:hidden;
+    }
+
+    /* Slide images sit inside navy — the overlay tints them dark-navy */
+    .hero-slides { position:absolute; inset:0; }
+    .slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s var(--ease); }
+    .slide.active { opacity:1; }
+    .slide-bg {
+      width:100%; height:100%;
+      background:var(--navy); /* fallback = navy when image missing */
+    }
+    .slide-bg img {
+      width:100%; height:100%;
+      object-fit:cover; object-position:center;
+    }
+    /* Dark-navy overlay — stronger at top (nav) and bottom (gradient into stats) */
+    .slide::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(
+        to bottom,
+        rgba(10,22,40,.72) 0%,
+        rgba(10,22,40,.50) 35%,
+        rgba(10,22,40,.60) 60%,
+        rgba(10,22,40,.92) 100%
+      );
+    }
+
+    /* ── Bottom gradient that bleeds INTO the stats section ── */
+    .hero-fade-bottom {
+      position:absolute; bottom:0; left:0; right:0; z-index:4; pointer-events:none;
+      height:220px;
+      background:linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--navy) 100%
+      );
+    }
+
+    /* Geometric grid overlay */
+    .hero::before {
+      content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(37,99,235,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.05) 1px, transparent 1px);
+      background-size:72px 72px;
+    }
+    /* Glow orbs */
+    .hero-orb-1 {
+      position:absolute; z-index:1; pointer-events:none;
+      width:700px; height:700px; border-radius:50%;
+      background:radial-gradient(circle, rgba(37,99,235,.13) 0%, transparent 68%);
+      top:-200px; right:-150px;
+    }
+    .hero-orb-2 {
+      position:absolute; z-index:1; pointer-events:none;
+      width:440px; height:440px; border-radius:50%;
+      background:radial-gradient(circle, rgba(245,158,11,.08) 0%, transparent 68%);
+      bottom:120px; left:-120px;
+    }
+
+    .hero-content {
+      position:relative; z-index:3;
+      flex:1; display:flex; flex-direction:column; justify-content:flex-end;
+      padding-bottom:clamp(100px,12vw,160px); /* more bottom space for gradient overlap */
+      padding-top:140px;
+    }
+    .hero-kicker {
+      display:inline-flex; align-items:center; gap:10px;
+      font-family:'Plus Jakarta Sans', sans-serif;
+      font-size:.72rem; font-weight:700; text-transform:uppercase;
+      letter-spacing:.22em; color:rgba(255,255,255,.4); margin-bottom:20px;
+    }
+    .hero-kicker::before { content:''; width:24px; height:1px; background:var(--amber); opacity:.7; }
+    .hero-h {
+      font-size:clamp(2.4rem,6vw,5.2rem); font-weight:800;
+      color:#fff; line-height:1.02; letter-spacing:-.04em; margin-bottom:20px;
+    }
+    .hero-h em { font-style:normal; color:var(--amber); }
+    .hero-sub {
+      font-size:clamp(.9rem,1.6vw,1.05rem);
+      color:rgba(255,255,255,.5); max-width:480px;
+      line-height:1.85; margin-bottom:36px;
+    }
+    .hero-btns { display:flex; flex-wrap:wrap; gap:12px; }
+
+    /* Slide dots */
+    .hero-dots {
+      position:absolute; bottom:clamp(32px,4vw,52px);
+      right:clamp(16px,3vw,48px); z-index:5;
+      display:flex; gap:8px; align-items:center;
+    }
+    .dot {
+      width:7px; height:7px; border-radius:50%;
+      background:rgba(255,255,255,.22);
+      border:none; cursor:pointer; transition:all .3s;
+    }
+    .dot.active { background:var(--amber); width:22px; border-radius:4px; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      position:absolute; bottom:clamp(32px,4vw,52px); left:clamp(16px,3vw,48px);
+      z-index:5; display:flex; align-items:center; gap:10px;
+      font-size:.68rem; letter-spacing:.18em; text-transform:uppercase;
+      color:rgba(255,255,255,.28); font-family:'Plus Jakarta Sans', sans-serif; font-weight:600;
+    }
+    .scroll-line { width:32px; height:1px; background:rgba(255,255,255,.18); position:relative; overflow:hidden; }
+    .scroll-line::after {
+      content:''; position:absolute; inset:0;
+      background:var(--amber); transform:translateX(-100%);
+      animation:scroll-tick 2s ease infinite;
+    }
+    @keyframes scroll-tick { 0%{transform:translateX(-100%)} 50%{transform:translateX(0)} 100%{transform:translateX(100%)} }
+
+    /* ═══════════════════════════
+       STATS — lives inside the navy→snow transition
+       The section itself starts dark (navy) and the card
+       punches through to white as the gradient rolls in.
+    ═══════════════════════════ */
+    .stats-wrap {
+      /* gradient from navy (top) to snow (bottom) — the bridge IS this section */
+      background:linear-gradient(
+        to bottom,
+        var(--navy)         0%,
+        var(--navy-mid)     30%,
+        #0f2540             50%,
+        #e8edf5             72%,
+        var(--snow)         100%
+      );
+      padding:0 0 clamp(60px,8vw,100px);
+    }
+    .stats-bar {
+      background:var(--card-bg);
+      border:1px solid var(--border);
+      border-radius:var(--r-xl);
+      padding:clamp(28px,4vw,44px) clamp(24px,5vw,60px);
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:32px;
+      position:relative; z-index:10;
+      box-shadow:0 8px 40px rgba(0,0,0,.09);
+      max-width:1100px; margin:0 auto;
+    }
+    @media(max-width:768px){ .stats-bar { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:400px){ .stats-bar { grid-template-columns:1fr; } }
+    .stat-item { text-align:center; }
+    .stat-n {
+      font-family:'Plus Jakarta Sans', sans-serif;
+      font-size:clamp(1.8rem,4vw,2.8rem); font-weight:800;
+      color:var(--dark); line-height:1; margin-bottom:6px; letter-spacing:-.04em;
+    }
+    .stat-n span { color:var(--blue); }
+    .stat-l { font-size:.72rem; text-transform:uppercase; letter-spacing:.15em; color:var(--muted); font-weight:600; }
+
+    /* Dividers between stats */
+    .stat-item + .stat-item { border-left:1px solid var(--border); }
+    @media(max-width:768px){
+      .stat-item + .stat-item { border-left:none; }
+      .stat-item:nth-child(odd) { border-right:1px solid var(--border); }
+      .stat-item:nth-child(n+3) { border-top:1px solid var(--border); padding-top:28px; }
+    }
+
+    /* ═══════════════════════════
+       SOBRE NÓS
+    ═══════════════════════════ */
+    .about-grid {
+      display:grid; grid-template-columns:1fr 1fr;
+      gap:clamp(40px,6vw,100px); align-items:center;
+    }
+    @media(max-width:860px){ .about-grid { grid-template-columns:1fr; gap:48px; } }
+
+    .about-visual { position:relative; }
+    .about-img-wrap {
+      border-radius:var(--r-xl); overflow:hidden;
+      box-shadow:0 24px 64px rgba(0,0,0,.12); position:relative;
+    }
+    .about-img-wrap img { width:100%; display:block; }
+    .about-img-wrap::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(135deg, transparent 60%, rgba(37,99,235,.15) 100%);
+      border-radius:var(--r-xl);
+    }
+    .about-accent {
+      position:absolute; top:-16px; left:-16px;
+      width:120px; height:120px; border-radius:var(--r-lg);
+      background:var(--blue-xs); border:1px solid rgba(37,99,235,.15); z-index:-1;
+    }
+    .about-badge {
+      position:absolute; bottom:28px; right:-20px;
+      background:#fff; border:1px solid var(--border); border-radius:var(--r-lg);
+      padding:20px 26px; text-align:center;
+      box-shadow:0 12px 36px rgba(0,0,0,.12); z-index:2;
+    }
+    @media(max-width:860px){ .about-badge { right:16px; } }
+    .badge-n {
+      font-family:'Plus Jakarta Sans', sans-serif; font-size:2.4rem; font-weight:800;
+      color:var(--amber); line-height:1; letter-spacing:-.05em; margin-bottom:4px;
+    }
+    .badge-l { font-size:.65rem; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); font-weight:600; }
+
+    .about-text .sec-h { color:var(--dark); }
+    .check-list { list-style:none; margin:24px 0 32px; }
+    .check-list li {
+      display:flex; align-items:flex-start; gap:12px;
+      margin-bottom:13px; font-size:.9rem; color:var(--muted);
+    }
+    .chk {
+      width:20px; height:20px; flex-shrink:0; margin-top:1px;
+      background:var(--blue-xs); border-radius:50%;
+      display:flex; align-items:center; justify-content:center;
+    }
+    .chk i { font-size:.52rem; color:var(--blue); }
+
+    /* ═══════════════════════════
+       OKU PLATFORM (navy bg)
+    ═══════════════════════════ */
+    .platform-section {
+      background:var(--navy);
+      padding:clamp(80px,10vw,140px) 0;
+      position:relative; overflow:hidden;
+    }
+    .platform-section::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(37,99,235,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.04) 1px, transparent 1px);
+      background-size:60px 60px;
+    }
+    .platform-orb {
+      position:absolute; pointer-events:none; border-radius:50%; filter:blur(80px);
+      width:500px; height:500px;
+      background:radial-gradient(circle, rgba(37,99,235,.1) 0%, transparent 70%);
+      top:-100px; right:-100px;
+    }
+    .platform-header {
+      display:grid; grid-template-columns:1fr 1fr; gap:clamp(32px,5vw,80px);
+      align-items:end; margin-bottom:clamp(48px,6vw,80px);
+      position:relative; z-index:1;
+    }
+    @media(max-width:768px){ .platform-header { grid-template-columns:1fr; } }
+    .platform-header .sec-h { color:#fff; }
+    .platform-header p { color:rgba(255,255,255,.45); font-size:.95rem; line-height:1.8; }
+
+    .prod-grid {
+      display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+      position:relative; z-index:1;
+    }
+    @media(max-width:960px){ .prod-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:540px){ .prod-grid { grid-template-columns:1fr; } }
+
+    .prod-card {
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:var(--r-lg); padding:28px 26px;
+      display:flex; flex-direction:column;
+      position:relative; overflow:hidden;
+      transition:all .32s var(--ease); cursor:pointer;
+    }
+    .prod-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:2px;
+      background:var(--prod-color, var(--blue));
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .35s var(--ease);
+    }
+    .prod-card:hover { transform:translateY(-6px); background:rgba(255,255,255,.07); border-color:rgba(255,255,255,.14); box-shadow:0 20px 48px rgba(0,0,0,.4); }
+    .prod-card:hover::before { transform:scaleX(1); }
+    .prod-icon {
+      width:48px; height:48px; border-radius:12px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:20px; transition:all .28s;
+    }
+    .prod-card:hover .prod-icon { background:var(--prod-color, var(--blue)); border-color:transparent; }
+    .prod-icon i { font-size:1.1rem; color:var(--prod-color, var(--blue)); transition:color .28s; }
+    .prod-card:hover .prod-icon i { color:#fff; }
+    .prod-name { font-size:1rem; font-weight:700; color:#fff; margin-bottom:10px; }
+    .prod-card p { font-size:.83rem; color:rgba(255,255,255,.38); flex:1; line-height:1.75; margin:0 0 18px; }
+    .prod-tag {
+      display:inline-block; font-size:.68rem; font-weight:700;
+      color:var(--prod-color, var(--blue)); letter-spacing:.06em; text-transform:uppercase;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1);
+      padding:4px 12px; border-radius:50px;
+    }
+
+    /* ═══════════════════════════
+       SOLUÇÕES (light bg)
+    ═══════════════════════════ */
+    .svc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:56px; }
+    @media(max-width:640px){ .svc-grid { grid-template-columns:1fr; } }
+
+    .svc-card {
+      background:var(--card-bg); border:1px solid var(--border); border-radius:var(--r-lg);
+      padding:28px 26px; display:flex; gap:18px; align-items:flex-start;
+      transition:all .25s var(--ease);
+    }
+    .svc-card:hover { border-color:var(--blue); box-shadow:0 8px 32px rgba(37,99,235,.1); transform:translateY(-3px); }
+    .svc-icon {
+      width:44px; height:44px; flex-shrink:0; border-radius:12px;
+      background:var(--blue-xs); border:1px solid rgba(37,99,235,.15);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .svc-icon i { font-size:.95rem; color:var(--blue); }
+    .svc-card h4 { font-size:.95rem; font-weight:700; margin-bottom:6px; color:var(--dark); }
+    .svc-card p { font-size:.83rem; color:var(--muted); margin:0; line-height:1.65; }
+
+    /* ═══════════════════════════
+       CONTACT
+    ═══════════════════════════ */
+    .contact-grid { display:grid; grid-template-columns:5fr 7fr; gap:clamp(24px,4vw,56px); }
+    @media(max-width:860px){ .contact-grid { grid-template-columns:1fr; } }
+
+    .contact-info-card {
+      background:var(--navy); border-radius:var(--r-xl);
+      padding:clamp(32px,5vw,48px); color:#fff;
+      position:relative; overflow:hidden;
+    }
+    .contact-info-card::before {
+      content:''; position:absolute; inset:0; pointer-events:none;
+      background-image:
+        linear-gradient(rgba(37,99,235,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,.06) 1px, transparent 1px);
+      background-size:48px 48px;
+    }
+    .contact-info-card h4 { color:#fff; font-size:1.4rem; margin-bottom:6px; position:relative; z-index:1; }
+    .contact-info-card > p { color:rgba(255,255,255,.4); font-size:.88rem; margin-bottom:36px; position:relative; z-index:1; }
+    .ci-item { display:flex; align-items:flex-start; gap:14px; margin-bottom:24px; position:relative; z-index:1; }
+    .ci-ic {
+      width:40px; height:40px; flex-shrink:0; border-radius:10px;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      display:flex; align-items:center; justify-content:center;
+    }
+    .ci-ic i { color:var(--blue-lt); font-size:.85rem; }
+    .ci-label { font-size:.65rem; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,.28); font-weight:600; margin-bottom:3px; }
+    .ci-val, .ci-val a { color:rgba(255,255,255,.72); font-size:.9rem; margin:0; transition:color .2s; }
+    .ci-val a:hover { color:#fff; }
+    .ci-soc { display:flex; gap:8px; margin-top:32px; position:relative; z-index:1; }
+    .ci-soc a {
+      width:36px; height:36px; border-radius:50%;
+      background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.38); font-size:.72rem; transition:all .22s;
+    }
+    .ci-soc a:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+
+    .contact-right { display:flex; flex-direction:column; gap:20px; }
+    .wa-card {
+      background:linear-gradient(135deg, #d4f7e3 0%, #e8f8f0 100%);
+      border:1px solid rgba(37,211,102,.2); border-radius:var(--r-xl);
+      padding:32px; text-align:center;
+    }
+    .wa-card h4 { font-size:1.1rem; color:var(--dark); margin-bottom:8px; }
+    .wa-card > p { font-size:.85rem; color:var(--muted); margin-bottom:20px; }
+    .wa-card .hint { font-size:.74rem; color:var(--muted); margin-top:10px; }
+    .map-card { flex:1; border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--border); min-height:220px; }
+    .map-card iframe { width:100%; height:100%; min-height:220px; border:none; }
+
+    /* ─── Footer ─── */
+    .footer { background:var(--navy); border-top:1px solid rgba(255,255,255,.05); padding:clamp(60px,8vw,96px) 0 0; }
+    .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:clamp(24px,4vw,56px); }
+    @media(max-width:900px){ .footer-grid { grid-template-columns:1fr 1fr; } }
+    @media(max-width:540px){ .footer-grid { grid-template-columns:1fr; } }
+    .footer-logo { height:80px; width:auto; margin-bottom:16px; display:block; opacity:.85; }
+    .footer-about { font-size:.83rem; color:rgba(255,255,255,.32); line-height:1.8; margin-bottom:22px; }
+    .footer-head { font-size:.65rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:rgba(255,255,255,.2); margin-bottom:16px; }
+    .footer-links { list-style:none; }
+    .footer-links li { margin-bottom:10px; }
+    .footer-links a { font-size:.84rem; color:rgba(255,255,255,.32); display:inline-flex; align-items:center; gap:8px; transition:all .22s; }
+    .footer-links a:hover { color:#fff; transform:translateX(4px); }
+    .footer-soc { display:flex; gap:8px; }
+    .footer-soc a {
+      width:32px; height:32px; border-radius:50%;
+      background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08);
+      display:flex; align-items:center; justify-content:center;
+      color:rgba(255,255,255,.28); font-size:.7rem; transition:all .22s;
+    }
+    .footer-soc a:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .footer-bottom {
+      border-top:1px solid rgba(255,255,255,.05); padding:22px 0;
+      margin-top:clamp(40px,5vw,64px);
+      display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    }
+    .footer-bottom p { font-size:.76rem; color:rgba(255,255,255,.22); margin:0; }
+    .footer-bottom a { color:rgba(255,255,255,.32); transition:color .2s; }
+    .footer-bottom a:hover { color:#fff; }
+
+    :focus-visible { outline:2px solid var(--blue); outline-offset:3px; border-radius:4px; }
+    @media(prefers-reduced-motion:reduce){
+      [data-anim] { opacity:1; transform:none; }
+      .slide { transition:none; }
+    }
   </style>
 </head>
 <body>
 
 <!-- Preloader -->
 <div id="pl" aria-hidden="true">
-  <div class="pl-ring"></div>
-  <div class="pl-name">OKUTONDA</div>
+  <img src="img/logo/logo-write.png" alt="OKUTONDA" class="pl-logo-img"
+       onerror="this.style.display='none'; document.querySelector('.pl-fallback').style.display='block'" />
+  <span class="pl-fallback" style="display:none; font-family:'Plus Jakarta Sans',sans-serif; font-size:1.1rem; font-weight:800; letter-spacing:.25em; color:#fff; text-transform:uppercase;">OKUTONDA</span>
+  <div class="pl-bar"><div class="pl-fill"></div></div>
 </div>
 
-<!-- Sidebar overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay" aria-hidden="true"></div>
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
 
 <!-- Sidebar -->
-<aside class="sidebar" id="sidebar" aria-label="Menu de navegação" aria-hidden="true">
-  <div class="sidebar-header">
-    <div class="sidebar-brand">
-      <img src="img/logo/logo-write.png" alt="OKUTONDA" onerror="this.style.display='none'" />
-    </div>
-    <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">
-      <i class="fas fa-times"></i>
-    </button>
+<aside class="sidebar" id="sidebar" aria-label="Menu" aria-hidden="true">
+  <div class="sb-head">
+    <img src="img/logo/logo-write.png" alt="OKUTONDA" class="sb-logo"
+         onerror="this.outerHTML='<span style=\'font-family:Plus Jakarta Sans,sans-serif;font-size:.9rem;font-weight:800;letter-spacing:.12em;color:#fff;text-transform:uppercase;\'>OKUTONDA</span>'" />
+    <button class="sb-close" id="sbClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
   </div>
-  <ul class="sidebar-nav" role="list">
-    <li><a href="#home"         class="sidebar-link act"><i class="fas fa-home"></i>Home</a></li>
-    <li><a href="#about"        class="sidebar-link"><i class="fas fa-building"></i>Sobre Nós</a></li>
-    <li><a href="#oku-platform" class="sidebar-link"><i class="fas fa-layer-group"></i>Oku Platform</a></li>
-    <li><a href="#services"     class="sidebar-link"><i class="fas fa-cogs"></i>Soluções</a></li>
-    <li><a href="#contact"      class="sidebar-link"><i class="fas fa-envelope"></i>Contacto</a></li>
+  <ul class="sb-nav">
+    <li><a href="#home"         class="sl act"><i class="fas fa-home"></i>Home</a></li>
+    <li><a href="#about"        class="sl"><i class="fas fa-building"></i>Sobre Nós</a></li>
+    <li><a href="#oku-platform" class="sl"><i class="fas fa-layer-group"></i>Oku Platform</a></li>
+    <li><a href="#services"     class="sl"><i class="fas fa-cogs"></i>Soluções</a></li>
+    <li><a href="#contact"      class="sl"><i class="fas fa-envelope"></i>Contacto</a></li>
   </ul>
-  <div class="sidebar-footer">
-    <a href="#contact" class="sb-cta sidebar-link"><i class="fas fa-paper-plane"></i>Solicitar Demonstração</a>
+  <div class="sb-foot">
+    <a href="#contact" class="sb-cta sl"><i class="fas fa-paper-plane"></i>Solicitar Demo</a>
     <a href="https://wa.link/qxuy5y" class="sb-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
-    <div class="sb-soc">
-      <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://wa.link/qxuy5y" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-    </div>
   </div>
 </aside>
 
 <!-- Nav -->
-<nav class="nav" id="nav" aria-label="Navegação principal">
+<nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#home" class="nav-brand">
-      <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
+
+    <!-- Logo: logo-header (white/light) on dark hero, logo (dark) when scrolled -->
+    <a href="#home" class="nav-logo">
+      <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" class="logo-light"
+           onerror="this.style.display='none'" />
+      <img src="img/logo/logotipo.png" alt="OKUTONDA Technologies" class="logo-dark"
+           onerror="this.style.display='none'" />
     </a>
-    <ul class="nav-menu" role="list">
+
+    <ul class="nav-menu">
       <li><a href="#home" class="act">Home</a></li>
       <li><a href="#about">Sobre Nós</a></li>
       <li><a href="./platform.html">Oku Platform</a></li>
@@ -583,94 +717,112 @@
       <li><a href="#contact">Contacto</a></li>
     </ul>
     <a href="#contact" class="nav-cta"><i class="fas fa-paper-plane"></i>Fale Connosco</a>
-    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- Hero -->
+<!-- ═══ HERO ═══ -->
 <section class="hero" id="home" aria-label="Apresentação">
-  <div class="hero-grid"></div>
-  <div class="hero-orb" style="width:500px;height:500px;background:rgba(16,89,232,.055);top:-160px;right:-80px;"></div>
-  <div class="hero-orb" style="width:300px;height:300px;background:rgba(200,146,42,.04);bottom:-60px;left:-40px;"></div>
+  <div class="hero-orb-1"></div>
+  <div class="hero-orb-2"></div>
 
-  <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column;">
-    <div class="slides-viewport">
-
-      <!-- Slide 1: eager (first paint) -->
-      <div class="slide active">
-        <div class="slide-bg">
-          <img src="img/slider/slider1.png" alt="OKUTONDA" width="1920" height="1080"
-               loading="eager" decoding="async" onerror="this.style.display='none'" />
-        </div>
-      </div>
-      <!-- Slides 2-4: lazy -->
-      <div class="slide">
-        <div class="slide-bg">
-          <img src="img/slider/slider2.png" alt="OKUTONDA" width="1920" height="1080"
-               loading="lazy" decoding="async" onerror="this.style.display='none'" />
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-bg">
-          <img src="img/slider/slider3.png" alt="OKUTONDA" width="1920" height="1080"
-               loading="lazy" decoding="async" onerror="this.style.display='none'" />
-        </div>
-      </div>
-      <div class="slide">
-        <div class="slide-bg">
-          <img src="img/slider/slider4.png" alt="OKUTONDA" width="1920" height="1080"
-               loading="lazy" decoding="async" onerror="this.style.display='none'" />
-        </div>
-      </div>
-
-      <div class="slide-dots">
-        <button class="dot active" data-i="0" aria-label="Slide 1"></button>
-        <button class="dot"        data-i="1" aria-label="Slide 2"></button>
-        <button class="dot"        data-i="2" aria-label="Slide 3"></button>
-        <button class="dot"        data-i="3" aria-label="Slide 4"></button>
+  <div class="hero-slides">
+    <div class="slide active">
+      <div class="slide-bg">
+        <img src="img/slider/slider1.png" alt="" loading="eager" decoding="async" />
       </div>
     </div>
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/slider/slider2.png" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/slider/slider3.png" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-bg">
+        <img src="img/slider/slider4.png" alt="" loading="lazy" decoding="async" />
+      </div>
+    </div>
+  </div>
 
-    <div class="hero-copy">
-      <div class="container">
-        <div class="hero-copy-inner" data-anim>
-          <span class="hero-kicker">OKUTONDA Technologies · Angola</span>
-          <h1 class="hero-h">Tecnologia para <em>transformar.</em></h1>
-          <p class="hero-sub">Plataformas digitais para empresas e instituições que exigem eficiência, integração e crescimento sustentado.</p>
-          <div class="hero-btns">
-            <a href="#contact"      class="btn btn-sky"><i class="fas fa-paper-plane"></i>Solicitar Demonstração</a>
-            <a href="#oku-platform" class="btn btn-ghost">Oku Platform <i class="fas fa-arrow-right"></i></a>
-          </div>
+  <!-- Bottom fade that bleeds into stats section -->
+  <div class="hero-fade-bottom"></div>
+
+  <div class="hero-content">
+    <div class="container">
+      <div data-anim style="max-width:660px;">
+        <span class="hero-kicker">OKUTONDA Technologies · Angola</span>
+        <h1 class="hero-h">Tecnologia para<br><em>transformar.</em></h1>
+        <p class="hero-sub">Plataformas digitais para empresas e instituições que exigem eficiência, integração e crescimento sustentado.</p>
+        <div class="hero-btns">
+          <a href="#contact"      class="btn btn-blue"><i class="fas fa-paper-plane"></i>Solicitar Demonstração</a>
+          <a href="#oku-platform" class="btn btn-outline-white">Oku Platform <i class="fas fa-arrow-right"></i></a>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-dots">
+    <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+    <button class="dot"        data-i="1" aria-label="Slide 2"></button>
+    <button class="dot"        data-i="2" aria-label="Slide 3"></button>
+    <button class="dot"        data-i="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="scroll-line"></div>Scroll
+  </div>
+</section>
+
+<!-- ═══ HERO → STATS GRADIENT SECTION ═══ -->
+<!-- No hard "bridge" div — the stats-wrap itself carries the gradient -->
+<section class="stats-wrap" aria-label="Destaques">
+  <div class="container">
+    <div class="stats-bar" data-anim>
+      <div class="stat-item">
+        <div class="stat-n">5<span>+</span></div>
+        <div class="stat-l">Anos de experiência</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">9<span></span></div>
+        <div class="stat-l">Produtos integrados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">100<span>%</span></div>
+        <div class="stat-l">Suporte local</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-n">AO<span></span></div>
+        <div class="stat-l">Made in Angola</div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- Sobre Nós -->
-<section class="section section-alt" id="about" aria-labelledby="about-h">
+<!-- ═══ SOBRE NÓS ═══ -->
+<section class="section section-light" id="about">
   <div class="container">
     <div class="about-grid">
-      <div data-anim>
-        <div class="about-img">
-          <img src="img/images/about-1.png" alt="Equipa OKUTONDA Technologies"
-               width="600" height="480" loading="lazy" decoding="async"
-               onerror="this.style.display='none'" />
-          <div class="about-badge">
-            <div class="n">5+</div>
-            <div class="l">Anos de<br>Experiência</div>
-          </div>
+      <div class="about-visual" data-anim>
+        <div class="about-accent"></div>
+        <div class="about-img-wrap">
+          <img src="img/images/about-1.png" alt="Equipa OKUTONDA" loading="lazy" decoding="async" onerror="this.style.display='none'" />
+        </div>
+        <div class="about-badge">
+          <div class="badge-n">5+</div>
+          <div class="badge-l">Anos de<br>Experiência</div>
         </div>
       </div>
-      <div data-anim data-delay="2">
+      <div class="about-text" data-anim data-delay="2">
         <div class="eyebrow">Sobre Nós</div>
-        <h2 class="sec-h" id="about-h">Transformação digital <span class="hl">feita em Angola</span></h2>
-        <p style="margin-bottom:6px;font-size:.95rem;">A OKUTONDA Technologies desenvolve soluções tecnológicas modernas para empresas, instituições de ensino e organizações públicas e privadas em Angola.</p>
-        <p style="font-size:.95rem;">O nosso foco é a criação de plataformas integradas que automatizam processos, centralizam dados e aumentam a produtividade — com suporte contínuo e especializado.</p>
+        <h2 class="sec-h">Transformação digital<br><span class="hl">feita em Angola</span></h2>
+        <p style="margin-bottom:10px;">A OKUTONDA Technologies desenvolve soluções tecnológicas modernas para empresas, instituições de ensino e organizações públicas e privadas em Angola.</p>
+        <p>O nosso foco é a criação de plataformas integradas que automatizam processos, centralizam dados e aumentam a produtividade — com suporte contínuo e especializado.</p>
         <ul class="check-list">
           <li><span class="chk"><i class="fas fa-check"></i></span>Soluções adaptadas ao contexto angolano</li>
           <li><span class="chk"><i class="fas fa-check"></i></span>Suporte técnico com SLA garantido</li>
@@ -678,114 +830,116 @@
           <li><span class="chk"><i class="fas fa-check"></i></span>Integração entre todos os módulos da Oku Platform</li>
           <li><span class="chk"><i class="fas fa-check"></i></span>Formação e capacitação de equipas locais</li>
         </ul>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <a href="#oku-platform" class="btn btn-sky">Oku Platform <i class="fas fa-arrow-right"></i></a>
-          <a href="#contact"      class="btn btn-ghost">Fale Connosco</a>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#oku-platform" class="btn btn-blue">Oku Platform <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact"      class="btn btn-outline">Fale Connosco</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- Oku Platform -->
-<section class="platform-section" id="oku-platform" aria-labelledby="oku-h">
-  <div class="container" style="position:relative;z-index:1;">
+<!-- ═══ OKU PLATFORM ═══ -->
+<section class="platform-section" id="oku-platform">
+  <div class="platform-orb"></div>
+  <div class="container">
     <div class="platform-header" data-anim>
       <div>
-        <div class="eyebrow">Oku Platform</div>
-        <h2 class="sec-h" id="oku-h">Um ecossistema. <span class="hl-amber">Múltiplas soluções.</span></h2>
-        <p>A Oku Platform reúne nove produtos integrados para gerir operações, pessoas, finanças e conhecimento — desenvolvidos especificamente para o contexto angolano.</p>
-        <a href="#contact" class="btn btn-sky" style="margin-top:20px;"><i class="fas fa-calendar-alt"></i>Agendar Demonstração</a>
+        <div class="eyebrow eyebrow-white">Oku Platform</div>
+        <h2 class="sec-h" style="color:#fff;">Um ecossistema.<br><span class="hl-amber">Múltiplas soluções.</span></h2>
       </div>
-      <div></div>
+      <div>
+        <p>A Oku Platform reúne nove produtos integrados para gerir operações, pessoas, finanças e conhecimento — desenvolvidos especificamente para o contexto angolano.</p>
+        <a href="#contact" class="btn btn-blue" style="margin-top:20px;"><i class="fas fa-calendar-alt"></i>Agendar Demonstração</a>
+      </div>
     </div>
 
     <div class="prod-grid">
-      <div class="prod-card" data-anim data-delay="1">
+      <div class="prod-card" data-anim data-delay="1" style="--prod-color:#10b981;">
         <div class="prod-icon"><i class="fas fa-graduation-cap"></i></div>
         <h4 class="prod-name">OkuEdu</h4>
-        <p>Sistema de gestão académica e administrativa para escolas, institutos e universidades — matrículas, notas, horários e comunicação com encarregados.</p>
+        <p>Gestão académica e administrativa para escolas, institutos e universidades — matrículas, notas, horários e comunicação com encarregados.</p>
         <span class="prod-tag">Gestão Educacional</span>
       </div>
-      <div class="prod-card" data-anim data-delay="2">
+      <div class="prod-card" data-anim data-delay="2" style="--prod-color:#3B82F6;">
         <div class="prod-icon"><i class="fas fa-briefcase"></i></div>
         <h4 class="prod-name">OkuERP</h4>
-        <p>Plataforma integrada para gestão de finanças, inventário, compras, vendas e relatórios, adaptada às normas contabilísticas angolanas.</p>
+        <p>Gestão integrada de finanças, inventário, compras, vendas e relatórios, adaptada às normas contabilísticas angolanas.</p>
         <span class="prod-tag">Gestão Empresarial</span>
       </div>
-      <div class="prod-card" data-anim data-delay="3">
+      <div class="prod-card" data-anim data-delay="3" style="--prod-color:#F59E0B;">
         <div class="prod-icon"><i class="fas fa-cash-register"></i></div>
         <h4 class="prod-name">OkuPOS</h4>
-        <p>Faturação, controlo de caixa, gestão de produtos e relatórios de vendas em tempo real. Funciona em modo offline com sincronização automática.</p>
+        <p>Faturação, controlo de caixa e gestão de produtos em tempo real. Funciona offline com sincronização automática.</p>
         <span class="prod-tag">Faturação & POS</span>
       </div>
-      <div class="prod-card" data-anim data-delay="4">
+      <div class="prod-card" data-anim data-delay="4" style="--prod-color:#8B5CF6;">
         <div class="prod-icon"><i class="fas fa-user-friends"></i></div>
         <h4 class="prod-name">OkuCRM</h4>
-        <p>Gestão de leads, oportunidades e histórico de clientes para maximizar a retenção e apoiar a tomada de decisão comercial.</p>
+        <p>Gestão de leads, oportunidades e histórico de clientes para maximizar a retenção e apoiar decisões comerciais.</p>
         <span class="prod-tag">Gestão de Clientes</span>
       </div>
-      <div class="prod-card" data-anim data-delay="5">
+      <div class="prod-card" data-anim data-delay="5" style="--prod-color:#EC4899;">
         <div class="prod-icon"><i class="fas fa-id-badge"></i></div>
         <h4 class="prod-name">OkuHR</h4>
-        <p>Digitalização de recursos humanos — colaboradores, contratos, férias, folhas de salário e avaliação de desempenho numa única plataforma.</p>
+        <p>Digitalização de RH — colaboradores, contratos, férias, folhas de salário e avaliação de desempenho numa plataforma.</p>
         <span class="prod-tag">Recursos Humanos</span>
+      </div>
+      <div class="prod-card" data-anim data-delay="6" style="--prod-color:#06B6D4; cursor:default; text-align:center; justify-content:center; align-items:center;">
+        <i class="fas fa-plus-circle" style="font-size:2rem;color:rgba(255,255,255,.15);margin-bottom:12px;"></i>
+        <p style="color:rgba(255,255,255,.25);font-size:.85rem;margin:0;">OkuDocs · OkuPay · OkuBI · OkuLibrary</p>
+        <a href="./platform.html" class="btn btn-outline-white" style="margin-top:16px;font-size:.78rem;">Ver todos <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- Soluções -->
-<section class="section" id="services" aria-labelledby="services-h">
+<!-- ═══ SOLUÇÕES ═══ -->
+<section class="section section-light" id="services">
   <div class="container">
     <div class="text-center" data-anim>
       <div class="eyebrow" style="justify-content:center;">Soluções</div>
-      <h2 class="sec-h" id="services-h">O que <span class="hl">construímos</span></h2>
-      <p class="mx-auto" style="max-width:500px;font-size:.95rem;color:var(--ghost);">Do desenvolvimento de software à consultoria tecnológica, entregamos soluções que geram impacto operacional real.</p>
+      <h2 class="sec-h">O que <span class="hl">construímos</span></h2>
+      <p class="mx-auto" style="max-width:480px;font-size:.95rem;">Do desenvolvimento de software à consultoria tecnológica, entregamos soluções que geram impacto operacional real.</p>
     </div>
-
-    <div class="svc-list" data-anim data-delay="1">
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-code"></i></div>
+    <div class="svc-grid" data-anim data-delay="1">
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-code"></i></div>
         <div>
           <h4>Desenvolvimento de Software</h4>
           <p>Sistemas personalizados e plataformas digitais adaptadas às necessidades específicas da sua organização.</p>
         </div>
       </div>
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-cogs"></i></div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-cogs"></i></div>
         <div>
           <h4>Sistemas Empresariais</h4>
           <p>ERP, CRM e soluções integradas para gerir finanças, inventário e recursos humanos, alinhadas à regulamentação angolana.</p>
         </div>
       </div>
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-school"></i></div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-school"></i></div>
         <div>
           <h4>Soluções Educacionais</h4>
           <p>Gestão académica completa para escolas primárias, secundárias, institutos e universidades com configuração por nível de ensino.</p>
         </div>
       </div>
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-chart-line"></i></div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-chart-line"></i></div>
         <div>
           <h4>Business Intelligence</h4>
           <p>Dashboards, KPIs e relatórios analíticos para decisões estratégicas suportadas por dados em tempo real.</p>
         </div>
       </div>
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-globe"></i></div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-globe"></i></div>
         <div>
           <h4>Plataformas Web</h4>
           <p>Sites institucionais, portais de serviço e aplicações web responsivas, seguras e optimizadas para o mercado local.</p>
         </div>
       </div>
-      <div class="svc-row">
-        <div class="svc-ic"><i class="fas fa-lightbulb"></i></div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-lightbulb"></i></div>
         <div>
           <h4>Consultoria Tecnológica</h4>
           <p>Planeamento de TI, avaliação de processos, governação de dados e acompanhamento em transformação digital.</p>
@@ -795,49 +949,70 @@
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- Contacto -->
-<section class="section section-alt" id="contact" aria-labelledby="contact-h">
+<!-- ═══ CTA BAND ═══ -->
+<section style="background:var(--blue);padding:clamp(56px,7vw,88px) 0;">
   <div class="container">
-    <div class="text-center mx-auto" style="max-width:520px;margin-bottom:clamp(40px,5vw,56px);" data-anim>
-      <div class="eyebrow" style="justify-content:center;">Contacto</div>
-      <h2 class="sec-h" id="contact-h">Tem um <span class="hl">projeto em mente?</span></h2>
-      <p style="font-size:.95rem;">Contacte-nos pelo WhatsApp, email ou telefone. Respondemos em até 24 horas úteis.</p>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;" data-anim>
+      <div>
+        <h2 style="color:#fff;font-size:clamp(1.4rem,3vw,2.2rem);margin-bottom:8px;">Pronto para digitalizar a sua organização?</h2>
+        <p style="color:rgba(255,255,255,.65);margin:0;">Fale com a nossa equipa e receba uma proposta personalizada.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;flex-shrink:0;">
+        <a href="#contact" class="btn" style="background:#fff;color:var(--blue);">Solicitar Demo <i class="fas fa-arrow-right"></i></a>
+        <a href="https://wa.link/qxuy5y" class="btn btn-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i>WhatsApp</a>
+      </div>
     </div>
+  </div>
+</section>
 
+<!-- ═══ CONTACTO ═══ -->
+<section class="section section-slate" id="contact">
+  <div class="container">
+    <div class="text-center mx-auto" style="max-width:520px;margin-bottom:clamp(40px,5vw,60px);" data-anim>
+      <div class="eyebrow" style="justify-content:center;">Contacto</div>
+      <h2 class="sec-h">Tem um <span class="hl">projecto em mente?</span></h2>
+      <p>Contacte-nos pelo WhatsApp, email ou telefone. Respondemos em até 24 horas úteis.</p>
+    </div>
     <div class="contact-grid" data-anim>
-      <div class="ci-card">
+      <div class="contact-info-card">
         <h4>Informações de Contacto</h4>
+        <p>Estamos disponíveis para conversar sobre o seu projecto.</p>
         <div class="ci-item">
           <div class="ci-ic"><i class="fas fa-map-marker-alt"></i></div>
-          <div><h6>Localização</h6><p>Luanda, Angola</p></div>
+          <div>
+            <div class="ci-label">Localização</div>
+            <p class="ci-val">Luanda, Angola</p>
+          </div>
         </div>
         <div class="ci-item">
           <div class="ci-ic"><i class="fas fa-envelope"></i></div>
-          <div><h6>Email</h6><a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a></div>
+          <div>
+            <div class="ci-label">Email</div>
+            <p class="ci-val"><a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a></p>
+          </div>
         </div>
         <div class="ci-item">
           <div class="ci-ic"><i class="fas fa-phone"></i></div>
-          <div><h6>Telefone / WhatsApp</h6><a href="tel:+244945317734">+244 945 317 734</a></div>
-        </div>
-        <div class="ci-item">
-          <div class="ci-ic"><i class="fas fa-globe"></i></div>
-          <div><h6>Website</h6><a href="https://okutonda.com" target="_blank" rel="noopener">okutonda.com</a></div>
+          <div>
+            <div class="ci-label">Telefone / WhatsApp</div>
+            <p class="ci-val"><a href="tel:+244945317734">+244 945 317 734</a></p>
+          </div>
         </div>
         <div class="ci-item">
           <div class="ci-ic"><i class="fas fa-clock"></i></div>
-          <div><h6>Horário</h6><p>Segunda a Sexta · 08h00 – 20h00</p></div>
+          <div>
+            <div class="ci-label">Horário</div>
+            <p class="ci-val">Segunda a Sexta · 08h00 – 20h00</p>
+          </div>
         </div>
-        <div class="soc" style="margin-top:20px;">
-          <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://wa.link/qxuy5y" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <div class="ci-soc">
+          <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.link/qxuy5y" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
-
-      <div class="ci-side">
-        <div class="wa-block">
+      <div class="contact-right">
+        <div class="wa-card">
           <h4>Prefere falar directamente?</h4>
           <p>A nossa equipa está disponível no WhatsApp para responder às suas questões em tempo real.</p>
           <a href="https://wa.link/qxuy5y" class="btn btn-wa" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
@@ -845,13 +1020,10 @@
           </a>
           <p class="hint">Resposta rápida · Seg–Sex 08h–20h</p>
         </div>
-        <div class="ci-map">
+        <div class="map-card">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.46262481748!2d13.106072!3d-8.8368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f15cdc8d2c7d%3A0x850c1c1c1c1c1c1c!2sLuanda%2C%20Angola!5e0!3m2!1spt!2sao!4v1700000000000"
-            title="OKUTONDA Technologies — Luanda, Angola"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen>
+            title="OKUTONDA — Luanda" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
           </iframe>
         </div>
       </div>
@@ -860,24 +1032,21 @@
 </section>
 
 <!-- Footer -->
-<footer class="footer" role="contentinfo">
+<footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">
-          <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies"
-               width="140" height="70" loading="lazy" decoding="async"
-               onerror="this.style.display='none'" />
-        </div>
+        <img src="img/logo/logo-write.png" width="150px" alt="OKUTONDA Technologies" class="footer-logo"
+             onerror="this.outerHTML='<span style=\'font-family:Plus Jakarta Sans,sans-serif;font-size:1.1rem;font-weight:800;letter-spacing:.1em;color:#fff;text-transform:uppercase;display:block;margin-bottom:16px;\'>OKUTONDA</span>'" />
         <p class="footer-about">Tecnologia desenvolvida em Angola para organizações que exigem eficiência, integração e crescimento sustentado — ERP, CRM, gestão educacional, BI e consultoria especializada.</p>
-        <div class="soc">
+        <div class="footer-soc">
           <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
           <a href="https://wa.link/qxuy5y" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <div>
-        <h3 class="footer-head">Navegação</h3>
+        <p class="footer-head">Navegação</p>
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">Sobre Nós</a></li>
@@ -887,7 +1056,7 @@
         </ul>
       </div>
       <div>
-        <h3 class="footer-head">Oku Platform</h3>
+        <p class="footer-head">Oku Platform</p>
         <ul class="footer-links">
           <li><a href="./produtos/edu/index.html" target="_blank">OkuEdu</a></li>
           <li><a href="#oku-platform">OkuERP</a></li>
@@ -901,24 +1070,21 @@
         </ul>
       </div>
       <div>
-        <h3 class="footer-head">Contacto</h3>
+        <p class="footer-head">Contacto</p>
         <ul class="footer-links">
-          <li><a href="mailto:okutonda@gmail.com"><i class="fas fa-envelope" style="font-size:.7rem;color:var(--sky);"></i>okutonda@gmail.com</a></li>
-          <li><a href="tel:+244945317734"><i class="fas fa-phone" style="font-size:.7rem;color:var(--sky);"></i>+244 945 317 734</a></li>
-          <li><a href="./produtos/edu/index.html" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" style="font-size:.65rem;color:var(--sky);"></i>edu.okenda.com</a></li>
+          <li><a href="mailto:okutonda@gmail.com"><i class="fas fa-envelope" style="font-size:.7rem;color:var(--blue-lt);"></i>okutonda@gmail.com</a></li>
+          <li><a href="tel:+244945317734"><i class="fas fa-phone" style="font-size:.7rem;color:var(--blue-lt);"></i>+244 945 317 734</a></li>
+          <li><a href="https://okutonda.com" target="_blank" rel="noopener"><i class="fas fa-external-link-alt" style="font-size:.65rem;color:var(--blue-lt);"></i>okutonda.com</a></li>
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
-      <div class="footer-bottom-inner">
-        <p>&copy; <span id="yr"></span> OKUTONDA Technologies. Todos os direitos reservados.</p>
-        <p>
-          <a href="./termos.html">Termos de Uso</a>
-          <span class="heart"> & </span>
-          <a href="./privacidade.html">Política de Privacidade</a>
-        </p>
-      </div>
+      <p>&copy; <span id="yr"></span> OKUTONDA Technologies. Todos os direitos reservados.</p>
+      <p>
+        <a href="./termos.html">Termos de Uso</a>
+        <span style="margin:0 6px;color:rgba(255,255,255,.12);">&middot;</span>
+        <a href="./privacidade.html">Política de Privacidade</a>
+      </p>
     </div>
   </div>
 </footer>
@@ -926,126 +1092,79 @@
 <button id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
 
 <script>
-  /*
-   * ══════════════════════════════════════════════
-   * PRELOADER — 3 camadas de protecção:
-   *
-   *  1. DOMContentLoaded (400ms) — HTML pronto,
-   *     não espera imagens nem fontes externas.
-   *
-   *  2. window.load (200ms) — fallback, caso o
-   *     DOMContentLoaded seja mais lento.
-   *
-   *  3. setTimeout 2500ms — segurança absoluta:
-   *     mesmo que as imagens nunca carreguem
-   *     (offline, 404, etc.) o preloader sai.
-   * ══════════════════════════════════════════════
-   */
-  (function() {
-    var dismissed = false;
-    function hidePl() {
-      if (dismissed) return;
-      dismissed = true;
-      var pl = document.getElementById('pl');
-      if (pl) pl.classList.add('out');
-    }
-    document.addEventListener('DOMContentLoaded', function() { setTimeout(hidePl, 400); });
-    window.addEventListener('load',               function() { setTimeout(hidePl, 200); });
-    setTimeout(hidePl, 2500); // máximo absoluto
+  /* Preloader */
+  (function(){
+    var done=false;
+    function hide(){ if(done)return; done=true; document.getElementById('pl').classList.add('out'); }
+    document.addEventListener('DOMContentLoaded',function(){ setTimeout(hide,1600); });
+    window.addEventListener('load',function(){ setTimeout(hide,200); });
+    setTimeout(hide,3000);
   })();
 
-  /* Ano */
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  /* ── Sidebar ── */
-  var sidebar        = document.getElementById('sidebar');
-  var sidebarOverlay = document.getElementById('sidebarOverlay');
-  var hamburger      = document.getElementById('hamburger');
-  var sidebarClose   = document.getElementById('sidebarClose');
+  /* Sidebar */
+  var sb=document.getElementById('sidebar'),
+      ov=document.getElementById('overlay'),
+      hb=document.getElementById('hamburger'),
+      sc=document.getElementById('sbClose');
+  function openSb(){ sb.classList.add('open'); ov.classList.add('on'); document.body.classList.add('no-scroll'); hb.setAttribute('aria-expanded','true'); sb.setAttribute('aria-hidden','false'); }
+  function closeSb(){ sb.classList.remove('open'); ov.classList.remove('on'); document.body.classList.remove('no-scroll'); hb.setAttribute('aria-expanded','false'); sb.setAttribute('aria-hidden','true'); }
+  hb.addEventListener('click',openSb);
+  sc.addEventListener('click',closeSb);
+  ov.addEventListener('click',closeSb);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape')closeSb(); });
+  document.querySelectorAll('.sl').forEach(function(a){ a.addEventListener('click',closeSb); });
 
-  function openSidebar() {
-    sidebar.classList.add('open');
-    sidebarOverlay.classList.add('active');
-    document.body.classList.add('sidebar-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    sidebar.setAttribute('aria-hidden', 'false');
-    setTimeout(function() { var a = sidebar.querySelector('a'); if (a) a.focus(); }, 50);
-  }
-  function closeSidebar() {
-    sidebar.classList.remove('open');
-    sidebarOverlay.classList.remove('active');
-    document.body.classList.remove('sidebar-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    sidebar.setAttribute('aria-hidden', 'true');
-    hamburger.focus();
-  }
-  hamburger.addEventListener('click', openSidebar);
-  sidebarClose.addEventListener('click', closeSidebar);
-  sidebarOverlay.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && sidebar.classList.contains('open')) closeSidebar();
-  });
-  document.querySelectorAll('.sidebar-link').forEach(function(a) {
-    a.addEventListener('click', closeSidebar);
-  });
-
-  /* ── Nav scroll + active link ── */
-  var nav      = document.getElementById('nav');
-  var btt      = document.getElementById('btt');
-  var sections = document.querySelectorAll('section[id]');
-  var allLinks = document.querySelectorAll('.nav-menu a, .sidebar-link');
-
-  function onScroll() {
-    var sy = window.scrollY;
-    nav.classList.toggle('scrolled', sy > 60);
-    btt.classList.toggle('show', sy > 400);
-    var current = '';
-    sections.forEach(function(s) { if (sy >= s.offsetTop - 200) current = s.id; });
-    allLinks.forEach(function(a) {
+  /* Nav scroll + active links */
+  var nav=document.getElementById('nav'), btt=document.getElementById('btt');
+  var sections=document.querySelectorAll('section[id]');
+  var navLinks=document.querySelectorAll('.nav-menu a, .sb-nav a');
+  function onScroll(){
+    var sy=window.scrollY;
+    nav.classList.toggle('scrolled',sy>80);
+    btt.classList.toggle('show',sy>400);
+    var cur='';
+    sections.forEach(function(s){ if(sy>=s.offsetTop-200)cur=s.id; });
+    navLinks.forEach(function(a){
       a.classList.remove('act');
-      if (a.getAttribute('href') === '#' + current) a.classList.add('act');
+      if(a.getAttribute('href')==='#'+cur)a.classList.add('act');
     });
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll',onScroll,{passive:true});
   onScroll();
 
-  /* ── Smooth scroll ── */
-  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (!target) return;
+  /* Smooth scroll */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(!t)return;
       e.preventDefault();
-      window.scrollTo({ top: target.offsetTop - nav.offsetHeight - 8, behavior: 'smooth' });
+      window.scrollTo({top:t.offsetTop-nav.offsetHeight-8,behavior:'smooth'});
     });
   });
 
-  /* ── Hero slider ── */
-  (function() {
-    var slides = document.querySelectorAll('.slide');
-    var dots   = document.querySelectorAll('.dot');
-    var cur = 0, timer;
-    function go(i) {
+  /* Slider */
+  (function(){
+    var slides=document.querySelectorAll('.slide'),
+        dots=document.querySelectorAll('.dot'),
+        cur=0, timer;
+    function go(i){
       slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
-      cur = i;
-      slides[cur].classList.add('active'); dots[cur].classList.add('active');
+      cur=i; slides[cur].classList.add('active'); dots[cur].classList.add('active');
     }
-    function start() { timer = setInterval(function() { go((cur + 1) % slides.length); }, 6500); }
-    dots.forEach(function(d) {
-      d.addEventListener('click', function() { clearInterval(timer); go(+d.dataset.i); start(); });
-    });
+    function start(){ timer=setInterval(function(){ go((cur+1)%slides.length); },6500); }
+    dots.forEach(function(d){ d.addEventListener('click',function(){ clearInterval(timer); go(+d.dataset.i); start(); }); });
     start();
   })();
 
-  /* ── Entrance animations ── */
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('[data-anim]').forEach(function(el) { io.observe(el); });
+  /* Entrance animations */
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+  },{threshold:0.08});
+  document.querySelectorAll('[data-anim]').forEach(function(el){ io.observe(el); });
 
-  /* ── Back to top ── */
-  btt.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  btt.addEventListener('click',function(){ window.scrollTo({top:0,behavior:'smooth'}); });
 </script>
 </body>
 </html>
