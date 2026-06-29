@@ -1,473 +1,549 @@
 <!DOCTYPE html>
 <html lang="pt-AO">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../img/logo/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="../../img/logo/favicon.png" type="image/png" />
-<title>OkuPOS - Gestão e Vendas para o seu Negócio</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.css"></script>
-<script>
-tailwind = { config: { theme: { extend: { colors: {
-  brand: { blue: '#2563eb', dark: '#0a1f44', green: '#22c55e' }
-}}}}}
-</script>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>body{font-family:'Inter',sans-serif;}</style>
+  <title>Okutonda POS — Gestão e Faturação Comercial em Angola</title>
+  
+  <meta name="description" content="Okutonda POS — O ponto de venda inteligente e faturação homologada pela AGT. Controle stock, caixas e vendas em qualquer lugar." />
+  <meta name="keywords" content="POS Angola, faturação AGT, ponto de venda Luanda, gestão de stock, Okutonda" />
+  <meta name="author" content="OKUTONDA Technologies" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            title: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              amber: '#f59e0b',
+              'amber-dark': '#d97706',
+              'dark-space': '#ffffff',
+              'bg-card': 'rgba(255, 255, 255, 0.8)',
+              text: '#475569',
+            },
+            slate: {
+              900: '#0a1d37',
+              50: '#f4f7fa',
+              100: '#eef2f6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #475569;
+    }
+    .mesh-bg {
+      background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.04) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                  #ffffff;
+    }
+    .grid-pattern {
+      background-image: linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    /* ─── FULLSCREEN BACKGROUND SLIDER ─── */
+    .hero-slider-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+    }
+    .hero-slides {
+      position: relative; width: 100%; height: 100%; overflow: hidden;
+      background: #f4f7fa;
+    }
+    .hero-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out;
+    }
+    .hero-slide.active { opacity: 1; z-index: 2; }
+    .hero-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0.08) 100%);
+      z-index: 3; pointer-events: none;
+    }
+    .slider-indicators {
+      position: absolute; bottom: 40px; right: 40px; z-index: 5;
+      display: flex; gap: 8px;
+    }
+    .indicator {
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(7, 39, 74, 0.25);
+      cursor: pointer; transition: all 0.3s;
+    }
+    .indicator.active {
+      background: #07274a; width: 24px; border-radius: 4px;
+    }
+    @media(max-width:880px){
+      .hero-overlay {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.88) 30%, rgba(255, 255, 255, 0.95) 100%);
+      }
+      .slider-indicators {
+        left: 50%; right: auto; transform: translateX(-50%);
+        bottom: 24px;
+      }
+    }
+
+    /* ─── SCROLL NAVBAR MENU ─── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background-color: transparent; border-bottom: 1px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(15, 23, 42, 0.06);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+    header > div {
+      transition: padding 0.3s;
+    }
+    header.scrolled > div {
+      padding-top: 12px; padding-bottom: 12px;
+    }
+  </style>
 </head>
-<body class="text-slate-800">
+<body class="mesh-bg relative min-h-screen overflow-x-hidden font-body">
 
-<!-- NAVBAR -->
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-2 font-extrabold text-xl">
-      <span class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">O</span>
-      Oku<span class="text-blue-600">POS</span>
-    </div>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-      <a href="#problemas" class="hover:text-blue-600">Problemas</a>
-      <a href="#solucao" class="hover:text-blue-600">Soluções</a>
-      <a href="#funcionalidades" class="hover:text-blue-600">Funcionalidades</a>
-      <a href="#segmentos" class="hover:text-blue-600">Segmentos</a>
-      <a href="#planos" class="hover:text-blue-600">Planos</a>
-      <a href="#faq" class="hover:text-blue-600">FAQ</a>
-    </nav>
-    <div class="flex items-center gap-3">
-      <a href="#" class="hidden sm:inline-block text-sm font-semibold text-blue-600 border border-blue-600 rounded-full px-5 py-2 hover:bg-blue-50">Demonstração</a>
-      <a href="#" class="text-sm font-semibold text-white bg-blue-600 rounded-full px-5 py-2 hover:bg-blue-700">Fale Connosco</a>
-    </div>
-  </div>
-</header>
+  <div class="grid-pattern absolute inset-0 pointer-events-none z-0"></div>
 
-<!-- HERO -->
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-700 via-blue-600 to-slate-900 text-white">
-  <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <span class="inline-flex items-center gap-2 bg-white/10 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
-        ✨ OKUTONDA Technologies · Feito em Angola
-      </span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-        Venda Mais, Controle Melhor e Faça a 
-        <span class="text-green-400">Gestão do Seu Negócio</span> em Um Só Lugar
-      </h1>
-      <p class="text-blue-100 text-lg mb-8 max-w-lg">
-        O OkuPOS é o sistema de ponto de venda e gestão completa para comerciantes angolanos. Tudo o que precisas para crescer, num só lugar.
-      </p>
-      <div class="flex flex-wrap gap-4 mb-8">
-        <a href="#" class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-full hover:bg-blue-50 flex items-center gap-2">▶ Pedir Demonstração</a>
-        <a href="#" class="bg-green-500 text-white font-semibold px-6 py-3 rounded-full hover:bg-green-600 flex items-center gap-2">💬 Falar no WhatsApp</a>
+  <!-- NAVBAR -->
+  <header>
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-title font-bold text-xl text-slate-900">
+        <span class="w-8 h-8 rounded-full bg-brand-amber flex items-center justify-center text-white font-title text-base">P</span>
+        Okutonda<span class="text-brand-amber">POS</span>
       </div>
-      <div class="flex flex-wrap gap-6 text-sm text-blue-100">
-        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Suporte 24/7</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Funciona offline</span>
-        <span class="flex items-center gap-2"><span class="w-2 h-2 bg-green-400 rounded-full"></span> Conforme AGT</span>
+      <nav class="hidden md:flex items-center gap-1 text-xs font-title font-semibold text-slate-600">
+        <a href="#problemas" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Problemas</a>
+        <a href="#solucao" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Solução</a>
+        <a href="#funcionalidades" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Funcionalidades</a>
+        <a href="#segmentos" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Segmentos</a>
+        <a href="#planos" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Planos</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="hidden sm:inline-block text-xs font-title font-semibold text-slate-600 hover:text-slate-900 transition border border-slate-200 rounded-full px-5 py-2">
+          Voltar à Home
+        </a>
+        <a href="#planos" class="text-xs font-title font-semibold text-white bg-brand-amber hover:bg-brand-amber-dark transition rounded-full px-5 py-2 shadow-lg shadow-amber-500/20">
+          Ver Planos
+        </a>
       </div>
     </div>
-    <div class="relative hidden md:block">
-      <div class="bg-slate-900/60 rounded-3xl p-6 shadow-2xl border border-white/10 rotate-3">
-        <div class="grid grid-cols-3 gap-3">
-          <div class="h-20 bg-blue-500/40 rounded-lg"></div>
-          <div class="h-20 bg-green-400/40 rounded-lg"></div>
-          <div class="h-20 bg-white/10 rounded-lg"></div>
-          <div class="col-span-3 h-32 bg-slate-800/60 rounded-lg flex items-end p-3 gap-2">
-            <div class="w-1/6 bg-blue-400 h-1/3 rounded"></div>
-            <div class="w-1/6 bg-blue-400 h-2/3 rounded"></div>
-            <div class="w-1/6 bg-green-400 h-full rounded"></div>
-            <div class="w-1/6 bg-blue-400 h-1/2 rounded"></div>
-            <div class="w-1/6 bg-green-400 h-3/4 rounded"></div>
-            <div class="w-1/6 bg-blue-400 h-1/4 rounded"></div>
-          </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative z-10 overflow-hidden min-h-screen flex items-center pt-28 pb-16">
+    <!-- Fullscreen Slider Background -->
+    <div class="hero-slider-bg">
+      <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide active">
+          <img src="../../img/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider2.png" alt="OKUTONDA POS Faturação">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider3.png" alt="OKUTONDA ERP Comercial">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider4.png" alt="OKUTONDA CRM Clientes">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider6.png" alt="OKUTONDA Recursos Humanos">
         </div>
       </div>
     </div>
-  </div>
+    <!-- Premium Fading Overlay -->
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-brand-amber/5 border border-brand-amber/10 text-brand-amber text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
+          ✨ OKUTONDA Technologies · Feito em Angola
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-title font-bold text-slate-900 leading-tight mb-6 tracking-tight">
+          Venda mais, controle melhor e faça a 
+          <span class="bg-gradient-to-r from-amber-500 to-orange-600 bg-clip-text text-transparent">gestão do seu negócio</span> em tempo real.
+        </h1>
+        <p class="text-slate-600 text-lg mb-8 max-w-lg">
+          O Okutonda POS é a solução inteligente de ponto de venda e faturação certificada pela AGT, desenhada especificamente para os comerciantes angolanos.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="#planos" class="bg-gradient-to-r from-brand-amber to-orange-600 text-white font-title font-semibold px-6 py-3.5 rounded-full hover:shadow-lg hover:shadow-amber-500/25 transition">
+            Começar Agora
+          </a>
+          <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Okutonda%20POS" 
+             target="_blank" rel="noopener"
+             class="bg-slate-100 text-slate-800 border border-slate-200 font-title font-semibold px-6 py-3.5 rounded-full hover:bg-slate-200 transition flex items-center gap-2">
+            💬 Falar no WhatsApp
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-slate-500">
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-amber rounded-full animate-ping"></span> Suporte Técnico Local</span>
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-amber rounded-full"></span> Operação Offline</span>
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-amber rounded-full"></span> Certificado pela AGT</span>
+        </div>
+      </div>
+      
+      <!-- Spacer for background slider visibility -->
+      <div class="hidden md:block h-[300px]"></div>
+    </div>
+    <!-- Indicators absolute positioned at the bottom -->
+    <div class="slider-indicators" id="sliderIndicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+      <span class="indicator" data-slide="3"></span>
+      <span class="indicator" data-slide="4"></span>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section id="problemas" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Desafios Comuns
+      </span>
+      <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">O seu negócio sofre com isto?</h2>
+      <p class="text-slate-600">Obstáculos que prejudicam a faturação e o controlo diário de comerciantes angolanos.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">📉</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Vendas sem controlo</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Falta de visibilidade sobre os lucros diários, o que vende mais e os fluxos de caixa reais.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">📦</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Stock desorganizado</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Quebras de stock constantes, perdas de produtos e dificuldade em saber o que repor.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">🧾</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Sem faturação legal</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Emissão de recibos manuais que não cumprem com os requisitos fiscais da AGT.</p>
+      </div>
+    </div>
 </section>
 
-<!-- PROBLEMAS -->
-<section id="problemas" class="max-w-7xl mx-auto px-6 py-20">
-  <div class="text-center max-w-2xl mx-auto mb-12">
-    <span class="inline-block bg-red-50 text-red-500 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Problemas comuns</span>
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">O seu negócio sofre com isto?</h2>
-    <p class="text-slate-500">Estes são os obstáculos que travam comerciantes angolanos todos os dias.</p>
-  </div>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">📉</div>
-      <h3 class="font-bold mb-2">Vendas sem controlo</h3>
-      <p class="text-sm text-slate-500">Não sabe quanto vende, o que vende mais nem qual o lucro real.</p>
+  <!-- SOLUÇÃO -->
+  <section id="solucao" class="bg-slate-50 border-y border-slate-900/5 py-24 relative z-10">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-brand-amber">
+          <p class="text-3xl font-title font-bold text-slate-900">+47%</p>
+          <p class="text-xs text-slate-500 mt-1">Média de aumento nas vendas</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-green-500">
+          <p class="text-3xl font-title font-bold text-slate-900">24/7</p>
+          <p class="text-xs text-slate-500 mt-1">Suporte técnico local</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-blue-500">
+          <p class="text-3xl font-title font-bold text-slate-900">-80%</p>
+          <p class="text-xs text-slate-500 mt-1">Tempo reduzido em fechos de caixa</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-amber-500">
+          <p class="text-3xl font-title font-bold text-slate-900">100%</p>
+          <p class="text-xs text-slate-500 mt-1">Faturação conforme AGT</p>
+        </div>
+      </div>
+      <div>
+        <span class="inline-block bg-brand-amber/5 border border-brand-amber/10 text-brand-amber text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+          A Solução
+        </span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-6">Tudo o que precisa num único ecossistema</h2>
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          O Okutonda POS foi desenhado para simplificar o seu dia a dia. É robusto, seguro, funciona sem internet e mantém o seu negócio alinhado com as obrigações fiscais.
+        </p>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-center gap-3 text-slate-700">
+            <span class="text-brand-amber">✔</span> Faturação eletrónica certificada
+          </li>
+          <li class="flex items-center gap-3 text-slate-700">
+            <span class="text-brand-amber">✔</span> Gestão de stock automatizada com alertas
+          </li>
+          <li class="flex items-center gap-3 text-slate-700">
+            <span class="text-brand-amber">✔</span> Compatível com impressoras térmicas e leitores de código
+          </li>
+        </ul>
+        <a href="#planos" class="bg-brand-amber hover:bg-brand-amber-dark text-white font-title font-semibold px-6 py-3 rounded-full transition shadow-lg shadow-amber-500/10">
+          Quero Conhecer os Planos
+        </a>
+      </div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">📦</div>
-      <h3 class="font-bold mb-2">Stock desorganizado</h3>
-      <p class="text-sm text-slate-500">Produtos em falta, perdas e dificuldade em saber o que repor.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">🧾</div>
-      <h3 class="font-bold mb-2">Sem facturação legal</h3>
-      <p class="text-sm text-slate-500">Recibos manuais que não cumprem com os requisitos da AGT.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">📒</div>
-      <h3 class="font-bold mb-2">Gestão em cadernos</h3>
-      <p class="text-sm text-slate-500">Informação espalhada em papéis, sem histórico nem relatórios.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">⏱️</div>
-      <h3 class="font-bold mb-2">Tempo perdido</h3>
-      <p class="text-sm text-slate-500">Horas a fechar caixa, contar stock e somar contas à mão.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-lg bg-red-50 text-red-500 flex items-center justify-center mb-4">⚠️</div>
-      <h3 class="font-bold mb-2">Decisões no escuro</h3>
-      <p class="text-sm text-slate-500">Sem dados claros para decidir o próximo passo do negócio.</p>
-    </div>
-  </div>
 </section>
 
-<!-- SOLUÇÃO -->
-<section id="solucao" class="bg-slate-50 py-20">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-    <div class="grid grid-cols-2 gap-4">
-      <div class="bg-blue-600 text-white rounded-2xl p-6 h-44 flex flex-col justify-center">
-        <p class="text-3xl font-extrabold">+47%</p><p class="text-sm opacity-80 mt-1">mais vendas</p>
+  <!-- FUNCIONALIDADES -->
+  <section id="funcionalidades" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block bg-brand-amber/5 border border-brand-amber/10 text-brand-amber text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Funcionalidades
+      </span>
+      <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">Recursos poderosos para crescer</h2>
+      <p class="text-slate-600">Automatização de alto nível para tornar a sua operação eficiente.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div class="glass-card rounded-2xl p-6">
+        <div class="text-2xl mb-4">🛒</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">POS Rápido</h3>
+        <p class="text-sm text-slate-600">Registe vendas em segundos por toque ou leitura de código.</p>
       </div>
-      <div class="bg-green-500 text-white rounded-2xl p-6 h-44 flex flex-col justify-center">
-        <p class="text-3xl font-extrabold">24/7</p><p class="text-sm opacity-80 mt-1">suporte local</p>
+      <div class="glass-card rounded-2xl p-6">
+        <div class="text-2xl mb-4">📦</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Controlo de Stock</h3>
+        <p class="text-sm text-slate-600">Entradas, saídas e inventários em tempo real com alertas.</p>
       </div>
-      <div class="bg-slate-900 text-white rounded-2xl p-6 h-44 flex flex-col justify-center">
-        <p class="text-3xl font-extrabold">-80%</p><p class="text-sm opacity-80 mt-1">tempo em caixa</p>
+      <div class="glass-card rounded-2xl p-6">
+        <div class="text-2xl mb-4">📊</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Relatórios Financeiros</h3>
+        <p class="text-sm text-slate-600">Gráficos de vendas, margens de lucro e produtos populares.</p>
       </div>
-      <div class="bg-white border border-slate-200 rounded-2xl p-6 h-44 flex flex-col justify-center">
-        <p class="text-3xl font-extrabold text-blue-600">100%</p><p class="text-sm text-slate-500 mt-1">conforme AGT</p>
+      <div class="glass-card rounded-2xl p-6">
+        <div class="text-2xl mb-4">📄</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Homologação AGT</h3>
+        <p class="text-sm text-slate-600">Emissão de faturas, recibos e guias de transporte legais.</p>
       </div>
     </div>
-    <div>
-      <span class="inline-block bg-green-50 text-green-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">A solução</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Tudo o que precisas, num <span class="text-blue-600">único sistema</span></h2>
-      <p class="text-slate-500 mb-6">O OkuPOS foi pensado para a realidade angolana: simples de usar, robusto e completo.</p>
-      <ul class="space-y-3 mb-8">
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Controlo total de vendas em tempo real, em qualquer dispositivo</li>
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Stock automatizado com alertas inteligentes de reposição</li>
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Facturação electrónica conforme as normas da AGT</li>
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Relatórios claros sobre lucro, clientes e produtos top</li>
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Funciona online e offline, sem perder uma venda</li>
-        <li class="flex items-start gap-3"><span class="text-green-500 mt-1">✔</span> Multi-utilizador com permissões por colaborador</li>
-      </ul>
-      <a href="#planos" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 inline-block">Quero conhecer os planos</a>
-    </div>
-  </div>
 </section>
 
-<!-- FUNCIONALIDADES -->
-<section id="funcionalidades" class="max-w-7xl mx-auto px-6 py-20">
-  <div class="text-center max-w-2xl mx-auto mb-12">
-    <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Funcionalidades</span>
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Recursos poderosos, simples de usar</h2>
-    <p class="text-slate-500">Tudo o que um negócio moderno precisa para crescer com confiança.</p>
-  </div>
-  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-    <!-- repeat cards -->
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">🛒</div>
-      <h3 class="font-bold mb-2">POS rápido</h3>
-      <p class="text-sm text-slate-500">Atende clientes em segundos com leitura de código de barras.</p>
+  <!-- SEGMENTOS -->
+  <section id="segmentos" class="bg-slate-50 border-y border-slate-900/5 py-24 relative z-10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="inline-block bg-brand-amber/5 border border-brand-amber/10 text-brand-amber text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+          Sectores
+        </span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">Desenvolvido para cada tipo de comércio</h2>
+        <p class="text-slate-600">Adaptado às dinâmicas operacionais de diversos mercados.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/20 transition">
+          <div class="w-10 h-10 rounded-lg bg-brand-amber/10 text-brand-amber flex items-center justify-center mb-6">🛍️</div>
+          <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Supermercados e Lojas</h3>
+          <p class="text-sm text-slate-600">Gestão de código de barras, vendas por volume e stocks múltiplos.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/20 transition">
+          <div class="w-10 h-10 rounded-lg bg-brand-amber/10 text-brand-amber flex items-center justify-center mb-6">💊</div>
+          <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Farmácias</h3>
+          <p class="text-sm text-slate-600">Controlo de lotes de medicamentos, datas de validade e caixas.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-8 hover:border-brand-amber/20 transition">
+          <div class="w-10 h-10 rounded-lg bg-brand-amber/10 text-brand-amber flex items-center justify-center mb-6">🍽️</div>
+          <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Restaurantes e Cafés</h3>
+          <p class="text-sm text-slate-600">Organização de mesas, pedidos de cozinha e faturação rápida.</p>
+        </div>
+      </div>
     </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">📦</div>
-      <h3 class="font-bold mb-2">Gestão de stock</h3>
-      <p class="text-sm text-slate-500">Entradas, saídas, transferências e inventário automático.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">📊</div>
-      <h3 class="font-bold mb-2">Relatórios visuais</h3>
-      <p class="text-sm text-slate-500">Gráficos de vendas, lucro, clientes e produtos top.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">📄</div>
-      <h3 class="font-bold mb-2">Facturação AGT</h3>
-      <p class="text-sm text-slate-500">Facturas, recibos e proformas certificados pela AGT.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">👥</div>
-      <h3 class="font-bold mb-2">Clientes & CRM</h3>
-      <p class="text-sm text-slate-500">Histórico, dívidas, fidelização e contactos centralizados.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">💳</div>
-      <h3 class="font-bold mb-2">Multimétodos</h3>
-      <p class="text-sm text-slate-500">Multicaixa, Express, dinheiro, transferência e crédito.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">📱</div>
-      <h3 class="font-bold mb-2">App móvel</h3>
-      <p class="text-sm text-slate-500">Venda e consulta tudo a partir do telemóvel ou tablet.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">☁️</div>
-      <h3 class="font-bold mb-2">Backup na nuvem</h3>
-      <p class="text-sm text-slate-500">Seus dados seguros, sincronizados e sempre disponíveis.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">🔔</div>
-      <h3 class="font-bold mb-2">Alertas inteligentes</h3>
-      <p class="text-sm text-slate-500">Avisos de stock baixo, vencimento e pagamentos.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">🏷️</div>
-      <h3 class="font-bold mb-2">Promoções</h3>
-      <p class="text-sm text-slate-500">Crie descontos, combos e campanhas em poucos cliques.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">🚚</div>
-      <h3 class="font-bold mb-2">Compras & fornecedores</h3>
-      <p class="text-sm text-slate-500">Controle pedidos, custos e prazos de entrega.</p>
-    </div>
-    <div class="border border-slate-100 rounded-2xl p-6">
-      <div class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-4">🔐</div>
-      <h3 class="font-bold mb-2">Permissões</h3>
-      <p class="text-sm text-slate-500">Defina o que cada utilizador pode ver e fazer.</p>
-    </div>
-  </div>
 </section>
 
-<!-- BENEFICIOS -->
-<section class="bg-slate-50 py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Benefícios</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Resultados que o seu negócio vai sentir</h2>
+  <!-- PLANOS -->
+  <section id="planos" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block bg-brand-amber/5 border border-brand-amber/10 text-brand-amber text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Planos & Preços
+      </span>
+      <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">Preços claros, sem fidelizações</h2>
+      <p class="text-slate-600">Escolha a escala perfeita para o seu comércio.</p>
     </div>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">🚀</div>
-        <h3 class="font-bold mb-2">Aumente as vendas</h3>
-        <p class="text-sm text-slate-500">Atenda mais rápido e nunca perca uma oportunidade.</p>
+    <div class="grid md:grid-cols-3 gap-6 items-center">
+      <!-- Start -->
+      <div class="glass-card rounded-2xl p-8 border border-slate-200 hover:border-brand-amber/20 transition">
+        <h3 class="text-xl font-title font-bold text-slate-900 mb-1">Start</h3>
+        <p class="text-sm text-slate-500 mb-6">Para pequenos retalhos e comércio inicial.</p>
+        <p class="text-3xl font-title font-bold text-slate-900 mb-6">15.000 <span class="text-xs text-slate-500 font-normal">Kz / mês</span></p>
+        <ul class="space-y-3 text-sm mb-8 text-slate-600">
+          <li class="flex gap-2"><span>✔</span> 1 Ponto de Venda</li>
+          <li class="flex gap-2"><span>✔</span> Controlo de stock básico</li>
+          <li class="flex gap-2"><span>✔</span> Faturação em conformidade AGT</li>
+          <li class="flex gap-2"><span>✔</span> Suporte via email</li>
+        </ul>
+        <a href="https://wa.me/244945317734?text=Quero%20o%20plano%20Start%20do%20Okutonda%20POS" target="_blank" rel="noopener" class="block text-center border border-slate-200 rounded-full py-3 text-sm font-title font-semibold hover:bg-slate-50 transition text-slate-700">
+          Escolher Plano
+        </a>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">📈</div>
-        <h3 class="font-bold mb-2">Decisões baseadas em dados</h3>
-        <p class="text-sm text-slate-500">Saiba exactamente o que funciona no seu negócio.</p>
+      <!-- Pro -->
+      <div class="glass-card rounded-2xl p-8 border-2 border-brand-amber relative shadow-xl shadow-amber-500/5">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-amber text-xs font-title font-bold px-4 py-1 rounded-full text-white">✓ Mais Escolhido</span>
+        <h3 class="text-xl font-title font-bold text-slate-900 mb-1">Pro</h3>
+        <p class="text-sm text-slate-500 mb-6">Controlo avançado para PMEs.</p>
+        <p class="text-4xl font-title font-bold text-slate-900 mb-6">35.000 <span class="text-xs text-slate-500 font-normal">Kz / mês</span></p>
+        <ul class="space-y-3 text-sm mb-8 text-slate-600">
+          <li class="flex gap-2"><span class="text-brand-amber">✔</span> Até 3 Pontos de Venda</li>
+          <li class="flex gap-2"><span class="text-brand-amber">✔</span> Tudo do plano Start</li>
+          <li class="flex gap-2"><span class="text-brand-amber">✔</span> App móvel integrado</li>
+          <li class="flex gap-2"><span class="text-brand-amber">✔</span> Relatórios analíticos</li>
+          <li class="flex gap-2"><span class="text-brand-amber">✔</span> Suporte via WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/244945317734?text=Quero%20o%20plano%20Pro%20do%20Okutonda%20POS" target="_blank" rel="noopener" class="block text-center bg-brand-amber hover:bg-brand-amber-dark rounded-full py-3 text-sm font-title font-semibold text-white transition">
+          Escolher Plano
+        </a>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">💚</div>
-        <h3 class="font-bold mb-2">Clientes mais felizes</h3>
-        <p class="text-sm text-slate-500">Experiência de compra fluida e profissional.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">🔒</div>
-        <h3 class="font-bold mb-2">Segurança total</h3>
-        <p class="text-sm text-slate-500">Dados protegidos com backup automático em nuvem.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">🎧</div>
-        <h3 class="font-bold mb-2">Suporte em português</h3>
-        <p class="text-sm text-slate-500">Equipa local pronta a ajudar quando precisar.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <div class="text-2xl mb-3">🌍</div>
-        <h3 class="font-bold mb-2">Acesse de qualquer lugar</h3>
-        <p class="text-sm text-slate-500">Seu negócio na palma da mão, 24 horas por dia.</p>
+      <!-- Business -->
+      <div class="glass-card rounded-2xl p-8 border border-slate-200 hover:border-brand-amber/20 transition">
+        <h3 class="text-xl font-title font-bold text-slate-900 mb-1">Business</h3>
+        <p class="text-sm text-slate-500 mb-6">Para redes de lojas e armazéns.</p>
+        <p class="text-3xl font-title font-bold text-slate-900 mb-6">Sob consulta <span class="block text-xs text-slate-500 font-normal mt-1">Customizado</span></p>
+        <ul class="space-y-3 text-sm mb-8 text-slate-600">
+          <li class="flex gap-2"><span>✔</span> Terminais ilimitados</li>
+          <li class="flex gap-2"><span>✔</span> Tudo do plano Pro</li>
+          <li class="flex gap-2"><span>✔</span> Integração via API</li>
+          <li class="flex gap-2"><span>✔</span> Formação técnica local</li>
+        </ul>
+        <a href="https://wa.me/244945317734?text=Quero%20saber%20mais%20sobre%20o%20plano%20Business%20do%20Okutonda%20POS" target="_blank" rel="noopener" class="block text-center border border-slate-200 rounded-full py-3 text-sm font-title font-semibold hover:bg-slate-50 transition text-slate-700">
+          Falar com Vendas
+        </a>
       </div>
     </div>
-  </div>
 </section>
 
-<!-- SEGMENTOS -->
-<section id="segmentos" class="bg-slate-900 text-white py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <span class="inline-block bg-green-500/10 text-green-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Para o seu sector</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Feito para todo tipo de negócio</h2>
-      <p class="text-slate-400">Adaptado às necessidades de cada segmento de comércio em Angola.</p>
-    </div>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">🛍️</div>
-        <h3 class="font-bold mb-2">Supermercados</h3>
-        <p class="text-sm text-slate-400">Frente de caixa rápida e gestão de centenas de SKUs.</p>
+  <!-- CTA -->
+  <section class="max-w-7xl mx-auto px-6 pb-24 relative z-10">
+    <div class="glass-card rounded-3xl p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-200 shadow-xl">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-title font-bold text-slate-900 mb-3">Modernize a faturação do seu negócio hoje</h2>
+        <p class="text-slate-600 max-w-xl">Controlo financeiro rigoroso e conformidade legal na palma da sua mão. Teste o Okutonda POS.</p>
       </div>
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">💊</div>
-        <h3 class="font-bold mb-2">Farmácias</h3>
-        <p class="text-sm text-slate-400">Controlo de lotes, validades e receituário.</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">🍽️</div>
-        <h3 class="font-bold mb-2">Restaurantes</h3>
-        <p class="text-sm text-slate-400">Comandas, mesas, takeaway e gestão de cozinha.</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">👕</div>
-        <h3 class="font-bold mb-2">Boutiques</h3>
-        <p class="text-sm text-slate-400">Grade de tamanhos, cores e gestão de colecções.</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">📚</div>
-        <h3 class="font-bold mb-2">Papelarias</h3>
-        <p class="text-sm text-slate-400">Catálogo extenso, escolares e material de escritório.</p>
-      </div>
-      <div class="bg-slate-800/60 rounded-2xl p-6 border border-slate-700">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center mb-4">🏬</div>
-        <h3 class="font-bold mb-2">Armazéns</h3>
-        <p class="text-sm text-slate-400">Vendas por grosso, preços por cliente e logística.</p>
+      <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+        <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20solicitar%20uma%20demonstração%20do%20Okutonda%20POS" 
+           target="_blank" rel="noopener"
+           class="bg-green-500 hover:bg-green-600 text-white font-title font-semibold px-8 py-3.5 rounded-full text-center transition">
+          Iniciar WhatsApp
+        </a>
+        <a href="#planos" class="bg-slate-100 text-slate-800 border border-slate-200 hover:bg-slate-200 font-title font-semibold px-8 py-3.5 rounded-full text-center transition">
+          Ver Planos →
+        </a>
       </div>
     </div>
-  </div>
 </section>
 
-<!-- PLANOS -->
-<section id="planos" class="max-w-7xl mx-auto px-6 py-20">
-  <div class="text-center max-w-2xl mx-auto mb-12">
-    <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">Planos & Preços</span>
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Escolha o plano ideal</h2>
-    <p class="text-slate-500">Sem fidelização. Pode mudar ou cancelar quando quiser.</p>
-  </div>
-  <div class="grid md:grid-cols-3 gap-6 items-center">
-    <div class="border border-slate-200 rounded-2xl p-8">
-      <h3 class="text-xl font-bold mb-1">Start</h3>
-      <p class="text-sm text-slate-500 mb-6">Para começar a controlar o seu negócio.</p>
-      <p class="text-4xl font-extrabold mb-6">15.000 <span class="text-base font-medium text-slate-400">Kz / mês</span></p>
-      <ul class="space-y-2 text-sm mb-8">
-        <li class="flex gap-2"><span class="text-green-500">✔</span> 1 ponto de venda</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Gestão de stock</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Facturação AGT</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Relatórios básicos</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Suporte por email</li>
-      </ul>
-      <a href="#" class="block text-center border border-slate-300 rounded-full py-3 font-semibold hover:bg-slate-50">Começar agora</a>
-    </div>
-    <div class="bg-gradient-to-b from-blue-600 to-slate-900 text-white rounded-2xl p-8 shadow-2xl scale-105 relative">
-      <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-xs font-semibold px-4 py-1 rounded-full">✓ Mais popular</span>
-      <h3 class="text-xl font-bold mb-1">Pro</h3>
-      <p class="text-sm text-blue-200 mb-6">O mais escolhido por comerciantes.</p>
-      <p class="text-4xl font-extrabold mb-6">35.000 <span class="text-base font-medium text-blue-200">Kz / mês</span></p>
-      <ul class="space-y-2 text-sm mb-8">
-        <li class="flex gap-2"><span class="text-green-400">✔</span> Até 3 pontos de venda</li>
-        <li class="flex gap-2"><span class="text-green-400">✔</span> Tudo do plano Start</li>
-        <li class="flex gap-2"><span class="text-green-400">✔</span> App móvel</li>
-        <li class="flex gap-2"><span class="text-green-400">✔</span> Relatórios avançados</li>
-        <li class="flex gap-2"><span class="text-green-400">✔</span> Multi-utilizador</li>
-        <li class="flex gap-2"><span class="text-green-400">✔</span> Suporte prioritário</li>
-      </ul>
-      <a href="#" class="block text-center bg-green-500 rounded-full py-3 font-semibold hover:bg-green-600">Começar agora</a>
-    </div>
-    <div class="border border-slate-200 rounded-2xl p-8">
-      <h3 class="text-xl font-bold mb-1">Business</h3>
-      <p class="text-sm text-slate-500 mb-6">Para redes e operações maiores.</p>
-      <p class="text-3xl font-extrabold mb-6">Sob consulta <span class="block text-base font-medium text-slate-400 mt-1">personalizado</span></p>
-      <ul class="space-y-2 text-sm mb-8">
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Pontos de venda ilimitados</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Tudo do plano Pro</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> API e integrações</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Gestor dedicado</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> Formação no local</li>
-        <li class="flex gap-2"><span class="text-green-500">✔</span> SLA garantido</li>
-      </ul>
-      <a href="#" class="block text-center border border-slate-300 rounded-full py-3 font-semibold hover:bg-slate-50">Começar agora</a>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="bg-slate-50 py-20">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <span class="inline-block bg-blue-50 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">FAQ</span>
-      <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Perguntas frequentes</h2>
-      <p class="text-slate-500">Esclarecemos as dúvidas mais comuns.</p>
-    </div>
-    <div class="space-y-3" id="faqList">
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">O OkuPOS funciona sem internet? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">Sim, o OkuPOS funciona offline e sincroniza automaticamente quando a internet voltar.</p>
-      </details>
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">As facturas são aceites pela AGT? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">Sim, todas as facturas, recibos e proformas são emitidos em conformidade com as normas da AGT.</p>
-      </details>
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">Posso usar em vários dispositivos? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">Sim, pode usar no computador, tablet e telemóvel ao mesmo tempo, com dados sincronizados.</p>
-      </details>
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">Quanto tempo leva a instalação? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">A configuração inicial demora poucos minutos, e a nossa equipa ajuda em todo o processo.</p>
-      </details>
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">Há fidelização ou taxas escondidas? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">Não. Sem contratos longos e sem custos escondidos — pode cancelar quando quiser.</p>
-      </details>
-      <details class="bg-white rounded-xl p-4 border border-slate-100 group">
-        <summary class="cursor-pointer font-semibold flex justify-between items-center">Que suporte recebo? <span class="transition group-open:rotate-180">⌄</span></summary>
-        <p class="text-sm text-slate-500 mt-3">Suporte em português via WhatsApp, email e telefone, com equipa local pronta a ajudar.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="max-w-7xl mx-auto px-6 pb-20">
-  <div class="bg-gradient-to-r from-blue-600 to-green-500 rounded-2xl p-10 flex flex-col md:flex-row items-center justify-between gap-6 text-white">
-    <div>
-      <h2 class="text-2xl md:text-3xl font-extrabold mb-2">Pronto para transformar o seu negócio?</h2>
-      <p class="text-blue-100">Junte-se a centenas de comerciantes angolanos que já vendem mais com o OkuPOS. Comece hoje, sem compromisso.</p>
-    </div>
-    <div class="flex flex-col gap-3 w-full md:w-auto">
-      <a href="#" class="bg-green-500 hover:bg-green-600 font-semibold rounded-full px-8 py-3 text-center whitespace-nowrap">💬 WhatsApp Direto</a>
-      <a href="#planos" class="bg-white text-blue-700 hover:bg-blue-50 font-semibold rounded-full px-8 py-3 text-center whitespace-nowrap">Ver Planos →</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-slate-900 text-slate-400 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
-    <div>
-      <div class="flex items-center gap-2 font-extrabold text-xl text-white mb-3">
-        <span class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">O</span>
-        Oku<span class="text-blue-400">POS</span>
+  <!-- FOOTER -->
+  <footer class="bg-slate-50 text-slate-500 pt-20 pb-10 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 font-title font-bold text-slate-900 text-xl mb-4">
+          <span class="w-8 h-8 rounded-full bg-brand-amber flex items-center justify-center text-white font-title text-base">P</span>
+          Okutonda<span class="text-brand-amber">POS</span>
+        </div>
+        <p class="text-sm text-slate-600">Solução profissional de faturação e retalho da OKUTONDA Technologies. Made in Angola.</p>
       </div>
-      <p class="text-sm">Sistema de gestão e vendas da OKUTONDA Technologies. Feito em Angola, para Angola.</p>
-      <div class="flex gap-3 mt-4">
-        <span class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center">f</span>
-        <span class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center">📷</span>
-        <span class="w-9 h-9 rounded-full bg-slate-800 flex items-center justify-center">in</span>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">Links Rápidos</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#funcionalidades" class="hover:text-slate-900 transition">Funcionalidades</a></li>
+          <li><a href="#segmentos" class="hover:text-slate-900 transition">Segmentos</a></li>
+          <li><a href="#planos" class="hover:text-slate-900 transition">Planos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">OKUTONDA</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../../index.html" class="hover:text-slate-900 transition">Sobre Nós</a></li>
+          <li><a href="../edu/index.html" class="hover:text-slate-900 transition">Okutonda Edu</a></li>
+          <li><a href="../../privacidade.html" class="hover:text-slate-900 transition">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">Contacto</h4>
+        <ul class="space-y-2 text-sm">
+          <li>📍 Luanda, Angola</li>
+          <li>✉️ okutonda@gmail.com</li>
+          <li>📞 +244 945 317 734</li>
+        </ul>
       </div>
     </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3">Produto</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#funcionalidades" class="hover:text-white">Funcionalidades</a></li>
-        <li><a href="#segmentos" class="hover:text-white">Segmentos</a></li>
-        <li><a href="#planos" class="hover:text-white">Planos</a></li>
-        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
-      </ul>
+    <div class="max-w-7xl mx-auto px-6 border-t border-slate-200 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>© 2026 OKUTONDA Technologies. Todos os direitos reservados.</p>
+      <div class="flex gap-6">
+        <a href="../../termos.html" class="hover:text-slate-900 transition">Termos de Uso</a>
+        <a href="../../privacidade.html" class="hover:text-slate-900 transition">Política de Privacidade</a>
+      </div>
     </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3">Empresa</h4>
-      <ul class="space-y-2 text-sm">
-        <li><a href="#" class="hover:text-white">Sobre nós</a></li>
-        <li><a href="#" class="hover:text-white">OkuEdu</a></li>
-        <li><a href="#" class="hover:text-white">Carreiras</a></li>
-        <li><a href="#" class="hover:text-white">Blog</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-white font-semibold mb-3">Contacto</h4>
-      <ul class="space-y-2 text-sm">
-        <li>📞 +244 900 000 000</li>
-        <li>✉️ okupos@okutonda.ao</li>
-        <li>📍 Luanda, Angola</li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto px-6 border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
-    <p>© 2026 OKUTONDA Technologies. Todos os direitos reservados.</p>
-    <div class="flex gap-6"><a href="#" class="hover:text-white">Termos</a><a href="#" class="hover:text-white">Privacidade</a></div>
-  </div>
-</footer>
+  </footer>
 
+
+  <!-- Hero Slider Auto-rotation -->
+  <script>
+    (function(){
+      var slides = document.querySelectorAll('.hero-slide');
+      var indicators = document.querySelectorAll('.indicator');
+      if(slides.length === 0) return;
+      var curSlide = 0;
+      var interval = 4000;
+      var timer;
+
+      function showSlide(index) {
+        slides.forEach(function(s){ s.classList.remove('active'); });
+        indicators.forEach(function(ind){ ind.classList.remove('active'); });
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        curSlide = index;
+      }
+
+      function nextSlide() {
+        var next = (curSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function startTimer() {
+        timer = setInterval(nextSlide, interval);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+      }
+
+      indicators.forEach(function(ind){
+        ind.addEventListener('click', function(){
+          var index = parseInt(this.getAttribute('data-slide'));
+          showSlide(index);
+          resetTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
+
+  <!-- Scroll Navbar transition -->
+  <script>
+    (function(){
+      var header = document.querySelector('header');
+      if(!header) return;
+      function onScroll(){
+        if(window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

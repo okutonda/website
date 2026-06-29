@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Okenda.Edu — Plataforma completa de gestão escolar para Angola. Automatize matrículas, propinas, avaliações, pautas e certificados numa única plataforma." />
-  <meta name="keywords" content="gestão escolar, software escolar, Angola, matrículas, propinas, avaliações, pautas, certificados" />
-  <meta name="author" content="Okenda.Edu" />
-  <meta property="og:title" content="Okenda.Edu — Gestão Escolar Completa" />
+  <meta name="description" content="Okutonda Edu — Plataforma completa de gestão escolar para Angola. Automatize matrículas, propinas, avaliações, pautas e certificados numa única plataforma." />
+  <meta name="keywords" content="gestão escolar, software escolar, Angola, matrículas, propinas, avaliações, pautas, certificados, Okutonda" />
+  <meta name="author" content="OKUTONDA Technologies" />
+  <meta property="og:title" content="Okutonda Edu — Gestão Escolar Completa" />
   <meta property="og:description" content="A plataforma mais completa de gestão escolar para Angola. Automatize toda a operação da sua instituição." />
   <meta property="og:type" content="website" />
-  <title>Okenda.Edu — A Gestão Escolar Completa em Uma Única Plataforma</title>
+  <title>Okutonda Edu — Gestão Escolar Completa em Angola</title>
 
-  <link rel="icon" href="../../img/logo/favicon.ico" type="image/x-icon" />
   <link rel="icon" href="../../img/logo/favicon.png" type="image/png" />
   <!-- Bootstrap 5.3 CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
@@ -22,15 +21,12 @@
 </head>
 <body>
 
-<!-- =============================================
-  NAVBAR
- ============================================= -->
+<!-- NAVBAR -->
 <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top" aria-label="Navegação principal">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand" href="#inicio">
-      <!-- <i class="bi bi-mortarboard-fill me-2" style="color:var(--accent);"></i>Okenda<span class="brand-dot">.</span>Edu -->
-      <img src="assets/img/logo/logotipo.png" width="150px" alt="Okenda.Edu Logo" class="navbar-logo" />
+    <a class="navbar-brand d-flex align-items-center" href="#inicio" style="font-family:var(--font-display); font-weight:700; color:var(--text-light); letter-spacing:0.05em; font-size:1.25rem;">
+      <i class="bi bi-mortarboard-fill me-2" style="color:var(--primary);"></i>Okutonda<span style="color:var(--primary);">.</span>Edu
     </a>
 
     <!-- Toggler mobile -->
@@ -43,56 +39,71 @@
     <!-- Nav links -->
     <div class="collapse navbar-collapse" id="navContent">
       <ul class="navbar-nav mx-auto gap-1">
-        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#inicio">Início</a></li>
         <li class="nav-item"><a class="nav-link" href="#solucao">Funcionalidades</a></li>
         <li class="nav-item"><a class="nav-link" href="#beneficios">Benefícios</a></li>
         <li class="nav-item"><a class="nav-link" href="#instituicoes">Instituições</a></li>
         <li class="nav-item"><a class="nav-link" href="#formulario">Contactos</a></li>
       </ul>
       <!-- Botões CTA -->
-      <div class="navbar-nav-btns mt-3 mt-lg-0">
-       
-        <!-- <a href="#formulario" class="btn-primary-custom" style="font-size:.82rem; padding:9px 22px;"> -->
-        <a href="https://okenda.com.ao/escola/auth/admin" target="_blank" class="btn-primary-custom" style="font-size:.82rem; padding:9px 22px;">
-          <i class="bi bi-calendar-check"></i> Demonstração
+      <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+        <a href="../../index.html" class="btn-outline-white" style="font-size:.82rem; padding:9px 20px;">
+          <i class="bi bi-arrow-left"></i> Voltar à Home
         </a>
-        <a href="https://wa.me/244945317734?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Okenda.Edu"
-           target="_blank" rel="noopener"
-           class="btn-whatsapp" style="font-size:.82rem; padding:9px 22px;">
-          <i class="bi bi-whatsapp"></i> WhatsApp
+        <a href="#formulario" class="btn-primary-custom" style="font-size:.82rem; padding:9px 20px;">
+          <i class="bi bi-calendar-check"></i> Demonstração
         </a>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- =============================================
-     HERO SECTION
-     ============================================= -->
-<section id="inicio">
-  <div id="hero">
+<!-- HERO SECTION -->
+<section id="inicio" class="position-relative overflow-hidden">
+      <!-- Fullscreen Slider Background -->
+    <div class="hero-slider-bg">
+      <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide active">
+          <img src="../../img/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider2.png" alt="OKUTONDA POS Faturação">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider3.png" alt="OKUTONDA ERP Comercial">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider4.png" alt="OKUTONDA CRM Clientes">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider6.png" alt="OKUTONDA Recursos Humanos">
+        </div>
+      </div>
+    </div>
+    <!-- Premium Fading Overlay -->
+    <div class="hero-overlay"></div>
+  <div id="hero" class="position-relative" style="z-index: 4;">
     <div class="hero-grid-bg"></div>
     <div class="container position-relative">
       <div class="row align-items-center gy-5">
-
         <!-- Conteúdo texto -->
         <div class="col-lg-6">
           <div class="hero-badge fade-in-up">
-            <i class="bi bi-stars"></i> Sistema de Gestão Escolar #1 em Angola
+            <i class="bi bi-stars"></i> Gestão Escolar Inteligente em Angola
           </div>
           <h1 class="hero-title fade-in-up delay-1">
             A Gestão Escolar<br>
-            <span>Completa</span> em Uma<br>
+            <span>Completa</span> em uma<br>
             Única Plataforma
           </h1>
           <p class="hero-subtitle fade-in-up delay-2">
-            Automatize matrículas, propinas, avaliações, pautas, certificados e toda a operação da sua instituição de ensino.
+            Automatize matrículas, propinas, avaliações, pautas, certificados e toda a operação da sua instituição de ensino de forma simples e segura.
           </p>
           <div class="hero-buttons fade-in-up delay-3">
             <a href="#formulario" class="btn-primary-custom">
               <i class="bi bi-calendar-check-fill"></i> Solicitar Demonstração
             </a>
-            <a href="https://wa.me/244945317734?text=Olá%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Okenda.Edu"
+            <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Okutonda%20Edu"
                target="_blank" rel="noopener" class="btn-whatsapp">
               <i class="bi bi-whatsapp"></i> Falar no WhatsApp
             </a>
@@ -102,11 +113,11 @@
               <span class="hero-stat-num">+200</span>
               <span class="hero-stat-label">Escolas Parceiras</span>
             </div>
-            <div class="hero-stat" style="border-left:1px solid rgba(255,255,255,.15);padding-left:24px;">
+            <div class="hero-stat" style="border-left:1px solid rgba(15,23,42,.12);padding-left:24px;">
               <span class="hero-stat-num">+50k</span>
               <span class="hero-stat-label">Alunos Geridos</span>
             </div>
-            <div class="hero-stat" style="border-left:1px solid rgba(255,255,255,.15);padding-left:24px;">
+            <div class="hero-stat" style="border-left:1px solid rgba(15,23,42,.12);padding-left:24px;">
               <span class="hero-stat-num">98%</span>
               <span class="hero-stat-label">Satisfação</span>
             </div>
@@ -117,57 +128,61 @@
         <div class="col-lg-6 fade-in-up delay-3">
           <div class="hero-mockup-wrapper">
             <div class="hero-mockup-bg">
-              <!-- Mockup screen decorativo -->
-              <div class="hero-mockup-screen">
-                <div class="mockup-topbar">
+              <div class="hero-mockup-screen d-flex flex-column" style="overflow:hidden;">
+                <div class="mockup-topbar flex-shrink-0">
                   <span class="mockup-dot mockup-dot-red"></span>
                   <span class="mockup-dot mockup-dot-yellow"></span>
                   <span class="mockup-dot mockup-dot-green"></span>
                   <div class="mockup-bar"></div>
                 </div>
-                <div class="mockup-rows">
-                  <div class="mockup-row w-90"></div>
-                  <div class="mockup-row w-60"></div>
-                </div>
-                <div class="mockup-cards">
-                  <div class="mockup-card">
-                    <i class="bi bi-people-fill"></i>
-                    <span>Alunos</span>
+                <!-- Imagem do Produto (Futuro) -->
+                <img src="assets/img/edu-screenshot.png" alt="Okutonda Edu Dashboard" class="img-fluid w-100 h-100 object-fit-cover d-none" onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none');">
+                
+                <div class="mockup-content-fallback flex-grow-1">
+                  <div class="mockup-rows">
+                    <div class="mockup-row w-90"></div>
+                    <div class="mockup-row w-60"></div>
                   </div>
-                  <div class="mockup-card">
-                    <i class="bi bi-cash-stack"></i>
-                    <span>Propinas</span>
+                  <div class="mockup-cards">
+                    <div class="mockup-card">
+                      <i class="bi bi-people-fill"></i>
+                      <span>Alunos</span>
+                    </div>
+                    <div class="mockup-card">
+                      <i class="bi bi-cash-stack"></i>
+                      <span>Propinas</span>
+                    </div>
+                    <div class="mockup-card">
+                      <i class="bi bi-graph-up-arrow"></i>
+                      <span>Notas</span>
+                    </div>
                   </div>
-                  <div class="mockup-card">
-                    <i class="bi bi-graph-up-arrow"></i>
-                    <span>Notas</span>
+                  <div class="mockup-rows mt-3">
+                    <div class="mockup-row w-80"></div>
+                    <div class="mockup-row w-70"></div>
                   </div>
-                </div>
-                <div class="mockup-rows mt-3">
-                  <div class="mockup-row w-80"></div>
-                  <div class="mockup-row w-70"></div>
                 </div>
               </div>
 
               <!-- Floating badges -->
               <div class="hero-float f1">
-                <i class="bi bi-check-circle-fill" style="color:#22C55E;"></i>
+                <i class="bi bi-check-circle-fill" style="color:var(--primary);"></i>
                 <div>
-                  <div style="font-size:.65rem;color:var(--gray-400);font-weight:500;">Matrícula</div>
+                  <div style="font-size:.65rem;color:var(--text-main);font-weight:500;">Matrícula</div>
                   <div>Processada!</div>
                 </div>
               </div>
               <div class="hero-float f2">
                 <i class="bi bi-currency-exchange" style="color:var(--primary);"></i>
                 <div>
-                  <div style="font-size:.65rem;color:var(--gray-400);font-weight:500;">Propina</div>
+                  <div style="font-size:.65rem;color:var(--text-main);font-weight:500;">Propina</div>
                   <div>Recebida</div>
                 </div>
               </div>
               <div class="hero-float f3">
                 <i class="bi bi-file-earmark-check-fill" style="color:var(--accent);"></i>
                 <div>
-                  <div style="font-size:.65rem;color:var(--gray-400);font-weight:500;">Certificado</div>
+                  <div style="font-size:.65rem;color:var(--text-main);font-weight:500;">Certificado</div>
                   <div>Emitido!</div>
                 </div>
               </div>
@@ -176,46 +191,46 @@
         </div>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator">
-      <div class="scroll-mouse"></div>
-      <span>Explorar</span>
-    </div>
   </div>
+    <!-- Indicators absolute positioned at the bottom -->
+    <div class="slider-indicators" id="sliderIndicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+      <span class="indicator" data-slide="3"></span>
+      <span class="indicator" data-slide="4"></span>
+    </div>
 </section>
 
-<!-- =============================================
-     LOGOS / PARCEIROS (social proof)
-     ============================================= -->
-<section style="padding:32px 0; background:var(--white); border-bottom:1px solid var(--gray-100);">
+<!-- PARCEIROS -->
+<section style="padding:48px 0; background:var(--bg-darker); border-bottom:1px solid rgba(255,255,255,0.03);">
   <div class="container">
-    <p class="text-center mb-4" style="font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gray-400);">
+    <p class="text-center mb-4" style="font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-main);">
       Utilizado por Instituições de Todo o País
     </p>
-    <div class="row justify-content-center align-items-center gy-3">
-      <div class="col-6 col-md-2 text-center">
-        <div style="padding:8px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gray-400);">
+    <div class="row justify-content-center align-items-center g-3 text-center">
+      <div class="col-6 col-md-2">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Colégio ABC
         </div>
       </div>
-      <div class="col-6 col-md-2 text-center">
-        <div style="padding:8px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gray-400);">
+      <div class="col-6 col-md-2">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Escola Nova
         </div>
       </div>
-      <div class="col-6 col-md-2 text-center">
-        <div style="padding:8px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gray-400);">
+      <div class="col-6 col-md-2">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> CFPAH
         </div>
       </div>
-      <div class="col-6 col-md-2 text-center">
-        <div style="padding:8px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gray-400);">
+      <div class="col-6 col-md-2">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Ens. Futura
         </div>
       </div>
-      <div class="col-6 col-md-2 text-center">
-        <div style="padding:8px 16px;border:1.5px solid var(--gray-200);border-radius:10px;font-family:var(--font-display);font-weight:700;font-size:.85rem;color:var(--gray-400);">
+      <div class="col-6 col-md-2">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Colégio Elite
         </div>
       </div>
@@ -223,32 +238,26 @@
   </div>
 </section>
 
-<!-- =============================================
-     PROBLEMA
-     ============================================= -->
+<!-- PROBLEMA -->
 <section id="problema" aria-labelledby="problema-title">
   <div class="container">
-    <!-- Heading -->
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
-        <span class="section-badge fade-in-up"><i class="bi bi-exclamation-triangle-fill"></i> O Problema</span>
-        <h2 class="section-title fade-in-up delay-1" id="problema-title">A Sua Escola Ainda Trabalha com Processos Manuais?</h2>
+        <span class="section-badge fade-in-up"><i class="bi bi-exclamation-triangle-fill"></i> O Desafio</span>
+        <h2 class="section-title fade-in-up delay-1" id="problema-title">A sua escola ainda trabalha com processos manuais?</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
-        <p class="section-sub fade-in-up delay-2">Muitas instituições de ensino em Angola ainda enfrentam estes desafios diariamente.</p>
+        <p class="section-sub fade-in-up delay-2">Muitas instituições de ensino em Angola ainda enfrentam barreiras operacionais que travam o crescimento.</p>
       </div>
     </div>
 
-    <!-- Cards de problemas -->
     <div class="row g-4 mb-5">
-      <!-- Card 1 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-file-earmark-excel"></i></div>
           <h5>Notas em Folhas Excel</h5>
-          <p>Planilhas desorganizadas, propensas a erros e difíceis de gerir entre professores.</p>
+          <p>Planilhas desorganizadas, propensas a erros e difíceis de centralizar entre professores.</p>
         </div>
       </div>
-      <!-- Card 2 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-pencil-square"></i></div>
@@ -256,23 +265,20 @@
           <p>Emissão lenta, risco de erros, difícil rastreabilidade e falta de padronização.</p>
         </div>
       </div>
-      <!-- Card 3 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-clock-history"></i></div>
           <h5>Pautas Demoradas</h5>
-          <p>Dias a compilar resultados manualmente, atrasando o fecho de trimestres e anos lectivos.</p>
+          <p>Dias a compilar resultados manuais, atrasando o fecho de trimestres e anos lectivos.</p>
         </div>
       </div>
-      <!-- Card 4 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-wallet2"></i></div>
           <h5>Cobranças Desorganizadas</h5>
-          <p>Controlo de propinas em papel, inadimplência alta e dificuldade para emitir recibos.</p>
+          <p>Controlo de propinas em papel, inadimplência alta e dificuldade para emitir recibos rápidos.</p>
         </div>
       </div>
-      <!-- Card 5 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-chat-dots"></i></div>
@@ -280,7 +286,6 @@
           <p>Encarregados desinformados sobre o desempenho dos filhos e eventos da escola.</p>
         </div>
       </div>
-      <!-- Card 6 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="problema-card">
           <div class="problema-icon"><i class="bi bi-bug"></i></div>
@@ -294,61 +299,56 @@
     <div class="row justify-content-center fade-in-up">
       <div class="col-lg-9">
         <div class="problema-impact">
-          <h3>Estes problemas custam tempo, dinheiro e prejudicam a imagem da sua escola.</h3>
-          <p>Existe uma solução mais inteligente. Descubra como o Okenda.Edu transforma toda a gestão da sua instituição.</p>
+          <h3>Estes problemas custam tempo, dinheiro e prejudicam a imagem da escola.</h3>
+          <p>Existe uma solução mais inteligente. Descubra como o Okutonda Edu transforma toda a gestão da sua instituição.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     SOLUÇÃO
-     ============================================= -->
+<!-- SOLUÇÃO -->
 <section id="solucao" aria-labelledby="solucao-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
         <span class="section-badge fade-in-up"><i class="bi bi-check2-circle"></i> A Solução</span>
-        <h2 class="section-title fade-in-up delay-1" id="solucao-title">Tudo o Que a Sua Escola Precisa Num Só Lugar</h2>
+        <h2 class="section-title fade-in-up delay-1" id="solucao-title">Tudo o que a sua Escola Precisa Num Só Lugar</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
-        <p class="section-sub fade-in-up delay-2">Uma plataforma integrada que cobre todos os processos académicos e administrativos.</p>
+        <p class="section-sub fade-in-up delay-2">Uma plataforma 100% web que cobre todos os processos académicos e administrativos.</p>
       </div>
     </div>
 
     <div class="row g-4">
-      <!-- Card 1 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-mortarboard-fill"></i></div>
           <h4>Gestão Académica</h4>
-          <p>Controlo total sobre turmas, horários, disciplinas e calendário escolar.</p>
+          <p>Controlo total sobre turmas, horários, disciplinas, matrículas e calendário escolar.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Matrículas</span>
             <span class="solucao-tag">Turmas</span>
-            <span class="solucao-tag">Avaliações</span>
+            <span class="solucao-tag">Calendário</span>
           </div>
         </div>
       </div>
-      <!-- Card 2 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-cash-coin"></i></div>
           <h4>Gestão Financeira</h4>
-          <p>Controlo de propinas, emissão de recibos e relatórios financeiros detalhados.</p>
+          <p>Controlo de propinas, emissão de faturas e recibos rápidos e relatórios financeiros detalhados.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Propinas</span>
-            <span class="solucao-tag">Recibos</span>
+            <span class="solucao-tag">Faturas</span>
             <span class="solucao-tag">Relatórios</span>
           </div>
         </div>
       </div>
-      <!-- Card 3 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-person-badge"></i></div>
           <h4>Portal do Aluno</h4>
-          <p>Acesso online a notas, horários, documentos e comunicados da escola.</p>
+          <p>Acesso online simplificado a notas, horários, documentos e comunicados da escola.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Notas</span>
             <span class="solucao-tag">Horários</span>
@@ -356,42 +356,39 @@
           </div>
         </div>
       </div>
-      <!-- Card 4 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-person-video3"></i></div>
           <h4>Portal do Professor</h4>
-          <p>Lançamento de sumários, avaliações e acompanhamento de cada turma.</p>
+          <p>Lançamento ágil de sumários, faltas, avaliações e acompanhamento contínuo de cada turma.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Sumários</span>
-            <span class="solucao-tag">Avaliações</span>
-            <span class="solucao-tag">Portal do Enc.</span>
+            <span class="solucao-tag">Notas</span>
+            <span class="solucao-tag">Turmas</span>
           </div>
         </div>
       </div>
-      <!-- Card 5 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-file-earmark-check"></i></div>
-          <h4>Certificados Automáticos</h4>
-          <p>Emissão instantânea de certificados, declarações e outros documentos oficiais.</p>
+          <h4>Certificados Digitais</h4>
+          <p>Emissão instantânea e automatizada de certificados, declarações e boletins de notas oficiais.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Certificados</span>
             <span class="solucao-tag">Declarações</span>
-            <span class="solucao-tag">Instante</span>
+            <span class="solucao-tag">Impressão</span>
           </div>
         </div>
       </div>
-      <!-- Card 6 -->
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-table"></i></div>
           <h4>Pautas Académicas</h4>
-          <p>Geração automática de pautas trimestrais e finais com exportação em PDF.</p>
+          <p>Geração automática de pautas trimestrais e finais com exportação em PDF e Excel em segundos.</p>
           <div class="solucao-tags">
             <span class="solucao-tag">Trimestrais</span>
             <span class="solucao-tag">Finais</span>
-            <span class="solucao-tag">Recursos</span>
+            <span class="solucao-tag">Média Geral</span>
           </div>
         </div>
       </div>
@@ -399,20 +396,17 @@
   </div>
 </section>
 
-<!-- =============================================
-     BENEFÍCIOS
-     ============================================= -->
+<!-- BENEFÍCIOS -->
 <section id="beneficios" aria-labelledby="beneficios-title">
   <div class="container position-relative">
-    <!-- Heading -->
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
-        <span class="section-badge fade-in-up" style="background:rgba(245,158,11,.15);color:var(--accent);">
+        <span class="section-badge fade-in-up" style="background:rgba(16,185,129,.15);color:var(--primary);">
           <i class="bi bi-graph-up-arrow"></i> Benefícios
         </span>
-        <h2 class="section-title fade-in-up delay-1" id="beneficios-title" style="color:var(--white);">Mais Eficiência, Menos Trabalho Manual</h2>
+        <h2 class="section-title fade-in-up delay-1" id="beneficios-title">Mais Eficiência, Menos Trabalho Manual</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
-        <p class="section-sub fade-in-up delay-2" style="color:rgba(255,255,255,.7);">Resultados reais de escolas que já adoptaram o Okenda.Edu.</p>
+        <p class="section-sub fade-in-up delay-2">Resultados reais medidos em escolas que utilizam o Okutonda Edu.</p>
       </div>
     </div>
 
@@ -422,21 +416,21 @@
         <div class="beneficio-stat">
           <div class="beneficio-icon"><i class="bi bi-lightning-charge-fill"></i></div>
           <div class="beneficio-num" data-counter="80" data-suffix="%">0%</div>
-          <div class="beneficio-label">Menos Tarefas Administrativas</div>
+          <div class="beneficio-label">Menos Tarefas Manuais</div>
         </div>
       </div>
       <div class="col-6 col-lg-3 fade-in-up delay-2">
         <div class="beneficio-stat">
           <div class="beneficio-icon"><i class="bi bi-globe2"></i></div>
           <div class="beneficio-num" data-counter="100" data-suffix="% Web">0%</div>
-          <div class="beneficio-label">Acesso de Qualquer Dispositivo</div>
+          <div class="beneficio-label">Acesso de Qualquer Lugar</div>
         </div>
       </div>
       <div class="col-6 col-lg-3 fade-in-up delay-3">
         <div class="beneficio-stat">
           <div class="beneficio-icon"><i class="bi bi-clock-fill"></i></div>
           <div class="beneficio-num" data-counter="24" data-suffix="h">0h</div>
-          <div class="beneficio-label">Informações em Tempo Real</div>
+          <div class="beneficio-label">Sincronização Online</div>
         </div>
       </div>
       <div class="col-6 col-lg-3 fade-in-up delay-4">
@@ -455,7 +449,7 @@
           <div class="beneficio-feature-icon"><i class="bi bi-diagram-3-fill"></i></div>
           <div>
             <h5>Processos Centralizados</h5>
-            <p>Toda a informação da escola numa única plataforma integrada, sem dados dispersos.</p>
+            <p>Toda a informação da secretaria, tesouraria e corpo docente unificada numa única nuvem.</p>
           </div>
         </div>
       </div>
@@ -463,8 +457,8 @@
         <div class="beneficio-feature">
           <div class="beneficio-feature-icon"><i class="bi bi-people-fill"></i></div>
           <div>
-            <h5>Multi-Utilizador</h5>
-            <p>Directores, secretarias, professores e encarregados, cada um com o seu acesso.</p>
+            <h5>Controlo de Níveis de Acesso</h5>
+            <p>Diretores, secretários, professores, alunos e pais, cada um com o seu próprio painel seguro.</p>
           </div>
         </div>
       </div>
@@ -472,8 +466,8 @@
         <div class="beneficio-feature">
           <div class="beneficio-feature-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
           <div>
-            <h5>Relatórios Detalhados</h5>
-            <p>Tome decisões baseadas em dados com relatórios académicos e financeiros completos.</p>
+            <h5>Relatórios Inteligentes</h5>
+            <p>Tome decisões estratégicas com dashboards que revelam a taxa de abandono, notas médias e receitas.</p>
           </div>
         </div>
       </div>
@@ -482,7 +476,7 @@
           <div class="beneficio-feature-icon"><i class="bi bi-phone-fill"></i></div>
           <div>
             <h5>Totalmente Responsivo</h5>
-            <p>Acesse pelo computador, tablet ou smartphone com a mesma experiência perfeita.</p>
+            <p>Aceda pelo computador, tablet ou smartphone com a mesma experiência fluida e intuitiva.</p>
           </div>
         </div>
       </div>
@@ -490,78 +484,70 @@
   </div>
 </section>
 
-<!-- =============================================
-     INSTITUIÇÕES
-     ============================================= -->
+<!-- INSTITUIÇÕES -->
 <section id="instituicoes" aria-labelledby="inst-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
-        <span class="section-badge fade-in-up"><i class="bi bi-buildings-fill"></i> Para Quem</span>
-        <h2 class="section-title fade-in-up delay-1" id="inst-title">Adaptado Para Todas as Instituições de Ensino</h2>
+        <span class="section-badge fade-in-up"><i class="bi bi-buildings-fill"></i> Flexibilidade</span>
+        <h2 class="section-title fade-in-up delay-1" id="inst-title">Adaptado Para Todas as Instituições</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
-        <p class="section-sub fade-in-up delay-2">Do pré-escolar ao ensino técnico profissional, o Okenda.Edu adapta-se a cada realidade.</p>
+        <p class="section-sub fade-in-up delay-2">Do ensino primário à formação técnico-profissional, o Okutonda Edu adapta-se à sua metodologia.</p>
       </div>
     </div>
 
     <div class="row g-4">
-      <!-- Pré-Escolar -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-1">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#FEF3C7,#FDE68A);">🎨</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🎨</div>
           <div class="inst-card-body">
             <h5>Pré-Escolar</h5>
-            <p>Gestão simplificada para crianças em idade pré-escolar.</p>
+            <p>Controlo simples de presenças e fichas descritivas.</p>
           </div>
         </div>
       </div>
-      <!-- Ensino Primário -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-2">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#DBEAFE,#BFDBFE);">📚</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">📚</div>
           <div class="inst-card-body">
             <h5>Ens. Primário</h5>
-            <p>Controlo de notas, turmas e comunicação com famílias.</p>
+            <p>Boletins de notas, turmas e comunicação com encarregados.</p>
           </div>
         </div>
       </div>
-      <!-- I Ciclo -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-3">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#D1FAE5,#A7F3D0);">🎓</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🎓</div>
           <div class="inst-card-body">
             <h5>I Ciclo</h5>
-            <p>Gestão completa do ensino médio com pautas automáticas.</p>
+            <p>Geração de pautas automáticas trimestrais e estatísticas.</p>
           </div>
         </div>
       </div>
-      <!-- II Ciclo -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-4">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#EDE9FE,#DDD6FE);">🔬</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🔬</div>
           <div class="inst-card-body">
             <h5>II Ciclo</h5>
-            <p>Preparação para exames com rastreio de desempenho detalhado.</p>
+            <p>Controle de exames, históricos de aproveitamento e médias.</p>
           </div>
         </div>
       </div>
-      <!-- Ens. Técnico -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-5">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#FFE4E6,#FECDD3);">⚙️</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">⚙️</div>
           <div class="inst-card-body">
             <h5>Ens. Técnico</h5>
-            <p>Módulos especializados para cursos técnicos profissionais.</p>
+            <p>Módulos para cursos técnicos, disciplinas e estágios.</p>
           </div>
         </div>
       </div>
-      <!-- Centros de Form. -->
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-6">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:linear-gradient(135deg,#FEF9C3,#FEF08A);">🏫</div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🏫</div>
           <div class="inst-card-body">
             <h5>Centros Form.</h5>
-            <p>Gestão de cursos, turmas e certificações profissionais.</p>
+            <p>Gestão rápida de turmas curtas e emissão de certificados.</p>
           </div>
         </div>
       </div>
@@ -569,15 +555,13 @@
   </div>
 </section>
 
-<!-- =============================================
-     DASHBOARD / GALERIA
-     ============================================= -->
+<!-- DASHBOARD / GALERIA -->
 <section id="dashboard" aria-labelledby="dash-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-4">
       <div class="col-lg-7">
         <span class="section-badge fade-in-up"><i class="bi bi-display"></i> Preview</span>
-        <h2 class="section-title fade-in-up delay-1" id="dash-title">Veja o Sistema em Funcionamento</h2>
+        <h2 class="section-title fade-in-up delay-1" id="dash-title">Veja a Interface em Funcionamento</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
       </div>
     </div>
@@ -598,37 +582,35 @@
       </div>
 
       <div class="dash-screen-item" data-screen="overview">
-        <img src="assets/img/escola1.png" class="w-100" style="display:block; border-radius:8px;" alt="Dashboard Visão Geral">
+        <img src="assets/img/escola1.png" class="w-100" style="display:block; border-radius:8px;" alt="Dashboard Visão Geral" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Dashboard+Overview'">
       </div>
 
       <div class="dash-screen-item" data-screen="academico" style="display:none;">
-        <img src="assets/img/escola2.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Académica">
+        <img src="assets/img/escola2.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Académica" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Academico+Screen'">
       </div>
 
       <div class="dash-screen-item" data-screen="financeiro" style="display:none;">
-        <img src="assets/img/escola3.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Financeira">
+        <img src="assets/img/escola3.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Financeira" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Financeiro+Screen'">
       </div>
 
       <div class="dash-screen-item" data-screen="aluno" style="display:none;">
-        <img src="assets/img/escola4.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Aluno">
+        <img src="assets/img/escola4.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Aluno" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Portal+do+Aluno'">
       </div>
 
       <div class="dash-screen-item" data-screen="professor" style="display:none;">
-        <img src="assets/img/escola5.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Professor">
+        <img src="assets/img/escola5.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Professor" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Portal+do+Professor'">
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     DIFERENCIAIS
-     ============================================= -->
+<!-- DIFERENCIAIS -->
 <section id="diferenciais" aria-labelledby="dif-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
         <span class="section-badge fade-in-up"><i class="bi bi-trophy-fill"></i> Diferenciais</span>
-        <h2 class="section-title fade-in-up delay-1" id="dif-title">Porque Escolher o Okenda.Edu</h2>
+        <h2 class="section-title fade-in-up delay-1" id="dif-title">Porque Escolher o Okutonda Edu</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
       </div>
     </div>
@@ -637,107 +619,102 @@
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-geo-alt-fill"></i></div>
-          <h4>Desenvolvido para Angola</h4>
-          <p>Sistema criado de raiz para o contexto educacional angolano, com suporte ao currículo nacional e moeda local.</p>
+          <h4>Desenvolvido em Angola</h4>
+          <p>Sistema alinhado ao currículo escolar angolano e à moeda nacional, adaptado inteiramente ao nosso contexto.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-globe2"></i></div>
-          <h4>Plataforma 100% Web</h4>
-          <p>Sem instalação de software. Acesse de qualquer dispositivo com internet, incluindo smartphones.</p>
+          <h4>Plataforma 100% Cloud</h4>
+          <p>Aceda a partir de qualquer computador, tablet ou smartphone conectado à internet, sem instalações locais.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-shield-lock-fill"></i></div>
-          <h4>Segurança Avançada</h4>
-          <p>Dados criptografados, backups automáticos e controlo rigoroso de acessos por perfil de utilizador.</p>
+          <h4>Segurança e Proteção</h4>
+          <p>Backups diários automatizados e encriptação ponta a ponta garantem a segurança dos dados escolares.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-headset"></i></div>
-          <h4>Suporte Especializado</h4>
-          <p>Equipa de suporte angolana disponível via WhatsApp, email e telefone. Formação incluída na implementação.</p>
+          <h4>Suporte Técnico Local</h4>
+          <p>Nossa equipa está sempre disponível para suporte rápido presencial e via WhatsApp, com formações incluídas.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-arrow-repeat"></i></div>
-          <h4>Atualizações Constantes</h4>
-          <p>Melhorias e novas funcionalidades adicionadas regularmente, sem custos adicionais.</p>
+          <h4>Evolução Sem Custos</h4>
+          <p>Atualizações regulares com novas funcionalidades e melhorias de segurança são disponibilizadas gratuitamente.</p>
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
         <div class="dif-card">
           <div class="dif-icon"><i class="bi bi-bar-chart-steps"></i></div>
-          <h4>Escalabilidade</h4>
-          <p>Do pré-escolar com 50 alunos ao complexo educativo com 5.000 alunos. O sistema cresce com a sua escola.</p>
+          <h4>Escalabilidade Ilimitada</h4>
+          <p>Seja um colégio de bairro de 100 alunos ou um complexo escolar de 10.000 alunos, a infraestrutura acompanha.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     TESTEMUNHOS
-     ============================================= -->
+<!-- TESTEMUNHOS -->
 <section id="testemunhos" aria-labelledby="test-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
-        <span class="section-badge fade-in-up"><i class="bi bi-chat-quote-fill"></i> Testemunhos</span>
+        <span class="section-badge fade-in-up"><i class="bi bi-chat-quote-fill"></i> Sucesso</span>
         <h2 class="section-title fade-in-up delay-1" id="test-title">O Que Dizem Quem Já Usa</h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
       </div>
     </div>
 
     <div class="row g-4">
-      <!-- Testemunho 1 -->
       <div class="col-md-4 fade-in-up delay-1">
         <div class="test-card">
           <div class="test-stars">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
-          <p>"O Okenda.Edu transformou completamente a nossa gestão escolar. O que antes levava 3 dias para preparar pautas, hoje fazemos em minutos. A equipa de secretaria está muito mais produtiva."</p>
+          <p>"O Okutonda Edu transformou o nosso final de ano letivo. O que antes levava dias de cálculo em planilhas para gerar as pautas, agora fazemos com cliques. A secretaria trabalha feliz."</p>
           <div class="test-author">
             <div class="test-avatar">MS</div>
             <div class="test-author-info">
               <strong>Maria Santos</strong>
-              <span>Directora Pedagógica · Colégio Nova Era, Luanda</span>
+              <span>Diretora Pedagógica · Colégio Nova Era, Luanda</span>
             </div>
           </div>
         </div>
       </div>
-      <!-- Testemunho 2 -->
       <div class="col-md-4 fade-in-up delay-2">
         <div class="test-card">
           <div class="test-stars">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
           </div>
-          <p>"A gestão financeira mudou completamente. Acabaram-se as planilhas perdidas. Agora vejo em tempo real quantos alunos pagaram e quantos estão em atraso. O controlo é total."</p>
+          <p>"A gestão financeira da escola mudou inteiramente. Acabaram-se os registos dispersos em blocos de papel. Hoje temos o controlo de propinas pagas e em atraso em tempo real."</p>
           <div class="test-author">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#F59E0B,#D97706);">AF</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">AF</div>
             <div class="test-author-info">
               <strong>António Ferreira</strong>
-              <span>Director Geral · Escola Técnica do Bié</span>
+              <span>Diretor Geral · Escola Técnica do Bié</span>
             </div>
           </div>
         </div>
       </div>
-      <!-- Testemunho 3 -->
       <div class="col-md-4 fade-in-up delay-3">
         <div class="test-card">
           <div class="test-stars">
             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
           </div>
-          <p>"Os encarregados adoram o portal. Agora acompanham as notas e recebem comunicados em tempo real. A comunicação entre escola e família melhorou drasticamente."</p>
+          <p>"Os encarregados adoram o portal do aluno. Eles acompanham as notas trimestrais e recebem os boletins dos filhos à distância, sem precisar de se deslocar à secretaria."</p>
           <div class="test-author">
-            <div class="test-avatar" style="background:linear-gradient(135deg,#10B981,#059669);">CN</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#10b981,#059669);">CN</div>
             <div class="test-author-info">
               <strong>Clara Neto</strong>
-              <span>Directora · Centro de Formação Profissional Angola</span>
+              <span>Diretora · Centro de Formação Profissional, Angola</span>
             </div>
           </div>
         </div>
@@ -746,55 +723,47 @@
   </div>
 </section>
 
-<!-- =============================================
-     CTA FINAL
-     ============================================= -->
+<!-- CTA FINAL -->
 <section id="cta-final" aria-labelledby="cta-title">
   <div class="container position-relative text-center">
-    <span class="section-badge fade-in-up" style="background:rgba(245,158,11,.15);color:var(--accent);justify-content:center;">
-      <i class="bi bi-rocket-takeoff-fill"></i> Comece Hoje
+    <span class="section-badge fade-in-up" style="background:rgba(16,185,129,.15);color:var(--primary);justify-content:center;">
+      <i class="bi bi-rocket-takeoff-fill"></i> Modernize
     </span>
-    <h2 class="cta-title fade-in-up delay-1" id="cta-title">Pronto Para Modernizar a Sua Escola?</h2>
+    <h2 class="cta-title fade-in-up delay-1" id="cta-title">Pronto para digitalizar a sua escola?</h2>
     <p class="cta-sub fade-in-up delay-2 mx-auto" style="max-width:560px;">
-      Solicite uma demonstração gratuita e descubra como o Okenda.Edu pode transformar a gestão da sua instituição.
+      Agende uma demonstração sem compromisso e veja como podemos impulsionar os seus processos académicos.
     </p>
     <div class="cta-buttons fade-in-up delay-3">
       <a href="#formulario" class="btn-primary-custom">
         <i class="bi bi-calendar-check-fill"></i> Agendar Demonstração
       </a>
-      <a href="#formulario" class="btn-accent-custom">
-        <i class="bi bi-file-earmark-text"></i> Solicitar Proposta
-      </a>
-      <a href="https://wa.me/244945317734?text=Quero%20uma%20demonstração%20do%20Okenda.Edu"
+      <a href="https://wa.me/244945317734?text=Quero%20uma%20demonstração%20do%20Okutonda%20Edu"
          target="_blank" rel="noopener" class="btn-outline-white">
-        <i class="bi bi-whatsapp"></i> WhatsApp
+        <i class="bi bi-whatsapp"></i> Falar no WhatsApp
       </a>
     </div>
   </div>
 </section>
 
-<!-- =============================================
-     FORMULÁRIO DE CAPTURA
-     ============================================= -->
+<!-- FORMULÁRIO DE CAPTURA -->
 <section id="formulario" style="padding:96px 0;" aria-labelledby="form-title">
   <div class="container">
     <div class="row g-0 align-items-stretch">
       <!-- Form side info -->
       <div class="col-lg-4 fade-in-up delay-1">
         <div class="form-side">
-          <span class="section-badge" style="background:rgba(245,158,11,.15);color:var(--accent);">
-            <i class="bi bi-send-fill"></i> Fale Connosco
+          <span class="section-badge" style="background:rgba(16,185,129,.08);color:var(--primary);">
+            <i class="bi bi-send-fill"></i> Demonstração
           </span>
-          <h3>Solicite uma Demonstração Gratuita</h3>
-          <p>Preencha o formulário e a nossa equipa entrará em contacto em até 24 horas.</p>
-          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Demonstração sem compromisso</div>
-          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Suporte dedicado na implementação</div>
-          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Formação gratuita para a equipa</div>
-          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Proposta personalizada</div>
-          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Sem taxa de instalação</div>
+          <h3>Agende uma Apresentação Completa</h3>
+          <p>Deixe os dados da sua instituição e um dos nossos consultores entrará em contacto nas próximas horas.</p>
+          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Apresentação online ou presencial</div>
+          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Planos adaptados à dimensão da escola</div>
+          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Formação presencial incluída</div>
+          <div class="form-side-feature"><i class="bi bi-check-circle-fill"></i> Migração de dados de sistemas antigos</div>
           <div class="mt-4 pt-2">
-            <a href="https://wa.me/244945317734" target="_blank" rel="noopener" class="btn-whatsapp">
-              <i class="bi bi-whatsapp"></i> Falar Agora no WhatsApp
+            <a href="https://wa.me/244945317734" target="_blank" rel="noopener" class="btn-whatsapp" style="padding: 10px 24px; font-size: 0.85rem;">
+              <i class="bi bi-whatsapp"></i> Iniciar Conversa no WhatsApp
             </a>
           </div>
         </div>
@@ -802,9 +771,9 @@
 
       <!-- Form -->
       <div class="col-lg-8 fade-in-up delay-2">
-        <div class="form-wrapper" style="border-radius:0 var(--radius-xl) var(--radius-xl) 0;">
-          <h3 id="form-title">Solicitar Demonstração</h3>
-          <p>Preencha os dados abaixo e entraremos em contacto.</p>
+        <div class="form-wrapper">
+          <h3 id="form-title">Solicitar Contacto</h3>
+          <p>Preencha os campos obrigatórios (*) para agendarmos a apresentação.</p>
 
           <form id="demoForm" novalidate>
             <div class="row g-3">
@@ -863,7 +832,7 @@
               <div class="col-12">
                 <label for="mensagem" class="form-label">Mensagem (opcional)</label>
                 <textarea id="mensagem" name="mensagem" class="form-control" rows="3"
-                  placeholder="Conta-nos um pouco mais sobre a tua escola ou o que precisas..."></textarea>
+                  placeholder="Conte-nos um pouco mais sobre a sua instituição ou dúvidas específicas..."></textarea>
               </div>
               <!-- Submit -->
               <div class="col-12">
@@ -872,9 +841,9 @@
                 </button>
               </div>
               <div class="col-12">
-                <p style="font-size:.75rem;color:var(--gray-400);text-align:center;margin:0;">
+                <p style="font-size:.75rem;color:var(--text-main);text-align:center;margin:0;">
                   <i class="bi bi-lock-fill me-1"></i>
-                  Os seus dados estão seguros. Não partilhamos informações com terceiros.
+                  Os seus dados estão seguros. Não partilhamos informações.
                 </p>
               </div>
             </div>
@@ -885,17 +854,15 @@
   </div>
 </section>
 
-<!-- =============================================
-     FOOTER
-     ============================================= -->
+<!-- FOOTER -->
 <footer id="footer" role="contentinfo">
   <div class="container">
     <div class="row g-4">
       <!-- Brand -->
       <div class="col-lg-4">
-        <span class="footer-brand"><i class="bi bi-mortarboard-fill me-2" style="color:var(--accent);"></i>Okenda<span style="color:var(--accent);">.</span>Edu</span>
-        <p class="footer-tagline">A plataforma de gestão escolar mais completa de Angola.</p>
-        <div class="footer-contact-item" href="tel:+244945317734">
+        <span class="footer-brand"><i class="bi bi-mortarboard-fill me-2" style="color:var(--primary);"></i>Okutonda<span style="color:var(--primary);">.</span>Edu</span>
+        <p class="footer-tagline">Soluções inovadoras de gestão escolar adaptadas às exigências operacionais de Angola.</p>
+        <div class="footer-contact-item">
           <i class="bi bi-telephone-fill"></i>
           <span>+244 945 317 734</span>
         </div>
@@ -903,31 +870,25 @@
           <i class="bi bi-whatsapp"></i>
           <span>+244 945 317 734 (WhatsApp)</span>
         </a>
-        <a class="footer-contact-item" href="mailto:info@okenda.edu.ao">
+        <a class="footer-contact-item" href="mailto:okutonda@gmail.com">
           <i class="bi bi-envelope-fill"></i>
           <span>okutonda@gmail.com</span>
         </a>
-        <div class="social-links">
-          <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/okutonda?igsh=ZDg0ODYxaThwcnM1" target="_blank" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/hulquene-roberto-ngola-66b849227" target="_blank" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com" target="_blank" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-        </div>
       </div>
 
       <!-- Links - Produto -->
-      <div class="col-sm-6 col-lg-2">
+      <div class="col-sm-6 col-lg-2 offset-lg-1">
         <p class="footer-heading">Produto</p>
         <ul class="footer-links">
           <li><a href="#solucao">Funcionalidades</a></li>
           <li><a href="#beneficios">Benefícios</a></li>
           <li><a href="#diferenciais">Diferenciais</a></li>
-          <li><a href="#dashboard">Preview</a></li>
+          <li><a href="#dashboard">Visualização</a></li>
           <li><a href="#formulario">Demonstração</a></li>
         </ul>
       </div>
 
-      <!-- Links - Instituições -->
+      <!-- Links - Níveis -->
       <div class="col-sm-6 col-lg-2">
         <p class="footer-heading">Instituições</p>
         <ul class="footer-links">
@@ -939,46 +900,35 @@
         </ul>
       </div>
 
-      <!-- Links - Suporte -->
-      <div class="col-sm-6 col-lg-2">
-        <p class="footer-heading">Suporte</p>
+      <!-- Links - Corporativo -->
+      <div class="col-sm-6 col-lg-3">
+        <p class="footer-heading">OKUTONDA</p>
         <ul class="footer-links">
-          <li><a href="#formulario">Central de Ajuda</a></li>
-          <li><a href="#formulario">Formação</a></li>
-          <li><a href="https://wa.me/244945317734" target="_blank" rel="noopener">WhatsApp</a></li>
-          <li><a href="mailto:suporte@okenda.edu.ao">E-mail Suporte</a></li>
+          <li><a href="../../index.html">Sobre Nós</a></li>
+          <li><a href="../../privacidade.html">Política de Privacidade</a></li>
+          <li><a href="../../termos.html">Termos de Uso</a></li>
         </ul>
-      </div>
-
-      <!-- Contacto rápido -->
-      <div class="col-sm-6 col-lg-2">
-        <p class="footer-heading">Empresa</p>
-        <ul class="footer-links">
-          <li><a href="#">Sobre Nós</a></li>
-          <li><a href="#">Carreiras</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Política de Privacidade</a></li>
-          <li><a href="#">Termos de Uso</a></li>
-        </ul>
+        <div class="social-links mt-3 d-flex gap-2">
+          <a href="https://www.facebook.com/profile.php?id=61565844385579" target="_blank" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/okutonda" target="_blank" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
       </div>
     </div>
 
     <!-- Footer bottom -->
     <div class="footer-bottom">
-      <span>© 2025 Okenda.Edu · Todos os direitos reservados · Desenvolvido em Angola 🇦🇴</span>
-      <span>Luanda, Angola · info@okenda.edu.ao</span>
+      <span>© 2026 OKUTONDA Technologies. Todos os direitos reservados.</span>
+      <span>Luanda, Angola · okutonda@gmail.com</span>
     </div>
   </div>
 </footer>
 
-<!-- =============================================
-     MODAL DE DASHBOARD
-     ============================================= -->
+<!-- MODAL DE DASHBOARD -->
 <div class="modal fade" id="dashboardModal" tabindex="-1" aria-labelledby="dashboardModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="dashboardModalLabel" style="font-family:var(--font-display);font-weight:700;color:var(--secondary);">Dashboard</h5>
+        <h5 class="modal-title" id="dashboardModalLabel">Dashboard</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
       </div>
       <div class="modal-body">
@@ -989,7 +939,7 @@
 </div>
 
 <!-- WhatsApp float -->
-<a href="https://wa.me/244945317734?text=Olá%2C%20tenho%20interesse%20no%20Okenda.Edu"
+<a href="https://wa.me/244945317734?text=Olá,%20tenho%20interesse%20no%20Okutonda%20Edu"
    target="_blank" rel="noopener"
    class="whatsapp-float"
    aria-label="Falar no WhatsApp">
@@ -1005,5 +955,49 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Custom JS -->
 <script src="assets/js/main.js"></script>
+
+  <!-- Hero Slider Auto-rotation -->
+  <script>
+    (function(){
+      var slides = document.querySelectorAll('.hero-slide');
+      var indicators = document.querySelectorAll('.indicator');
+      if(slides.length === 0) return;
+      var curSlide = 0;
+      var interval = 4000;
+      var timer;
+
+      function showSlide(index) {
+        slides.forEach(function(s){ s.classList.remove('active'); });
+        indicators.forEach(function(ind){ ind.classList.remove('active'); });
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        curSlide = index;
+      }
+
+      function nextSlide() {
+        var next = (curSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function startTimer() {
+        timer = setInterval(nextSlide, interval);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+      }
+
+      indicators.forEach(function(ind){
+        ind.addEventListener('click', function(){
+          var index = parseInt(this.getAttribute('data-slide'));
+          showSlide(index);
+          resetTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
 </body>
 </html>

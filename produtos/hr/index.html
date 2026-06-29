@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../img/logo/favicon.png" type="image/png" />
+  <title>Okutonda HR — Gestão de Recursos Humanos e Processamento de Salários em Angola</title>
+  
+  <meta name="description" content="Okutonda HR — O software completo para gerir colaboradores, processamento de salários, cálculos automáticos de IRT e INSS e controle de férias em Angola." />
+  <meta name="keywords" content="recursos humanos Angola, processamento de salários Luanda, cálculo IRT INSS, gestão de pessoal, Okutonda" />
+  <meta name="author" content="OKUTONDA Technologies" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            title: ['Space Grotesk', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              pink: '#ec4899',
+              'pink-dark': '#db2777',
+              'dark-space': '#ffffff',
+              'bg-card': 'rgba(255, 255, 255, 0.8)',
+              text: '#475569',
+            },
+            slate: {
+              900: '#0a1d37',
+              50: '#f4f7fa',
+              100: '#eef2f6',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #475569;
+    }
+    .mesh-bg {
+      background: radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.04) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                  #ffffff;
+    }
+    .grid-pattern {
+      background-image: linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    /* ─── FULLSCREEN BACKGROUND SLIDER ─── */
+    .hero-slider-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+    }
+    .hero-slides {
+      position: relative; width: 100%; height: 100%; overflow: hidden;
+      background: #f4f7fa;
+    }
+    .hero-slide {
+      position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out;
+    }
+    .hero-slide.active { opacity: 1; z-index: 2; }
+    .hero-slide img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0.08) 100%);
+      z-index: 3; pointer-events: none;
+    }
+    .slider-indicators {
+      position: absolute; bottom: 40px; right: 40px; z-index: 5;
+      display: flex; gap: 8px;
+    }
+    .indicator {
+      width: 8px; height: 8px; border-radius: 50%; background: rgba(7, 39, 74, 0.25);
+      cursor: pointer; transition: all 0.3s;
+    }
+    .indicator.active {
+      background: #07274a; width: 24px; border-radius: 4px;
+    }
+    @media(max-width:880px){
+      .hero-overlay {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.88) 30%, rgba(255, 255, 255, 0.95) 100%);
+      }
+      .slider-indicators {
+        left: 50%; right: auto; transform: translateX(-50%);
+        bottom: 24px;
+      }
+    }
+
+    /* ─── SCROLL NAVBAR MENU ─── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      background-color: transparent; border-bottom: 1px solid transparent;
+      transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(15, 23, 42, 0.06);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+    header > div {
+      transition: padding 0.3s;
+    }
+    header.scrolled > div {
+      padding-top: 12px; padding-bottom: 12px;
+    }
+  </style>
+</head>
+<body class="mesh-bg relative min-h-screen overflow-x-hidden font-body">
+
+  <div class="grid-pattern absolute inset-0 pointer-events-none z-0"></div>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div class="flex items-center gap-2 font-title font-bold text-xl text-slate-900">
+        <span class="w-8 h-8 rounded-full bg-brand-pink flex items-center justify-center text-slate-900 font-title text-base">H</span>
+        Okutonda<span class="text-brand-pink">HR</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-1 text-xs font-title font-semibold text-slate-600">
+        <a href="#problemas" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Problemas</a>
+        <a href="#solucao" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Solução</a>
+        <a href="#funcionalidades" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Funcionalidades</a>
+        <a href="#contacto" class="px-4 py-2 hover:text-slate-900 hover:bg-slate-100 rounded-full transition">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="../../index.html" class="hidden sm:inline-block text-xs font-title font-semibold text-slate-600 hover:text-slate-900 transition border border-slate-200 rounded-full px-5 py-2">
+          Voltar à Home
+        </a>
+        <a href="#contacto" class="text-xs font-title font-semibold text-slate-900 bg-brand-pink hover:bg-brand-pink-dark transition rounded-full px-5 py-2 shadow-lg shadow-pink-500/20">
+          Solicitar Demo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative z-10 overflow-hidden min-h-screen flex items-center pt-28 pb-16">
+    <!-- Fullscreen Slider Background -->
+    <div class="hero-slider-bg">
+      <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide active">
+          <img src="../../img/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider2.png" alt="OKUTONDA POS Faturação">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider3.png" alt="OKUTONDA ERP Comercial">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider4.png" alt="OKUTONDA CRM Clientes">
+        </div>
+        <div class="hero-slide">
+          <img src="../../img/hero/slider6.png" alt="OKUTONDA Recursos Humanos">
+        </div>
+      </div>
+    </div>
+    <!-- Premium Fading Overlay -->
+    <div class="hero-overlay"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-flex items-center gap-2 bg-brand-pink/5 border border-brand-pink/10 text-brand-pink text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-6 uppercase tracking-wider">
+          👥 OKUTONDA Technologies · Gestão de Equipa
+        </span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-title font-bold text-slate-900 leading-tight mb-6 tracking-tight">
+          Gestão de RH inteligente e <span class="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent">processamento salarial</span> ágil.
+        </h1>
+        <p class="text-slate-600 text-lg mb-8 max-w-lg">
+          O Okutonda HR digitaliza o seu departamento de pessoal. Controle férias, processe folhas de salários, calcule taxas de IRT/INSS de forma automática e emita recibos num clique.
+        </p>
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a href="#contacto" class="bg-gradient-to-r from-brand-pink to-rose-700 text-slate-900 font-title font-semibold px-6 py-3.5 rounded-full hover:shadow-lg hover:shadow-pink-500/25 transition">
+            Agendar Demonstração
+          </a>
+          <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Okutonda%20HR" 
+             target="_blank" rel="noopener"
+             class="bg-slate-100 text-slate-900 border border-slate-200 font-title font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition flex items-center gap-2">
+            💬 WhatsApp
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-6 text-sm text-slate-600">
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-pink rounded-full animate-ping"></span> Suporte Direto</span>
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-pink rounded-full"></span> Conforme Lei Geral do Trabalho</span>
+          <span class="flex items-center gap-2"><span class="w-2 h-2 bg-brand-pink rounded-full"></span> Exportações Seguras</span>
+        </div>
+      </div>
+      
+      <div class="relative hidden md:block">
+        <div class="hero-mockup-bg p-8 rounded-3xl border border-slate-900/5 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-xl shadow-2xl relative">
+          <div class="grid grid-cols-3 gap-3">
+            <div class="h-20 bg-brand-pink/10 border border-brand-pink/20 rounded-lg flex items-center justify-center text-brand-pink">📄</div>
+            <div class="h-20 bg-green-500/10 border border-green-500/20 rounded-lg flex items-center justify-center text-green-500">📅</div>
+            <div class="h-20 bg-slate-100 border border-slate-200 rounded-lg flex items-center justify-center text-slate-500">🏢</div>
+            <div class="col-span-3 h-36 bg-slate-950/80 border border-slate-900/5 rounded-lg flex items-end p-4 gap-3">
+              <div class="w-1/6 bg-brand-pink/40 h-1/3 rounded"></div>
+              <div class="w-1/6 bg-brand-pink/40 h-2/3 rounded"></div>
+              <div class="w-1/6 bg-brand-pink h-full rounded shadow-lg shadow-pink-500/30"></div>
+              <div class="w-1/6 bg-brand-pink/40 h-1/2 rounded"></div>
+              <div class="w-1/6 bg-brand-pink h-3/4 rounded shadow-lg shadow-pink-500/20"></div>
+              <div class="w-1/6 bg-brand-pink/40 h-1/4 rounded"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Indicators absolute positioned at the bottom -->
+    <div class="slider-indicators" id="sliderIndicators">
+      <span class="indicator active" data-slide="0"></span>
+      <span class="indicator" data-slide="1"></span>
+      <span class="indicator" data-slide="2"></span>
+      <span class="indicator" data-slide="3"></span>
+      <span class="indicator" data-slide="4"></span>
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section id="problemas" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block bg-red-500/10 border border-red-500/20 text-red-500 text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Problemas de Gestão de Pessoal
+      </span>
+      <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">Sua empresa ainda calcula salários à mão?</h2>
+      <p class="text-slate-600">Erros de cálculo e atrasos no processamento geram insatisfação e riscos legais.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">⏳</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Processamento lento</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Dias inteiros perdidos a calcular horas extras, subsídios e faltas em planilhas Excel lentas e confusas.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">⚖️</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Erros fiscais e legais</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Cálculos errados de Segurança Social (INSS) ou Imposto sobre o Rendimento do Trabalho (IRT), levando a coimas da AGT.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/30 transition duration-300">
+        <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center mb-6">📁</div>
+        <h3 class="font-title font-bold text-slate-900 text-lg mb-2">Férias em papel</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Pedidos de férias, faltas e licenças geridos de forma desorganizada, sem histórico centralizado ou registo digital.</p>
+      </div>
+    </div>
+</section>
+
+  <!-- SOLUÇÃO -->
+  <section id="solucao" class="bg-slate-50/60 border-y border-slate-900/5 py-24 relative z-10">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-brand-pink">
+          <p class="text-3xl font-title font-bold text-slate-900">1-Click</p>
+          <p class="text-xs text-slate-600 mt-1">Folhas de salários prontas instantaneamente</p>
+        </div>
+        <div class="glass-card rounded-2xl p-6 h-40 flex flex-col justify-center border-l-2 border-l-rose-500">
+          <p class="text-3xl font-title font-bold text-slate-900">100% Legal</p>
+          <p class="text-xs text-slate-600 mt-1">Tabelas de IRT e INSS sempre atualizadas</p>
+        </div>
+      </div>
+      <div>
+        <span class="inline-block bg-brand-pink/5 border border-brand-pink/10 text-brand-pink text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+          A Solução
+        </span>
+        <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-6">Gestão de Recursos Humanos sem complicações</h2>
+        <p class="text-slate-600 mb-6 leading-relaxed">
+          O Okutonda HR centraliza todas as informações dos colaboradores numa plataforma segura e em nuvem. Desde a contratação ao processamento mensal de salários, oferecemos uma experiência automatizada e livre de erros.
+        </p>
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-center gap-3 text-slate-300">
+            <span class="text-brand-pink">✔</span> Geração de recibos de vencimento em PDF com envio automático por email
+          </li>
+          <li class="flex items-center gap-3 text-slate-300">
+            <span class="text-brand-pink">✔</span> Controlo de férias, faltas e licenças com calendário partilhado
+          </li>
+          <li class="flex items-center gap-3 text-slate-300">
+            <span class="text-brand-pink">✔</span> Exportações de guias de pagamento de impostos (IRT e INSS) num clique
+          </li>
+        </ul>
+      </div>
+    </div>
+</section>
+
+  <!-- FUNCIONALIDADES -->
+  <section id="funcionalidades" class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="inline-block bg-brand-pink/5 border border-brand-pink/10 text-brand-pink text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">
+        Funcionalidades
+      </span>
+      <h2 class="text-3xl md:text-4xl font-title font-bold text-slate-900 mb-4">Automação de Departamento de Pessoal</h2>
+      <p class="text-slate-600">Funcionalidades desenhadas para poupar tempo e garantir o cumprimento da LGT.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/20 transition">
+        <div class="text-2xl mb-4">📂</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Ficha de Colaboradores</h3>
+        <p class="text-sm text-slate-600">Histórico de contratos, cargos, salários base, qualificações e documentos digitalizados em segurança.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/20 transition">
+        <div class="text-2xl mb-4">💰</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Processamento de Salários</h3>
+        <p class="text-sm text-slate-600">Processamento em lote com cálculo automático de faltas, subsídios, IRT, INSS e descontos diversos.</p>
+      </div>
+      <div class="glass-card rounded-2xl p-8 hover:border-brand-pink/20 transition">
+        <div class="text-2xl mb-4">📅</div>
+        <h3 class="font-title font-semibold text-slate-900 mb-2">Férias & Assiduidade</h3>
+        <p class="text-sm text-slate-600">Planeamento anual de férias, registo de faltas justificadas/injustificadas e acompanhamento de escalas de trabalho.</p>
+      </div>
+    </div>
+</section>
+
+  <!-- CONTACTO / CAPTURA -->
+  <section id="contacto" class="max-w-4xl mx-auto px-6 pb-24 relative z-10">
+    <div class="glass-card rounded-3xl p-10 md:p-12 border border-slate-900/5 shadow-2xl">
+      <div class="text-center mb-10">
+        <span class="inline-block bg-brand-pink/5 border border-brand-pink/10 text-brand-pink text-xs font-title font-semibold px-4 py-1.5 rounded-full mb-3 uppercase tracking-wider">
+          Contacto
+        </span>
+        <h2 class="text-2xl md:text-3xl font-title font-bold text-slate-900">Solicite uma demonstração do Okutonda HR</h2>
+        <p class="text-slate-600 mt-2">Nossa equipa apresentará como automatizar o processamento de salários da sua empresa.</p>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20agendar%20uma%20demonstração%20do%20Okutonda%20HR" 
+           target="_blank" rel="noopener"
+           class="bg-green-500 hover:bg-green-600 text-white font-title font-semibold px-8 py-3.5 rounded-full text-center transition flex items-center justify-center gap-2">
+          💬 Falar no WhatsApp
+        </a>
+        <a href="mailto:okutonda@gmail.com?subject=Demonstração%20Okutonda%20HR" 
+           class="bg-brand-pink hover:bg-brand-pink-dark text-white font-title font-semibold px-8 py-3.5 rounded-full text-center transition flex items-center justify-center gap-2">
+          ✉ Enviar E-mail
+        </a>
+      </div>
+    </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-50 text-slate-500 pt-20 pb-10 border-t border-slate-900/5">
+    <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-12">
+      <div>
+        <div class="flex items-center gap-2 font-title font-bold text-slate-900 text-xl mb-4">
+          <span class="w-8 h-8 rounded-full bg-brand-pink flex items-center justify-center text-slate-900 font-title text-base">H</span>
+          Okutonda<span class="text-brand-pink">HR</span>
+        </div>
+        <p class="text-sm text-slate-600">Solução avançada de gestão de pessoal e processamento salarial da OKUTONDA Technologies.</p>
+      </div>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">Navegação</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#solucao" class="hover:text-slate-900 transition">Solução</a></li>
+          <li><a href="#funcionalidades" class="hover:text-slate-900 transition">Funcionalidades</a></li>
+          <li><a href="#contacto" class="hover:text-slate-900 transition">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">Ecossistema</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="../../index.html" class="hover:text-slate-900 transition">OKUTONDA Home</a></li>
+          <li><a href="../edu/index.html" class="hover:text-slate-900 transition">Okutonda Edu</a></li>
+          <li><a href="../pos/index.html" class="hover:text-slate-900 transition">Okutonda POS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-slate-900 font-title font-semibold mb-4">Contacto</h4>
+        <ul class="space-y-2 text-sm">
+          <li>📍 Luanda, Angola</li>
+          <li>✉️ okutonda@gmail.com</li>
+          <li>📞 +244 945 317 734</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 border-t border-slate-900/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs">
+      <p>© 2026 OKUTONDA Technologies. Todos os direitos reservados.</p>
+      <div class="flex gap-6">
+        <a href="../../termos.html" class="hover:text-slate-900 transition">Termos de Uso</a>
+        <a href="../../privacidade.html" class="hover:text-slate-900 transition">Política de Privacidade</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Hero Slider Auto-rotation -->
+  <script>
+    (function(){
+      var slides = document.querySelectorAll('.hero-slide');
+      var indicators = document.querySelectorAll('.indicator');
+      if(slides.length === 0) return;
+      var curSlide = 0;
+      var interval = 4000;
+      var timer;
+
+      function showSlide(index) {
+        slides.forEach(function(s){ s.classList.remove('active'); });
+        indicators.forEach(function(ind){ ind.classList.remove('active'); });
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        curSlide = index;
+      }
+
+      function nextSlide() {
+        var next = (curSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function startTimer() {
+        timer = setInterval(nextSlide, interval);
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        startTimer();
+      }
+
+      indicators.forEach(function(ind){
+        ind.addEventListener('click', function(){
+          var index = parseInt(this.getAttribute('data-slide'));
+          showSlide(index);
+          resetTimer();
+        });
+      });
+
+      startTimer();
+    })();
+  </script>
+
+  <!-- Scroll Navbar transition -->
+  <script>
+    (function(){
+      var header = document.querySelector('header');
+      if(!header) return;
+      function onScroll(){
+        if(window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

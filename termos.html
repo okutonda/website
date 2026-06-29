@@ -17,18 +17,18 @@
 
   <style>
     :root {
-      --ink:      #07111f;
-      --ink-mid:  #0c1a2e;
-      --ink-lt:   #111f33;
-      --sky:      #1059e8;
-      --sky-2:    #4080ff;
+      --ink:      #ffffff;
+      --ink-mid:  #f4f7fa;
+      --ink-lt:   #eef2f6;
+      --sky:      #07274a;
+      --sky-2:    #0066cc;
       --amber:    #c8922a;
       --amber-lt: #e8b96a;
-      --paper:    #edf1f7;
-      --mist:     #8fa3be;
-      --ghost:    #3d5070;
-      --line:     rgba(255,255,255,.07);
-      --card:     rgba(12,26,46,.55);
+      --paper:    #07274a;
+      --mist:     #475569;
+      --ghost:    #64748b;
+      --line:     rgba(15,23,42,.08);
+      --card:     rgba(255,255,255,.8);
       --r:        10px;
       --r-lg:     18px;
       --ease:     cubic-bezier(.4,0,.2,1);
@@ -60,10 +60,10 @@
     }
     .nav.scrolled {
       padding:12px 0;
-      background:rgba(5,13,26,.95);
+      background:rgba(255,255,255,.95);
       backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
       border-bottom-color:var(--line);
-      box-shadow:0 2px 32px rgba(0,0,0,.3);
+      box-shadow:0 2px 32px rgba(15,23,42,.06);
     }
     .nav-inner {
       max-width:1360px; margin:0 auto;
@@ -74,11 +74,11 @@
     .nav.scrolled .nav-brand img { height:34px; }
     .nav-back {
       display:inline-flex; align-items:center; gap:8px;
-      font-size:.82rem; font-weight:500; color:rgba(237,241,247,.55);
+      font-size:.82rem; font-weight:500; color:rgba(7,39,74,.75);
       padding:7px 16px; border-radius:50px;
       border:1px solid var(--line); transition:all .25s var(--ease);
     }
-    .nav-back:hover { color:var(--paper); background:rgba(255,255,255,.06); border-color:rgba(237,241,247,.2); }
+    .nav-back:hover { color:var(--paper); background:rgba(7,39,74,.06); border-color:rgba(7,39,74,.2); }
     .nav-back i { font-size:.75rem; }
 
     /* Page hero */
@@ -139,7 +139,7 @@
     .toc-title {
       font-family:'Syne',sans-serif; font-size:.72rem; font-weight:600;
       text-transform:uppercase; letter-spacing:.15em;
-      color:rgba(237,241,247,.3); margin-bottom:14px; padding-bottom:12px;
+      color:rgba(7,39,74,.5); margin-bottom:14px; padding-bottom:12px;
       border-bottom:1px solid var(--line);
     }
     .toc ul { list-style:none; padding:0; }
@@ -167,14 +167,14 @@
       background:rgba(16,89,232,.12); font-size:.72rem; font-weight:600; color:var(--sky-2);
       font-family:'Inter',sans-serif; letter-spacing:0;
     }
-    .article h3 { font-size:1rem; margin:20px 0 8px; color:rgba(237,241,247,.8); }
-    .article p  { font-size:.9rem; margin-bottom:12px; color:rgba(143,163,190,.85); line-height:1.8; }
+    .article h3 { font-size:1rem; margin:20px 0 8px; color:var(--paper); }
+    .article p  { font-size:.9rem; margin-bottom:12px; color:var(--mist); line-height:1.8; }
     .article ul, .article ol {
       padding-left:0; list-style:none; margin:12px 0 16px;
     }
     .article ul li, .article ol li {
       display:flex; align-items:flex-start; gap:10px;
-      font-size:.88rem; color:rgba(143,163,190,.85);
+      font-size:.88rem; color:var(--mist);
       margin-bottom:8px; line-height:1.7;
     }
     .article ul li::before {
@@ -196,7 +196,7 @@
       border-left:3px solid var(--sky); border-radius:var(--r);
       padding:16px 20px; margin:18px 0;
     }
-    .highlight-box p { margin:0; font-size:.875rem; color:rgba(237,241,247,.65); }
+    .highlight-box p { margin:0; font-size:.875rem; color:var(--mist); }
     .highlight-box strong { color:var(--sky-2); }
 
     .warn-box {
@@ -206,14 +206,14 @@
       display:flex; gap:12px; align-items:flex-start;
     }
     .warn-box i { color:var(--amber-lt); font-size:.9rem; margin-top:2px; flex-shrink:0; }
-    .warn-box p { margin:0; font-size:.875rem; color:rgba(237,241,247,.6); }
+    .warn-box p { margin:0; font-size:.875rem; color:var(--mist); }
 
     /* Divider */
-    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent); }
+    .divider { height:1px; background:linear-gradient(90deg,transparent,rgba(15,23,42,.06),transparent); }
 
     /* Footer */
-    .footer { background:#020b17; border-top:1px solid var(--line); padding:clamp(40px,5vw,56px) 0 0; }
-    .footer-bottom { border-top:1px solid rgba(255,255,255,.04); padding:20px 0; margin-top:clamp(32px,4vw,48px); }
+    .footer { background:#f8fafc; border-top:1px solid var(--line); padding:clamp(40px,5vw,56px) 0 0; }
+    .footer-bottom { border-top:1px solid rgba(15,23,42,.08); padding:20px 0; margin-top:clamp(32px,4vw,48px); }
     .footer-bottom-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; }
     .footer-bottom p { font-size:.76rem; color:var(--ghost); margin:0; }
     .footer-bottom a { color:var(--ghost); transition:color .2s; }
@@ -256,7 +256,7 @@
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
-      <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
+      <img src="img/logo/logotipo.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
     </a>
     <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i>Voltar ao Site</a>
   </div>
@@ -307,7 +307,7 @@
 
       <section id="aceitacao">
         <h2><span class="sec-num">1</span>Aceitação dos Termos</h2>
-        <p>Estes Termos de Uso ("Termos") constituem um acordo legal vinculativo entre si ("Utilizador" ou "Cliente") e a <strong style="color:var(--paper);">OKUTONDA Technologies</strong>, empresa sediada em Luanda, Angola, responsável pelo desenvolvimento e comercialização das plataformas da Oku Platform (OkuEdu, OkuERP, OkuPOS, OkuCRM, OkuHR, entre outros).</p>
+        <p>Estes Termos de Uso ("Termos") constituem um acordo legal vinculativo entre si ("Utilizador" ou "Cliente") e a <strong style="color:var(--paper);">OKUTONDA Technologies</strong>, empresa sediada em Luanda, Angola, responsável pelo desenvolvimento e comercialização das plataformas Okutonda (Okutonda Edu, Okutonda ERP, Okutonda POS, Okutonda CRM, Okutonda HR, entre outros).</p>
         <p>O acesso e uso de qualquer um dos nossos serviços implica a aceitação plena e incondicional destes Termos. Caso não concorde com alguma das condições aqui estabelecidas, deverá cessar imediatamente a utilização dos nossos serviços.</p>
       </section>
 
@@ -315,11 +315,11 @@
         <h2><span class="sec-num">2</span>Descrição dos Serviços</h2>
         <p>A OKUTONDA Technologies disponibiliza um conjunto de plataformas digitais e serviços de consultoria tecnológica, incluindo:</p>
         <ul>
-          <li><strong style="color:var(--paper);">OkuEdu</strong> — Sistema de gestão académica e administrativa para instituições de ensino</li>
-          <li><strong style="color:var(--paper);">OkuERP</strong> — Plataforma integrada para gestão empresarial, finanças e inventário</li>
-          <li><strong style="color:var(--paper);">OkuPOS</strong> — Sistema de faturação e ponto de venda</li>
-          <li><strong style="color:var(--paper);">OkuCRM</strong> — Gestão de relacionamento com clientes</li>
-          <li><strong style="color:var(--paper);">OkuHR</strong> — Gestão de recursos humanos</li>
+          <li><strong style="color:var(--paper);">Okutonda Edu</strong> — Sistema de gestão académica e administrativa para instituições de ensino</li>
+          <li><strong style="color:var(--paper);">Okutonda ERP</strong> — Plataforma integrada para gestão empresarial, finanças e inventário</li>
+          <li><strong style="color:var(--paper);">Okutonda POS</strong> — Sistema de faturação e ponto de venda</li>
+          <li><strong style="color:var(--paper);">Okutonda CRM</strong> — Gestão de relacionamento com clientes</li>
+          <li><strong style="color:var(--paper);">Okutonda HR</strong> — Gestão de recursos humanos</li>
           <li>Consultoria tecnológica, desenvolvimento de software personalizado e plataformas web</li>
         </ul>
         <p>Os serviços são fornecidos no modelo SaaS (Software como Serviço), podendo ser acedidos via browser em qualquer dispositivo com ligação à internet.</p>
@@ -436,7 +436,7 @@
     <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:flex-start; gap:32px; margin-bottom:8px;">
       <div>
         <div class="footer-brand">
-          <img src="img/logo/logo-write.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
+          <img src="img/logo/logotipo.png" alt="OKUTONDA Technologies" onerror="this.style.display='none'" />
         </div>
         <p class="footer-about">Plataformas digitais para organizações que exigem eficiência, integração e crescimento sustentado — desenvolvidas em Angola.</p>
       </div>

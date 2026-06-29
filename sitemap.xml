@@ -7,11 +7,6 @@
     </url>
 
     <url>
-        <loc>https://okutonda.com/platform.html</loc>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
         <loc>https://okutonda.com/privacidade.html</loc>
         <priority>0.5</priority>
     </url>
@@ -20,6 +15,7 @@
         <loc>https://okutonda.com/termos.html</loc>
         <priority>0.5</priority>
     </url>
+
     <url>
         <loc>https://okutonda.com/produtos/edu/</loc>
         <priority>0.9</priority>
@@ -27,6 +23,21 @@
 
     <url>
         <loc>https://okutonda.com/produtos/pos/</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://okutonda.com/produtos/erp/</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://okutonda.com/produtos/crm/</loc>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://okutonda.com/produtos/hr/</loc>
         <priority>0.9</priority>
     </url>
 </urlset>
