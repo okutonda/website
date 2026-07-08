@@ -1,0 +1,9 @@
+# Impede o acesso directo aos ficheiros de pedidos guardados aqui.
+# Não apagar — os pedidos contêm dados pessoais (nome, email, telefone).
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Deny from all
+</IfModule>

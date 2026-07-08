@@ -1,0 +1,1041 @@
+<!doctype html>
+<html lang="pt-AO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKUTONDA Technologies | A Plataforma Oku — Software Empresarial de Angola</title>
+<meta name="description" content="A OKUTONDA constrói a Plataforma Oku: nove produtos integrados de gestão escolar, ERP, POS, CRM, RH, documentos, pagamentos e BI, desenhados e suportados em Luanda, Angola.">
+<meta name="keywords" content="software Angola, ERP Angola, gestão escolar Angola, faturação AGT, POS Angola, CRM, recursos humanos, OKUTONDA, Oku Platform">
+<meta name="author" content="OKUTONDA Technologies">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://okutonda.com/">
+<link rel="icon" type="image/png" href="img/logo/favicon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="OKUTONDA Technologies — A Plataforma Oku">
+<meta property="og:description" content="Nove produtos. Uma só plataforma. Software empresarial desenhado e suportado em Angola.">
+<meta property="og:url" content="https://okutonda.com/">
+<meta property="og:image" content="https://okutonda.com/img/logo/logotipo.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "OKUTONDA Technologies",
+  "url": "https://okutonda.com",
+  "logo": "https://okutonda.com/img/logo/logotipo.png",
+  "email": "okutonda@gmail.com",
+  "telephone": "+244945317734",
+  "address": { "@type": "PostalAddress", "addressCountry": "AO", "addressLocality": "Luanda" },
+  "sameAs": [
+    "https://www.instagram.com/okutonda/",
+    "https://www.facebook.com/profile.php?id=61565844385579"
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ============================================================
+   OKUTONDA — DESIGN TOKENS
+   Ground: an Angolan software ecosystem — nine products, one
+   platform. Palette: near-black ink with a brass/gold signature
+   (Luanda dusk over the Atlantic), not the default blue-purple
+   SaaS gradient. Type: a warm display serif (Fraunces) for
+   authority + Inter for working UI copy + a mono face for data
+   and structural labels. Signature motif: a node network — the
+   platform literally is nine connected products — used as the
+   hero visual and again as section dividers.
+   ============================================================ */
+:root{
+  --ink:        #090b10;
+  --ink-1:      #0e1118;
+  --ink-2:      #12151e;
+  --ink-3:      #171b26;
+  --line:       rgba(238,232,219,0.09);
+  --line-2:     rgba(238,232,219,0.16);
+  --paper:      #f2ede2;
+  --text:       #e9e6de;
+  --text-dim:   #9aa0ab;
+  --text-mute:  #6b7280;
+  --gold:       #e3b565;
+  --gold-2:     #f6d999;
+  --gold-dim:   rgba(227,181,101,0.14);
+  --teal:       #5fb8ae;
+  --rose:       #cf8f7a;
+  --sage:       #9fae86;
+
+  --grad-gold: linear-gradient(120deg, var(--gold) 0%, var(--gold-2) 100%);
+
+  --f-display: 'Fraunces', 'Georgia', serif;
+  --f-body:    'Inter', -apple-system, sans-serif;
+  --f-mono:    'IBM Plex Mono', monospace;
+
+  --fs-hero:   clamp(2.6rem, 5.6vw, 4.5rem);
+  --fs-h2:     clamp(2.1rem, 4.2vw, 3.15rem);
+  --fs-h3:     clamp(1.4rem, 2vw, 1.7rem);
+  --fs-card:   clamp(1.3rem, 1.6vw, 1.45rem);
+  --fs-body:   1.125rem;
+  --fs-lead:   clamp(1.15rem, 1.6vw, 1.3rem);
+
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-l: 28px;
+
+  --ease: cubic-bezier(.19,1,.22,1);
+}
+
+*,*::before,*::after{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--ink);
+  color:var(--text);
+  font-family:var(--f-body);
+  font-size:var(--fs-body);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body.locked{ overflow:hidden; }
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; }
+h1,h2,h3,h4{ font-family:var(--f-display); font-weight:600; line-height:1.08; letter-spacing:-0.01em; color:var(--paper); }
+::selection{ background:var(--gold); color:var(--ink); }
+
+.container{ max-width:1280px; margin:0 auto; padding:0 clamp(22px,5vw,56px); }
+.section{ padding:clamp(88px,10vw,150px) 0; position:relative; }
+.section-tight{ padding:clamp(56px,7vw,96px) 0; }
+
+.eyebrow{
+  font-family:var(--f-mono); font-size:0.78rem; font-weight:500; letter-spacing:0.16em;
+  text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:10px;
+  margin-bottom:20px;
+}
+.eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 12px var(--gold); }
+
+.h2{ font-size:var(--fs-h2); margin-bottom:18px; }
+.lead{ font-size:var(--fs-lead); color:var(--text-dim); max-width:640px; line-height:1.6; font-weight:400; }
+.sect-head{ max-width:760px; margin-bottom:clamp(48px,6vw,80px); }
+.sect-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; gap:10px; font-family:var(--f-body); font-weight:600;
+  font-size:1rem; padding:15px 30px; border-radius:100px; border:1px solid transparent;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), border-color .35s var(--ease);
+  white-space:nowrap;
+}
+.btn-gold{ background:var(--grad-gold); color:#1a1204; box-shadow:0 8px 30px -8px rgba(227,181,101,0.55); }
+.btn-gold:hover{ transform:translateY(-2px); box-shadow:0 14px 36px -8px rgba(227,181,101,0.7); }
+.btn-ghost{ background:rgba(255,255,255,0.02); color:var(--paper); border-color:var(--line-2); }
+.btn-ghost:hover{ background:rgba(255,255,255,0.06); border-color:var(--gold); transform:translateY(-2px); }
+.btn-sm{ padding:11px 22px; font-size:0.9rem; }
+.text-link{
+  display:inline-flex; align-items:center; gap:8px; font-weight:600; font-size:0.92rem;
+  color:var(--gold); letter-spacing:0.01em; transition:gap .25s var(--ease);
+}
+.text-link:hover{ gap:13px; }
+
+/* ============ NODE DIVIDER (signature motif) ============ */
+.node-divider{ display:flex; align-items:center; gap:14px; max-width:1280px; margin:0 auto; padding:0 clamp(22px,5vw,56px); opacity:0.55; }
+.node-divider .ln{ flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--line-2), transparent); }
+.node-divider .dt{ width:5px; height:5px; border-radius:50%; background:var(--gold); }
+
+/* ============ PRELOADER ============ */
+#pl{ position:fixed; inset:0; z-index:9999; background:var(--ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px; transition:opacity .6s var(--ease), visibility .6s; }
+#pl.hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+.pl-mark{ font-family:var(--f-display); font-size:1.4rem; letter-spacing:0.08em; color:var(--paper); }
+.pl-bar{ width:160px; height:2px; background:rgba(255,255,255,0.08); position:relative; overflow:hidden; border-radius:2px; }
+.pl-bar span{ position:absolute; inset:0; width:40%; background:var(--grad-gold); animation:scan 1.3s infinite ease-in-out; }
+@keyframes scan{ 0%{ left:-40%; } 100%{ left:100%; } }
+
+/* ============ NAV ============ */
+.nav{ position:fixed; top:0; left:0; right:0; z-index:800; padding:26px 0; transition:all .4s var(--ease); }
+.nav.scrolled{ padding:14px 0; background:rgba(9,11,16,0.82); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border-bottom:1px solid var(--line); }
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.nav-logo{ display:flex; align-items:center; }
+.nav-logo img{ height:32px; width:auto; }
+.nav-logo .txt{ font-family:var(--f-display); font-size:1.15rem; color:var(--paper); letter-spacing:0.02em; }
+.nav-links{ display:flex; align-items:center; gap:6px; }
+.nav-links a{ font-size:1.02rem; font-weight:500; color:var(--text-dim); padding:9px 17px; border-radius:100px; transition:all .25s; position:relative; }
+.nav-links a:hover, .nav-links a.act{ color:var(--paper); background:rgba(255,255,255,0.05); }
+.nav-right{ display:flex; align-items:center; gap:18px; }
+.hamburger{ display:none; flex-direction:column; gap:5px; background:rgba(255,255,255,0.04); border:1px solid var(--line-2); padding:12px; border-radius:10px; }
+.hamburger span{ width:20px; height:1.5px; background:var(--paper); }
+@media(max-width:980px){ .nav-links{ display:none; } .hamburger{ display:flex; } .nav-right .btn{ display:none; } }
+
+.overlay{ position:fixed; inset:0; z-index:900; background:rgba(5,6,9,0.6); backdrop-filter:blur(6px); opacity:0; pointer-events:none; transition:opacity .35s var(--ease); }
+.overlay.on{ opacity:1; pointer-events:all; }
+.sidebar{ position:fixed; top:0; right:0; bottom:0; width:340px; max-width:88vw; background:var(--ink-1); border-left:1px solid var(--line); z-index:901; transform:translateX(110%); transition:transform .45s var(--ease); display:flex; flex-direction:column; }
+.sidebar.open{ transform:translateX(0); }
+.sb-head{ padding:26px 28px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+.sb-close{ width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.05); border:1px solid var(--line-2); color:var(--paper); display:flex; align-items:center; justify-content:center; }
+.sb-links{ padding:20px 0; flex:1; overflow-y:auto; }
+.sb-links a{ display:flex; align-items:center; gap:14px; padding:15px 28px; font-size:1.02rem; font-weight:500; color:var(--text-dim); border-left:2px solid transparent; }
+.sb-links a i{ color:var(--gold); width:16px; }
+.sb-links a:hover{ color:var(--paper); border-left-color:var(--gold); background:rgba(255,255,255,0.03); }
+.sb-foot{ padding:24px 28px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:12px; }
+
+/* ============ HERO ============ */
+.hero{ position:relative; min-height:100vh; display:flex; align-items:center; padding-top:130px; padding-bottom:80px; overflow:hidden; }
+.hero-bg-glow{ position:absolute; width:900px; height:900px; top:-30%; right:-20%; background:radial-gradient(circle, rgba(227,181,101,0.09) 0%, transparent 65%); pointer-events:none; }
+.hero-bg-glow.b{ top:auto; bottom:-40%; left:-20%; right:auto; background:radial-gradient(circle, rgba(95,184,174,0.06) 0%, transparent 65%); }
+.hero-grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:clamp(30px,5vw,70px); align-items:center; position:relative; z-index:3; }
+@media(max-width:980px){ .hero-grid{ grid-template-columns:1fr; } }
+
+.hero-title{ font-size:var(--fs-hero); margin-bottom:26px; }
+.hero-title em{ font-style:italic; color:var(--gold); font-weight:500; }
+.hero-desc{ font-size:var(--fs-lead); color:var(--text-dim); max-width:520px; margin-bottom:38px; }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:16px; margin-bottom:46px; }
+.hero-proof{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+.hero-proof .p-item{ display:flex; align-items:center; gap:9px; font-family:var(--f-mono); font-size:0.82rem; color:var(--text-mute); letter-spacing:0.03em; }
+.hero-proof .p-item i{ color:var(--gold); }
+
+/* constellation */
+.constellation{ position:absolute; inset:0; z-index:1; opacity:0.5; pointer-events:none; }
+.constellation svg{ width:100%; height:100%; }
+.node-pulse{ animation:nodepulse 3.4s ease-in-out infinite; transform-origin:center; }
+@keyframes nodepulse{ 0%,100%{ opacity:0.55; r:3.2; } 50%{ opacity:1; r:4.6; } }
+.line-draw{ stroke-dasharray:6 6; animation:dash 26s linear infinite; }
+@keyframes dash{ to{ stroke-dashoffset:-600; } }
+
+/* hero mockup panel */
+.hero-visual{ position:relative; z-index:3; }
+.mock-panel{
+  background:linear-gradient(165deg, var(--ink-2), var(--ink-1));
+  border:1px solid var(--line-2); border-radius:var(--radius-l);
+  padding:22px; box-shadow:0 40px 90px -30px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.02) inset;
+  position:relative;
+}
+.mock-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.mock-dots{ display:flex; gap:6px; }
+.mock-dots span{ width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.14); }
+.mock-tag{ font-family:var(--f-mono); font-size:0.68rem; letter-spacing:0.12em; color:var(--text-mute); text-transform:uppercase; }
+.mock-stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px; }
+.mock-stat{ background:rgba(255,255,255,0.025); border:1px solid var(--line); border-radius:12px; padding:14px; }
+.mock-stat b{ display:block; font-family:var(--f-display); font-size:1.4rem; color:var(--paper); font-weight:600; }
+.mock-stat span{ font-size:0.72rem; color:var(--text-mute); }
+.mock-chart{ display:flex; align-items:flex-end; gap:7px; height:110px; padding:0 2px 6px; border-bottom:1px solid var(--line); margin-bottom:16px; }
+.mock-chart i{ flex:1; border-radius:6px 6px 2px 2px; background:linear-gradient(180deg, var(--gold-2), var(--gold)); opacity:0.85; }
+.mock-rows{ display:flex; flex-direction:column; gap:10px; }
+.mock-row{ display:flex; align-items:center; gap:10px; }
+.mock-row .dot{ width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.mock-row .bar{ height:7px; border-radius:4px; background:rgba(255,255,255,0.08); flex:1; }
+.float-chip{ position:absolute; background:var(--ink-2); border:1px solid var(--line-2); border-radius:14px; padding:13px 18px; display:flex; align-items:center; gap:10px; box-shadow:0 20px 45px -15px rgba(0,0,0,0.6); animation:floaty 5.5s ease-in-out infinite; }
+.float-chip.c1{ top:-8%; left:-10%; }
+.float-chip.c2{ bottom:-7%; right:-8%; animation-delay:1.4s; }
+.float-chip i{ color:var(--sage); font-size:1.1rem; }
+.float-chip b{ font-size:0.85rem; color:var(--paper); display:block; }
+.float-chip span{ font-size:0.7rem; color:var(--text-mute); }
+@keyframes floaty{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-10px); } }
+
+/* ============ STATS STRIP ============ */
+.stats-strip{ border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:var(--ink-1); }
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); }
+.stat-cell{ padding:38px 20px; text-align:center; border-left:1px solid var(--line); }
+.stat-cell:first-child{ border-left:none; }
+.stat-num{ font-family:var(--f-display); font-size:clamp(1.9rem,3.4vw,2.6rem); color:var(--paper); font-weight:600; margin-bottom:4px; }
+.stat-num span{ color:var(--gold); }
+.stat-label{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.09em; text-transform:uppercase; color:var(--text-mute); }
+@media(max-width:768px){ .stats-grid{ grid-template-columns:repeat(2,1fr); } .stat-cell:nth-child(3){ border-left:none; } }
+
+/* ============ WHY ============ */
+.why-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:clamp(40px,6vw,90px); align-items:start; }
+@media(max-width:900px){ .why-grid{ grid-template-columns:1fr; } }
+.why-list{ display:flex; flex-direction:column; }
+.why-item{ display:grid; grid-template-columns:52px 1fr; gap:22px; padding:30px 0; border-top:1px solid var(--line); }
+.why-item:last-child{ border-bottom:1px solid var(--line); }
+.why-ic{ width:50px; height:50px; border-radius:14px; background:var(--gold-dim); border:1px solid rgba(227,181,101,0.25); display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:1.15rem; }
+.why-item h3{ font-size:var(--fs-h3); margin-bottom:8px; }
+.why-item p{ color:var(--text-dim); max-width:520px; }
+
+/* ============ PRODUCTS ============ */
+.prod-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media(max-width:980px){ .prod-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:640px){ .prod-grid{ grid-template-columns:1fr; } }
+.prod-card{
+  background:var(--ink-1); border:1px solid var(--line); border-radius:var(--radius-m); padding:32px;
+  display:flex; flex-direction:column; height:100%; transition:transform .4s var(--ease), border-color .4s var(--ease), background .4s var(--ease);
+  position:relative; overflow:hidden;
+}
+.prod-card::before{ content:''; position:absolute; top:0; left:0; right:0; height:2px; background:var(--pc, var(--gold)); opacity:0; transition:opacity .4s; }
+.prod-card:hover{ transform:translateY(-6px); border-color:var(--line-2); background:var(--ink-2); }
+.prod-card:hover::before{ opacity:1; }
+.prod-top{ display:flex; align-items:center; justify-content:space-between; margin-bottom:26px; }
+.prod-dot{ width:11px; height:11px; border-radius:50%; background:var(--pc, var(--gold)); box-shadow:0 0 14px var(--pc, var(--gold)); }
+.prod-flag{ font-family:var(--f-mono); font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mute); }
+.prod-name{ font-size:var(--fs-card); margin-bottom:12px; }
+.prod-desc{ color:var(--text-dim); font-size:0.98rem; line-height:1.65; flex:1; margin-bottom:24px; }
+.prod-featlist{ display:flex; flex-direction:column; gap:8px; margin-bottom:22px; }
+.prod-featlist li{ display:flex; align-items:center; gap:9px; font-size:0.85rem; color:var(--text-mute); }
+.prod-featlist i{ color:var(--pc, var(--gold)); font-size:0.7rem; }
+.prod-more{ display:flex; align-items:center; justify-content:center; text-align:center; border:1px dashed var(--line-2); background:transparent; }
+.prod-more i{ font-size:1.4rem; color:var(--gold); margin-bottom:14px; }
+.prod-more h4{ font-family:var(--f-display); font-size:1.2rem; margin-bottom:8px; color:var(--paper); }
+.prod-more p{ font-size:0.88rem; color:var(--text-mute); margin-bottom:20px; max-width:230px; }
+
+/* ============ FEATURES (alternating) ============ */
+.feat-row{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(40px,6vw,90px); align-items:center; padding:clamp(50px,7vw,84px) 0; border-top:1px solid var(--line); }
+.feat-row:last-child{ border-bottom:1px solid var(--line); }
+.feat-row.rev .feat-text{ order:2; } .feat-row.rev .feat-visual{ order:1; }
+@media(max-width:900px){ .feat-row{ grid-template-columns:1fr; } .feat-row.rev .feat-text, .feat-row.rev .feat-visual{ order:0; } }
+.feat-text h3{ font-size:clamp(1.6rem,2.6vw,2.1rem); margin-bottom:16px; }
+.feat-text p{ color:var(--text-dim); font-size:1.05rem; margin-bottom:22px; max-width:480px; }
+.feat-tags{ display:flex; flex-wrap:wrap; gap:10px; }
+.feat-tag{ font-family:var(--f-mono); font-size:0.76rem; padding:7px 14px; border-radius:100px; border:1px solid var(--line-2); color:var(--text-dim); }
+.feat-visual{ background:var(--ink-1); border:1px solid var(--line); border-radius:var(--radius-l); padding:30px; min-height:280px; display:flex; align-items:center; justify-content:center; }
+.feat-diagram{ width:100%; }
+.fv-nodes{ display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+.fv-node{ width:64px; height:64px; border-radius:16px; background:var(--ink-2); border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; font-size:1.3rem; color:var(--gold); }
+.fv-ln{ flex:1; height:1px; background:linear-gradient(90deg, var(--line-2), var(--gold), var(--line-2)); margin:0 6px; }
+.fv-caption{ text-align:center; font-family:var(--f-mono); font-size:0.75rem; color:var(--text-mute); letter-spacing:0.06em; }
+.fv-bars{ display:flex; align-items:flex-end; gap:12px; height:150px; }
+.fv-bars b{ flex:1; border-radius:8px 8px 3px 3px; }
+.fv-locklist{ display:flex; flex-direction:column; gap:14px; }
+.fv-lockrow{ display:flex; align-items:center; gap:14px; background:var(--ink-2); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+.fv-lockrow i{ color:var(--sage); }
+.fv-lockrow span{ font-size:0.9rem; color:var(--text-dim); }
+
+/* ============ INDUSTRIES ============ */
+.ind-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-m); overflow:hidden; }
+@media(max-width:900px){ .ind-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .ind-grid{ grid-template-columns:1fr; } }
+.ind-cell{ background:var(--ink-1); padding:38px 30px; transition:background .3s; }
+.ind-cell:hover{ background:var(--ink-2); }
+.ind-cell i{ font-size:1.5rem; color:var(--gold); margin-bottom:18px; display:block; }
+.ind-cell h4{ font-family:var(--f-display); font-size:1.2rem; margin-bottom:8px; color:var(--paper); }
+.ind-cell p{ font-size:0.88rem; color:var(--text-mute); }
+
+/* ============ PROCESS ============ */
+.proc-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; position:relative; }
+@media(max-width:900px){ .proc-track{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .proc-track{ grid-template-columns:1fr; } }
+.proc-step{ position:relative; padding-top:26px; }
+.proc-step::before{ content:''; position:absolute; top:0; left:0; width:34px; height:1px; background:var(--gold); }
+.proc-idx{ font-family:var(--f-mono); font-size:0.78rem; color:var(--gold); letter-spacing:0.1em; margin-bottom:14px; display:block; }
+.proc-step h4{ font-family:var(--f-display); font-size:1.25rem; margin-bottom:10px; color:var(--paper); }
+.proc-step p{ font-size:0.92rem; color:var(--text-mute); }
+
+/* ============ SECTORS / PORTFOLIO ============ */
+.sect-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media(max-width:900px){ .sect-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:640px){ .sect-grid{ grid-template-columns:1fr; } }
+.sect-card{ border-radius:var(--radius-m); overflow:hidden; border:1px solid var(--line); background:var(--ink-1); }
+.sect-media{ height:150px; position:relative; background:linear-gradient(135deg, var(--ink-3), var(--ink-2)); display:flex; align-items:center; justify-content:center; }
+.sect-media i{ font-size:2.1rem; color:var(--gold); opacity:0.85; }
+.sect-media::after{ content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 20%, rgba(227,181,101,0.15), transparent 60%); }
+.sect-body{ padding:26px; }
+.sect-body span{ font-family:var(--f-mono); font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mute); }
+.sect-body h4{ font-family:var(--f-display); font-size:1.25rem; margin:8px 0 10px; color:var(--paper); }
+.sect-body p{ font-size:0.9rem; color:var(--text-mute); }
+
+/* ============ TESTIMONIALS ============ */
+.test-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+@media(max-width:900px){ .test-grid{ grid-template-columns:1fr; } }
+.test-card{ background:var(--ink-1); border:1px solid var(--line); border-radius:var(--radius-m); padding:32px; display:flex; flex-direction:column; }
+.test-quote{ font-family:var(--f-display); font-size:1.18rem; font-weight:500; font-style:italic; color:var(--paper); line-height:1.55; margin-bottom:24px; flex:1; }
+.test-who{ display:flex; align-items:center; gap:14px; padding-top:20px; border-top:1px solid var(--line); }
+.test-avatar{ width:42px; height:42px; border-radius:50%; background:var(--grad-gold); display:flex; align-items:center; justify-content:center; font-family:var(--f-display); font-weight:700; color:#1a1204; }
+.test-who b{ display:block; font-size:0.92rem; color:var(--paper); }
+.test-who span{ font-size:0.78rem; color:var(--text-mute); }
+
+/* ============ FAQ ============ */
+.faq-list{ max-width:820px; margin:0 auto; }
+.faq-item{ border-bottom:1px solid var(--line); }
+.faq-q{ width:100%; background:none; border:none; color:var(--paper); text-align:left; padding:26px 0; display:flex; align-items:center; justify-content:space-between; gap:20px; font-family:var(--f-display); font-size:1.15rem; }
+.faq-q i{ color:var(--gold); transition:transform .35s var(--ease); flex-shrink:0; }
+.faq-item.open .faq-q i{ transform:rotate(45deg); }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
+.faq-a p{ padding-bottom:26px; color:var(--text-dim); max-width:680px; font-size:1rem; }
+
+/* ============ CTA BAND ============ */
+.cta-band{ position:relative; overflow:hidden; padding:clamp(70px,9vw,120px) 0; background:var(--ink-1); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.cta-glow{ position:absolute; width:700px; height:500px; top:50%; left:50%; transform:translate(-50%,-50%); background:radial-gradient(circle, rgba(227,181,101,0.1), transparent 65%); pointer-events:none; }
+.cta-inner{ position:relative; z-index:2; text-align:center; max-width:680px; margin:0 auto; }
+.cta-inner h2{ font-size:clamp(2rem,4vw,2.9rem); margin-bottom:18px; }
+.cta-inner p{ color:var(--text-dim); font-size:var(--fs-lead); margin-bottom:36px; }
+.cta-actions{ display:flex; flex-wrap:wrap; gap:16px; justify-content:center; }
+
+/* ============ CONTACT ============ */
+.contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+@media(max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+.contact-card{ background:var(--ink-1); border:1px solid var(--line); border-radius:var(--radius-l); padding:44px; }
+.contact-card h3{ font-size:1.5rem; margin-bottom:14px; }
+.contact-card > p{ color:var(--text-dim); margin-bottom:32px; max-width:420px; }
+.info-list{ display:grid; gap:22px; }
+.info-item{ display:flex; gap:16px; align-items:flex-start; }
+.info-ic{ width:42px; height:42px; border-radius:11px; background:rgba(255,255,255,0.03); border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; color:var(--gold); flex-shrink:0; }
+.info-label{ font-family:var(--f-mono); font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-mute); margin-bottom:4px; }
+.info-val{ color:var(--paper); font-size:0.98rem; }
+.info-val a:hover{ color:var(--gold); }
+.social-row{ display:flex; gap:10px; margin-top:32px; }
+.social-btn{ width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,0.03); border:1px solid var(--line-2); display:flex; align-items:center; justify-content:center; color:var(--text-dim); transition:all .25s; }
+.social-btn:hover{ background:var(--gold); color:#1a1204; border-color:var(--gold); }
+.contact-wa{ display:flex; flex-direction:column; align-items:flex-start; justify-content:center; height:100%; }
+.contact-wa i{ font-size:2.6rem; color:#25d366; margin-bottom:20px; }
+.contact-wa .rt{ font-size:0.8rem; color:var(--text-mute); margin-top:14px; }
+
+/* ============ FOOTER ============ */
+.footer{ background:#050608; padding:clamp(64px,8vw,96px) 0 30px; border-top:1px solid var(--line); }
+.footer-grid{ display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:clamp(30px,4vw,60px); margin-bottom:64px; }
+@media(max-width:860px){ .footer-grid{ grid-template-columns:1fr 1fr; } }
+@media(max-width:520px){ .footer-grid{ grid-template-columns:1fr; } }
+.footer-logo{ font-family:var(--f-display); font-size:1.3rem; color:var(--paper); margin-bottom:18px; }
+.footer-about{ color:var(--text-mute); font-size:0.9rem; line-height:1.7; max-width:340px; margin-bottom:24px; }
+.footer-title{ font-family:var(--f-mono); font-size:0.68rem; font-weight:600; text-transform:uppercase; letter-spacing:0.14em; color:var(--text-dim); margin-bottom:20px; }
+.footer-links li{ margin-bottom:12px; }
+.footer-links a{ font-size:0.92rem; color:var(--text-mute); transition:color .2s; }
+.footer-links a:hover{ color:var(--gold); }
+.footer-bottom{ border-top:1px solid var(--line); padding-top:26px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px; }
+.footer-copy{ font-size:0.78rem; color:var(--text-mute); }
+.footer-bl{ display:flex; gap:22px; }
+.footer-bl a{ font-size:0.78rem; color:var(--text-mute); }
+.footer-bl a:hover{ color:var(--gold); }
+
+/* ============ BACK TO TOP ============ */
+#btt{ position:fixed; bottom:28px; right:28px; z-index:700; width:46px; height:46px; border-radius:50%; border:1px solid var(--line-2); background:var(--ink-2); color:var(--paper); display:flex; align-items:center; justify-content:center; opacity:0; visibility:hidden; transform:translateY(10px); transition:all .3s var(--ease); }
+#btt.show{ opacity:1; visibility:visible; transform:translateY(0); }
+#btt:hover{ border-color:var(--gold); color:var(--gold); }
+
+/* ============ REVEAL ============ */
+[data-r]{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+[data-r].in{ opacity:1; transform:none; }
+[data-r][data-d="1"]{ transition-delay:.1s; } [data-r][data-d="2"]{ transition-delay:.2s; }
+[data-r][data-d="3"]{ transition-delay:.3s; } [data-r][data-d="4"]{ transition-delay:.4s; }
+
+@media(prefers-reduced-motion:reduce){
+  [data-r]{ opacity:1; transform:none; }
+  .node-pulse, .line-draw, .float-chip, #pl-bar span{ animation:none !important; }
+  html{ scroll-behavior:auto; }
+}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:4px; }
+</style>
+</head>
+<body>
+
+<div id="pl" role="status" aria-label="A carregar">
+  <div class="pl-mark">OKUTONDA</div>
+  <div class="pl-bar"><span></span></div>
+</div>
+
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+
+<aside class="sidebar" id="sidebar" aria-label="Menu de navegação" aria-hidden="true">
+  <div class="sb-head">
+    <span style="font-family:var(--f-display);font-size:1.1rem;color:var(--paper);">OKUTONDA</span>
+    <button class="sb-close" id="sbClose" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+  </div>
+  <nav class="sb-links">
+    <a href="#home" class="sl-link"><i class="fas fa-house"></i>Início</a>
+    <a href="#produtos" class="sl-link"><i class="fas fa-cubes"></i>Produtos</a>
+    <a href="#solucoes" class="sl-link"><i class="fas fa-diagram-project"></i>Soluções</a>
+    <a href="#industrias" class="sl-link"><i class="fas fa-industry"></i>Indústrias</a>
+    <a href="#empresa" class="sl-link"><i class="fas fa-building"></i>Empresa</a>
+    <a href="#faq" class="sl-link"><i class="fas fa-circle-question"></i>Perguntas Frequentes</a>
+  </nav>
+  <div class="sb-foot">
+    <a href="#contact" class="btn btn-gold sl-link">Pedir Demonstração</a>
+    <a href="https://wa.me/244945317734" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</aside>
+
+<nav class="nav" id="nav" aria-label="Navegação principal">
+  <div class="container nav-inner">
+    <a href="#home" class="nav-logo" aria-label="OKUTONDA — Início">
+      <img src="img/logo/logotipo.png" alt="OKUTONDA Technologies" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'txt',textContent:'OKUTONDA'}))">
+    </a>
+    <div class="nav-links">
+      <a href="#produtos">Produtos</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="#industrias">Indústrias</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-gold btn-sm">Pedir Demonstração</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="home">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-glow b"></div>
+  <div class="constellation" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+      <g stroke="#e3b565" stroke-width="1" opacity="0.35">
+        <line class="line-draw" x1="850" y1="380" x2="1020" y2="180"/>
+        <line class="line-draw" x1="850" y1="380" x2="1080" y2="420"/>
+        <line class="line-draw" x1="850" y1="380" x2="960" y2="620"/>
+        <line class="line-draw" x1="850" y1="380" x2="720" y2="560"/>
+        <line class="line-draw" x1="850" y1="380" x2="700" y2="220"/>
+        <line class="line-draw" x1="850" y1="380" x2="1150" y2="640"/>
+      </g>
+      <g fill="#f6d999">
+        <circle class="node-pulse" cx="850" cy="380" r="5"/>
+        <circle class="node-pulse" cx="1020" cy="180" r="3.2" style="animation-delay:.3s"/>
+        <circle class="node-pulse" cx="1080" cy="420" r="3.2" style="animation-delay:.6s"/>
+        <circle class="node-pulse" cx="960" cy="620" r="3.2" style="animation-delay:.9s"/>
+        <circle class="node-pulse" cx="720" cy="560" r="3.2" style="animation-delay:1.2s"/>
+        <circle class="node-pulse" cx="700" cy="220" r="3.2" style="animation-delay:1.5s"/>
+        <circle class="node-pulse" cx="1150" cy="640" r="3.2" style="animation-delay:1.8s"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <div data-r>
+        <div class="eyebrow">Plataforma Oku · Feita em Luanda</div>
+        <h1 class="hero-title">O sistema<br>operativo das <em>empresas angolanas</em>.</h1>
+        <p class="hero-desc">Nove produtos, uma só plataforma. A OKUTONDA constrói o software de gestão, ensino, vendas e dados que a sua operação usa todos os dias — desenhado para a realidade fiscal e de conectividade de Angola, e suportado por uma equipa em Luanda.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-gold">Pedir Demonstração <i class="fas fa-arrow-right"></i></a>
+          <a href="#produtos" class="btn btn-ghost">Explorar a Plataforma</a>
+        </div>
+        <div class="hero-proof">
+          <span class="p-item"><i class="fas fa-check"></i> Conforme AGT</span>
+          <span class="p-item"><i class="fas fa-check"></i> Suporte local em Luanda</span>
+          <span class="p-item"><i class="fas fa-check"></i> Dados alojados com segurança</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" data-r data-d="2">
+        <div class="mock-panel">
+          <div class="mock-head">
+            <div class="mock-dots"><span></span><span></span><span></span></div>
+            <span class="mock-tag">Oku · Painel Geral</span>
+          </div>
+          <div class="mock-stats">
+            <div class="mock-stat"><b>2 481</b><span>Utilizadores activos</span></div>
+            <div class="mock-stat"><b>99.9%</b><span>Disponibilidade</span></div>
+            <div class="mock-stat"><b>Kz</b><span>Facturação AGT</span></div>
+          </div>
+          <div class="mock-chart">
+            <i style="height:38%"></i><i style="height:62%"></i><i style="height:44%"></i>
+            <i style="height:80%"></i><i style="height:56%"></i><i style="height:92%"></i>
+            <i style="height:70%"></i><i style="height:50%"></i>
+          </div>
+          <div class="mock-rows">
+            <div class="mock-row"><span class="dot" style="background:#e3b565"></span><span class="bar" style="width:80%"></span></div>
+            <div class="mock-row"><span class="dot" style="background:#5fb8ae"></span><span class="bar" style="width:55%"></span></div>
+            <div class="mock-row"><span class="dot" style="background:#cf8f7a"></span><span class="bar" style="width:68%"></span></div>
+          </div>
+          <div class="float-chip c1"><i class="fas fa-shield-halved"></i><div><b>Conforme AGT</b><span>Facturação certificada</span></div></div>
+          <div class="float-chip c2"><i class="fas fa-link"></i><div><b>9 módulos</b><span>Dados sincronizados</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS STRIP ========== -->
+<div class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-cell" data-r><div class="stat-num">5<span>+</span></div><div class="stat-label">Anos de Experiência</div></div>
+      <div class="stat-cell" data-r data-d="1"><div class="stat-num">9</div><div class="stat-label">Produtos Integrados</div></div>
+      <div class="stat-cell" data-r data-d="2"><div class="stat-num">100<span>%</span></div><div class="stat-label">Suporte Local</div></div>
+      <div class="stat-cell" data-r data-d="3"><div class="stat-num">AO</div><div class="stat-label">Feito em Angola</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== WHY ========== -->
+<section class="section" id="empresa">
+  <div class="container">
+    <div class="why-grid">
+      <div data-r>
+        <div class="eyebrow">Porquê a OKUTONDA</div>
+        <h2 class="h2">Software global.<br>Contexto local.</h2>
+        <p class="lead">A maioria dos sistemas de gestão foi desenhada para outra realidade fiscal, outra moeda e outra infraestrutura. Nós construímos a partir de Angola, para Angola — e é isso que nos torna diferentes.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item" data-r>
+          <div class="why-ic"><i class="fas fa-map-location-dot"></i></div>
+          <div><h3>Desenhado para Angola</h3><p>Facturação certificada pela AGT, cálculo de IRT e INSS, operação em Kwanza e tolerância a conectividade instável — não são extras, são o ponto de partida.</p></div>
+        </div>
+        <div class="why-item" data-r data-d="1">
+          <div class="why-ic"><i class="fas fa-diagram-project"></i></div>
+          <div><h3>Uma plataforma, não fragmentos</h3><p>Os nove produtos da Oku Platform partilham os mesmos dados. Um aluno, um cliente ou um colaborador só existe uma vez — sem reconciliação manual entre sistemas.</p></div>
+        </div>
+        <div class="why-item" data-r data-d="2">
+          <div class="why-ic"><i class="fas fa-headset"></i></div>
+          <div><h3>Equipa local, resposta real</h3><p>A nossa equipa de engenharia e suporte está em Luanda. Quando algo precisa de atenção, fala com quem construiu o sistema — não com um serviço de apoio estrangeiro.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="node-divider" aria-hidden="true"><span class="dt"></span><span class="ln"></span><span class="dt"></span><span class="ln"></span><span class="dt"></span></div>
+
+<!-- ========== PRODUCTS ========== -->
+<section class="section" id="produtos">
+  <div class="container">
+    <div class="sect-head center" data-r>
+      <div class="eyebrow" style="justify-content:center;">A Plataforma Oku</div>
+      <h2 class="h2">Nove produtos.<br>Um só ecossistema.</h2>
+      <p class="lead" style="margin:0 auto;">Cada produto resolve um problema real de gestão — e todos falam a mesma língua de dados. Comece por um módulo ou implemente a plataforma inteira.</p>
+    </div>
+
+    <div class="prod-grid">
+      <div class="prod-card" data-r style="--pc:#5fb8ae;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Educação</span></div>
+        <h3 class="prod-name">OkuEdu</h3>
+        <p class="prod-desc">Gestão académica e administrativa completa para instituições de ensino: matrículas, pautas, propinas e comunicação com encarregados de educação.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Mapas estatísticos e pautas</li>
+          <li><i class="fas fa-check"></i>Gestão de propinas e mensalidades</li>
+        </ul>
+        <a href="./produtos/edu/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r data-d="1" style="--pc:#e3b565;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Gestão</span></div>
+        <h3 class="prod-name">OkuERP</h3>
+        <p class="prod-desc">Gestão empresarial integrada: finanças, tesouraria, compras, inventário e contabilidade em tempo real, conforme a legislação vigente em Angola.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Contabilidade e tesouraria</li>
+          <li><i class="fas fa-check"></i>Controlo de inventário</li>
+        </ul>
+        <a href="./produtos/erp/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r data-d="2" style="--pc:#cf8f7a;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Vendas</span></div>
+        <h3 class="prod-name">OkuPOS</h3>
+        <p class="prod-desc">Facturação comercial e ponto de venda homologado pela AGT. Funciona offline e sincroniza com a nuvem assim que a ligação regressa.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Homologado pela AGT</li>
+          <li><i class="fas fa-check"></i>Funciona sem internet</li>
+        </ul>
+        <a href="./produtos/pos/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r style="--pc:#9fae86;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Comercial</span></div>
+        <h3 class="prod-name">OkuCRM</h3>
+        <p class="prod-desc">Organize o funil de vendas, registe leads e analise contactos para que a sua equipa comercial feche mais negócios com menos esforço.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Funil de vendas visual</li>
+          <li><i class="fas fa-check"></i>Histórico de contactos</li>
+        </ul>
+        <a href="./produtos/crm/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r data-d="1" style="--pc:#e3b565;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Pessoas</span></div>
+        <h3 class="prod-name">OkuHR</h3>
+        <p class="prod-desc">Digitalize o departamento de Recursos Humanos: processamento salarial com IRT e INSS, férias, faltas e ficha de cada colaborador.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Processamento de salários</li>
+          <li><i class="fas fa-check"></i>Gestão de férias e faltas</li>
+        </ul>
+        <a href="./produtos/hr/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r data-d="2" style="--pc:#5fb8ae;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Documentos</span></div>
+        <h3 class="prod-name">OkuDocs</h3>
+        <p class="prod-desc">Gestão documental centralizada com controlo de versões, aprovações e arquivo digital seguro para toda a organização.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Controlo de versões</li>
+          <li><i class="fas fa-check"></i>Fluxos de aprovação</li>
+        </ul>
+        <a href="./produtos/docs/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r style="--pc:#cf8f7a;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Pagamentos</span></div>
+        <h3 class="prod-name">OkuPay</h3>
+        <p class="prod-desc">Cobranças, conciliação e reconciliação financeira automática entre os módulos da plataforma — sem folhas de cálculo paralelas.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Conciliação automática</li>
+          <li><i class="fas fa-check"></i>Múltiplos métodos de cobrança</li>
+        </ul>
+        <a href="./produtos/pay/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card" data-r data-d="1" style="--pc:#9fae86;">
+        <div class="prod-top"><span class="prod-dot"></span><span class="prod-flag">Dados</span></div>
+        <h3 class="prod-name">OkuBI</h3>
+        <p class="prod-desc">Transforme os dados de toda a plataforma em painéis e relatórios estratégicos, prontos para a tomada de decisão da liderança.</p>
+        <ul class="prod-featlist">
+          <li><i class="fas fa-check"></i>Painéis em tempo real</li>
+          <li><i class="fas fa-check"></i>Relatórios exportáveis</li>
+        </ul>
+        <a href="./produtos/bi/index.html" class="text-link" target="_blank" rel="noopener">Ver detalhes <i class="fas fa-arrow-right"></i></a>
+      </div>
+
+      <div class="prod-card prod-more" data-r data-d="2">
+        <div>
+          <i class="fas fa-plus"></i>
+          <h4>Precisa de algo à medida?</h4>
+          <p>A nossa equipa de engenharia desenvolve módulos e integrações sob requisitos específicos.</p>
+          <a href="#contact" class="btn btn-ghost btn-sm">Falar com Especialista</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="node-divider" aria-hidden="true"><span class="dt"></span><span class="ln"></span><span class="dt"></span><span class="ln"></span><span class="dt"></span></div>
+
+<!-- ========== FEATURES ========== -->
+<section class="section" id="solucoes">
+  <div class="container">
+    <div class="sect-head" data-r>
+      <div class="eyebrow">Como Funciona</div>
+      <h2 class="h2">Construído para operar como um só sistema.</h2>
+    </div>
+
+    <div class="feat-row" data-r>
+      <div class="feat-text">
+        <h3>Integração nativa entre módulos</h3>
+        <p>Um cliente do CRM torna-se automaticamente um cliente na facturação. Um colaborador do RH aparece nos custos do ERP. Não há ficheiros de exportação nem sincronizações manuais — os dados vivem numa só base.</p>
+        <div class="feat-tags"><span class="feat-tag">API interna</span><span class="feat-tag">Dados partilhados</span><span class="feat-tag">Sem duplicação</span></div>
+      </div>
+      <div class="feat-visual">
+        <div class="feat-diagram">
+          <div class="fv-nodes">
+            <div class="fv-node"><i class="fas fa-graduation-cap"></i></div>
+            <div class="fv-ln"></div>
+            <div class="fv-node" style="width:76px;height:76px;font-size:1.5rem;border-color:#e3b565;color:#f6d999;">OKU</div>
+            <div class="fv-ln"></div>
+            <div class="fv-node"><i class="fas fa-users"></i></div>
+          </div>
+          <p class="fv-caption">EDU · ERP · POS · CRM · HR — UMA SÓ BASE DE DADOS</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row rev" data-r>
+      <div class="feat-text">
+        <h3>Segurança e conformidade em primeiro lugar</h3>
+        <p>Facturação certificada pela AGT, cálculo automático de IRT e contribuições ao INSS, controlo de acessos por perfil e registo de auditoria em cada operação sensível.</p>
+        <div class="feat-tags"><span class="feat-tag">Certificado AGT</span><span class="feat-tag">IRT · INSS</span><span class="feat-tag">Registo de auditoria</span></div>
+      </div>
+      <div class="feat-visual">
+        <div class="fv-bars">
+          <b style="height:60%;background:linear-gradient(180deg,#f6d999,#e3b565);"></b>
+          <b style="height:88%;background:linear-gradient(180deg,#f6d999,#e3b565);"></b>
+          <b style="height:44%;background:rgba(255,255,255,0.08);"></b>
+          <b style="height:70%;background:rgba(255,255,255,0.08);"></b>
+          <b style="height:96%;background:linear-gradient(180deg,#f6d999,#e3b565);"></b>
+          <b style="height:52%;background:rgba(255,255,255,0.08);"></b>
+        </div>
+      </div>
+    </div>
+
+    <div class="feat-row" data-r>
+      <div class="feat-text">
+        <h3>Pensado para a conectividade real de Angola</h3>
+        <p>Os módulos críticos — como o ponto de venda — continuam a funcionar sem ligação à internet e sincronizam automaticamente assim que a rede regressa. Nunca pára uma venda por falta de sinal.</p>
+        <div class="feat-tags"><span class="feat-tag">Modo offline</span><span class="feat-tag">Sincronização automática</span><span class="feat-tag">Alojamento seguro</span></div>
+      </div>
+      <div class="feat-visual">
+        <div class="fv-locklist" style="width:100%;">
+          <div class="fv-lockrow"><i class="fas fa-wifi"></i><span>Ligação instável detectada — a operar em modo local</span></div>
+          <div class="fv-lockrow"><i class="fas fa-arrows-rotate"></i><span>42 transacções em fila para sincronização</span></div>
+          <div class="fv-lockrow"><i class="fas fa-circle-check"></i><span>Sincronizado com sucesso às 14:32</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INDUSTRIES ========== -->
+<section class="section" id="industrias">
+  <div class="container">
+    <div class="sect-head center" data-r>
+      <div class="eyebrow" style="justify-content:center;">Indústrias</div>
+      <h2 class="h2">Onde a Oku Platform actua</h2>
+      <p class="lead" style="margin:0 auto;">Sectores diferentes, o mesmo compromisso: software que compreende a forma como se trabalha em Angola.</p>
+    </div>
+    <div class="ind-grid" data-r>
+      <div class="ind-cell"><i class="fas fa-school"></i><h4>Educação</h4><p>Escolas e institutos que precisam de gerir matrículas, propinas e desempenho académico num só lugar.</p></div>
+      <div class="ind-cell"><i class="fas fa-cart-shopping"></i><h4>Retalho & Comércio</h4><p>Lojas e cadeias que precisam de facturação certificada e controlo de stock em múltiplos pontos de venda.</p></div>
+      <div class="ind-cell"><i class="fas fa-building-columns"></i><h4>Serviços Financeiros</h4><p>Instituições que exigem rastreabilidade, conciliação e relatórios rigorosos para cada transacção.</p></div>
+      <div class="ind-cell"><i class="fas fa-briefcase-medical"></i><h4>Saúde</h4><p>Clínicas que precisam de gerir marcações, processos administrativos e facturação de forma integrada.</p></div>
+      <div class="ind-cell"><i class="fas fa-industry"></i><h4>Indústria & Logística</h4><p>Operações que dependem de inventário preciso, custos reais e visibilidade sobre toda a cadeia.</p></div>
+      <div class="ind-cell"><i class="fas fa-landmark"></i><h4>Sector Público</h4><p>Organismos que precisam de processos auditáveis, seguros e conformes com a regulação angolana.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="node-divider" aria-hidden="true"><span class="dt"></span><span class="ln"></span><span class="dt"></span><span class="ln"></span><span class="dt"></span></div>
+
+<!-- ========== PROCESS ========== -->
+<section class="section">
+  <div class="container">
+    <div class="sect-head" data-r>
+      <div class="eyebrow">Como Trabalhamos</div>
+      <h2 class="h2">Da primeira conversa ao dia-a-dia da equipa.</h2>
+    </div>
+    <div class="proc-track">
+      <div class="proc-step" data-r><span class="proc-idx">01 · Diagnóstico</span><h4>Entendemos a operação</h4><p>Mapeamos processos actuais, dados existentes e prioridades reais antes de propor qualquer módulo.</p></div>
+      <div class="proc-step" data-r data-d="1"><span class="proc-idx">02 · Configuração</span><h4>Adaptamos a plataforma</h4><p>Configuramos os módulos escolhidos à estrutura, moeda e regras fiscais da sua organização.</p></div>
+      <div class="proc-step" data-r data-d="2"><span class="proc-idx">03 · Lançamento</span><h4>Formamos a equipa</h4><p>Acompanhamos a migração de dados e formamos as equipas até ao sistema estar em uso pleno.</p></div>
+      <div class="proc-step" data-r data-d="3"><span class="proc-idx">04 · Suporte</span><h4>Continuamos presentes</h4><p>Suporte local contínuo, actualizações regulares e evolução da plataforma com o seu negócio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTORS SHOWCASE (portfolio) ========== -->
+<section class="section" style="background:var(--ink-1);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="container">
+    <div class="sect-head" data-r>
+      <div class="eyebrow">Portefólio</div>
+      <h2 class="h2">Tipos de operação que apoiamos</h2>
+      <p class="lead">Uma amostra ilustrativa das configurações mais comuns da Oku Platform — cada implementação real é ajustada às regras próprias de cada organização.</p>
+    </div>
+    <div class="sect-grid">
+      <div class="sect-card" data-r>
+        <div class="sect-media"><i class="fas fa-school"></i></div>
+        <div class="sect-body"><span>OkuEdu</span><h4>Rede de ensino privado</h4><p>Gestão centralizada de matrículas, pautas e propinas em múltiplas unidades escolares.</p></div>
+      </div>
+      <div class="sect-card" data-r data-d="1">
+        <div class="sect-media"><i class="fas fa-cash-register"></i></div>
+        <div class="sect-body"><span>OkuPOS + ERP</span><h4>Cadeia de retalho</h4><p>Facturação certificada e controlo de inventário sincronizado entre lojas físicas.</p></div>
+      </div>
+      <div class="sect-card" data-r data-d="2">
+        <div class="sect-media"><i class="fas fa-people-group"></i></div>
+        <div class="sect-body"><span>OkuHR + OkuCRM</span><h4>Empresa de serviços</h4><p>Processamento salarial automatizado e funil comercial numa só plataforma.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<!-- Placeholder quotes — substituir por feedback real de clientes antes de publicar. -->
+<section class="section">
+  <div class="container">
+    <div class="sect-head center" data-r>
+      <div class="eyebrow" style="justify-content:center;">Confiança</div>
+      <h2 class="h2">O que esperamos entregar</h2>
+      <p class="lead" style="margin:0 auto;">Exemplos ilustrativos do impacto que procuramos gerar em cada implementação — a preencher com testemunhos reais à medida que os projectos avançam.</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card" data-r>
+        <p class="test-quote">"Deixámos de reconciliar propinas manualmente todos os meses — o financeiro e a secretaria vêem exactamente os mesmos números."</p>
+        <div class="test-who"><div class="test-avatar">D</div><div><b>Direcção Financeira</b><span>Instituição de ensino (exemplo)</span></div></div>
+      </div>
+      <div class="test-card" data-r data-d="1">
+        <p class="test-quote">"O POS continua a facturar mesmo quando a internet cai. Isso, sozinho, já justificou a mudança."</p>
+        <div class="test-who"><div class="test-avatar">G</div><div><b>Gestão de Loja</b><span>Retalho (exemplo)</span></div></div>
+      </div>
+      <div class="test-card" data-r data-d="2">
+        <p class="test-quote">"O suporte responde em português, em Luanda, no mesmo dia. Isso muda a forma como confiamos no sistema."</p>
+        <div class="test-who"><div class="test-avatar">A</div><div><b>Administração</b><span>Serviços (exemplo)</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="section" id="faq" style="background:var(--ink-1);border-top:1px solid var(--line);">
+  <div class="container">
+    <div class="sect-head center" data-r>
+      <div class="eyebrow" style="justify-content:center;">Perguntas Frequentes</div>
+      <h2 class="h2">Antes de começar</h2>
+    </div>
+    <div class="faq-list" data-r>
+      <div class="faq-item open">
+        <button class="faq-q"><span>O que é a Oku Platform?</span><i class="fas fa-plus"></i></button>
+        <div class="faq-a"><p>É o conjunto de nove produtos da OKUTONDA — Edu, ERP, POS, CRM, HR, Docs, Pay, BI e Library — que partilham a mesma base de dados. Pode adoptar um único módulo ou toda a plataforma.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Os sistemas funcionam sem internet?</span><i class="fas fa-plus"></i></button>
+        <div class="faq-a"><p>Os módulos críticos, como o OkuPOS, operam em modo local e sincronizam automaticamente com a nuvem assim que a ligação é restabelecida — pensado para a realidade de conectividade em Angola.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Quanto tempo demora a implementação?</span><i class="fas fa-plus"></i></button>
+        <div class="faq-a"><p>Depende do número de módulos e da complexidade dos dados a migrar. Após o diagnóstico inicial, apresentamos um cronograma concreto antes de qualquer compromisso.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>O sistema está em conformidade com a AGT?</span><i class="fas fa-plus"></i></button>
+        <div class="faq-a"><p>Sim. O OkuPOS e o OkuERP seguem as regras de facturação certificada pela Administração Geral Tributária de Angola.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Como funciona o suporte após o lançamento?</span><i class="fas fa-plus"></i></button>
+        <div class="faq-a"><p>Suporte contínuo prestado por uma equipa em Luanda, por telefone, e-mail ou WhatsApp, com actualizações regulares incluídas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section class="cta-band">
+  <div class="cta-glow"></div>
+  <div class="container">
+    <div class="cta-inner" data-r>
+      <h2>Pronto para ver a plataforma em acção?</h2>
+      <p>Marque uma demonstração de 30 minutos com um especialista e veja como a Oku Platform se adapta à sua operação.</p>
+      <div class="cta-actions">
+        <a href="#contact" class="btn btn-gold">Pedir Demonstração <i class="fas fa-arrow-right"></i></a>
+        <a href="https://wa.me/244945317734" class="btn btn-ghost" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Falar no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="sect-head" data-r>
+      <div class="eyebrow">Contacto</div>
+      <h2 class="h2">Vamos falar sobre o seu negócio</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card" data-r>
+        <h3>Fale com a nossa equipa</h3>
+        <p>Responderemos com um plano concreto para a sua operação — sem discursos genéricos de vendas.</p>
+        <div class="info-list">
+          <div class="info-item"><div class="info-ic"><i class="fas fa-location-dot"></i></div><div><div class="info-label">Localização</div><div class="info-val">Luanda, Angola</div></div></div>
+          <div class="info-item"><div class="info-ic"><i class="fas fa-envelope"></i></div><div><div class="info-label">Email</div><div class="info-val"><a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a></div></div></div>
+          <div class="info-item"><div class="info-ic"><i class="fas fa-phone"></i></div><div><div class="info-label">Telefone / WhatsApp</div><div class="info-val"><a href="tel:+244945317734">+244 945 317 734</a></div></div></div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.facebook.com/profile.php?id=61565844385579" class="social-btn" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/244945317734" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/okutonda/" class="social-btn" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="contact-card contact-wa" data-r data-d="1">
+        <i class="fab fa-whatsapp"></i>
+        <h3>Precisa de uma resposta rápida?</h3>
+        <p>Fale directamente com um dos nossos técnicos pelo WhatsApp — normalmente respondemos em poucos minutos.</p>
+        <a href="https://wa.me/244945317734" class="btn btn-gold" target="_blank" rel="noopener">Abrir Conversa <i class="fab fa-whatsapp"></i></a>
+        <span class="rt">Tempo médio de resposta: menos de 15 minutos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">OKUTONDA</div>
+        <p class="footer-about">A OKUTONDA Technologies constrói a Oku Platform — nove produtos integrados que ajudam empresas, escolas e organizações angolanas a operar com mais clareza e menos fricção.</p>
+      </div>
+      <div>
+        <div class="footer-title">Navegação</div>
+        <ul class="footer-links">
+          <li><a href="#home">Início</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#solucoes">Soluções</a></li>
+          <li><a href="#industrias">Indústrias</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Plataforma Oku</div>
+        <ul class="footer-links">
+          <li><a href="./produtos/edu/index.html" target="_blank" rel="noopener">OkuEdu</a></li>
+          <li><a href="./produtos/erp/index.html" target="_blank" rel="noopener">OkuERP</a></li>
+          <li><a href="./produtos/pos/index.html" target="_blank" rel="noopener">OkuPOS</a></li>
+          <li><a href="./produtos/crm/index.html" target="_blank" rel="noopener">OkuCRM</a></li>
+          <li><a href="./produtos/hr/index.html" target="_blank" rel="noopener">OkuHR</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title">Contacto</div>
+        <ul class="footer-links">
+          <li><a href="mailto:okutonda@gmail.com">okutonda@gmail.com</a></li>
+          <li><a href="tel:+244945317734">+244 945 317 734</a></li>
+          <li>Luanda, Angola</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="yr"></span> OKUTONDA Technologies. Todos os direitos reservados.</p>
+      <div class="footer-bl">
+        <a href="./termos.html">Termos de Uso</a>
+        <a href="./privacidade.html">Política de Privacidade</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+/* Preloader */
+(function(){
+  var done=false, pl=document.getElementById('pl');
+  function hide(){ if(done)return; done=true; pl.classList.add('hidden'); }
+  window.addEventListener('load', function(){ setTimeout(hide,250); });
+  setTimeout(hide, 2200);
+})();
+
+/* Year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Mobile sidebar */
+var sb=document.getElementById('sidebar'), ov=document.getElementById('overlay'),
+    hb=document.getElementById('hamburger'), sc=document.getElementById('sbClose');
+function openSb(){ sb.classList.add('open'); ov.classList.add('on'); document.body.classList.add('locked'); hb.setAttribute('aria-expanded','true'); sb.setAttribute('aria-hidden','false'); }
+function closeSb(){ sb.classList.remove('open'); ov.classList.remove('on'); document.body.classList.remove('locked'); hb.setAttribute('aria-expanded','false'); sb.setAttribute('aria-hidden','true'); }
+hb.addEventListener('click', openSb);
+sc.addEventListener('click', closeSb);
+ov.addEventListener('click', closeSb);
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeSb(); });
+document.querySelectorAll('.sl-link').forEach(function(a){ a.addEventListener('click', closeSb); });
+
+/* Nav scroll state + active link */
+var nav=document.getElementById('nav'), btt=document.getElementById('btt');
+var navAnchors=document.querySelectorAll('.nav-links a');
+var sections=['home','produtos','solucoes','industrias','faq'].map(function(id){ return document.getElementById(id); }).filter(Boolean);
+function onScroll(){
+  var y=window.scrollY;
+  nav.classList.toggle('scrolled', y>40);
+  btt.classList.toggle('show', y>500);
+  var cur='';
+  sections.forEach(function(s){ if(y>=s.offsetTop-200) cur=s.id; });
+  navAnchors.forEach(function(a){ a.classList.toggle('act', a.getAttribute('href')==='#'+cur); });
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+btt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+/* Reveal on scroll */
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, {threshold:0.08});
+document.querySelectorAll('[data-r]').forEach(function(el){ io.observe(el); });
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var q=item.querySelector('.faq-q'), a=item.querySelector('.faq-a');
+  if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight+'px'; }
+  q.addEventListener('click', function(){
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(other){
+      if(other!==item){ other.classList.remove('open'); other.querySelector('.faq-a').style.maxHeight=null; }
+    });
+    if(isOpen){ item.classList.remove('open'); a.style.maxHeight=null; }
+    else { item.classList.add('open'); a.style.maxHeight = a.scrollHeight+'px'; }
+  });
+});
+window.addEventListener('resize', function(){
+  document.querySelectorAll('.faq-item.open .faq-a').forEach(function(a){ a.style.maxHeight = a.scrollHeight+'px'; });
+});
+</script>
+</body>
+</html>
