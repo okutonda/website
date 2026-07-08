@@ -139,6 +139,7 @@ p{max-width:65ch;}
   [data-r]{opacity:1; transform:none;}
   .hub-dot, .hub-line, .live-dot, .hub-orbit{animation:none !important;}
   .cursor-dot, .cursor-ring{display:none !important;}
+  .bg-fx__blob, .bg-fx__grid{animation:none !important;}
 }
 
 /* ---------- ambient texture (engineering-grid, used sparingly) ---------- */
@@ -148,6 +149,32 @@ p{max-width:65ch;}
 .divider{display:flex; align-items:center; gap:12px; max-width:var(--container); margin:0 auto; padding:0 clamp(20px,5vw,48px); opacity:.5;}
 .divider .ln{flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--line-2),transparent);}
 .divider .dt{width:5px; height:5px; border-radius:50%; background:var(--blue);}
+
+/* ============================================================
+   FUNDO ANIMADO GLOBAL — glow ambiente + grelha em deriva lenta
+   Fixo atrás de todo o conteúdo (z-index negativo); as secções
+   com fundo sólido (stats, parceiros, produtos, sectores) tapam-no
+   naturalmente, criando alternância entre zonas "vivas" e sólidas.
+   Só CSS — sem canvas/JS — para não pesar em telemóveis.
+   ============================================================ */
+.bg-fx{position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--ink);}
+.bg-fx__blob{position:absolute; border-radius:50%; filter:blur(70px); will-change:transform;}
+.bg-fx__blob.b1{width:46vw; height:46vw; max-width:640px; max-height:640px; left:-12%; top:-10%; background:radial-gradient(circle, rgba(47,123,250,.26), transparent 70%); animation:bgFloatA 26s ease-in-out infinite;}
+.bg-fx__blob.b2{width:38vw; height:38vw; max-width:560px; max-height:560px; right:-10%; top:26%; background:radial-gradient(circle, rgba(19,74,148,.3), transparent 70%); animation:bgFloatB 32s ease-in-out infinite;}
+.bg-fx__blob.b3{width:34vw; height:34vw; max-width:500px; max-height:500px; left:16%; bottom:-14%; background:radial-gradient(circle, rgba(143,203,255,.15), transparent 70%); animation:bgFloatC 38s ease-in-out infinite;}
+.bg-fx__grid{position:absolute; inset:-56px;
+  background-image:linear-gradient(rgba(143,203,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(143,203,255,.045) 1px, transparent 1px);
+  background-size:56px 56px; animation:bgGridDrift 60s linear infinite;
+  mask-image:radial-gradient(circle at 50% 25%, black 0%, transparent 75%);
+  -webkit-mask-image:radial-gradient(circle at 50% 25%, black 0%, transparent 75%);}
+@keyframes bgFloatA{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(4vw,5vh) scale(1.08);}}
+@keyframes bgFloatB{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(-5vw,-4vh) scale(1.1);}}
+@keyframes bgFloatC{0%,100%{transform:translate(0,0) scale(1);} 50%{transform:translate(3vw,-5vh) scale(1.06);}}
+@keyframes bgGridDrift{to{background-position:56px 56px;}}
+@media(max-width:640px){
+  .bg-fx__blob{filter:blur(44px);}
+  .bg-fx__blob.b3{display:none;}
+}
 
 /* ============================================================
    PRELOADER
@@ -196,7 +223,7 @@ p{max-width:65ch;}
    ============================================================ */
 .hero{
   position:relative; padding-top:calc(118px + 2vw); padding-bottom:64px; overflow:hidden;
-  background:var(--ink) url('img/hero/slider2.png') center 22%/cover no-repeat;
+  background:var(--ink) url('img/hero/slider1.png') center 22%/cover no-repeat;
 }
 .hero::before{content:''; position:absolute; inset:0; z-index:0;
   background:radial-gradient(circle at 85% -8%, rgba(47,123,250,.32) 0%, transparent 45%),
@@ -467,6 +494,13 @@ body.has-custom-cursor .cursor-dot, body.has-custom-cursor .cursor-ring{opacity:
 </style>
 </head>
 <body>
+
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__blob b1"></div>
+  <div class="bg-fx__blob b2"></div>
+  <div class="bg-fx__blob b3"></div>
+  <div class="bg-fx__grid"></div>
+</div>
 
 <div id="pl" role="status" aria-label="A carregar"><div class="pl-mark">OKUTONDA</div><div class="pl-bar"><span></span></div></div>
 
