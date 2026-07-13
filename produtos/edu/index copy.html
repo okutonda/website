@@ -21,10 +21,6 @@
 /* =============================================
    OKUTONDA EDU — Cyber-Tech Stylesheet (Light Theme)
    Brand Color: Emerald Green (#10b981)
-   ----------------------------------------------
-   [REFINADO] — ajustes incrementais de UI/UX sobre a versão
-   original: hierarquia, acessibilidade, contraste e correção
-   de bugs visuais. Identidade visual, paleta e conceito mantidos.
    ============================================= */
 
 /* ---- Google Fonts ---- */
@@ -37,7 +33,6 @@
   --primary-glow: rgba(16, 185, 129, 0.12);
   --secondary:  #f4f7fa;
   --accent:     #f59e0b;
-  --accent-dark: #d97706;
   --accent-glow: rgba(245, 158, 11, 0.12);
   --light:      #ffffff;
   --dark:       #ffffff;
@@ -93,27 +88,6 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); font-weight: 700; line-hei
 a { text-decoration: none; transition: color var(--transition); }
 img { max-width: 100%; height: auto; }
 
-/* ---- Acessibilidade [NOVO] ---- */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-[tabindex]:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
 /* ---- Utility Classes ---- */
 .text-primary   { color: var(--primary)   !important; }
 .text-accent    { color: var(--accent)    !important; }
@@ -154,18 +128,6 @@ textarea:focus-visible,
   border-radius: 4px;
   margin: 16px 0 28px;
 }
-
-/* Marca inline reutilizável [NOVO] — antes definida com style="" repetido */
-.brand-inline {
-  display: inline-flex;
-  align-items: center;
-  font-family: var(--font-display);
-  font-weight: 700;
-  color: var(--text-light);
-  letter-spacing: 0.05em;
-  font-size: 2.7rem;
-}
-.brand-inline i { color: var(--primary); display: none; }
 
 /* ---- Buttons ---- */
 .btn-primary-custom {
@@ -255,29 +217,6 @@ textarea:focus-visible,
   color: var(--white);
 }
 
-/* Variante outline do WhatsApp [NOVO] — usada onde já existe um CTA primário
-   ao lado, para não competir em peso visual (ver Hero) */
-.btn-whatsapp-outline {
-  background: transparent;
-  color: #128c7e;
-  border: 1.5px solid rgba(18, 140, 126, 0.35);
-  border-radius: 50px;
-  padding: 12px 30px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: .95rem;
-  transition: var(--transition);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-whatsapp-outline:hover {
-  background: rgba(37, 211, 102, 0.08);
-  border-color: #25d366;
-  color: #128c7e;
-  transform: translateY(-2px);
-}
-
 /* ---- Navbar ---- */
 .navbar {
   padding: 24px 0;
@@ -316,20 +255,6 @@ textarea:focus-visible,
   border-radius: 8px;
 }
 .navbar-toggler:focus { box-shadow: none; }
-
-/* Link de retorno da navbar [NOVO] — texto simples, sem competir com o CTA principal */
-.navbar-back-link {
-  font-family: var(--font-display);
-  font-size: .82rem;
-  font-weight: 600;
-  color: var(--text-main);
-  padding: 9px 10px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color .2s;
-}
-.navbar-back-link:hover { color: var(--primary); }
 
 /* ---- Hero Section ---- */
 #inicio {
@@ -456,24 +381,6 @@ textarea:focus-visible,
 
 .scroll-indicator { display: none; }
 
-/* ---- Parceiros / Prova Social ---- */
-.partners-strip {
-  padding: 48px 0; background: var(--bg-darker); border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-}
-.partner-chip {
-  padding: 12px 10px;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 10px;
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: .85rem;
-  color: var(--text-main);
-  background: rgba(15, 23, 42, 0.02);
-  opacity: .75;
-  transition: opacity .2s, border-color .2s;
-}
-.partner-chip:hover { opacity: 1; border-color: rgba(16,185,129,.3); }
-
 /* ---- Problema Section ---- */
 #problema { padding: 90px 0; background: var(--bg-darker); border-top: 1px solid rgba(15, 23, 42, 0.06); border-bottom: 1px solid rgba(15, 23, 42, 0.06); }
 .problema-card {
@@ -481,14 +388,11 @@ textarea:focus-visible,
   border-radius: var(--radius); transition: all 0.25s; height: 100%;
 }
 .problema-card:hover { border-color: rgba(239,68,68,0.2); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(239,68,68,0.03); }
-/* Ícones neutros por padrão [REFINADO] — o vermelho fica reservado ao hover
-   e ao bloco de impacto final, para não "gastar" a cor de alerta */
 .problema-icon {
-  width: 44px; height: 44px; border-radius: 10px; background: rgba(15, 23, 42, 0.05);
-  border: 1px solid rgba(15, 23, 42, 0.1); display: flex; align-items: center; justify-content: center;
-  color: #475569; font-size: 1.1rem; margin-bottom: 18px; transition: all .25s;
+  width: 44px; height: 44px; border-radius: 10px; background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2); display: flex; align-items: center; justify-content: center;
+  color: #ef4444; font-size: 1.1rem; margin-bottom: 18px;
 }
-.problema-card:hover .problema-icon { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); color: #ef4444; }
 .problema-card h5 { font-size: 1.05rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
 .problema-card p { font-size: 0.82rem; color: var(--text-main); margin: 0; line-height: 1.6; }
 .problema-impact {
@@ -504,7 +408,6 @@ textarea:focus-visible,
 .solucao-card {
   padding: 32px 28px; background: var(--bg-card); border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: var(--radius-lg); transition: all 0.25s; height: 100%; display: flex; flex-direction: column;
-  position: relative;
 }
 .solucao-card:hover { border-color: var(--primary); transform: translateY(-6px); box-shadow: 0 10px 30px rgba(16,185,129,0.06); }
 .solucao-icon {
@@ -517,24 +420,9 @@ textarea:focus-visible,
 .solucao-card p { font-size: 0.82rem; color: var(--text-main); line-height: 1.6; margin-bottom: 18px; flex: 1; }
 .solucao-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .solucao-tag {
-  font-size: 0.68rem; font-weight: 600; color: #334155;
-  background: rgba(15, 23, 42, 0.04); border: 1px solid rgba(15, 23, 42, 0.08);
-  padding: 3px 10px; border-radius: 30px;
-}
-
-/* Cartão em destaque [NOVO] — quebra a simetria da grelha para guiar o olhar
-   até o diferenciador mais forte, em vez de tratar os 6 módulos como iguais */
-.solucao-card.featured {
-  border-color: var(--primary);
-  box-shadow: 0 10px 30px rgba(16,185,129,0.08);
-}
-.solucao-card.featured .solucao-icon { background: var(--primary); color: #fff; border-color: transparent; }
-.solucao-featured-badge {
-  position: absolute; top: -11px; right: 20px;
-  background: var(--primary); color: #fff;
-  font-family: var(--font-display); font-size: .62rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .06em;
-  padding: 4px 12px; border-radius: 30px;
+  font-size: 0.65rem; font-weight: 600; color: var(--text-main);
+  background: rgba(15, 23, 42, 0.03); border: 1px solid rgba(15, 23, 42, 0.06);
+  padding: 3px 9px; border-radius: 30px;
 }
 
 /* ---- Benefícios Section ---- */
@@ -569,7 +457,7 @@ textarea:focus-visible,
 .inst-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); }
 .inst-card-img {
   width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; margin: 0 auto 16px;
+  font-size: 1.5rem; margin: 0 auto 16px;
 }
 .inst-card h5 { font-size: 0.92rem; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
 .inst-card p { font-size: 0.72rem; color: var(--text-main); margin: 0; line-height: 1.5; }
@@ -600,31 +488,20 @@ textarea:focus-visible,
 .dash-screen-item img { transition: transform 0.5s; }
 .dashboard-preview:hover .dash-screen-item img { transform: scale(1.015); }
 
-/* ---- Diferenciais Section [REFINADO — layout intro + lista] ---- */
+/* ---- Diferenciais Section ---- */
 #diferenciais { padding: 100px 0; }
-.dif-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
-.dif-intro { position: sticky; top: 100px; }
-.dif-intro h3 { font-size: 1.4rem; color: var(--text-light); margin-bottom: 0; }
-.dif-intro p { font-size: 0.95rem; color: var(--text-main); margin-top: 16px; max-width: 40ch; }
-.dif-list { display: flex; flex-direction: column; gap: 0; }
-.dif-row {
-  display: flex; align-items: flex-start; gap: 18px;
-  padding: 22px 4px; border-bottom: 1px solid rgba(15, 23, 42, 0.07);
-  transition: padding-left .25s;
+.dif-card {
+  padding: 32px; background: var(--bg-card); border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: var(--radius-lg); height: 100%; transition: all 0.25s;
 }
-.dif-row:last-child { border-bottom: none; }
-.dif-row:hover { padding-left: 10px; }
-.dif-row-icon {
+.dif-card:hover { border-color: rgba(15, 23, 42, 0.08); background: rgba(15, 23, 42, 0.02); }
+.dif-icon {
   width: 40px; height: 40px; border-radius: 8px; background: rgba(16,185,129,0.05);
   display: flex; align-items: center; justify-content: center; color: var(--primary);
-  font-size: 0.95rem; flex-shrink: 0;
+  font-size: 0.95rem; margin-bottom: 18px;
 }
-.dif-row h4 { font-size: 1.02rem; font-weight: 600; color: var(--text-light); margin-bottom: 4px; }
-.dif-row p { font-size: 0.82rem; color: var(--text-main); margin: 0; line-height: 1.6; }
-@media (max-width: 991px) {
-  .dif-layout { grid-template-columns: 1fr; }
-  .dif-intro { position: static; margin-bottom: 8px; }
-}
+.dif-card h4 { font-size: 1.05rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
+.dif-card p { font-size: 0.8rem; color: var(--text-main); margin: 0; line-height: 1.6; }
 
 /* ---- Testemunhos Section ---- */
 #testemunhos { padding: 90px 0; background: var(--bg-darker); border-top: 1px solid rgba(15, 23, 42, 0.06); }
@@ -639,15 +516,13 @@ textarea:focus-visible,
   width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
 }
-.test-avatar.a2 { background: linear-gradient(135deg,#f59e0b,#d97706); }
-.test-avatar.a3 { background: linear-gradient(135deg,#10b981,#059669); }
 .test-author-info strong { display: block; font-size: 0.88rem; color: var(--text-light); }
 .test-author-info span { font-size: 0.72rem; color: var(--text-main); }
 
 /* ---- CTA Final ---- */
 #cta-final {
-  padding: 96px 0; background: linear-gradient(135deg, #eef2f6 0%, #dbe3ea 100%);
-  border-top: 3px solid var(--primary); border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  padding: 96px 0; background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  border-top: 1px solid rgba(15, 23, 42, 0.06); border-bottom: 1px solid rgba(15, 23, 42, 0.06);
 }
 .cta-title { font-size: clamp(1.8rem, 4.5vw, 3rem); margin-bottom: 12px; font-weight: 700; color: var(--text-light); }
 .cta-sub { font-size: 1.05rem; color: var(--text-main); margin-bottom: 32px; }
@@ -686,27 +561,9 @@ textarea:focus-visible,
 .invalid-feedback { font-size: 0.72rem; color: #ef4444; margin-top: 4px; }
 .is-invalid { border-color: #ef4444 !important; }
 
-/* Painel de sucesso do formulário [NOVO] — substitui o formulário em vez de
-   apenas somar um alerta acima de campos já vazios */
-.form-success-panel { text-align: center; padding: 20px 10px 10px; }
-.form-success-icon {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(16,185,129,0.1); color: var(--primary);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.8rem; margin: 0 auto 18px;
-}
-.form-success-panel h4 { font-size: 1.2rem; color: var(--text-light); margin-bottom: 8px; }
-.form-success-panel p { font-size: 0.85rem; color: var(--text-main); margin-bottom: 20px; }
-.form-success-reset {
-  font-family: var(--font-display); font-size: .8rem; font-weight: 600;
-  color: var(--primary); border: 1px solid rgba(16,185,129,.3); border-radius: 30px;
-  padding: 8px 20px; background: transparent; cursor: pointer; transition: all .2s;
-}
-.form-success-reset:hover { background: rgba(16,185,129,.08); }
-
 /* ---- Footer ---- */
 #footer {
-  padding: 80px 0 30px; background: #f8fafc; border-top: 3px solid var(--primary);
+  padding: 80px 0 30px; background: #f8fafc; border-top: 1px solid rgba(15, 23, 42, 0.06);
 }
 .footer-brand {
   font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text-light);
@@ -769,16 +626,6 @@ textarea:focus-visible,
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
 .delay-6 { transition-delay: 0.6s; }
-
-/* ---- Ritmo mobile [NOVO] — reduz o "vazio" vertical em ecrãs pequenos,
-   onde o scroll longo copiado 1:1 do desktop aumenta o abandono ---- */
-@media (max-width: 768px) {
-  #problema, #solucao, #beneficios, #instituicoes,
-  #dashboard, #diferenciais, #testemunhos, #cta-final {
-    padding: 64px 0;
-  }
-  #formulario { padding: 64px 0; }
-}
   </style>
 </head>
 <body>
@@ -795,9 +642,9 @@ textarea:focus-visible,
         width="auto"
         class="me-2" 
         style="object-fit:contain; max-width:150px;" 
-        onerror="this.replaceWith(Object.assign(document.createElement('i'), {className:'bi bi-mortarboard-fill me-2', style:'color:var(--primary); font-size:1.4rem;'})); var t=document.getElementById('navBrandFallbackText'); if(t) t.classList.remove('d-none');"
+        onerror="this.outerHTML='<i class=\'bi bi-mortarboard-fill me-2\' style=\'color:var(--primary);\'></i>'"
       />
-      <span id="navBrandFallbackText" class="d-none">Okutonda<span style="color:var(--primary);">.</span>Edu</span>
+      <!-- Okutonda<span style="color:var(--primary);">.</span>Edu -->
     </a>
 
     <!-- Toggler mobile -->
@@ -818,7 +665,7 @@ textarea:focus-visible,
       </ul>
       <!-- Botões CTA -->
       <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
-        <a href="../../index.html" class="navbar-back-link">
+        <a href="../../index.html" class="btn-outline-white" style="font-size:.82rem; padding:9px 20px;">
           <i class="bi bi-arrow-left"></i> Voltar à Home
         </a>
         <a href="#formulario" class="btn-primary-custom" style="font-size:.82rem; padding:9px 20px;">
@@ -838,17 +685,20 @@ textarea:focus-visible,
           <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
         </div>
         <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+          <img src="../../img/produtos/edu/hero/slider2.png" alt="OKUTONDA Gestão Escolar">
         </div>
         <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+          <img src="../../img/produtos/edu/hero/slider3.png" alt="OKUTONDA Gestão Escolar">
         </div>
         <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+          <img src="../../img/produtos/edu/hero/slider4.png" alt="OKUTONDA Gestão Escolar">
         </div>
          <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
+          <img src="../../img/produtos/edu/hero/slider5.png" alt="OKUTONDA Gestão Escolar">
         </div>
+        <!-- <div class="hero-slide">
+          <img src="../../img/hero/slider6.png" alt="OKUTONDA">
+        </div> -->
       </div>
     </div>
     <!-- Premium Fading Overlay -->
@@ -875,7 +725,7 @@ textarea:focus-visible,
               <i class="bi bi-calendar-check-fill"></i> Solicitar Demonstração
             </a>
             <a href="https://wa.me/244945317734?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Okutonda%20Edu"
-               target="_blank" rel="noopener" class="btn-whatsapp-outline">
+               target="_blank" rel="noopener" class="btn-whatsapp">
               <i class="bi bi-whatsapp"></i> Falar no WhatsApp
             </a>
           </div>
@@ -906,11 +756,8 @@ textarea:focus-visible,
                   <span class="mockup-dot mockup-dot-green"></span>
                   <div class="mockup-bar"></div>
                 </div>
-                <!-- Imagem do Produto: assume que o mockup fica visível até a
-                     screenshot real carregar com sucesso [BUG CORRIGIDO] -->
-                <img src="../../img/produtos/edu/edu-screenshot.png" alt="Okenda.Edu Dashboard" class="img-fluid w-100 h-100 object-fit-cover d-none"
-                     onload="this.classList.remove('d-none'); this.nextElementSibling.classList.add('d-none');"
-                     onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none');">
+                <!-- Imagem do Produto (Futuro) -->
+                <img src="../../img/produtos/edu/edu-screenshot.png" alt="Okenda.Edu Dashboard" class="img-fluid w-100 h-100 object-fit-cover d-none" onerror="this.classList.add('d-none'); this.nextElementSibling.classList.remove('d-none');">
                 
                 <div class="mockup-content-fallback flex-grow-1">
                   <div class="mockup-rows">
@@ -977,34 +824,34 @@ textarea:focus-visible,
 </section>
 
 <!-- PARCEIROS -->
-<section class="partners-strip">
+<section style="padding:48px 0; background:var(--bg-darker); border-bottom:1px solid rgba(255,255,255,0.03);">
   <div class="container">
     <p class="text-center mb-4" style="font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-main);">
       Utilizado por Instituições de Todo o País
     </p>
     <div class="row justify-content-center align-items-center g-3 text-center">
       <div class="col-6 col-md-2">
-        <div class="partner-chip">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Colégio ABC
         </div>
       </div>
       <div class="col-6 col-md-2">
-        <div class="partner-chip">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Escola Nova
         </div>
       </div>
       <div class="col-6 col-md-2">
-        <div class="partner-chip">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> CFPAH
         </div>
       </div>
       <div class="col-6 col-md-2">
-        <div class="partner-chip">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Ens. Futura
         </div>
       </div>
       <div class="col-6 col-md-2">
-        <div class="partner-chip">
+        <div style="padding:10px; border:1px solid rgba(255,255,255,0.05); border-radius:10px; font-family:var(--font-display); font-weight:600; font-size:.85rem; color:var(--text-main); background:rgba(255,255,255,0.01);">
           <i class="bi bi-building me-1"></i> Colégio Elite
         </div>
       </div>
@@ -1143,8 +990,7 @@ textarea:focus-visible,
         </div>
       </div>
       <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
-        <div class="solucao-card featured">
-          <span class="solucao-featured-badge">Destaque</span>
+        <div class="solucao-card">
           <div class="solucao-icon"><i class="bi bi-file-earmark-check"></i></div>
           <h4>Certificados Digitais</h4>
           <p>Emissão instantânea e automatizada de certificados, declarações e boletins de notas oficiais.</p>
@@ -1274,7 +1120,7 @@ textarea:focus-visible,
     <div class="row g-4">
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-1">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-palette-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🎨</div>
           <div class="inst-card-body">
             <h5>Pré-Escolar</h5>
             <p>Controlo simples de presenças e fichas descritivas.</p>
@@ -1283,7 +1129,7 @@ textarea:focus-visible,
       </div>
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-2">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-book-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">📚</div>
           <div class="inst-card-body">
             <h5>Ens. Primário</h5>
             <p>Boletins de notas, turmas e comunicação com encarregados.</p>
@@ -1292,7 +1138,7 @@ textarea:focus-visible,
       </div>
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-3">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-mortarboard-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🎓</div>
           <div class="inst-card-body">
             <h5>I Ciclo</h5>
             <p>Geração de pautas automáticas trimestrais e estatísticas.</p>
@@ -1301,7 +1147,7 @@ textarea:focus-visible,
       </div>
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-4">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-clipboard-data-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🔬</div>
           <div class="inst-card-body">
             <h5>II Ciclo</h5>
             <p>Controle de exames, históricos de aproveitamento e médias.</p>
@@ -1310,7 +1156,7 @@ textarea:focus-visible,
       </div>
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-5">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-gear-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">⚙️</div>
           <div class="inst-card-body">
             <h5>Ens. Técnico</h5>
             <p>Módulos para cursos técnicos, disciplinas e estágios.</p>
@@ -1319,7 +1165,7 @@ textarea:focus-visible,
       </div>
       <div class="col-6 col-md-4 col-lg-2 fade-in-up delay-6">
         <div class="inst-card">
-          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);"><i class="bi bi-building-fill"></i></div>
+          <div class="inst-card-img" style="background:rgba(16,185,129,0.08); color:var(--primary);">🏫</div>
           <div class="inst-card-body">
             <h5>Centros Form.</h5>
             <p>Gestão rápida de turmas curtas e emissão de certificados.</p>
@@ -1357,90 +1203,83 @@ textarea:focus-visible,
       </div>
 
       <div class="dash-screen-item" data-screen="overview">
-        <img src="../../img/produtos/edu/hero/slider1.png" class="w-100" style="display:block; border-radius:8px;" alt="Dashboard Visão Geral" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271200%27 height=%27600%27%3E%3Crect width=%271200%27 height=%27600%27 fill=%27%23f4f7fa%27/%3E%3Crect x=%272%27 y=%272%27 width=%271196%27 height=%27596%27 fill=%27none%27 stroke=%27%2310b981%27 stroke-width=%274%27/%3E%3Ctext x=%27600%27 y=%27290%27 font-family=%27sans-serif%27 font-weight=%27700%27 font-size=%2726%27 fill=%27%2310b981%27 text-anchor=%27middle%27%3EOkutonda.Edu%3C/text%3E%3Ctext x=%27600%27 y=%27326%27 font-family=%27sans-serif%27 font-size=%2715%27 fill=%27%23475569%27 text-anchor=%27middle%27%3EPre-visualizacao indisponivel%3C/text%3E%3C/svg%3E'">
+        <img src="../../img/produtos/edu/hero/slider1.png" class="w-100" style="display:block; border-radius:8px;" alt="Dashboard Visão Geral" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Dashboard+Overview'">
       </div>
 
       <div class="dash-screen-item" data-screen="academico" style="display:none;">
-        <img src="../../img/produtos/edu/hero/slider2.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Académica" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271200%27 height=%27600%27%3E%3Crect width=%271200%27 height=%27600%27 fill=%27%23f4f7fa%27/%3E%3Crect x=%272%27 y=%272%27 width=%271196%27 height=%27596%27 fill=%27none%27 stroke=%27%2310b981%27 stroke-width=%274%27/%3E%3Ctext x=%27600%27 y=%27290%27 font-family=%27sans-serif%27 font-weight=%27700%27 font-size=%2726%27 fill=%27%2310b981%27 text-anchor=%27middle%27%3EOkutonda.Edu%3C/text%3E%3Ctext x=%27600%27 y=%27326%27 font-family=%27sans-serif%27 font-size=%2715%27 fill=%27%23475569%27 text-anchor=%27middle%27%3EPre-visualizacao indisponivel%3C/text%3E%3C/svg%3E'">
+        <img src="../../img/produtos/edu/hero/slider2.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Académica" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Academico+Screen'">
       </div>
 
       <div class="dash-screen-item" data-screen="financeiro" style="display:none;">
-        <img src="../../img/produtos/edu/hero/slider3.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Financeira" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271200%27 height=%27600%27%3E%3Crect width=%271200%27 height=%27600%27 fill=%27%23f4f7fa%27/%3E%3Crect x=%272%27 y=%272%27 width=%271196%27 height=%27596%27 fill=%27none%27 stroke=%27%2310b981%27 stroke-width=%274%27/%3E%3Ctext x=%27600%27 y=%27290%27 font-family=%27sans-serif%27 font-weight=%27700%27 font-size=%2726%27 fill=%27%2310b981%27 text-anchor=%27middle%27%3EOkutonda.Edu%3C/text%3E%3Ctext x=%27600%27 y=%27326%27 font-family=%27sans-serif%27 font-size=%2715%27 fill=%27%23475569%27 text-anchor=%27middle%27%3EPre-visualizacao indisponivel%3C/text%3E%3C/svg%3E'">
+        <img src="../../img/produtos/edu/hero/slider3.png" class="w-100" style="display:block; border-radius:8px;" alt="Gestão Financeira" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Financeiro+Screen'">
       </div>
 
       <div class="dash-screen-item" data-screen="aluno" style="display:none;">
-        <img src="../../img/produtos/edu/hero/slider4.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Aluno" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271200%27 height=%27600%27%3E%3Crect width=%271200%27 height=%27600%27 fill=%27%23f4f7fa%27/%3E%3Crect x=%272%27 y=%272%27 width=%271196%27 height=%27596%27 fill=%27none%27 stroke=%27%2310b981%27 stroke-width=%274%27/%3E%3Ctext x=%27600%27 y=%27290%27 font-family=%27sans-serif%27 font-weight=%27700%27 font-size=%2726%27 fill=%27%2310b981%27 text-anchor=%27middle%27%3EOkutonda.Edu%3C/text%3E%3Ctext x=%27600%27 y=%27326%27 font-family=%27sans-serif%27 font-size=%2715%27 fill=%27%23475569%27 text-anchor=%27middle%27%3EPre-visualizacao indisponivel%3C/text%3E%3C/svg%3E'">
+        <img src="../../img/produtos/edu/hero/slider4.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Aluno" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Portal+do+Aluno'">
       </div>
 
       <div class="dash-screen-item" data-screen="professor" style="display:none;">
-        <img src="../../img/produtos/edu/hero/slider5.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Professor" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%271200%27 height=%27600%27%3E%3Crect width=%271200%27 height=%27600%27 fill=%27%23f4f7fa%27/%3E%3Crect x=%272%27 y=%272%27 width=%271196%27 height=%27596%27 fill=%27none%27 stroke=%27%2310b981%27 stroke-width=%274%27/%3E%3Ctext x=%27600%27 y=%27290%27 font-family=%27sans-serif%27 font-weight=%27700%27 font-size=%2726%27 fill=%27%2310b981%27 text-anchor=%27middle%27%3EOkutonda.Edu%3C/text%3E%3Ctext x=%27600%27 y=%27326%27 font-family=%27sans-serif%27 font-size=%2715%27 fill=%27%23475569%27 text-anchor=%27middle%27%3EPre-visualizacao indisponivel%3C/text%3E%3C/svg%3E'">
+        <img src="../../img/produtos/edu/hero/slider5.png" class="w-100" style="display:block; border-radius:8px;" alt="Portal do Professor" onerror="this.src='https://placehold.co/1200x600/081020/fff?text=Okutonda+Edu+Portal+do+Professor'">
       </div>
     </div>
   </div>
 </section>
 
-<!-- DIFERENCIAIS [REFINADO — intro + lista, quebra o padrão de grelha repetida] -->
+<!-- DIFERENCIAIS -->
 <section id="diferenciais" aria-labelledby="dif-title">
   <div class="container">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
         <span class="section-badge fade-in-up"><i class="bi bi-trophy-fill"></i> Diferenciais</span>
-        <h2 class="section-title fade-in-up delay-1" id="dif-title">Porque Escolher <span class="brand-inline">
-    <i class="bi bi-mortarboard-fill me-2"></i>
+        <h2 class="section-title fade-in-up delay-1" id="dif-title">Porque Escolher <span style="display:inline-flex; align-items:center; font-family:var(--font-display); font-weight:700; color:var(--text-light); letter-spacing:0.05em; font-size:2.7rem;">
+    <i class="bi bi-mortarboard-fill me-2" style="color:var(--primary); display:none;"></i>
     Okutonda<span style="color:var(--primary);">.</span>Edu
   </span></h2>
         <div class="divider-accent mx-auto fade-in-up delay-2"></div>
       </div>
     </div>
 
-    <div class="dif-layout">
-      <div class="dif-intro fade-in-up delay-1">
-        <h3>Construído para a realidade angolana, pensado para crescer consigo.</h3>
-        <p>Seis razões pelas quais dezenas de instituições confiam a gestão da sua operação académica e financeira ao Okutonda.Edu.</p>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-geo-alt-fill"></i></div>
+          <h4>Desenvolvido em Angola</h4>
+          <p>Sistema alinhado ao currículo escolar angolano e à moeda nacional, adaptado inteiramente ao nosso contexto.</p>
+        </div>
       </div>
-
-      <div class="dif-list fade-in-up delay-2">
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-geo-alt-fill"></i></div>
-          <div>
-            <h4>Desenvolvido em Angola</h4>
-            <p>Sistema alinhado ao currículo escolar angolano e à moeda nacional, adaptado inteiramente ao nosso contexto.</p>
-          </div>
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-globe2"></i></div>
+          <h4>Plataforma 100% Cloud</h4>
+          <p>Aceda a partir de qualquer computador, tablet ou smartphone conectado à internet, sem instalações locais.</p>
         </div>
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-globe2"></i></div>
-          <div>
-            <h4>Plataforma 100% Cloud</h4>
-            <p>Aceda a partir de qualquer computador, tablet ou smartphone conectado à internet, sem instalações locais.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-shield-lock-fill"></i></div>
+          <h4>Segurança e Proteção</h4>
+          <p>Backups diários automatizados e encriptação ponta a ponta garantem a segurança dos dados escolares.</p>
         </div>
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-shield-lock-fill"></i></div>
-          <div>
-            <h4>Segurança e Proteção</h4>
-            <p>Backups diários automatizados e encriptação ponta a ponta garantem a segurança dos dados escolares.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-1">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-headset"></i></div>
+          <h4>Suporte Técnico Local</h4>
+          <p>Nossa equipa está sempre disponível para suporte rápido presencial e via WhatsApp, com formações incluídas.</p>
         </div>
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-headset"></i></div>
-          <div>
-            <h4>Suporte Técnico Local</h4>
-            <p>Nossa equipa está sempre disponível para suporte rápido presencial e via WhatsApp, com formações incluídas.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-2">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-arrow-repeat"></i></div>
+          <h4>Evolução Sem Custos</h4>
+          <p>Atualizações regulares com novas funcionalidades e melhorias de segurança são disponibilizadas gratuitamente.</p>
         </div>
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-arrow-repeat"></i></div>
-          <div>
-            <h4>Evolução Sem Custos</h4>
-            <p>Atualizações regulares com novas funcionalidades e melhorias de segurança são disponibilizadas gratuitamente.</p>
-          </div>
-        </div>
-        <div class="dif-row">
-          <div class="dif-row-icon"><i class="bi bi-bar-chart-steps"></i></div>
-          <div>
-            <h4>Escalabilidade Ilimitada</h4>
-            <p>Seja um colégio de bairro de 100 alunos ou um complexo escolar de 10.000 alunos, a infraestrutura acompanha.</p>
-          </div>
+      </div>
+      <div class="col-sm-6 col-lg-4 fade-in-up delay-3">
+        <div class="dif-card">
+          <div class="dif-icon"><i class="bi bi-bar-chart-steps"></i></div>
+          <h4>Escalabilidade Ilimitada</h4>
+          <p>Seja um colégio de bairro de 100 alunos ou um complexo escolar de 10.000 alunos, a infraestrutura acompanha.</p>
         </div>
       </div>
     </div>
@@ -1481,7 +1320,7 @@ textarea:focus-visible,
           </div>
           <p>"A gestão financeira da escola mudou inteiramente. Acabaram-se os registos dispersos em blocos de papel. Hoje temos o controlo de propinas pagas e em atraso em tempo real."</p>
           <div class="test-author">
-            <div class="test-avatar a2">AF</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#f59e0b,#d97706);">AF</div>
             <div class="test-author-info">
               <strong>António Ferreira</strong>
               <span>Diretor Geral · Escola Técnica do Bié</span>
@@ -1496,7 +1335,7 @@ textarea:focus-visible,
           </div>
           <p>"Os encarregados adoram o portal do aluno. Eles acompanham as notas trimestrais e recebem os boletins dos filhos à distância, sem precisar de se deslocar à secretaria."</p>
           <div class="test-author">
-            <div class="test-avatar a3">CN</div>
+            <div class="test-avatar" style="background:linear-gradient(135deg,#10b981,#059669);">CN</div>
             <div class="test-author-info">
               <strong>Clara Neto</strong>
               <span>Diretora · Centro de Formação Profissional, Angola</span>
@@ -1561,7 +1400,7 @@ textarea:focus-visible,
           <p>Preencha os campos obrigatórios (*) para agendarmos a apresentação.</p>
 
           <form id="demoForm" novalidate>
-            <div class="row g-3" id="demoFormFields">
+            <div class="row g-3">
               <!-- Instituição -->
               <div class="col-md-6">
                 <label for="instituicao" class="form-label">Nome da Instituição *</label>
@@ -1631,15 +1470,6 @@ textarea:focus-visible,
                   Os seus dados estão seguros. Não partilhamos informações.
                 </p>
               </div>
-            </div>
-
-            <!-- Painel de sucesso [NOVO] — substitui os campos após envio válido,
-                 fechando o ciclo de forma inequívoca -->
-            <div id="demoFormSuccess" class="form-success-panel d-none">
-              <div class="form-success-icon"><i class="bi bi-check-lg"></i></div>
-              <h4>Pedido recebido com sucesso!</h4>
-              <p>A nossa equipa entrará em contacto em até 24 horas para agendar a sua demonstração.</p>
-              <button type="button" class="form-success-reset" id="demoFormResetBtn">Enviar novo pedido</button>
             </div>
           </form>
         </div>
@@ -1762,8 +1592,6 @@ textarea:focus-visible,
 /**
  * OKENDA.EDU — Main JavaScript
  * Funcionalidades: Navbar sticky, scroll suave, animações, contadores, formulário, modal, back to top
- * [REFINADO] Validação do formulário com atributos ARIA e foco automático no
- * primeiro campo inválido; estado de sucesso dedicado (ver initFormValidation).
  */
 
 'use strict';
@@ -1964,10 +1792,7 @@ function initDashboardModal() {
 }
 
 /* =============================================
-   VALIDAÇÃO DO FORMULÁRIO [REFINADO]
-   - aria-invalid / aria-describedby nos campos com erro
-   - foco automático no primeiro campo inválido
-   - painel de sucesso dedicado em vez de alerta sobre campos vazios
+   VALIDAÇÃO DO FORMULÁRIO
    ============================================= */
 function initFormValidation() {
   const form = document.getElementById('demoForm');
@@ -1977,48 +1802,42 @@ function initFormValidation() {
     e.preventDefault();
     e.stopPropagation();
 
-    // Limpar estado de erro anterior
-    form.querySelectorAll('.is-invalid').forEach(el => {
-      el.classList.remove('is-invalid');
-      el.removeAttribute('aria-invalid');
-    });
+    // Limpar alertas anteriores
+    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
 
     let isValid = true;
-    let firstInvalid = null;
 
     // Validar campos obrigatórios
     const required = form.querySelectorAll('[required]');
     required.forEach(field => {
       const val = field.value.trim();
-      let fieldValid = true;
 
       if (!val) {
         setInvalid(field, 'Este campo é obrigatório.');
-        fieldValid = false;
-      } else if (field.type === 'email') {
+        isValid = false;
+        return;
+      }
+
+      // Validação específica por tipo
+      if (field.type === 'email') {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(val)) {
           setInvalid(field, 'Insira um e-mail válido.');
-          fieldValid = false;
-        }
-      } else if (field.type === 'tel') {
-        const telRegex = /^\+?[\d\s\-()]{9,15}$/;
-        if (!telRegex.test(val)) {
-          setInvalid(field, 'Insira um telefone válido.');
-          fieldValid = false;
+          isValid = false;
         }
       }
 
-      if (!fieldValid) {
-        isValid = false;
-        if (!firstInvalid) firstInvalid = field;
+      if (field.type === 'tel') {
+        const telRegex = /^\+?[\d\s\-()]{9,15}$/;
+        if (!telRegex.test(val)) {
+          setInvalid(field, 'Insira um telefone válido.');
+          isValid = false;
+        }
       }
     });
 
     if (isValid) {
       showSuccessMessage(form);
-    } else if (firstInvalid) {
-      firstInvalid.focus();
     }
   });
 
@@ -2026,48 +1845,49 @@ function initFormValidation() {
   form.querySelectorAll('.form-control, .form-select').forEach(field => {
     field.addEventListener('input', () => {
       field.classList.remove('is-invalid');
-      field.removeAttribute('aria-invalid');
       const fb = field.nextElementSibling;
       if (fb && fb.classList.contains('invalid-feedback')) fb.textContent = '';
     });
   });
-
-  // Botão "Enviar novo pedido" no painel de sucesso
-  const resetBtn = document.getElementById('demoFormResetBtn');
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      document.getElementById('demoFormSuccess').classList.add('d-none');
-      document.getElementById('demoFormFields').classList.remove('d-none');
-      form.reset();
-    });
-  }
 }
 
 function setInvalid(field, msg) {
   field.classList.add('is-invalid');
-  field.setAttribute('aria-invalid', 'true');
-
   let fb = field.nextElementSibling;
   if (!fb || !fb.classList.contains('invalid-feedback')) {
     fb = document.createElement('div');
     fb.className = 'invalid-feedback';
     field.parentNode.insertBefore(fb, field.nextSibling);
   }
-  if (!fb.id) fb.id = field.id + '-error';
-  field.setAttribute('aria-describedby', fb.id);
   fb.textContent = msg;
 }
 
 function showSuccessMessage(form) {
-  const fieldsWrap = document.getElementById('demoFormFields');
-  const successPanel = document.getElementById('demoFormSuccess');
-  if (!fieldsWrap || !successPanel) return;
+  const existing = form.querySelector('.form-success');
+  if (existing) existing.remove();
 
-  fieldsWrap.classList.add('d-none');
-  successPanel.classList.remove('d-none');
+  const success = document.createElement('div');
+  success.className = 'form-success alert alert-success border-0 rounded-3 d-flex align-items-center gap-3 mt-4';
+  success.innerHTML = `
+    <i class="bi bi-check-circle-fill fs-4"></i>
+    <div>
+      <strong>Pedido enviado com sucesso!</strong><br>
+      <small>A nossa equipa entrará em contacto em até 24 horas.</small>
+    </div>
+  `;
+
+  form.appendChild(success);
   form.reset();
 
-  successPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  // Fazer scroll suave para a mensagem
+  success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+  // Remover após 8 segundos
+  setTimeout(() => {
+    success.style.opacity = '0';
+    success.style.transition = '.4s';
+    setTimeout(() => success.remove(), 400);
+  }, 8000);
 }
 
 /* =============================================
