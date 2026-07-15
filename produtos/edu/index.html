@@ -25,6 +25,14 @@
    [REFINADO] — ajustes incrementais de UI/UX sobre a versão
    original: hierarquia, acessibilidade, contraste e correção
    de bugs visuais. Identidade visual, paleta e conceito mantidos.
+
+   [REFINADO v2] — hero convertido de slider para imagem única
+   fixa, com leve zoom contínuo (Ken Burns) e uma camada de
+   contraste dedicada para garantir leitura fácil do texto sobre
+   a fotografia. Reforço de contraste em badges, título do hero,
+   botão primário e rodapé. Micro-interações adicionais (hover de
+   ícones, troca suave entre abas do dashboard, chips de parceiros
+   sempre legíveis, sem esmaecer o texto).
    ============================================= */
 
 /* ---- Google Fonts ---- */
@@ -34,6 +42,7 @@
 :root {
   --primary:    #10b981;
   --primary-dark: #059669;
+  --primary-deep: #065f46; /* [NOVO v2] tom profundo p/ texto sobre fundos claros — reforça contraste de leitura */
   --primary-glow: rgba(16, 185, 129, 0.12);
   --secondary:  #f4f7fa;
   --accent:     #f59e0b;
@@ -125,9 +134,9 @@ textarea:focus-visible,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(16, 185, 129, .08);
-  border: 1px solid rgba(16, 185, 129, .2);
-  color: var(--primary);
+  background: rgba(16, 185, 129, .09);
+  border: 1px solid rgba(16, 185, 129, .22);
+  color: var(--primary-deep);
   font-family: var(--font-display);
   font-size: .78rem;
   font-weight: 700;
@@ -136,6 +145,11 @@ textarea:focus-visible,
   padding: 6px 14px;
   border-radius: 50px;
   margin-bottom: 14px;
+}
+/* [NOVO v2] variante de maior densidade, usada sobre fundos em degradê (Benefícios, CTA final) */
+.section-badge-solid {
+  background: rgba(16, 185, 129, .16);
+  border-color: rgba(16, 185, 129, .32);
 }
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
@@ -169,7 +183,7 @@ textarea:focus-visible,
 
 /* ---- Buttons ---- */
 .btn-primary-custom {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-deep) 100%);
   color: var(--white);
   border: 1px solid transparent;
   border-radius: 50px;
@@ -349,9 +363,9 @@ textarea:focus-visible,
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 6px 14px; border-radius: 30px;
-  background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);
+  background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.18);
   margin-bottom: 24px; font-family: var(--font-display); font-size: 0.72rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.12em; color: var(--primary);
+  text-transform: uppercase; letter-spacing: 0.12em; color: var(--primary-deep);
 }
 .hero-title {
   font-size: clamp(2.4rem, 5vw, 4rem);
@@ -359,7 +373,7 @@ textarea:focus-visible,
   color: var(--text-light);
 }
 .hero-title span {
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  background: linear-gradient(135deg, #065f46 0%, #059669 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero-subtitle { font-size: 1.15rem; color: var(--text-main); margin-bottom: 36px; max-width: 540px; }
@@ -413,44 +427,43 @@ textarea:focus-visible,
 @keyframes float-anim-local { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
 
-    /* ─── FULLSCREEN BACKGROUND SLIDER ─── */
-    .hero-slider-bg {
+    /* ─── HERO: IMAGEM DE FUNDO ÚNICA E FIXA [REFINADO v2] ───
+       Substitui o antigo slider por uma única fotografia, com leve
+       zoom contínuo (efeito Ken Burns) e uma camada de contraste
+       dedicada — para a leitura do texto nunca depender do que
+       está a acontecer na imagem por trás. */
+    .hero-bg {
       position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1;
+      overflow: hidden;
+      background: var(--bg-darker);
     }
-    .hero-slides {
-      position: relative; width: 100%; height: 100%; overflow: hidden;
-      background: #f4f7fa;
+    .hero-bg-img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+      transform: scale(1.06);
+      animation: hero-ken-burns 26s ease-in-out infinite alternate;
+      will-change: transform;
     }
-    .hero-slide {
-      position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease-in-out;
-    }
-    .hero-slide.active { opacity: 1; z-index: 2; }
-    .hero-slide img {
-      width: 100%; height: 100%; object-fit: cover;
+    @keyframes hero-ken-burns {
+      0%   { transform: scale(1.06) translate3d(0, 0, 0); }
+      100% { transform: scale(1.14) translate3d(-1.4%, -1%, 0); }
     }
     .hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.45) 55%, rgba(255, 255, 255, 0.08) 100%);
-      z-index: 3; pointer-events: none;
-    }
-    .slider-indicators {
-      position: absolute; bottom: 40px; right: 40px; z-index: 5;
-      display: flex; gap: 8px;
-    }
-    .indicator {
-      width: 8px; height: 8px; border-radius: 50%; background: rgba(7, 39, 74, 0.25);
-      cursor: pointer; transition: all 0.3s;
-    }
-    .indicator.active {
-      background: #07274a; width: 24px; border-radius: 4px;
+      position: absolute; inset: 0; z-index: 3; pointer-events: none;
+      background: linear-gradient(100deg,
+        rgba(255, 255, 255, .98) 0%,
+        rgba(255, 255, 255, .97) 34%,
+        rgba(255, 255, 255, .86) 48%,
+        rgba(255, 255, 255, .48) 66%,
+        rgba(255, 255, 255, .14) 100%);
     }
     @media(max-width:880px){
       .hero-overlay {
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.88) 30%, rgba(255, 255, 255, 0.95) 100%);
-      }
-      .slider-indicators {
-        left: 50%; right: auto; transform: translateX(-50%);
-        bottom: 24px;
+        background: linear-gradient(180deg,
+          rgba(255, 255, 255, .92) 0%,
+          rgba(255, 255, 255, .97) 30%,
+          rgba(255, 255, 255, .98) 55%,
+          rgba(255, 255, 255, .98) 100%);
       }
     }
 
@@ -469,10 +482,11 @@ textarea:focus-visible,
   font-size: .85rem;
   color: var(--text-main);
   background: rgba(15, 23, 42, 0.02);
-  opacity: .75;
-  transition: opacity .2s, border-color .2s;
+  transition: border-color .2s, background .2s, transform .2s;
 }
-.partner-chip:hover { opacity: 1; border-color: rgba(16,185,129,.3); }
+/* [REFINADO v2] o chip já não perde opacidade em repouso — o texto fica sempre
+   totalmente legível; o destaque de hover passa a vir de cor e elevação */
+.partner-chip:hover { border-color: rgba(16,185,129,.35); background: rgba(16,185,129,.03); transform: translateY(-2px); }
 
 /* ---- Problema Section ---- */
 #problema { padding: 90px 0; background: var(--bg-darker); border-top: 1px solid rgba(15, 23, 42, 0.06); border-bottom: 1px solid rgba(15, 23, 42, 0.06); }
@@ -488,7 +502,7 @@ textarea:focus-visible,
   border: 1px solid rgba(15, 23, 42, 0.1); display: flex; align-items: center; justify-content: center;
   color: #475569; font-size: 1.1rem; margin-bottom: 18px; transition: all .25s;
 }
-.problema-card:hover .problema-icon { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); color: #ef4444; }
+.problema-card:hover .problema-icon { background: rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.25); color: #ef4444; transform: scale(1.08); }
 .problema-card h5 { font-size: 1.05rem; font-weight: 600; color: var(--text-light); margin-bottom: 8px; }
 .problema-card p { font-size: 0.82rem; color: var(--text-main); margin: 0; line-height: 1.6; }
 .problema-impact {
@@ -512,7 +526,7 @@ textarea:focus-visible,
   border: 1px solid rgba(16,185,129,0.2); display: flex; align-items: center; justify-content: center;
   color: var(--primary); font-size: 1.25rem; margin-bottom: 20px; transition: all 0.3s;
 }
-.solucao-card:hover .solucao-icon { background: var(--primary); color: #fff; border-color: transparent; }
+.solucao-card:hover .solucao-icon { background: var(--primary); color: #fff; border-color: transparent; transform: scale(1.08); }
 .solucao-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--text-light); margin-bottom: 10px; }
 .solucao-card p { font-size: 0.82rem; color: var(--text-main); line-height: 1.6; margin-bottom: 18px; flex: 1; }
 .solucao-tags { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -569,8 +583,9 @@ textarea:focus-visible,
 .inst-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03); }
 .inst-card-img {
   width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  font-size: 1.4rem; margin: 0 auto 16px;
+  font-size: 1.4rem; margin: 0 auto 16px; transition: transform .25s cubic-bezier(.16,1,.3,1);
 }
+.inst-card:hover .inst-card-img { transform: scale(1.08); }
 .inst-card h5 { font-size: 0.92rem; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
 .inst-card p { font-size: 0.72rem; color: var(--text-main); margin: 0; line-height: 1.5; }
 
@@ -597,6 +612,8 @@ textarea:focus-visible,
   font-size: 1.5rem; opacity: 0; transition: opacity 0.3s; z-index: 10;
 }
 .dashboard-preview:hover .dashboard-preview-overlay { opacity: 1; }
+/* [REFINADO v2] transição suave (crossfade) ao trocar de aba, em vez de troca abrupta */
+.dash-screen-item { opacity: 1; transition: opacity .2s ease; }
 .dash-screen-item img { transition: transform 0.5s; }
 .dashboard-preview:hover .dash-screen-item img { transform: scale(1.015); }
 
@@ -631,7 +648,10 @@ textarea:focus-visible,
 .test-card {
   padding: 32px; background: var(--bg-card); border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: var(--radius-lg); height: 100%; display: flex; flex-direction: column;
+  transition: transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s, border-color .3s;
 }
+/* [NOVO v2] elevação suave ao passar o rato — consistente com os restantes cartões do site */
+.test-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(15,23,42,.05); border-color: rgba(16,185,129,.18); }
 .test-stars { color: var(--accent); font-size: 0.85rem; margin-bottom: 18px; }
 .test-card p { font-size: 0.88rem; font-style: italic; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 24px; }
 .test-author { display: flex; gap: 14px; align-items: center; }
@@ -715,7 +735,7 @@ textarea:focus-visible,
 .footer-tagline { font-size: 0.82rem; color: var(--text-main); margin-bottom: 24px; }
 .footer-contact-item { display: flex; align-items: center; gap: 12px; font-size: 0.82rem; color: var(--text-main); margin-bottom: 12px; }
 .footer-contact-item i { color: var(--primary); }
-.footer-heading { font-family: var(--font-display); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary); margin-bottom: 18px; }
+.footer-heading { font-family: var(--font-display); font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-deep); margin-bottom: 18px; }
 .footer-links li { margin-bottom: 8px; }
 .footer-links a { font-size: 0.82rem; color: var(--text-main); transition: all 0.2s; }
 .footer-links a:hover { color: var(--text-light); transform: translateX(3px); display: inline-block; }
@@ -831,28 +851,17 @@ textarea:focus-visible,
 
 <!-- HERO SECTION -->
 <section id="inicio" class="position-relative overflow-hidden">
-      <!-- Fullscreen Slider Background -->
-    <div class="hero-slider-bg">
-      <div class="hero-slides" id="heroSlides">
-        <div class="hero-slide active">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
-        </div>
-        <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
-        </div>
-        <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
-        </div>
-        <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
-        </div>
-         <div class="hero-slide">
-          <img src="../../img/produtos/edu/hero/slider1.png" alt="OKUTONDA Gestão Escolar">
-        </div>
-      </div>
-    </div>
-    <!-- Premium Fading Overlay -->
-    <div class="hero-overlay"></div>
+  <!-- Imagem de fundo única e fixa [REFINADO v2 — substitui o slider anterior] -->
+  <div class="hero-bg" aria-hidden="true">
+    <img
+      src="../../img/produtos/edu/hero/slider1.png"
+      alt=""
+      class="hero-bg-img"
+      onerror="this.style.display='none';"
+    />
+  </div>
+  <!-- Camada de contraste: garante que o texto se lê sempre com facilidade sobre a fotografia -->
+  <div class="hero-overlay"></div>
   <div id="hero" class="position-relative" style="z-index: 4;">
     <div class="hero-grid-bg"></div>
     <div class="container position-relative">
@@ -896,7 +905,7 @@ textarea:focus-visible,
         </div>
 
         <!-- Mockup visual -->
-        <div class="col-lg-6 fade-in-up delay-3">
+        <div class="col-lg-6 scale-in delay-3">
           <div class="hero-mockup-wrapper">
             <div class="hero-mockup-bg">
               <div class="hero-mockup-screen d-flex flex-column" style="overflow:hidden;">
@@ -966,14 +975,6 @@ textarea:focus-visible,
       </div>
     </div>
   </div>
-    <!-- Indicators absolute positioned at the bottom -->
-    <div class="slider-indicators" id="sliderIndicators">
-      <span class="indicator active" data-slide="0"></span>
-      <span class="indicator" data-slide="1"></span>
-      <span class="indicator" data-slide="2"></span>
-      <span class="indicator" data-slide="3"></span>
-      <span class="indicator" data-slide="4"></span>
-    </div>
 </section>
 
 <!-- PARCEIROS -->
@@ -1176,7 +1177,7 @@ textarea:focus-visible,
   <div class="container position-relative">
     <div class="row justify-content-center text-center mb-5">
       <div class="col-lg-7">
-        <span class="section-badge fade-in-up" style="background:rgba(16,185,129,.15);color:var(--primary);">
+        <span class="section-badge section-badge-solid fade-in-up">
           <i class="bi bi-graph-up-arrow"></i> Benefícios
         </span>
         <h2 class="section-title fade-in-up delay-1" id="beneficios-title">Mais Eficiência, Menos Trabalho Manual</h2>
@@ -1511,7 +1512,7 @@ textarea:focus-visible,
 <!-- CTA FINAL -->
 <section id="cta-final" aria-labelledby="cta-title">
   <div class="container position-relative text-center">
-    <span class="section-badge fade-in-up" style="background:rgba(16,185,129,.15);color:var(--primary);justify-content:center;">
+    <span class="section-badge section-badge-solid justify-content-center fade-in-up">
       <i class="bi bi-rocket-takeoff-fill"></i> Modernize
     </span>
     <h2 class="cta-title fade-in-up delay-1" id="cta-title">Pronto para digitalizar a sua escola?</h2>
@@ -1537,7 +1538,7 @@ textarea:focus-visible,
       <!-- Form side info -->
       <div class="col-lg-4 fade-in-up delay-1">
         <div class="form-side">
-          <span class="section-badge" style="background:rgba(16,185,129,.08);color:var(--primary);">
+          <span class="section-badge">
             <i class="bi bi-send-fill"></i> Demonstração
           </span>
           <h3>Agende uma Apresentação Completa</h3>
@@ -1764,6 +1765,8 @@ textarea:focus-visible,
  * Funcionalidades: Navbar sticky, scroll suave, animações, contadores, formulário, modal, back to top
  * [REFINADO] Validação do formulário com atributos ARIA e foco automático no
  * primeiro campo inválido; estado de sucesso dedicado (ver initFormValidation).
+ * [REFINADO v2] Hero passou a usar uma única imagem fixa (sem slider/JS de
+ * rotação); troca de abas do dashboard agora faz um crossfade suave.
  */
 
 'use strict';
@@ -1898,7 +1901,7 @@ function animateCounter(el) {
 }
 
 /* =============================================
-   TABS DO DASHBOARD
+   TABS DO DASHBOARD [REFINADO v2 — crossfade suave]
    ============================================= */
 function initDashboardTabs() {
   const tabBtns = document.querySelectorAll('.dash-tab-btn');
@@ -1918,13 +1921,27 @@ function initDashboardTabs() {
   tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const target = btn.getAttribute('data-tab');
+      if (btn.classList.contains('active')) return;
 
       tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      screens.forEach(s => {
-        s.style.display = s.getAttribute('data-screen') === target ? 'block' : 'none';
-      });
+      const current = Array.from(screens).find(s => s.style.display !== 'none');
+      const next = Array.from(screens).find(s => s.getAttribute('data-screen') === target);
+
+      if (next && current !== next) {
+        if (current) {
+          current.style.opacity = '0';
+          window.setTimeout(() => {
+            current.style.display = 'none';
+            next.style.display = 'block';
+            requestAnimationFrame(() => { next.style.opacity = '1'; });
+          }, 200);
+        } else {
+          next.style.display = 'block';
+          requestAnimationFrame(() => { next.style.opacity = '1'; });
+        }
+      }
 
       // Actualiza o título do modal conforme o tab activo
       if (preview) {
@@ -2091,48 +2108,5 @@ function initBackToTop() {
 }
 </script>
 
-  <!-- Hero Slider Auto-rotation -->
-  <script>
-    (function(){
-      var slides = document.querySelectorAll('.hero-slide');
-      var indicators = document.querySelectorAll('.indicator');
-      if(slides.length === 0) return;
-      var curSlide = 0;
-      var interval = 4000;
-      var timer;
-
-      function showSlide(index) {
-        slides.forEach(function(s){ s.classList.remove('active'); });
-        indicators.forEach(function(ind){ ind.classList.remove('active'); });
-        slides[index].classList.add('active');
-        indicators[index].classList.add('active');
-        curSlide = index;
-      }
-
-      function nextSlide() {
-        var next = (curSlide + 1) % slides.length;
-        showSlide(next);
-      }
-
-      function startTimer() {
-        timer = setInterval(nextSlide, interval);
-      }
-
-      function resetTimer() {
-        clearInterval(timer);
-        startTimer();
-      }
-
-      indicators.forEach(function(ind){
-        ind.addEventListener('click', function(){
-          var index = parseInt(this.getAttribute('data-slide'));
-          showSlide(index);
-          resetTimer();
-        });
-      });
-
-      startTimer();
-    })();
-  </script>
 </body>
 </html>
